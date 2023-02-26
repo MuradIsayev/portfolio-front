@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
+import { ThemeContext } from '../App';
+import { useContext } from 'react';
 
 function NavBar() {
   const location = useLocation();
@@ -7,6 +9,7 @@ function NavBar() {
   const isGuestBookPage = location.pathname.includes('/guestbook');
   const isAboutPage = location.pathname.includes('/about');
   const isHomePage = location.pathname.includes('/home');
+  const { theme } = useContext(ThemeContext);
 
   return (
     <nav className="navbar">
@@ -15,7 +18,6 @@ function NavBar() {
       </Link>
       <hr />
       <Link to="/about" className={isAboutPage ? 'active' : ''}>
-        {' '}
         <span className="navbar-texts">About</span>
       </Link>
       <hr />

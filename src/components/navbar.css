@@ -34,3 +34,13 @@ nav .active {
 nav .active:hover {
     background-color: #aaa;
 }
+
+nav #dark {
+    background-color: #000000ef;
+    color: #fff;
+}
+
+nav #light {
+    background-color: #fff;
+    color: #333;
+}
