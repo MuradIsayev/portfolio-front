@@ -1,10 +1,12 @@
-function GuestBook () {
-    return (
-        <div>
-        <h1>Guest Book</h1>
-        <p>Sign our guest book!</p>
-        </div>
-    )
+import NavBar from './NavBar';
+
+function GuestBook() {
+  return (
+    <div>
+      <NavBar />
+      <p>This is GuestBook page</p>
+    </div>
+  );
 }
 
 export default GuestBook;

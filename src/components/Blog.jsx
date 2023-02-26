@@ -1,10 +1,12 @@
+import NavBar from './NavBar';
+
 function Blog() {
-    return (
-        <div>
-        <h1>Blog</h1>
-        <p>Blog posts go here.</p>
-        </div>
-    )
+  return (
+    <div>
+      <NavBar />
+      <p>This is Blog page</p>
+    </div>
+  );
 }
 
 export default Blog;
