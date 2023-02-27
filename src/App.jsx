@@ -42,7 +42,6 @@ function App() {
             width={48}
             handleDiameter={24}
             className="react-switch"
-
           />
       </ThemeContext.Provider>
     </>

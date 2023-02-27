@@ -12,12 +12,12 @@ function NavBar() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <nav className="navbar">
-      <Link to="/home" className={isHomePage ? 'active' : ''}>
-        <span className="navbar-texts">Home</span>
+    <nav className="navbar" id={theme} style= {{backgroundColor:  'transparent'}}>
+      <Link to="/home"  className={isHomePage ? 'active' : ''}>
+        <span  className="navbar-texts">Home</span>
       </Link>
       <hr />
-      <Link to="/about" className={isAboutPage ? 'active' : ''}>
+      <Link to="/about"className={isAboutPage ? 'active' : ''}>
         <span className="navbar-texts">About</span>
       </Link>
       <hr />
