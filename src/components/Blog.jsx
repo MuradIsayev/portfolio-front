@@ -1,8 +1,9 @@
 import NavBar from './NavBar';
+import './navbar-cont.css';
 
 function Blog() {
   return (
-    <div>
+    <div className='navbar-container'>
       <NavBar />
       <p>This is Blog page</p>
     </div>
