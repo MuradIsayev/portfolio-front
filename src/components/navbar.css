@@ -1,0 +1,42 @@
+nav a {
+    color: #a0a0a0;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    transition: linear 0.2s;
+}
+
+#light a:hover {
+    color: #302f2f;
+}
+
+#light .active {
+    background-color: #eeeaea;
+    color: #302f2f;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+#dark a:hover {
+    color: #ffffff;
+}
+
+#dark .active {
+    color: #ffffff;
+    background-color: #c4b3b3;
+}

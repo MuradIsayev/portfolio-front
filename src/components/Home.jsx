@@ -1,9 +1,12 @@
-function Home () {
+import NavBar from './NavBar';
+
+function Home() {
   return (
-    <div className="home">
-      <h1>Home</h1>
+    <div>
+      <NavBar />
+      <p>This is Home page</p>
     </div>
-  )
+  );
 }
 
 export default Home;

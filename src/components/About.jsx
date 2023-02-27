@@ -1,10 +1,12 @@
-function About () {
-    return (
-        <div>
-        <h1>About</h1>
-        <p>This is the about page.</p>
-        </div>
-    )
+import NavBar from './NavBar';
+
+function About() {
+  return (
+    <div>
+      <NavBar />
+      <p>This is About page</p>
+    </div>
+  );
 }
 
 export default About;
