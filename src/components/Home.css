@@ -1,0 +1,29 @@
+.center-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5%;
+    margin: 2% auto;
+}
+
+.socials-container {
+    display: flex;
+    flex-direction: column;
+    gap:13px;
+    width: 100%;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+p {
+    max-width: 70%;
+}
+
