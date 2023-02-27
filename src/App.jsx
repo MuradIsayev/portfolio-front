@@ -30,8 +30,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/guestbook" element={<GuestBook />} />
           </Routes>
-        </div>
-        <ReactSwitch
+          <ReactSwitch
             checked={theme === 'dark'}
             onChange={toggleTheme}
             onColor="#d4d0d0"
@@ -43,6 +42,7 @@ function App() {
             handleDiameter={24}
             className="react-switch"
           />
+        </div>
       </ThemeContext.Provider>
     </>
   );
