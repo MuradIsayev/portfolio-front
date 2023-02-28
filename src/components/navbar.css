@@ -56,3 +56,16 @@ nav {
     align-items: flex-start;
     justify-content: flex-start;
 }
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+        margin: 0 10%;
+        width: 27%;
+
+    }
+}
