@@ -6,7 +6,7 @@ import bluegithub from '../assets/bluegithub.svg';
 import './Home.css';
 import './navbar-cont.css';
 import darkgithub from '../assets/darkgithub.svg';
-import bluelinkedin from '../assets/bluelinkedin.svg'; 
+import bluelinkedin from '../assets/bluelinkedin.svg';
 import darklinkedin from '../assets/darklinkedin.svg';
 
 function Home() {
@@ -26,26 +26,30 @@ function Home() {
         </p>
         <div className="center-content">
           <img
+            className="avatar-img"
             src={avatar}
-            style={{ height: '100px' }}
             alt="portfolio avatar"
           />
           <div className="socials-container">
             <div className="social-container">
-              <img
-                src={theme === 'dark' ? bluegithub : darkgithub}
-                style={{ height: '24px' }}
-                alt="github logo"
-              />
-              <p>My Github</p>
+              <a href="https://www.linkedin.com/in/murad-isayev-7735671b5/">
+                <img
+                  className="social-img"
+                  src={theme === 'dark' ? bluegithub : darkgithub}
+                  alt="github logo"
+                />
+                <p className='social-text'>My Github</p>
+              </a>
             </div>
             <div className="social-container">
-              <img
-                src={theme === 'dark' ? bluelinkedin : darklinkedin}
-                style={{ height: '24px' }}
-                alt="linkedin logo"
-              />
-              <p>My LinkedIn</p>
+              <a href="https://github.com/MuradIsayev">
+                <img
+                  className="social-img"
+                  src={theme === 'dark' ? bluelinkedin : darklinkedin}
+                  alt="linkedin logo"
+                />
+                <p className='social-text'>My LinkedIn</p>
+              </a>
             </div>
           </div>
         </div>
