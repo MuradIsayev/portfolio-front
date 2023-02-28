@@ -25,11 +25,7 @@ function Home() {
           asperiores
         </p>
         <div className="center-content">
-          <img
-            className="avatar-img"
-            src={avatar}
-            alt="portfolio avatar"
-          />
+          <img className="avatar-img" src={avatar} alt="portfolio avatar" />
           <div className="socials-container">
             <div className="social-container">
               <a href="https://www.linkedin.com/in/murad-isayev-7735671b5/">
@@ -38,7 +34,7 @@ function Home() {
                   src={theme === 'dark' ? bluegithub : darkgithub}
                   alt="github logo"
                 />
-                <p className='social-text'>My Github</p>
+                <p className="social-text">My Github</p>
               </a>
             </div>
             <div className="social-container">
@@ -48,7 +44,7 @@ function Home() {
                   src={theme === 'dark' ? bluelinkedin : darklinkedin}
                   alt="linkedin logo"
                 />
-                <p className='social-text'>My LinkedIn</p>
+                <p className="social-text">My LinkedIn</p>
               </a>
             </div>
           </div>
