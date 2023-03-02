@@ -1,13 +1,13 @@
-import NavBar from './NavBar';
+import NavBar from '../NavBar/NavBar';
 import { useContext } from 'react';
-import { ThemeContext } from '../App';
-import avatar from '../assets/avatar.svg';
-import bluegithub from '../assets/bluegithub.svg';
+import { ThemeContext } from '../../App';
+import avatar from '../../assets/avatar.svg';
+import bluegithub from '../../assets/bluegithub.svg';
 import './Home.css';
-import './navbar-cont.css';
-import darkgithub from '../assets/darkgithub.svg';
-import bluelinkedin from '../assets/bluelinkedin.svg';
-import darklinkedin from '../assets/darklinkedin.svg';
+import '../NavBar/navbar-cont.css'
+import darkgithub from '../../assets/darkgithub.svg';
+import bluelinkedin from '../../assets/bluelinkedin.svg';
+import darklinkedin from '../../assets/darklinkedin.svg'
 
 function Home() {
   const { theme } = useContext(ThemeContext);

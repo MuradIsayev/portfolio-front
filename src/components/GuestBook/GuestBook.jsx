@@ -1,5 +1,5 @@
-import NavBar from './NavBar';
-import './navbar-cont.css';
+import NavBar from '../NavBar/NavBar';
+import '../NavBar/navbar-cont.css';
 
 function GuestBook() {
   return (

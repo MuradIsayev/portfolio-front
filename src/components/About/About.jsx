@@ -1,5 +1,5 @@
-import './navbar-cont.css';
-import NavBar from './NavBar';
+import '../NavBar/navbar-cont.css';
+import NavBar from '../NavBar/NavBar';
 
 function About() {
   return (

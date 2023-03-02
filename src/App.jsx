@@ -1,7 +1,7 @@
-import Home from './components/Home';
-import About from './components/About';
-import Blog from './components/Blog';
-import GuestBook from './components/GuestBook';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Blog from './components/Blog/Blog';
+import GuestBook from './components/GuestBook/GuestBook';
 import { Routes, Route } from 'react-router-dom';
 import React, { createContext, useEffect, useState } from 'react';
 import './App.css';

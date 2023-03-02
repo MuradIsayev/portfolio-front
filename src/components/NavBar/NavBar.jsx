@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../../App';
 import { useContext } from 'react';
 
 function NavBar() {
