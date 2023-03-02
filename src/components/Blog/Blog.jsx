@@ -14,7 +14,7 @@ function Blog() {
       <NavBar />
       </div>    
       <div
-        className="blogs-container blogs-class-block"
+        className="blogs-container"
         id={theme}
         style={{ backgroundColor: 'transparent' }}
       >
