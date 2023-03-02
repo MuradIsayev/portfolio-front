@@ -4,16 +4,18 @@ import { ThemeContext } from '../../App';
 import avatar from '../../assets/avatar.svg';
 import bluegithub from '../../assets/bluegithub.svg';
 import './Home.css';
-import '../NavBar/navbar-cont.css'
+import '../NavBar/navbar-cont.css';
 import darkgithub from '../../assets/darkgithub.svg';
 import bluelinkedin from '../../assets/bluelinkedin.svg';
-import darklinkedin from '../../assets/darklinkedin.svg'
+import darklinkedin from '../../assets/darklinkedin.svg';
 
 function Home() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="navbar-container">
-      <NavBar />
+    <div className="main-container">
+      <div className="navbar-container home-navbar-class-block">
+        <NavBar />
+      </div>
       <div
         className="content-container"
         id={theme}
