@@ -6,7 +6,7 @@
     height: 70vh;
     width: 78vw;
     gap: 8%;
-    margin: 4% auto;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
