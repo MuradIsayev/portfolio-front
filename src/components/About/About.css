@@ -3,20 +3,158 @@
     justify-content: center;
     width: 78%;
     margin: 0 auto;
-}  
+}
 
 .about-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 13px;
     margin-top: 8em;
     width: 90%;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 3%;
+    row-gap: 5%;
+    margin-top: 2em;
+    width: 93%;
+    height: 100%;
+}
+
+.project-container {
+    border: 1px solid #a0a0a0;
+    border-radius: 10px;
+    width: 37%;
+    height: 175px;
+    background-color: #141414;
+    transition: linear 0.2s;
+}
+
+.project-container:hover {
+    border: 1px solid #ffffff;
+    background-color: rgb(27, 27, 27);
+}
+
+.project-header {
+    margin-left: 3%;
+    margin-top: 2%;
+    font-size: 16px;
+}
+
+.project-text {
+    margin-left: 3%;
+    font-size: 14px;
+}
+
+.link-text {
+    max-width: 80%;
+    font-size: 12px;
+}
+
+.link-container {
+    display: flex;
+    border: 1px solid #a0a0a0;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3%;
+    height: 28%;
+    width: 45%;
+    margin-top: 12%;
+    transition: linear 0.2s;
+}
+
+.link-container>a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 500;
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: linear 0.1s;
+}
+
+.link-container:hover {
+    background-color: rgb(27, 27, 27);
+    border: 1px solid #ffffff;
+}
+
+.github-img {
+    width: 20px;
+}
+
+#light .project-container {
+    border: 1px solid #a0a0a0;
+    background-color: #f7f7f7;
+}
+
+#light .project-container:hover {
+    border: 1px solid #a0a0a0;
+    background-color: #e9e8e8;
+}
+
+#light .link-container {
+    border: 1px solid #a0a0a0;
+    background-color: #f7f7f7;
+}
+
+#light .link-container:hover {
+    border: 1px solid #a0a0a0;
+    background-color: #e9e8e8;
+}
+
+#light .link-container>a {
+    color: #838383;
+}
+
+#light .link-container>a:hover {
+    color: #302f2f;
 }
 
 @media (max-width: 768px) {
     .about-container {
         margin-top: 5em;
         width: auto;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        width: auto;
+        row-gap: 2%;
+    }
+
+    .project-container {
+        width: 85%;        
+    }
+
+    .link-text {
+        max-width: 100%;
+        font-size: 9px;
+    }
+
+    .github-img {
+        width: 16px;
+    }
+
+    .project-header {
+        font-size: 14px;
+    }
+
+    .project-text {
+        font-size: 12px;
+        width: 65%;
+    }
+
+    .link-container {
+        border: 1px solid #a0a0a0;
+        margin-left: 3%;
+        width: 40%;
+        height: 25%;
     }
 }
