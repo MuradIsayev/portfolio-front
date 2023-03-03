@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -17,6 +19,7 @@
 .view-counter {
     font-size: 12px;
     color: rgb(194, 194, 194);
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 

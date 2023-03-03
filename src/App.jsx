@@ -7,6 +7,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import ReactSwitch from 'react-switch';
 import {BsFillSunFill} from 'react-icons/bs '
+import { BsSunFill } from 'react-icons/bs'
 import { BsFillMoonFill } from 'react-icons/bs'
 
 export const ThemeContext = createContext(null);
@@ -37,7 +38,7 @@ function App() {
             onChange={toggleTheme}
             onColor="#878E88"
             offColor="#1f1e1e"
-            checkedIcon={<BsFillSunFill style={{color:'#eff31b', marginTop:'3.5px', marginLeft:'6.1px', width:'13px'}}/>}
+            checkedIcon={<BsSunFill style={{color:'#f7e330', marginTop:'3.5px', marginLeft:'6.1px', width:'13px'}}/>}
             uncheckedIcon={<BsFillMoonFill style={{color:'#cfcfcf', marginTop:'3.7px', marginLeft:'6px', width:'12px'}} />}
             height={24}
             width={48}
