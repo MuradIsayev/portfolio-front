@@ -1,0 +1,22 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    width: 78%;
+    margin: 0 auto;
+}  
+
+.guestbook-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 13px;
+    margin-top: 8em;
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    .guestbook-container {
+        margin-top: 5em;
+        width: auto;
+    }
+}
