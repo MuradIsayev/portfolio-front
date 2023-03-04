@@ -23,7 +23,7 @@
 }
 
 
-.blog-container>a {
+.blog-container>.blog-links {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,11 +34,26 @@
     transition: linear 0.1s;
 }
 
-.blog-container
-{
+.blog-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.blog-header {
+    transition: linear 0.1s;
+}
+
+#light .blog-links:hover {
+    background-color: #fff;
+}
+
+#light .blog-header:hover {
+    color: rgb(0, 0, 0);
+}
+
+#dark .blog-header:hover {
+    color: #fff;
 }
 
 

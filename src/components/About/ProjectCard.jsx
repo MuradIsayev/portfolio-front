@@ -12,7 +12,7 @@ function ProjectAbout() {
       <p className="project-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
       </p>
-      <div className="link-container" id={theme}>
+      <div className="link-container">
         <a href="#">
           <img
             className="github-img"
