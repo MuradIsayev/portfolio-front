@@ -30,7 +30,7 @@ function Home() {
           <img className="avatar-img" src={avatar} alt="portfolio avatar" />
           <div className="socials-container">
             <div className="social-container">
-              <a href="https://www.linkedin.com/in/murad-isayev-7735671b5/">
+              <a className='home-links' href="https://www.linkedin.com/in/murad-isayev-7735671b5/">
                 <img
                   className="social-img"
                   src={theme === 'dark' ? bluegithub : darkgithub}
@@ -40,7 +40,7 @@ function Home() {
               </a>
             </div>
             <div className="social-container">
-              <a href="https://github.com/MuradIsayev">
+              <a className='home-links' href="https://github.com/MuradIsayev">
                 <img
                   className="social-img"
                   src={theme === 'dark' ? bluelinkedin : darklinkedin}
