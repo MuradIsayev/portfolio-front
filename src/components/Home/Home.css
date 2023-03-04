@@ -24,16 +24,28 @@
     gap: 15px;
 }
 
-.social-container>a {
+.social-container>.home-links {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
     font-size: 14px;
     font-weight: 500;
     color: #a0a0a0;
     text-decoration: none;
     transition: linear 0.2s;
+}
+
+.social-text {
+    transition: linear 0.1s;
+}
+
+#dark .social-text:hover {
+    color:#f2f2f2;   
+}
+
+#light .social-text:hover {
+    color:rgb(0, 0, 0);   
 }
 
 p {
@@ -59,6 +71,10 @@ p {
 
 .content-container {
     width: 90%;
+}
+
+#dark {
+    background-color: red;
 }
 
 
@@ -87,7 +103,7 @@ p {
     }
 
     /* Social container */
-    .social-container>a {
+    .social-container>.home-links{
         font-size: 12px;
     }
 

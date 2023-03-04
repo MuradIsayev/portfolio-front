@@ -18,16 +18,28 @@ function NavBar() {
         id={theme}
         style={{ backgroundColor: 'transparent' }}
       >
-        <Link to="/home" className={isHomePage ? 'active' : ''}>
+        <Link
+          to="/home"
+          className={isHomePage ? 'active navbar-links' : 'navbar-links'}
+        >
           <span className="navbar-texts">Home</span>
         </Link>
-        <Link to="/about" className={isAboutPage ? 'active' : ''}>
+        <Link
+          to="/about"
+          className={isAboutPage ? 'active navbar-links' : 'navbar-links'}
+        >
           <span className="navbar-texts">About</span>
         </Link>
-        <Link to="/blog" className={isBlogPage ? 'active' : ''}>
+        <Link
+          to="/blog"
+          className={isBlogPage ? 'active navbar-links' : 'navbar-links'}
+        >
           <span className="navbar-texts">Blog</span>
         </Link>
-        <Link to="/guestbook" className={isGuestBookPage ? 'active' : ''}>
+        <Link
+          to="/guestbook"
+          className={isGuestBookPage ? 'active navbar-links' : 'navbar-links'}
+        >
           <span className="navbar-texts">GuestBook</span>
         </Link>
       </nav>
