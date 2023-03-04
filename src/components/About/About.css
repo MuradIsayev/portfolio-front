@@ -30,8 +30,9 @@
     border-radius: 10px;
     width: 37%;
     height: 175px;
-    background-color: #141414;
     transition: linear 0.2s;
+    background-color: #272727;
+
 }
 
 .project-container:hover {
