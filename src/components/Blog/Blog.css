@@ -40,7 +40,7 @@
     flex-wrap: wrap;
 }
 
-.blog-header {
+.blog-header-date {
     transition: linear 0.1s;
 }
 
@@ -48,14 +48,29 @@
     background-color: #fff;
 }
 
-#light .blog-header:hover {
+#light .blog-header-date:hover {
     color: rgb(0, 0, 0);
 }
 
-#dark .blog-header:hover {
+#dark .blog-header-date:hover {
     color: #fff;
 }
 
+.blog-fist-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    font-size: 16px;
+    color: #858585;
+    text-decoration: none;
+    transition: linear 0.1s;
+
+}
+
+.blog-date {
+    font-size: 14px;
+}
 
 @media (max-width: 768px) {
     .blogs-container {
