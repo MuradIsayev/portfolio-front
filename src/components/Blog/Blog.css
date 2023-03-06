@@ -77,4 +77,12 @@
         margin-top: 5em;
         width: auto;
     }
+
+    .blog-date {
+        font-size: 11px;
+    }
+
+    .blog-fist-content {
+        width: 100%;
+    }
 }
