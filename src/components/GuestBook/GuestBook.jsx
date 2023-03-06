@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 import NavBar from '../NavBar/NavBar';
+import GuestBookContent from './GuestBookContent';
 import '../NavBar/navbar-cont.css';
 import './GuestBook.css';
 import bluegithub from '../../assets/bluegithub.svg';
@@ -27,10 +28,10 @@ function GuestBook() {
               src={theme === 'dark' ? bluegithub : darkgithub}
               alt="github logo"
             />
-            <span className='button-text'> 
-            Sign in with GitHub
-            </span>
+            <span className="button-text">Sign in with GitHub</span>
           </button>
+          <GuestBookContent />
+          <GuestBookContent />
         </div>
       </div>
     </div>

@@ -55,6 +55,22 @@
     font-weight: 500;
 }
 
+.guestbook-chat-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap:6px;  
+    margin-top: 1.2em;
+    width: 90%;
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.guestbook-chat-name {
+    font-weight: 500;
+    font-size: 1em;
+}
+
 @media (max-width: 768px) {
     .guestbook-container {
         margin-top: 5em;
