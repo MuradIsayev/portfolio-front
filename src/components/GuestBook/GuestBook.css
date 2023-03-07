@@ -3,7 +3,7 @@
     justify-content: center;
     width: 78%;
     margin: 0 auto;
-}  
+}
 
 .guestbook-container {
     display: flex;
@@ -12,6 +12,128 @@
     gap: 13px;
     margin-top: 8em;
     width: 90%;
+}
+
+#light .github-button {
+    background-color: #f5f5f5;
+    color: #4E4E4E;
+}
+
+#light .github-button:hover {
+    background-color: #e5e5e5;
+    color: #0c0c0c;
+}
+
+.github-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2em;
+    gap: 8px;
+    border-radius: 5px;
+    transition: linear 0.1s;
+    cursor: pointer;
+    border: none;
+}
+
+#dark .github-button {
+    background-color: #272727;
+    color: #C2C2C2;
+}
+
+#dark .github-button:hover {
+    background-color: #333333;
+    color: #f0f0f0;
+}
+
+.guestbook-button-img {
+    width: 20px;
+}
+
+.button-text {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.guestbook-chat-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 1.8em;
+    width: 90%;
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.guestbook-chat-name {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.text-input-container {
+    position: relative;
+}
+
+.guestbook-button {
+    color: #3f3f3f;
+    position: relative;
+    border-radius: 5px;
+    right: 7.5%;
+    padding: .5em 1.1em;
+    border-radius: 5px;
+    transition: linear 0.2s;
+    cursor: pointer;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    height: auto;
+    background-color: #dddddd;
+}
+
+
+.guestbook-button:hover {
+    background-color: rgb(204, 204, 204);
+}
+
+.guestbook-input {
+    width: 50%;
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 400;
+    padding: .7em 1em;
+    border: none;
+    background-color: #f5f5f5;
+    color: #3d3030;
+}
+
+.github-signout {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    margin: 8px 0;
+    opacity: 0.7;
+    transition: linear 0.1s;
+}
+
+.github-signout:hover {
+    opacity: 1;
+}
+
+.signout {
+    background-color:#fff;
+    color: #3f3f3f;
+    transition: linear 0.2s;
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+::placeholder {
+    font-size: .94em;
+    color: rgb(194, 194, 194);
 }
 
 @media (max-width: 768px) {

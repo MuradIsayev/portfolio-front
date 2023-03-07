@@ -1,6 +1,10 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 import NavBar from '../NavBar/NavBar';
+import GuestBookContent from './GuestBookContent';
+import GuestBookWithoutLogin from './GuestBookWithoutLogin';
+import GuestBookWithLogin from './GuestbookWithLogin';
+import signout from '../../assets/sign-out.svg';
 import '../NavBar/navbar-cont.css';
 import './GuestBook.css';
 
@@ -12,14 +16,17 @@ function GuestBook() {
       <div className="navbar-container guestbook-navbar-class-block">
         <NavBar />
       </div>
-      <div className="guestbook-container" id={theme}
-      style={{backgroundColor:'transparent'}}>
+      <div
+        className="guestbook-container"
+        id={theme}
+        style={{ backgroundColor: 'transparent' }}
+      >
         <h2>GuestBook</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
-          itaque asperiores vitae deleniti praesentium odio perferendis, fuga
-          sapiente quidem sed delectus facere minima repudiandae?
-        </p>
+        <div className="guestbook-content-container">
+          <GuestBookWithLogin />
+          <GuestBookContent />
+          <GuestBookContent />
+        </div>
       </div>
     </div>
   );
