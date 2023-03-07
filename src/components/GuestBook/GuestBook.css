@@ -14,16 +14,6 @@
     width: 90%;
 }
 
-#light .github-button {
-    background-color: #f5f5f5;
-    color: #4E4E4E;
-}
-
-#light .github-button:hover {
-    background-color: #e5e5e5;
-    color: #0c0c0c;
-}
-
 .github-button {
     display: flex;
     justify-content: center;
@@ -36,6 +26,16 @@
     border: none;
 }
 
+#light .github-button {
+    background-color: #f5f5f5;
+    color: #4E4E4E;
+}
+
+#light .github-button:hover {
+    background-color: #e5e5e5;
+    color: #0c0c0c;
+}
+
 #dark .github-button {
     background-color: #272727;
     color: #C2C2C2;
@@ -44,10 +44,6 @@
 #dark .github-button:hover {
     background-color: #333333;
     color: #f0f0f0;
-}
-
-.guestbook-button-img {
-    width: 20px;
 }
 
 .button-text {
@@ -75,8 +71,7 @@
     position: relative;
 }
 
-.guestbook-button {
-    color: #3f3f3f;
+.guestbook-send-button {
     position: relative;
     border-radius: 5px;
     right: 7.5%;
@@ -88,11 +83,30 @@
     font-size: 13px;
     font-weight: 600;
     height: auto;
-    background-color: #dddddd;
+}
+
+#light .guestbook-send-button {
+    background-color: #f5f5f5;
+    color: #4E4E4E;
+}
+
+#light .guestbook-send-button:hover {
+    background-color: #e5e5e5;
+    color: #0c0c0c;
+}
+
+#dark .guestbook-send-button {
+    background-color: #272727;
+    color: #C2C2C2;
+}
+
+#dark .guestbook-send-button:hover {
+    background-color: #333333;
+    color: #f0f0f0;
 }
 
 
-.guestbook-button:hover {
+.guestbook-send-button:hover {
     background-color: rgb(204, 204, 204);
 }
 
@@ -103,8 +117,16 @@
     font-weight: 400;
     padding: .7em 1em;
     border: none;
+}
+
+#light .guestbook-input {
     background-color: #f5f5f5;
     color: #3d3030;
+}
+
+#dark .guestbook-input {
+    background-color: #272727;
+    color: #C2C2C2;
 }
 
 .github-signout {
@@ -115,6 +137,8 @@
     margin: 8px 0;
     opacity: 0.7;
     transition: linear 0.1s;
+    width: 10%;
+    cursor: pointer;
 }
 
 .github-signout:hover {
@@ -122,13 +146,20 @@
 }
 
 .signout {
-    background-color:#fff;
-    color: #3f3f3f;
+    background-color: transparent;
     transition: linear 0.2s;
     cursor: pointer;
     border: none;
     font-size: 12px;
     font-weight: 500;
+}
+
+#light .signout {
+    color: #3f3f3f;
+}
+
+#dark .signout {
+    color: #C2C2C2;
 }
 
 ::placeholder {
