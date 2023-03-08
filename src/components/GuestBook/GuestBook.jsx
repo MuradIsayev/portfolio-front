@@ -23,7 +23,7 @@ function GuestBook() {
       >
         <h2>GuestBook</h2>
         <div className="guestbook-content-container">
-          <GuestBookWithLogin />
+          <GuestBookWithoutLogin />
           <GuestBookContent />
           <GuestBookContent />
         </div>

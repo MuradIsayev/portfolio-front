@@ -11,6 +11,7 @@ function GuestBookWithoutLogin() {
       <img
         className="guestbook-button-img"
         src={theme === 'dark' ? bluegithub : darkgithub}
+        style={{width:'20px'}}
         alt="github logo"
       />
       <span className="button-text">Sign in with GitHub</span>
