@@ -55,11 +55,35 @@
 
 .project-text {
     margin-left: 3%;
-    font-size: 14px;
+    font-size: 13px;
+    width: 71%;
+}
+
+.desc-skill-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+li {
+    padding-left: .5ch;
+}
+
+.skill-list li::marker {
+    color: #5a66ac;
+    content: "➵";
 }
 
 #dark .link-text {
-    color:#5a66ac;
+    color: #5a66ac;
     max-width: 80%;
     font-size: 12px;
     font-weight: 600;
@@ -78,10 +102,10 @@
     border-radius: 8px;
     align-items: center;
     justify-content: center;
-    margin-left: 3%;
+    margin-left: 2%;
     height: 28%;
     width: 45%;
-    margin-top: 12%;
+    margin-top: 15%;
     transition: linear 0.2s;
 }
 
@@ -147,7 +171,7 @@
     }
 
     .project-container {
-        width: 85%;        
+        width: 85%;
     }
 
     .link-text {

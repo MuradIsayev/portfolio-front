@@ -9,9 +9,16 @@ function ProjectAbout() {
   return (
     <div className="project-container">
       <h3 className="project-header">Project 1</h3>
-      <p className="project-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
-      </p>
+      <div className="desc-skill-container">
+        <p className="project-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
+        </p>
+        <ul class="skill-list">
+          <li>Head</li>
+          <li>Shoulders</li>
+          <li>Knees</li>
+        </ul>
+      </div>
       <div className="link-container">
         <a href="#">
           <img
