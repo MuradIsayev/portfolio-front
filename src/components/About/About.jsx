@@ -2,10 +2,17 @@ import '../NavBar/navbar-cont.css';
 import NavBar from '../NavBar/NavBar';
 import ProjectAbout from './ProjectCard';
 import './About.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../App';
+import axios from 'axios';
 
 function About() {
+  const [project, setProject] = useState([]);
+  useEffect(() => {
+    axios.get('http://localhost:3000/projects').then(response => {
+      setProject(response.data);
+    });
+  }, []);
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -26,10 +33,16 @@ function About() {
         </p>
 
         <div className="projects-container">
-          <ProjectAbout />
-          <ProjectAbout />
-          <ProjectAbout />
-          <ProjectAbout />
+          {project?.map(({ name, description, skills, url }) => {
+            return (
+              <ProjectAbout
+                name={name}
+                description={description}
+                skills={skills}
+                url={url}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

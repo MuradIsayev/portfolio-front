@@ -4,16 +4,22 @@ import bluegithub from '../../assets/bluegithub.svg';
 import { ThemeContext } from '../../App';
 import { useContext } from 'react';
 
-function ProjectAbout() {
+function ProjectAbout({ name, description, url, skills }) {
   const { theme } = useContext(ThemeContext);
+
   return (
     <div className="project-container">
-      <h3 className="project-header">Project 1</h3>
-      <p className="project-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
-      </p>
+      <h3 className="project-header">{name}</h3>
+      <div className="desc-skill-container">
+        <p className="project-text">{description}</p>
+        <ul class="skill-list">
+          {skills.map(skill => (
+            <li className="skill-item">{skill.name}</li>
+          ))}
+        </ul>
+      </div>
       <div className="link-container">
-        <a href="#">
+        <a href={url}>
           <img
             className="github-img"
             src={theme === 'dark' ? bluegithub : darkgithub}
