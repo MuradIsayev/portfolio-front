@@ -9,7 +9,7 @@ import axios from 'axios';
 function About() {
   const [project, setProject] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3000/projects').then(response => {
+    axios.get('http://localhost:3001/api/projects').then(response => {
       setProject(response.data);
     });
   }, []);
