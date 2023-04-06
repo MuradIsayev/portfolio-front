@@ -22,7 +22,7 @@ function Home() {
         style={{ backgroundColor: 'transparent' }}
       >
         <h2>Filankəs</h2>
-        <p className='home-texts'>
+        <p className="home-texts">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
           asperiores
         </p>
@@ -30,7 +30,7 @@ function Home() {
           <img className="avatar-img" src={avatar} alt="portfolio avatar" />
           <div className="socials-container">
             <div className="social-container">
-              <a className='home-links' href="https://github.com/MuradIsayev">
+              <a className="home-links" href="https://github.com/MuradIsayev">
                 <img
                   className="social-img"
                   src={theme === 'dark' ? bluegithub : darkgithub}
@@ -40,7 +40,10 @@ function Home() {
               </a>
             </div>
             <div className="social-container">
-              <a className='home-links' href="https://www.linkedin.com/in/murad-isayev-7735671b5/">
+              <a
+                className="home-links"
+                href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
+              >
                 <img
                   className="social-img"
                   src={theme === 'dark' ? bluelinkedin : darklinkedin}
@@ -51,7 +54,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <p className='home-texts'>
+        <p className="home-texts">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
           itaque asperiores vitae deleniti praesentium odio perferendis, fuga
           sapiente quidem sed delectus facere minima repudiandae?
