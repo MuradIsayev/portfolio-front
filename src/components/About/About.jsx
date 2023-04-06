@@ -26,7 +26,7 @@ function About() {
         style={{ backgroundColor: 'transparent' }}
       >
         <h2>About</h2>
-        <p>
+        <p className='home-texts'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
           itaque asperiores vitae deleniti praesentium odio perferendis, fuga
           sapiente quidem sed delectus facere minima repudiandae?
