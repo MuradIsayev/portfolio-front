@@ -9,6 +9,7 @@ function NavBar() {
   const isGuestBookPage = location.pathname.includes('/guestbook');
   const isAboutPage = location.pathname.includes('/about');
   const isHomePage = location.pathname.includes('/home');
+  const isResumePage = location.pathname.includes('/resume');
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -41,6 +42,12 @@ function NavBar() {
           className={isGuestBookPage ? 'active navbar-links' : 'navbar-links'}
         >
           <span className="navbar-texts">GuestBook</span>
+        </Link>
+        <Link
+          to="/resume"
+          className={isResumePage ? 'active navbar-links' : 'navbar-links'}
+        >
+          <span className="navbar-texts">Resume</span>
         </Link>
       </nav>
     </div>
