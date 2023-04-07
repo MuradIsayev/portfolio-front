@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import ReactSwitch from 'react-switch';
-import {BsFillSunFill} from 'react-icons/bs '
+import Resume from './components/Resume/Resume';
 import { BsSunFill } from 'react-icons/bs'
 import { BsFillMoonFill } from 'react-icons/bs'
 
@@ -32,6 +32,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/guestbook" element={<GuestBook />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
           <ReactSwitch
             checked={theme === 'dark'}
