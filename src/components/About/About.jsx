@@ -14,7 +14,7 @@ function About() {
     });
   }, []);
   const { theme } = useContext(ThemeContext);
-
+  let i = 0;
   return (
     <div className="main-container">
       <div className="navbar-container about-navbar-class-block">
@@ -40,6 +40,7 @@ function About() {
                 description={description}
                 skills={skills}
                 url={url}
+                testValue={i++}
               />
             );
           })}
