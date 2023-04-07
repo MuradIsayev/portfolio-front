@@ -59,12 +59,12 @@ nav .navbar-links {
     }
 
     nav .navbar-links {
-        margin:7.5% 2%;
+        margin:7.5% 1.2%;
         padding: 0.4rem;
-        font-size: 13px;
+        font-size: 10px;
     }
 
     .navbar-texts {
-        font-size: 12px;
+        font-size: .64rem;
     }
 }
