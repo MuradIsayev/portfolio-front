@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
 import useDarkMode from '../../hooks/useDarkMode';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaSun } from 'react-icons/fa';
+import { IoMoonSharp } from 'react-icons/io5';
+
 
 function NavBar() {
   const location = useLocation();
@@ -11,15 +13,16 @@ function NavBar() {
   const isHomePage = location.pathname.includes('/home');
   const isResumePage = location.pathname.includes('/resume');
 
+
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const handleMode = () => setDarkTheme(!darkTheme);
     return (
-      <span onClick={handleMode} className='cursor-pointer'>
+      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2'>
         {darkTheme ? (
-          <FaMoon size="24" className="text-gray-500" />
+          <IoMoonSharp size="22" className="text-gray-400" />
         ) : (
-          <FaSun size="24" className="text-yellow-400" />
+          <FaSun size="22" className="text-yellow-400" />
         )}
       </span>
     );
@@ -27,40 +30,40 @@ function NavBar() {
 
   return (
     <nav
-      className="navbar"
+      className="flex flex-col items-start md:flex-row md:items-center"
       style={{ backgroundColor: 'transparent' }}
     >
       <ThemeIcon />
 
       <Link
         to="/home"
-        className={isHomePage ? 'active navbar-links' : 'navbar-links'}
+        className={isHomePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="navbar-texts">Home</span>
+        <span className="md:text-[.64rem]">Home</span>
       </Link>
       <Link
         to="/about"
-        className={isAboutPage ? 'active navbar-links' : 'navbar-links'}
+        className={isAboutPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="navbar-texts">About</span>
+        <span className="md:text-[.64rem]">About</span>
       </Link>
       <Link
         to="/blog"
-        className={isBlogPage ? 'active navbar-links' : 'navbar-links'}
+        className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="navbar-texts">Blog</span>
+        <span className="md:text-[.64rem]">Blog</span>
       </Link>
       <Link
         to="/guestbook"
-        className={isGuestBookPage ? 'active navbar-links' : 'navbar-links'}
+        className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="navbar-texts">GuestBook</span>
+        <span className="md:text-[.64rem]">GuestBook</span>
       </Link>
       <Link
         to="/resume"
-        className={isResumePage ? 'active navbar-links' : 'navbar-links'}
+        className={isResumePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="navbar-texts">Resume</span>
+        <span className="md:text-[.64rem]">Resume</span>
       </Link>
     </nav>
   );
