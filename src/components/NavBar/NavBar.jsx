@@ -17,9 +17,9 @@ function NavBar() {
     return (
       <span onClick={handleMode} className='cursor-pointer'>
         {darkTheme ? (
-          <FaSun size="24" className="text-yellow-500" />
-        ) : (
           <FaMoon size="24" className="text-gray-500" />
+        ) : (
+          <FaSun size="24" className="text-yellow-400" />
         )}
       </span>
     );
