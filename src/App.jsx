@@ -8,7 +8,7 @@ import Resume from './components/Resume/Resume';
 function App() {
   return (
     <>
-      <div className='h-screen m-0 p-0 box-border bg-white text-gray-800 dark:bg-black dark:text-white'>
+      <div className='h-screen bg-white text-gray-800 dark:bg-black dark:text-white'>
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
