@@ -7,6 +7,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'md': { 'max': '768px' },
+    },
     extend: {},
   },
   plugins: [],
