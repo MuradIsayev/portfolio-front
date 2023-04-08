@@ -26,4 +26,10 @@
         @apply bg-[#0F0F0F] text-[#F1F1F1] hover:bg-[#0F0F0F]
          dark:text-[#4E4E4E] dark:bg-[#F1F1F1] dark:hover:bg-[#F1F1F1]
     }
+
+    .navbar-container{
+        @apply flex flex-row items-center justify-start 
+        h-[73vh] w-[12vw] mx-auto
+        md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
+    }
 }
