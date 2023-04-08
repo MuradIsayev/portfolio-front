@@ -18,7 +18,7 @@ function NavBar() {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const handleMode = () => setDarkTheme(!darkTheme);
     return (
-      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2'>
+      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-1'>
         {darkTheme ? (
           <IoMoonSharp size="22" className="text-gray-400" />
         ) : (
@@ -30,8 +30,7 @@ function NavBar() {
 
   return (
     <nav
-      className="flex flex-col items-start md:flex-row md:items-center"
-      style={{ backgroundColor: 'transparent' }}
+        className="flex bg-transparent flex-col items-start md:flex-row md:items-center"
     >
       <ThemeIcon />
 
