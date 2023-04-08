@@ -1,6 +1,4 @@
 import NavBar from '../NavBar/NavBar';
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
 import avatar from '../../assets/avatar.svg';
 import bluegithub from '../../assets/bluegithub.svg';
 import './Home.css';
@@ -10,7 +8,6 @@ import bluelinkedin from '../../assets/bluelinkedin.svg';
 import darklinkedin from '../../assets/darklinkedin.svg';
 
 function Home() {
-  const { theme } = useContext(ThemeContext);
   return (
     <div className="main-container">
       <div className="navbar-container home-navbar-class-block">
@@ -18,7 +15,6 @@ function Home() {
       </div>
       <div
         className="content-container"
-        id={theme}
         style={{ backgroundColor: 'transparent' }}
       >
         <h2>Filankəs</h2>
@@ -33,7 +29,7 @@ function Home() {
               <a className="home-links" href="https://github.com/MuradIsayev">
                 <img
                   className="social-img"
-                  src={theme === 'dark' ? bluegithub : darkgithub}
+                  src={bluegithub}
                   alt="github logo"
                 />
                 <p className="social-text">My Github</p>
@@ -46,7 +42,7 @@ function Home() {
               >
                 <img
                   className="social-img"
-                  src={theme === 'dark' ? bluelinkedin : darklinkedin}
+                  src={bluelinkedin}
                   alt="linkedin logo"
                 />
                 <p className="social-text">My LinkedIn</p>

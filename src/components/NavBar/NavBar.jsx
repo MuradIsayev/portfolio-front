@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
-import { ThemeContext } from '../../App';
-import { useContext } from 'react';
+import useDarkMode from '../../hooks/useDarkMode';
+import { FaSun } from 'react-icons/fa';
+import { IoMoonSharp } from 'react-icons/io5';
+
 
 function NavBar() {
   const location = useLocation();
@@ -10,47 +12,59 @@ function NavBar() {
   const isAboutPage = location.pathname.includes('/about');
   const isHomePage = location.pathname.includes('/home');
   const isResumePage = location.pathname.includes('/resume');
-  const { theme } = useContext(ThemeContext);
+
+
+  const ThemeIcon = () => {
+    const [darkTheme, setDarkTheme] = useDarkMode();
+    const handleMode = () => setDarkTheme(!darkTheme);
+    return (
+      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-1'>
+        {darkTheme ? (
+          <IoMoonSharp size="22" className="text-gray-400" />
+        ) : (
+          <FaSun size="22" className="text-yellow-400" />
+        )}
+      </span>
+    );
+  };
 
   return (
-    <div className="container">
-      <nav
-        className="navbar"
-        id={theme}
-        style={{ backgroundColor: 'transparent' }}
+    <nav
+        className="flex bg-transparent flex-col items-start md:flex-row md:items-center"
+    >
+      <ThemeIcon />
+
+      <Link
+        to="/home"
+        className={isHomePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <Link
-          to="/home"
-          className={isHomePage ? 'active navbar-links' : 'navbar-links'}
-        >
-          <span className="navbar-texts">Home</span>
-        </Link>
-        <Link
-          to="/about"
-          className={isAboutPage ? 'active navbar-links' : 'navbar-links'}
-        >
-          <span className="navbar-texts">About</span>
-        </Link>
-        <Link
-          to="/blog"
-          className={isBlogPage ? 'active navbar-links' : 'navbar-links'}
-        >
-          <span className="navbar-texts">Blog</span>
-        </Link>
-        <Link
-          to="/guestbook"
-          className={isGuestBookPage ? 'active navbar-links' : 'navbar-links'}
-        >
-          <span className="navbar-texts">GuestBook</span>
-        </Link>
-        <Link
-          to="/resume"
-          className={isResumePage ? 'active navbar-links' : 'navbar-links'}
-        >
-          <span className="navbar-texts">Resume</span>
-        </Link>
-      </nav>
-    </div>
+        <span className="md:text-[.64rem]">Home</span>
+      </Link>
+      <Link
+        to="/about"
+        className={isAboutPage ? 'navbar-links active' : 'navbar-links'}
+      >
+        <span className="md:text-[.64rem]">About</span>
+      </Link>
+      <Link
+        to="/blog"
+        className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
+      >
+        <span className="md:text-[.64rem]">Blog</span>
+      </Link>
+      <Link
+        to="/guestbook"
+        className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
+      >
+        <span className="md:text-[.64rem]">GuestBook</span>
+      </Link>
+      <Link
+        to="/resume"
+        className={isResumePage ? 'navbar-links active' : 'navbar-links'}
+      >
+        <span className="md:text-[.64rem]">Resume</span>
+      </Link>
+    </nav>
   );
 }
 

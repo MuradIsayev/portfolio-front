@@ -1,12 +1,8 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
 import './Blog.css';
 
 function BlogContent() {
-  const { theme } = useContext(ThemeContext);
-
   return (
-    <div className="blog-container" id={theme}>
+    <div className="blog-container">
       <a href="#" className="blog-links">
         <div className="blog-fist-content">
           <p className="blog-header-date">

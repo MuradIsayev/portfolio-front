@@ -1,12 +1,9 @@
 import './About.css';
 import darkgithub from '../../assets/darkgithub.svg';
 import bluegithub from '../../assets/bluegithub.svg';
-import { ThemeContext } from '../../App';
-import { useContext } from 'react';
 import { motion } from 'framer-motion';
 
 function ProjectAbout({ name, description, url, skills, testValue }) {
-  const { theme } = useContext(ThemeContext);
 
   return (
     <motion.div
@@ -32,7 +29,7 @@ function ProjectAbout({ name, description, url, skills, testValue }) {
         <a href={url}>
           <img
             className="github-img"
-            src={theme === 'dark' ? bluegithub : darkgithub}
+            src={bluegithub}
             alt="github logo"
           />
           <p className="link-text">View Source</p>

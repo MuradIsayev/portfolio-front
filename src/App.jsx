@@ -3,52 +3,20 @@ import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import GuestBook from './components/GuestBook/GuestBook';
 import { Routes, Route } from 'react-router-dom';
-import React, { createContext, useEffect, useState } from 'react';
-import './App.css';
-import ReactSwitch from 'react-switch';
 import Resume from './components/Resume/Resume';
-import { BsSunFill } from 'react-icons/bs'
-import { BsFillMoonFill } from 'react-icons/bs'
-
-export const ThemeContext = createContext(null);
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
-  useEffect(() => {
-    document.body.id = theme;
-  }, [theme]);
-
   return (
     <>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <div className="App">
-          <p className='text-center text-green-500'>TEST</p>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/guestbook" element={<GuestBook />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
-          <ReactSwitch
-            checked={theme === 'dark'}
-            onChange={toggleTheme}
-            onColor="#878E88"
-            offColor="#1f1e1e"
-            checkedIcon={<BsSunFill style={{color:'#f7e330', marginTop:'3.5px', marginLeft:'6.1px', width:'13px'}}/>}
-            uncheckedIcon={<BsFillMoonFill style={{color:'#cfcfcf', marginTop:'3.7px', marginLeft:'6px', width:'12px'}} />}
-            height={24}
-            width={48}
-            handleDiameter={24}
-            className="react-switch"
-          />
-        </div>
-      </ThemeContext.Provider>
+      <div className='h-screen bg-white text-gray-800 dark:bg-black dark:text-white'>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/guestbook" element={<GuestBook />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+      </div>  
     </>
   );
 }
