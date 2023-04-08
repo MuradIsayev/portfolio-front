@@ -27,6 +27,7 @@ function App() {
     <>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div className="App">
+          <p className='text-center text-green-500'>TEST</p>
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
