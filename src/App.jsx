@@ -3,7 +3,6 @@ import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import GuestBook from './components/GuestBook/GuestBook';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import Resume from './components/Resume/Resume';
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
           <Route path="/guestbook" element={<GuestBook />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
-      </div>
+      </div>  
     </>
   );
 }
