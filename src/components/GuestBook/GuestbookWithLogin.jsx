@@ -1,15 +1,12 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
 import signout from '../../assets/sign-out.svg';
 import darksignout from '../../assets/darksignout.svg';
 import '../NavBar/navbar-cont.css';
 import './GuestBook.css';
 
 function GuestBookWithLogin() {
-  const { theme } = useContext(ThemeContext);
 
   return (
-    <div id={theme}>
+    <div>
       <div className="text-input-container">
         <input
           type="text"
@@ -22,7 +19,7 @@ function GuestBookWithLogin() {
       <div className="github-signout">
         <img
           className="guestbook-signout-icon"
-          src={theme === 'light' ? signout : darksignout}
+          src={signout}
           style={{ width: '18px' }}
           alt="signout icon"
         />

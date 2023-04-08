@@ -2,8 +2,7 @@ import '../NavBar/navbar-cont.css';
 import NavBar from '../NavBar/NavBar';
 import ProjectAbout from './ProjectCard';
 import './About.css';
-import { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '../../App';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function About() {
@@ -13,7 +12,6 @@ function About() {
       setProject(response.data);
     });
   }, []);
-  const { theme } = useContext(ThemeContext);
   let i = 0;
   return (
     <div className="main-container">
@@ -22,7 +20,6 @@ function About() {
       </div>
       <div
         className="about-container"
-        id={theme}
         style={{ backgroundColor: 'transparent' }}
       >
         <h2>About</h2>

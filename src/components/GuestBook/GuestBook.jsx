@@ -1,5 +1,4 @@
-import { useContext, useState } from 'react';
-import { ThemeContext } from '../../App';
+import { useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
@@ -10,7 +9,6 @@ import './GuestBook.css';
 import GithubLogin from 'react-github-login';
 
 function GuestBook() {
-  const { theme } = useContext(ThemeContext);
   const [isLogin, setIsLogin] = useState(false);
   const handleGithubLoginFailure = err => {
     console.log('Here is the error:', err);
@@ -36,7 +34,6 @@ function GuestBook() {
       </div>
       <div
         className="guestbook-container"
-        id={theme}
         style={{ backgroundColor: 'transparent' }}
       >
         <h2>GuestBook</h2>

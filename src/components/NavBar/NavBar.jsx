@@ -1,7 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
-import { ThemeContext } from '../../App';
-import { useContext } from 'react';
 
 function NavBar() {
   const location = useLocation();
@@ -10,13 +8,11 @@ function NavBar() {
   const isAboutPage = location.pathname.includes('/about');
   const isHomePage = location.pathname.includes('/home');
   const isResumePage = location.pathname.includes('/resume');
-  const { theme } = useContext(ThemeContext);
 
   return (
     <div className="container">
       <nav
         className="navbar"
-        id={theme}
         style={{ backgroundColor: 'transparent' }}
       >
         <Link
