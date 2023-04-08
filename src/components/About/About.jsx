@@ -40,7 +40,7 @@ function About() {
                 description={description}
                 skills={skills}
                 url={url}
-                testValue={i++}
+                testValue={i+=3}
               />
             );
           })}
