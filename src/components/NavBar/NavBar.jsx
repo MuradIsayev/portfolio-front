@@ -17,11 +17,11 @@ function NavBar() {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const handleMode = () => setDarkTheme(!darkTheme);
     return (
-      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-1'>
+      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-2'>
         {darkTheme ? (
-          <IoMoonSharp size="22" className="text-gray-400" />
+          <IoMoonSharp size="22" className="text-gray-400 md:w-[19px] md:h-[19px]" />
         ) : (
-          <FaSun size="22" className="text-yellow-400" />
+          <FaSun size="22" className="text-yellow-400 md:w-[19px] md:h-[19px]" />
         )}
       </span>
     );
