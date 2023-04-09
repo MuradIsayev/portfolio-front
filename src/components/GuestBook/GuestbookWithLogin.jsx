@@ -1,6 +1,5 @@
 import signout from '../../assets/sign-out.svg';
 import darksignout from '../../assets/darksignout.svg';
-import '../NavBar/navbar-cont.css';
 import './GuestBook.css';
 
 function GuestBookWithLogin() {

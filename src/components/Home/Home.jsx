@@ -2,7 +2,6 @@ import NavBar from '../NavBar/NavBar';
 import avatar from '../../assets/avatar.svg';
 import bluegithub from '../../assets/bluegithub.svg';
 import './Home.css';
-import '../NavBar/navbar-cont.css';
 import darkgithub from '../../assets/darkgithub.svg';
 import bluelinkedin from '../../assets/bluelinkedin.svg';
 import darklinkedin from '../../assets/darklinkedin.svg';

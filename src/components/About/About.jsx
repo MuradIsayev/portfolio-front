@@ -1,4 +1,3 @@
-import '../NavBar/navbar-cont.css';
 import NavBar from '../NavBar/NavBar';
 import ProjectAbout from './ProjectCard';
 import './About.css';

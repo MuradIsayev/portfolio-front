@@ -1,5 +1,4 @@
 import NavBar from '../NavBar/NavBar';
-import '../NavBar/navbar-cont.css';
 import './Blog.css';
 import BlogContent from './BlogContent';
 

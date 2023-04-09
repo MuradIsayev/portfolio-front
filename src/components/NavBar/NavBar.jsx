@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import './navbar.css';
 import useDarkMode from '../../hooks/useDarkMode';
 import { FaSun } from 'react-icons/fa';
 import { IoMoonSharp } from 'react-icons/io5';
