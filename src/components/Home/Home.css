@@ -46,29 +46,11 @@
     color:rgb(0, 0, 0);   
 }
 
-.social-img {
-    height: 24px;
-}
-
-#dark {
-    background-color: red;
-}
-
-
-
 /* Responsive styles */
 @media (max-width: 768px) {
     /* Social container */
     .social-container>.home-links{
         font-size: 11px;
-    }
-
-    .social-img {
-        height: 20px;
-    }
-    
-    h2 {
-        font-size: 1.02rem
     }
 
     .social-text {

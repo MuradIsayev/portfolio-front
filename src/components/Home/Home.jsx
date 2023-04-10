@@ -25,7 +25,7 @@ function Home() {
             <div className="social-container">
               <a className="home-links" href="https://github.com/MuradIsayev">
                 <img
-                  className="social-img"
+                  className="h-[26px] md:h-[21px]"
                   src={bluegithub}
                   alt="github logo"
                 />
@@ -38,7 +38,7 @@ function Home() {
                 href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
               >
                 <img
-                  className="social-img"
+                  className="h-[26px] md:h-[21px]"
                   src={bluelinkedin}
                   alt="linkedin logo"
                 />
