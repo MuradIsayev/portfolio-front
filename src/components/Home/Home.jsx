@@ -1,10 +1,10 @@
 import NavBar from '../NavBar/NavBar';
 import avatar from '../../assets/avatar.svg';
 import bluegithub from '../../assets/bluegithub.svg';
-import './Home.css';
 import darkgithub from '../../assets/darkgithub.svg';
 import bluelinkedin from '../../assets/bluelinkedin.svg';
 import darklinkedin from '../../assets/darklinkedin.svg';
+import { motion } from 'framer-motion';
 
 function Home() {
   return (
@@ -20,31 +20,30 @@ function Home() {
           asperiores
         </p>
         <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6 md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4">
-          <img className="avatar-img" src={avatar} alt="portfolio avatar" />
+          <img className="avatar-img"
+            src={avatar} alt="portfolio avatar" />
           <div className="flex flex-col gap-3 justify-center md:items-start md:gap-2">
-            <div className="social-container">
-              <a className="home-links" href="https://github.com/MuradIsayev">
-                <img
-                  className="h-[26px] md:h-[21px]"
-                  src={bluegithub}
-                  alt="github logo"
-                />
-                <p className="social-text">My Github</p>
-              </a>
-            </div>
-            <div className="social-container">
-              <a
-                className="home-links"
-                href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
-              >
-                <img
-                  className="h-[26px] md:h-[21px]"
-                  src={bluelinkedin}
-                  alt="linkedin logo"
-                />
-                <p className="social-text">My LinkedIn</p>
-              </a>
-            </div>
+            <a className="home-links" href="https://github.com/MuradIsayev">
+              <motion.img
+                whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1, repeat: Infinity } }}
+                className="h-[27px] md:h-[21px]"
+                src={bluegithub}
+                alt="github logo"
+              />
+              <p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]">My Github</p>
+            </a>
+            <a
+              className="home-links"
+              href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
+            >
+              <motion.img
+                whileHover={{ rotate: 360, transition: { ease: "backInOut", duration: 1, repeat: Infinity } }}
+                className="h-[27px] md:h-[21px]"
+                src={bluelinkedin}
+                alt="linkedin logo"
+              />
+              <p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]">My LinkedIn</p>
+            </a>
           </div>
         </div>
         <p className="home-texts">

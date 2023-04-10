@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 *,
 *::before,
@@ -51,5 +51,12 @@
     .home-texts {
         @apply max-w-[72%] text-[.96rem] font-[400] leading-[1.4] 
         md:max-w-[90%] md:text-[.75rem] md:text-[300] md:leading-[1.3]
+    }
+    
+    .home-links {
+        @apply flex flex-row items-center gap-2 text-[13px] font-[500]
+        text-[#a0a0a0] no-underline transition duration-200 ease-linear
+        opacity-90 hover:opacity-100 dark:opacity-80 dark:hover:opacity-100
+        md:font-[11px]
     }
 }
