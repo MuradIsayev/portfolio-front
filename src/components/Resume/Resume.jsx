@@ -11,7 +11,7 @@ function Resume() {
         style={{ backgroundColor: 'transparent' }}
       >
         <div>
-          <h2>My Resume</h2>
+          <h2 className="headers">My Resume</h2>
         </div>
       </div>
     </div>

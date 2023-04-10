@@ -17,19 +17,21 @@
     .navbar-links {
         @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
         dark:hover:bg-[#3f3f3f] dark:text-[#C2C2C2] dark:bg-[#272727] 
-        no-underline px-2 py-1.5 my-[3.2%] rounded-md 
-        text-sm font-medium transition duration-150 ease-linear
-        md:my-[10%] md:mx-[1.3%] md:px-1.5 md:py-1 
+        no-underline px-2 py-1.5 my-[3.2%] rounded-md text-sm font-medium transition
+         duration-150 ease-linear md:my-[10%] md:mx-[1.3%] md:px-1.5 md:py-1
     }
 
     .active {
-        @apply bg-[#0F0F0F] text-[#F1F1F1] hover:bg-[#0F0F0F]
-         dark:text-[#4E4E4E] dark:bg-[#F1F1F1] dark:hover:bg-[#F1F1F1]
+        @apply bg-[#0F0F0F] text-[#F1F1F1] hover:bg-[#0F0F0F] 
+        dark:text-[#4E4E4E] dark:bg-[#F1F1F1] dark:hover:bg-[#F1F1F1]
     }
 
-    .navbar-container{
-        @apply flex flex-row items-center justify-start 
-        h-[73vh] w-[12vw] mx-auto
-        md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
+    .navbar-container {
+        @apply flex flex-row items-center justify-start h-[73vh] w-[12vw] 
+        mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
+    }
+
+    .headers {
+        @apply text-xl font-medium mb-1 md:text-base md:mb-0
     }
 }

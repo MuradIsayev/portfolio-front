@@ -35,7 +35,7 @@ function GuestBook() {
         className="guestbook-container"
         style={{ backgroundColor: 'transparent' }}
       >
-        <h2>GuestBook</h2>
+        <h2 className='headers'>GuestBook</h2>
         <GithubLogin
           clientId="fb65cc1848303972e11a"
           onSuccess={handleGithubLogin}

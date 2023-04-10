@@ -13,7 +13,7 @@ function Blog() {
         style={{ backgroundColor: 'transparent' }}
       >
         <div>
-          <h2>Blog</h2>
+          <h2 className='headers'>Blog</h2>
         </div>
         <BlogContent />
         <BlogContent />
