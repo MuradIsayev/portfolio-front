@@ -25,24 +25,48 @@ function Home() {
           <div className="flex flex-col gap-3 justify-center md:items-start md:gap-2">
             <a className="home-links" href="https://github.com/MuradIsayev">
               <motion.img
-                whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1, repeat: Infinity } }}
+                initial={{ scale: 0 }}
+                animate={{ rotate: 360, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20
+                }}
                 className="h-[27px] md:h-[21px]"
                 src={bluegithub}
                 alt="github logo"
               />
-              <p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]">My Github</p>
+              <motion.p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]" initial={{ scale: 0 }}
+                animate={{ scale: 1, }}
+                transition={{
+                  type: "spring",
+                  stiffness: 500,
+                  damping: 15
+                }}>My Github</motion.p>
             </a>
             <a
               className="home-links"
               href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
             >
               <motion.img
-                whileHover={{ rotate: 360, transition: { ease: "backInOut", duration: 1, repeat: Infinity } }}
+                initial={{ scale: 0 }}
+                animate={{ rotate: 360, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20
+                }}
                 className="h-[27px] md:h-[21px]"
                 src={bluelinkedin}
                 alt="linkedin logo"
               />
-              <p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]">My LinkedIn</p>
+              <motion.p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]" initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 500,
+                  damping: 15
+                }}>My LinkedIn</motion.p>
             </a>
           </div>
         </div>
