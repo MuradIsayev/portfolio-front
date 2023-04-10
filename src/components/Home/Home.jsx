@@ -13,17 +13,15 @@ function Home() {
         <NavBar />
       </div>
       <div
-        className="content-container"
-        style={{ backgroundColor: 'transparent' }}
-      >
-        <h2>Filankəs</h2>
+        className="mt-32 w-[90%] md:w-[auto] md:mt-20">
+        <h2 className='headers'>Filankəs</h2>
         <p className="home-texts">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
           asperiores
         </p>
-        <div className="center-content">
+        <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6 md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4">
           <img className="avatar-img" src={avatar} alt="portfolio avatar" />
-          <div className="socials-container">
+          <div className="flex flex-col gap-3 justify-center md:items-start md:gap-2">
             <div className="social-container">
               <a className="home-links" href="https://github.com/MuradIsayev">
                 <img

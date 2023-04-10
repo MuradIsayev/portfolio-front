@@ -14,6 +14,7 @@
 }
 
 @layer components {
+    /* NAVBAR */
     .navbar-links {
         @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
         dark:hover:bg-[#3f3f3f] dark:text-[#C2C2C2] dark:bg-[#272727] 
@@ -31,7 +32,24 @@
         mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 
+    /*HOMEPAGE*/
+
     .headers {
         @apply text-xl font-medium mb-1 md:text-base md:mb-0
+    }
+
+    .avatar-img {
+        --f: 1.25;
+        @apply h-[90px] md:h-[55px] cursor-pointer transform 
+        scale-[var(--f)] transition duration-500 ease-in-out;
+      }
+      
+      .avatar-img:hover {
+        --f: 1.35;
+      }
+
+    .home-texts {
+        @apply max-w-[72%] text-[.96rem] font-[400] leading-[1.4] 
+        md:max-w-[90%] md:text-[.75rem] md:text-[300] md:leading-[1.3]
     }
 }
