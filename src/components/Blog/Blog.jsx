@@ -1,5 +1,4 @@
 import NavBar from '../NavBar/NavBar';
-import '../NavBar/navbar-cont.css';
 import './Blog.css';
 import BlogContent from './BlogContent';
 
@@ -14,7 +13,7 @@ function Blog() {
         style={{ backgroundColor: 'transparent' }}
       >
         <div>
-          <h2>Blog</h2>
+          <h2 className='headers'>Blog</h2>
         </div>
         <BlogContent />
         <BlogContent />

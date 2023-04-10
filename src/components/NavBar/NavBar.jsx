@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import './navbar.css';
 import useDarkMode from '../../hooks/useDarkMode';
 import { FaSun } from 'react-icons/fa';
 import { IoMoonSharp } from 'react-icons/io5';
+import { motion } from 'framer-motion';
 
 
 function NavBar() {
@@ -18,19 +18,32 @@ function NavBar() {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const handleMode = () => setDarkTheme(!darkTheme);
     return (
-      <span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-1'>
+      <motion.span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-2' initial={{ scale: 0 }}
+        animate={{ rotate: 360, scale: 1 }}
+        whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1, repeat: Infinity } }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20
+        }}>
         {darkTheme ? (
-          <IoMoonSharp size="22" className="text-gray-400" />
+          <motion.div
+            whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: .9, repeat: Infinity } }}
+          >
+            <IoMoonSharp size="22" className="text-gray-400 md:w-[19px] md:h-[19px]" /></motion.div>
         ) : (
-          <FaSun size="22" className="text-yellow-400" />
+          <motion.div
+            whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1.3, repeat: Infinity } }}
+          >
+            <FaSun size="22" className="text-yellow-400 md:w-[19px] md:h-[19px] " /></motion.div>
         )}
-      </span>
+      </motion.span>
     );
   };
 
   return (
     <nav
-        className="flex bg-transparent flex-col items-start md:flex-row md:items-center"
+      className="flex bg-transparent flex-col items-start md:flex-row md:items-center"
     >
       <ThemeIcon />
 

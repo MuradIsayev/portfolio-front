@@ -1,4 +1,3 @@
-import '../NavBar/navbar-cont.css';
 import NavBar from '../NavBar/NavBar';
 import ProjectAbout from './ProjectCard';
 import './About.css';
@@ -22,7 +21,7 @@ function About() {
         className="about-container"
         style={{ backgroundColor: 'transparent' }}
       >
-        <h2>About</h2>
+        <h2 className='headers'>About</h2>
         <p className='home-texts'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
           itaque asperiores vitae deleniti praesentium odio perferendis, fuga
