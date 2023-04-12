@@ -36,7 +36,7 @@ function Home() {
                 src={bluegithub}
                 alt="github logo"
               />
-              <motion.p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]" initial={{ scale: 0 }}
+              <motion.p className="md:text-[.65rem]" initial={{ scale: 0 }}
                 animate={{ scale: 1, }}
                 transition={{
                   type: "spring",
@@ -60,7 +60,7 @@ function Home() {
                 src={bluelinkedin}
                 alt="linkedin logo"
               />
-              <motion.p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]" initial={{ scale: 0 }}
+              <motion.p className="md:text-[.65rem]" initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{
                   type: "spring",
