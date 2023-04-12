@@ -32,8 +32,7 @@
         mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 
-    /*HOMEPAGE*/
-
+    /* HOMEPAGE */
     .headers {
         @apply text-xl font-medium mb-1 md:text-base md:mb-0
     }

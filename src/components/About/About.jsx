@@ -18,8 +18,7 @@ function About() {
         <NavBar />
       </div>
       <div
-        className="about-container"
-        style={{ backgroundColor: 'transparent' }}
+        className="flex flex-col justify-start w-[90%] mt-32 md:mt-20 md:w-auto"
       >
         <h2 className='headers'>About</h2>
         <p className='home-texts'>
@@ -28,7 +27,8 @@ function About() {
           sapiente quidem sed delectus facere minima repudiandae?
         </p>
 
-        <div className="projects-container">
+        <div className="flex flex-row flex-wrap justify-start gap-y-[4%] gap-x-[2%] mt-8 w-[94%] h-[100%]
+        md:flex-col md:flex-nowrap md:justify-start md:w-auto md:gap-y-[2%]">
           {project?.map(({ name, description, skills, url }) => {
             return (
               <ProjectAbout
@@ -36,7 +36,7 @@ function About() {
                 description={description}
                 skills={skills}
                 url={url}
-                testValue={i+=3}
+                testValue={i += 3}
               />
             );
           })}
