@@ -55,8 +55,8 @@
     
     .home-links {
         @apply flex flex-row items-center gap-2 text-[13px] font-[500]
-        text-[#a0a0a0] no-underline transition duration-200 ease-linear
-        opacity-90 hover:opacity-100 dark:opacity-80 dark:hover:opacity-100
-        md:font-[11px]
+        text-[#a0a0a0] no-underline transition duration-150 ease-linear
+        opacity-[.8] hover:opacity-100 dark:opacity-[.75] dark:hover:opacity-100
+        md:font-[11px] dark:hover:text-[#f2f2f2] hover:text-[#000000]
     }
 }

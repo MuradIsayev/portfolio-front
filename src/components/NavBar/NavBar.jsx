@@ -28,11 +28,27 @@ function NavBar() {
         }}>
         {darkTheme ? (
           <motion.div
+          // TODO decide which I animation I like better
+          // animate={{ rotate: 360 }}
+          // transition={{
+          //   duration: 2,
+          //   repeat: Infinity,
+          //   delay: 1,
+          //   repeatDelay: 1,
+          // }}
             whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: .9, repeat: Infinity } }}
           >
             <IoMoonSharp size="22" className="text-gray-400 md:w-[19px] md:h-[19px]" /></motion.div>
         ) : (
           <motion.div
+          // TODO decide which I animation I like better
+          // animate={{ rotate: 360 }}
+          // transition={{
+          //   duration: 2,
+          //   repeat: Infinity,
+          //   delay: 1,
+          //   repeatDelay: 1,
+          // }}
             whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1.3, repeat: Infinity } }}
           >
             <FaSun size="22" className="text-yellow-400 md:w-[19px] md:h-[19px] " /></motion.div>
