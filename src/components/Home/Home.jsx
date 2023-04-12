@@ -14,7 +14,13 @@ function Home() {
       </div>
       <div
         className="mt-32 w-[90%] md:w-[auto] md:mt-20">
-        <h2 className='headers'>Filankəs</h2>
+        <motion.h2 initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          transition={{
+            type: "tween",
+            duration: ".9",
+            delay: ".5"
+          }} className='headers'>Filankəs</motion.h2>
         <p className="home-texts">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
           asperiores
