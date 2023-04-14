@@ -6,7 +6,7 @@ import GuestBookWithLogin from './GuestbookWithLogin';
 import GithubLogin from 'react-github-login';
 
 function GuestBook() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const handleGithubLoginFailure = err => {
     console.log('Here is the error:', err);
   };
