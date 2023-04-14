@@ -4,17 +4,23 @@ function GuestBookWithLogin() {
 
   return (
     <div>
-      <div className="relative">
-        <input
-          type="text"
-          className="message-input"
-          name="name"
-          placeholder="Your message..."
-        />
-        <button className="send-button">Send</button>
+
+      <div className="flex items-center">
+        <div className="w-[50%]" >
+          <input
+            type="text"
+            className="  message-input"
+            name="name"
+            placeholder="Your message..."
+          />
+        </div>
+        <div>
+          <button className="send-button">Send</button>
+        </div>
       </div>
+
       <div className="flex justify-start items-center gap-[7px] my-2 opacity-70
-      transition ease-linear duration-100 cursor-pointer hover:opacity-100 mb-5">
+      transition ease-linear duration-100 cursor-pointer hover:opacity-100 mb-5 w-[10%]">
         <img
           className="md:w-3 w-[18px]"
           src={signout}

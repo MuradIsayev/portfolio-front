@@ -68,19 +68,18 @@
     }
 
     .send-button {
-        @apply relative rounded my-auto right-[7.6%] transition ease-linear duration-200
+        @apply rounded-md transition ease-linear duration-200
         font-[600] text-[13px] bg-[#f5f5f5] text-[#4E4E4E]
-        w-16 h-9 hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
+        w-16 h-10 hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
         dark:bg-[#272727] dark:text-[#C2C2C2]
         dark:hover:bg-[#333333] dark:hover:text-[#f0f0f0]
-        md:right-[17%] md:text-[.55rem] md:font-[600]
-        md:w-12 md:h-6
+         md:text-[.55rem] md:font-[600] md:w-12 md:h-8
     }
 
     .message-input {
-        @apply w-[50%] rounded font-[400] text-[.9rem] px-4 py-[.7rem] border-none
+        @apply w-[114.5%] md:w-[132.2%] rounded-md font-[400] text-[.9rem] px-4 py-[.7rem]
         text-[#3d3030] bg-[#f5f5f5] dark:bg-[#272727] dark:text-[#C2C2C2]
-        md:w-[75%] md:text-[.9rem] md:px-[.8rem] md:py-[.4rem] 
+         md:text-[.9rem] md:px-[.8rem] md:py-[.4rem] 
         placeholder-[#dfaeae] placeholder:text-[.88rem] md:placeholder:text-[.58rem]
         dark:placeholder-[#dfaeae] dark:placeholder:opacity-70 md:dark:placeholder:opacity-40
     }
