@@ -1,6 +1,5 @@
 import bluegithub from '../../assets/bluegithub.svg';
 import darkgithub from '../../assets/darkgithub.svg';
-import './GuestBook.css';
 
 function GuestBookWithoutLogin() {
   return (

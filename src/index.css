@@ -64,22 +64,23 @@
         cursor-pointer transition ease-linear duration-100
         bg-[#f5f5f5] text-[#4E4E4E] dark:bg-[#272727] 
         dark:text-[#C2C2C2] hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
-        dark:hover:bg-[#333333] dark:hover:text-[#f0f0f0] 
+        dark:hover:bg-[#333333] dark:hover:text-[#f0f0f0] mb-5 
     }
 
     .send-button {
-        @apply relative rounded px-[1.1rem] py-[.5rem] right-[7.8%] transition ease-linear duration-200
+        @apply relative rounded my-auto right-[7.6%] transition ease-linear duration-200
         font-[600] text-[13px] bg-[#f5f5f5] text-[#4E4E4E]
-        hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
+        w-16 h-9 hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
         dark:bg-[#272727] dark:text-[#C2C2C2]
         dark:hover:bg-[#333333] dark:hover:text-[#f0f0f0]
-        md:right-[14.5%] md:text-[.57rem] md:font-[600]
+        md:right-[17%] md:text-[.55rem] md:font-[600]
+        md:w-12 md:h-6
     }
 
     .message-input {
         @apply w-[50%] rounded font-[400] text-[.9rem] px-4 py-[.7rem] border-none
         text-[#3d3030] bg-[#f5f5f5] dark:bg-[#272727] dark:text-[#C2C2C2]
-        md:w-[60%] md:text-[.9rem] md:px-[.8rem] md:py-[.5rem] 
+        md:w-[75%] md:text-[.9rem] md:px-[.8rem] md:py-[.4rem] 
         placeholder-[#dfaeae] placeholder:text-[.88rem] md:placeholder:text-[.58rem]
         dark:placeholder-[#dfaeae] dark:placeholder:opacity-70 md:dark:placeholder:opacity-40
     }

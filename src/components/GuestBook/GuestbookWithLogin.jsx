@@ -1,6 +1,4 @@
-import signout from '../../assets/sign-out.svg';
-import darksignout from '../../assets/darksignout.svg';
-import './GuestBook.css';
+import signout from '../../assets/signout.svg';
 
 function GuestBookWithLogin() {
 
@@ -16,7 +14,7 @@ function GuestBookWithLogin() {
         <button className="send-button">Send</button>
       </div>
       <div className="flex justify-start items-center gap-[7px] my-2 opacity-70
-      transition ease-linear duration-100 cursor-pointer hover:opacity-100">
+      transition ease-linear duration-100 cursor-pointer hover:opacity-100 mb-5">
         <img
           className="md:w-3 w-[18px]"
           src={signout}

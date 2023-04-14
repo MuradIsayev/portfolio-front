@@ -3,8 +3,6 @@ import NavBar from '../NavBar/NavBar';
 import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
 import GuestBookWithLogin from './GuestbookWithLogin';
-import signout from '../../assets/sign-out.svg';
-import './GuestBook.css';
 import GithubLogin from 'react-github-login';
 
 function GuestBook() {
