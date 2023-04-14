@@ -12,8 +12,8 @@ function Home() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
-        delayChildren: .9,
+        staggerChildren: 0.35,
+        delayChildren: .2,
       },
     },
   }
@@ -23,8 +23,8 @@ function Home() {
     show: {
       opacity: 1, transition: {
         type: "tween",
-        staggerChildren: 0.2,
-        delayChildren: .7,
+        staggerChildren: 0.45,
+        delayChildren: .4,
         duration: ".8",
       },
     },
