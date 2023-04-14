@@ -67,31 +67,31 @@ function NavBar() {
         to="/home"
         className={isHomePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">Home</span>
+        <span className="md:text-[.6rem]">Home</span>
       </Link>
       <Link
         to="/about"
         className={isAboutPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">About</span>
+        <span className="md:text-[.6rem]">About</span>
       </Link>
       <Link
         to="/blog"
         className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">Blog</span>
+        <span className="md:text-[.6rem]">Blog</span>
       </Link>
       <Link
         to="/guestbook"
         className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">GuestBook</span>
+        <span className="md:text-[.6rem]">GuestBook</span>
       </Link>
       <Link
         to="/resume"
         className={isResumePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">Resume</span>
+        <span className="md:text-[.6rem]">Resume</span>
       </Link>
     </nav>
   );
