@@ -40,17 +40,19 @@ function Home() {
         animate="show"
         className="mt-32 w-[90%] md:w-[auto] md:mt-20">
         <motion.h2 variants={items}
-          className='headers'>Filankəs</motion.h2>
+          className='headers'>Murad Isayev</motion.h2>
         <motion.p variants={items}
           className="home-texts">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
           asperiores
         </motion.p>
-        <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6 md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4">
-          <motion.div variants={items}><img  className="avatar-img"
-            src={avatar} alt="portfolio avatar" /></motion.div>
-          <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-2">
-            <a  className="home-links" href="https://github.com/MuradIsayev">
+        <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6
+         md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4 md:mb-3">
+          <motion.div variants={items}><img className="avatar-img"
+            src={avatar} alt="portfolio avatar" />
+          </motion.div>
+          <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
+            <a className="home-links" href="https://github.com/MuradIsayev">
               <img
                 className="h-[27px] md:h-[21px]"
                 src={bluegithub}
@@ -58,7 +60,7 @@ function Home() {
               />
               <p className="md:text-[.65rem]">My Github</p>
             </a>
-            <a 
+            <a
               className="home-links"
               href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
             >
