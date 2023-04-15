@@ -3,8 +3,6 @@ import NavBar from '../NavBar/NavBar';
 import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
 import GuestBookWithLogin from './GuestbookWithLogin';
-import signout from '../../assets/sign-out.svg';
-import './GuestBook.css';
 import GithubLogin from 'react-github-login';
 
 function GuestBook() {
@@ -32,8 +30,8 @@ function GuestBook() {
         <NavBar />
       </div>
       <div
-        className="guestbook-container"
-        style={{ backgroundColor: 'transparent' }}
+        className="flex flex-col justify-start mt-32 
+                    w-[90%] gap-3 md:mt-20 md:w-[100%]"
       >
         <h2 className='headers'>GuestBook</h2>
         <GithubLogin

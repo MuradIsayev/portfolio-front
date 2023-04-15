@@ -7,75 +7,78 @@ import darklinkedin from '../../assets/darklinkedin.svg';
 import { motion } from 'framer-motion';
 
 function Home() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.35,
+        delayChildren: .2,
+      },
+    },
+  }
+
+  const items = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1, transition: {
+        type: "tween",
+        staggerChildren: 0.45,
+        delayChildren: .4,
+        duration: ".8",
+      },
+    },
+  }
+
   return (
     <div className="main-container">
       <div className="navbar-container home-navbar-class-block">
         <NavBar />
       </div>
-      <div
+      <motion.div variants={container}
+        initial="hidden"
+        animate="show"
         className="mt-32 w-[90%] md:w-[auto] md:mt-20">
-        <h2 className='headers'>Filankəs</h2>
-        <p className="home-texts">
+        <motion.h2 variants={items}
+          className='headers'>Murad Isayev</motion.h2>
+        <motion.p variants={items}
+          className="home-texts">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
           asperiores
-        </p>
-        <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6 md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4">
-          <img className="avatar-img"
+        </motion.p>
+        <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6
+         md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4 md:mb-3">
+          <motion.div variants={items}><img className="avatar-img"
             src={avatar} alt="portfolio avatar" />
-          <div className="flex flex-col gap-3 justify-center md:items-start md:gap-2">
+          </motion.div>
+          <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
             <a className="home-links" href="https://github.com/MuradIsayev">
-              <motion.img
-                initial={{ scale: 0 }}
-                animate={{ rotate: 360, scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 20
-                }}
+              <img
                 className="h-[27px] md:h-[21px]"
                 src={bluegithub}
                 alt="github logo"
               />
-              <motion.p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]" initial={{ scale: 0 }}
-                animate={{ scale: 1, }}
-                transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 15
-                }}>My Github</motion.p>
+              <p className="md:text-[.65rem]">My Github</p>
             </a>
             <a
               className="home-links"
               href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
             >
-              <motion.img
-                initial={{ scale: 0 }}
-                animate={{ rotate: 360, scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 20
-                }}
+              <img
                 className="h-[27px] md:h-[21px]"
                 src={bluelinkedin}
                 alt="linkedin logo"
               />
-              <motion.p className="md:text-[.65rem] transition duration-100 ease-linear dark:hover:text-[#f2f2f2] hover:text-[#000000]" initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 15
-                }}>My LinkedIn</motion.p>
+              <p className="md:text-[.65rem]">My LinkedIn</p>
             </a>
-          </div>
+          </motion.div>
         </div>
-        <p className="home-texts">
+        <motion.p variants={items} className="home-texts">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
           itaque asperiores vitae deleniti praesentium odio perferendis, fuga
           sapiente quidem sed delectus facere minima repudiandae?
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </div>
   );
 }

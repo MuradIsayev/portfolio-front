@@ -28,11 +28,27 @@ function NavBar() {
         }}>
         {darkTheme ? (
           <motion.div
+          // TODO decide which animation looks better
+          // animate={{ rotate: 360 }}
+          // transition={{
+          //   duration: 2,
+          //   repeat: Infinity,
+          //   delay: 1,
+          //   repeatDelay: 1,
+          // }}
             whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: .9, repeat: Infinity } }}
           >
             <IoMoonSharp size="22" className="text-gray-400 md:w-[19px] md:h-[19px]" /></motion.div>
         ) : (
           <motion.div
+          // TODO decide which animation looks better
+          // animate={{ rotate: 360 }}
+          // transition={{
+          //   duration: 2,
+          //   repeat: Infinity,
+          //   delay: 1,
+          //   repeatDelay: 1,
+          // }}
             whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1.3, repeat: Infinity } }}
           >
             <FaSun size="22" className="text-yellow-400 md:w-[19px] md:h-[19px] " /></motion.div>
@@ -51,31 +67,31 @@ function NavBar() {
         to="/home"
         className={isHomePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">Home</span>
+        <span className="md:text-[.6rem]">Home</span>
       </Link>
       <Link
         to="/about"
         className={isAboutPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">About</span>
+        <span className="md:text-[.6rem]">About</span>
       </Link>
       <Link
         to="/blog"
         className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">Blog</span>
+        <span className="md:text-[.6rem]">Blog</span>
       </Link>
       <Link
         to="/guestbook"
         className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">GuestBook</span>
+        <span className="md:text-[.6rem]">GuestBook</span>
       </Link>
       <Link
         to="/resume"
         className={isResumePage ? 'navbar-links active' : 'navbar-links'}
       >
-        <span className="md:text-[.64rem]">Resume</span>
+        <span className="md:text-[.6rem]">Resume</span>
       </Link>
     </nav>
   );
