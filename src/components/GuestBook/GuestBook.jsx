@@ -30,7 +30,8 @@ function GuestBook() {
         <NavBar />
       </div>
       <div
-        className="flex flex-col justify-start mt-32 w-[90%] gap-3 md:mt-20 md:w-[100%]"
+        className="flex flex-col justify-start mt-32 
+                    w-[90%] gap-3 md:mt-20 md:w-[100%]"
       >
         <h2 className='headers'>GuestBook</h2>
         <GithubLogin

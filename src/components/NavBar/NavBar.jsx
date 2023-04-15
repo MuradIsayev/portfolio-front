@@ -28,7 +28,7 @@ function NavBar() {
         }}>
         {darkTheme ? (
           <motion.div
-          // TODO decide which I animation I like better
+          // TODO decide which animation looks better
           // animate={{ rotate: 360 }}
           // transition={{
           //   duration: 2,
@@ -41,7 +41,7 @@ function NavBar() {
             <IoMoonSharp size="22" className="text-gray-400 md:w-[19px] md:h-[19px]" /></motion.div>
         ) : (
           <motion.div
-          // TODO decide which I animation I like better
+          // TODO decide which animation looks better
           // animate={{ rotate: 360 }}
           // transition={{
           //   duration: 2,

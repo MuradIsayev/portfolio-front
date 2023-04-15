@@ -20,13 +20,15 @@ function GuestBookWithLogin() {
       </div>
 
       <div className="flex justify-start items-center gap-[7px] my-2 opacity-70
-      transition ease-linear duration-100 cursor-pointer hover:opacity-100 mb-5 w-[10%] md:w-[20%] border">
+                      transition ease-linear duration-100 cursor-pointer 
+                      hover:opacity-100 mb-5 w-[10%] md:w-[20%] border">
         <img
           className="md:w-3 w-[18px]"
           src={signout}
           alt="signout icon"
         />
-        <button className="text-[#3f3f3f] dark:text-[#c2c2c2] text-[13px] md:text-[9px] font-[600]
+        <button className="text-[#3f3f3f] dark:text-[#c2c2c2] 
+                              text-[13px] md:text-[9px] font-[600]
         ">Sign out</button>
       </div>
     </div>
