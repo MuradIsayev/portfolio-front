@@ -1,16 +1,8 @@
 import signout from '../../assets/signout.svg';
-// import firebase from 'firebase/compat/app';
-// import 'firebase/compat/auth';
-// import 'firebase/compat/firestore';
 
-// const auth = firebase.auth();
+const GuestBookWithLogin = ({ signOut, currentUser }) => {
 
-const GuestBookWithLogin = ({ value, onLogin }) => {
-  // const handleSignOut = () => {
-  //   auth.signOut();
-  //   onLogin(value);
-  // };
-  return (
+  return currentUser && (
     <div>
 
       <div className="flex items-center">
@@ -37,7 +29,7 @@ const GuestBookWithLogin = ({ value, onLogin }) => {
         />
         <button className="text-[#3f3f3f] dark:text-[#c2c2c2] 
                               text-[13px] md:text-[9px] font-[600]
-        ">Sign out</button>
+        " onClick={signOut}>Sign out</button>
       </div>
     </div>
   );
