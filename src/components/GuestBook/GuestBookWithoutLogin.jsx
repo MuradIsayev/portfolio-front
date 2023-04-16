@@ -9,7 +9,7 @@ function GuestBookWithoutLogin() {
         src={bluegithub}
         alt="github logo"
       />
-      <span className="text-[.93rem] font-[500] md:text-[.65rem]">Sign in with GitHub</span>
+      <span className="text-[.83rem] font-[600] md:text-[.6rem]">Sign in with GitHub</span>
     </button>
   );
 }
