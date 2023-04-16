@@ -1,7 +1,10 @@
 import bluegithub from '../../assets/bluegithub.svg';
 import darkgithub from '../../assets/darkgithub.svg';
 
-function GuestBookWithoutLogin() {
+
+
+function GuestBookWithoutLogin({ signIn }) {
+
   return (
     <button className="login-with-github">
       <img
@@ -9,7 +12,7 @@ function GuestBookWithoutLogin() {
         src={bluegithub}
         alt="github logo"
       />
-      <span className="text-[.93rem] font-[500] md:text-[.65rem]">Sign in with GitHub</span>
+      <span className="text-[.83rem] font-[600] md:text-[.6rem]" onClick={signIn}>Sign in with GitHub</span>
     </button>
   );
 }

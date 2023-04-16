@@ -1,21 +1,29 @@
 import signout from '../../assets/signout.svg';
+import GuestBookContent from './GuestBookContent';
+import { useState } from 'react';
 
-function GuestBookWithLogin() {
+const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, setMessage }) => {
+  const handleSendButton = () => {
+    setIsSent(true);
+  };
 
-  return (
+  return currentUser && (
     <div>
 
       <div className="flex items-center">
         <div className="w-[50%]" >
           <input
             type="text"
-            className="  message-input"
-            name="name"
+            className="message-input"
+            name="message"
             placeholder="Your message..."
+            onChange={((e) => {
+              setMessage(e.target.value)
+            })}
           />
         </div>
         <div>
-          <button className="send-button">Send</button>
+          <button className="send-button" onClick={handleSendButton}>Send</button>
         </div>
       </div>
 
@@ -29,7 +37,7 @@ function GuestBookWithLogin() {
         />
         <button className="text-[#3f3f3f] dark:text-[#c2c2c2] 
                               text-[13px] md:text-[9px] font-[600]
-        ">Sign out</button>
+        " onClick={signOut}>Sign out</button>
       </div>
     </div>
   );

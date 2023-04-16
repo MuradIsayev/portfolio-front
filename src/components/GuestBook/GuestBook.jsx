@@ -1,27 +1,67 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
 import GuestBookWithLogin from './GuestbookWithLogin';
-import GithubLogin from 'react-github-login';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_APP_FIREBASE_KEY,
+  authDomain: import.meta.env.VITE_APP_FIREBASE_DOMAIN,
+  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_SENDER_ID,
+  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
 function GuestBook() {
-  const [isLogin, setIsLogin] = useState(false);
-  const handleGithubLoginFailure = err => {
-    console.log('Here is the error:', err);
+  const [message, setMessage] = useState('');
+  const [isSent, setIsSent] = useState(false);
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    let timeoutId;
+
+    const handleTimeout = () => {
+      clearTimeout(timeoutId);
+      handleSignOut();
+    };
+
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(handleTimeout, 300000); // 5 minutes
+      } else {
+        clearTimeout(timeoutId);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  const signInWithGitHub = () => {
+    const provider = new firebase.auth.GithubAuthProvider();
+    auth.signInWithPopup(provider).then(() => {
+      console.log(auth.currentUser.displayName);
+    })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
-  const handleGithubLogin = async response => {
-    const { code } = response;
-    const res = await fetch(
-      `http://localhost:3001/api/auth/github/callback?code=${code}`
-    );
-    if (res.ok) {
-      setIsLogin(true);
-      window.location.reload();
-    } else {
-      handleGithubLoginFailure(res.statusText);
-    }
+  const handleSignOut = async () => {
+    await auth.signOut();
   };
 
   return (
@@ -34,18 +74,9 @@ function GuestBook() {
                     w-[90%] gap-3 md:mt-20 md:w-[100%]"
       >
         <h2 className='headers'>GuestBook</h2>
-        <GithubLogin
-          clientId="fb65cc1848303972e11a"
-          onSuccess={handleGithubLogin}
-          onFailure={handleGithubLoginFailure}
-          redirectUri="http://localhost:3001/api/auth/github/callback"
-          scope="user:email"
-          buttonText="Login with GitHub"
-        />
         <div className="guestbook-content-container">
-          {isLogin ? <GuestBookWithLogin /> : <GuestBookWithoutLogin />}
-          <GuestBookContent />
-          <GuestBookContent />
+          {auth.currentUser ? <GuestBookWithLogin setMessage={setMessage} setIsSent={setIsSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser.displayName} /> : null}
         </div>
       </div>
     </div>
