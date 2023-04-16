@@ -21,7 +21,7 @@ function GuestBookWithLogin() {
 
       <div className="flex justify-start items-center gap-[7px] my-2 opacity-70
                       transition ease-linear duration-100 cursor-pointer 
-                      hover:opacity-100 mb-5 w-[10%] md:w-[20%] border">
+                      hover:opacity-100 mb-5 w-[10%] md:w-[20%]">
         <img
           className="md:w-3 w-[18px]"
           src={signout}
