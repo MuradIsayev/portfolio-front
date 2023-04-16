@@ -1,7 +1,15 @@
 import signout from '../../assets/signout.svg';
+// import firebase from 'firebase/compat/app';
+// import 'firebase/compat/auth';
+// import 'firebase/compat/firestore';
 
-function GuestBookWithLogin() {
+// const auth = firebase.auth();
 
+const GuestBookWithLogin = ({ value, onLogin }) => {
+  // const handleSignOut = () => {
+  //   auth.signOut();
+  //   onLogin(value);
+  // };
   return (
     <div>
 

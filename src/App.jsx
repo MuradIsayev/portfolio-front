@@ -5,6 +5,7 @@ import GuestBook from './components/GuestBook/GuestBook';
 import { Routes, Route } from 'react-router-dom';
 import Resume from './components/Resume/Resume';
 
+
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
           <Route path="/guestbook" element={<GuestBook />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
-      </div>  
+      </div>
     </>
   );
 }

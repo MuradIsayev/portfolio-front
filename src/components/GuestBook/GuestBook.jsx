@@ -4,8 +4,13 @@ import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
 import GuestBookWithLogin from './GuestbookWithLogin';
 
+
 function GuestBook() {
   const [isLogin, setIsLogin] = useState(false);
+
+  const handleLogin = (value) => {
+    value ? setIsLogin(false) : setIsLogin(true);
+  }
 
   return (
     <div className="main-container">
@@ -18,7 +23,7 @@ function GuestBook() {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {isLogin ? <GuestBookWithLogin /> : <GuestBookWithoutLogin />}
+          {isLogin ? <GuestBookWithLogin value={isLogin} onLogin={handleLogin} /> : <GuestBookWithoutLogin value={isLogin} onLogin={handleLogin} />}
           <GuestBookContent />
           <GuestBookContent />
         </div>
