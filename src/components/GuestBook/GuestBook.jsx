@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
@@ -21,7 +21,35 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
 function GuestBook() {
+  const [message, setMessage] = useState('');
+  const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    let timeoutId;
+
+    const handleTimeout = () => {
+      clearTimeout(timeoutId);
+      handleSignOut();
+    };
+
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(handleTimeout, 300000); // 5 minutes
+      } else {
+        clearTimeout(timeoutId);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
@@ -32,8 +60,8 @@ function GuestBook() {
       });
   };
 
-  const handleSignOut = () => {
-    auth.signOut();
+  const handleSignOut = async () => {
+    await auth.signOut();
   };
 
   return (
@@ -47,9 +75,8 @@ function GuestBook() {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {user ? <GuestBookWithLogin currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
-          <GuestBookContent />
-          <GuestBookContent />
+          {auth.currentUser ? <GuestBookWithLogin setMessage={setMessage} setIsSent={setIsSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser.displayName} /> : null}
         </div>
       </div>
     </div>
