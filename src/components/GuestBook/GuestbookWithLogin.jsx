@@ -1,9 +1,10 @@
 import signout from '../../assets/signout.svg';
-import GuestBookContent from './GuestBookContent';
-import { useState } from 'react';
+import { io } from "socket.io-client";
+const socket = io("http://localhost:3001");
 
-const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, setMessage }) => {
+const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessage }) => {
   const handleSendButton = () => {
+    socket.emit("message", { name: currentUser.displayName, message, photoURL: currentUser.photoURL })
     setIsSent(true);
   };
 
