@@ -31,8 +31,8 @@ function Home() {
   }
 
   return (
-    <div className="main-container">
-      <div className="navbar-container home-navbar-class-block">
+    <div className="main-container ">
+      <div className="navbar-container">
         <NavBar />
       </div>
       <motion.div variants={container}

@@ -66,7 +66,7 @@ function GuestBook() {
 
   return (
     <div className="main-container">
-      <div className="navbar-container guestbook-navbar-class-block">
+      <div className="navbar-container">
         <NavBar />
       </div>
       <div

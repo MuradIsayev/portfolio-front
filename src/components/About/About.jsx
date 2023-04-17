@@ -14,7 +14,7 @@ function About() {
   let i = 0;
   return (
     <div className="main-container">
-      <div className="navbar-container about-navbar-class-block">
+      <div className="navbar-container">
         <NavBar />
       </div>
       <div

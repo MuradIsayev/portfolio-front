@@ -3,7 +3,7 @@ import NavBar from "../NavBar/NavBar";
 function Resume() {
   return (
     <div className="main-container">
-      <div className="navbar-container navbar-class-block">
+      <div className="navbar-container">
         <NavBar />
       </div>
       <div

@@ -5,7 +5,7 @@ import BlogContent from './BlogContent';
 function Blog() {
   return (
     <div className="main-container">
-      <div className="navbar-container navbar-class-block">
+      <div className="navbar-container">
         <NavBar />
       </div>
       <div
