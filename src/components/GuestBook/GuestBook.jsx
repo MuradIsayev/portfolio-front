@@ -53,7 +53,7 @@ const GuestBook = () => {
     };
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     socket.emit('getMessage');
 
     socket.on('userMessage', (data) => {
