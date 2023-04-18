@@ -20,7 +20,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
-function GuestBook() {
+const GuestBook = () => {
   const [message, setMessage] = useState('');
   const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);
@@ -38,7 +38,7 @@ function GuestBook() {
         if (timeoutId) {
           clearTimeout(timeoutId);
         }
-        timeoutId = setTimeout(handleTimeout, 300000); // 5 minutes
+        timeoutId = setTimeout(handleTimeout, 120000); // 2 minutes
       } else {
         clearTimeout(timeoutId);
       }
@@ -75,8 +75,8 @@ function GuestBook() {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {auth.currentUser ? <GuestBookWithLogin setMessage={setMessage} setIsSent={setIsSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
-          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser.displayName} photoUrl={auth.currentUser.photoURL} /> : null}
+          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser?.displayName} photoUrl={auth.currentUser?.photoURL} /> : null}
         </div>
       </div>
     </div>

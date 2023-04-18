@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Resume from './components/Resume/Resume';
 
 
-function App() {
+const App = () => {
   return (
     <>
       <div className='h-screen bg-white text-gray-800 dark:bg-black dark:text-white'>

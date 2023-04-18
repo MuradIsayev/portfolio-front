@@ -1,6 +1,6 @@
 import './Blog.css';
 
-function BlogContent() {
+const BlogContent = () => {
   return (
     <div className="blog-container">
       <a href="#" className="blog-links">

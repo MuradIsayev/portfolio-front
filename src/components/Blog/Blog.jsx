@@ -2,7 +2,7 @@ import NavBar from '../NavBar/NavBar';
 import './Blog.css';
 import BlogContent from './BlogContent';
 
-function Blog() {
+const Blog = () => {
   return (
     <div className="main-container">
       <div className="navbar-container">

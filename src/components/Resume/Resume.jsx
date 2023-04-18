@@ -1,6 +1,6 @@
 import NavBar from "../NavBar/NavBar";
 
-function Resume() {
+const Resume = () => {
   return (
     <div className="main-container">
       <div className="navbar-container">

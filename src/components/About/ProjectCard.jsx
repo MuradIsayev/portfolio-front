@@ -3,14 +3,14 @@ import darkgithub from '../../assets/darkgithub.svg';
 import bluegithub from '../../assets/bluegithub.svg';
 import { motion } from 'framer-motion';
 
-function ProjectAbout({ name, description, url, skills, testValue }) {
+const ProjectAbout = ({ name, description, url, skills, testValue }) => {
 
   return (
     <motion.div
       className="project-container"
       initial={{
         opacity: 0,
-        translateX: testValue % 2 === 0 ? -50 :50,
+        translateX: testValue % 2 === 0 ? -50 : 50,
         translateY: -50,
       }}
       animate={{ opacity: 1, translateX: 0, translateY: 0 }}

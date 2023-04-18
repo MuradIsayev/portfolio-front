@@ -18,7 +18,8 @@
     "react-github-login": "^1.0.3",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
-    "react-switch": "^7.0.0"
+    "react-switch": "^7.0.0",
+    "socket.io-client": "^4.6.1"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.2",
