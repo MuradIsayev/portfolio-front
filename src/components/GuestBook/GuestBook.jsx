@@ -7,6 +7,8 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { io } from "socket.io-client";
+const socket = io("http://localhost:3001");
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APP_FIREBASE_KEY,
@@ -22,6 +24,7 @@ const auth = firebase.auth();
 
 const GuestBook = () => {
   const [message, setMessage] = useState('');
+  const [data, setData] = useState([]);
   const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);
 
@@ -50,6 +53,15 @@ const GuestBook = () => {
     };
   }, []);
 
+  useEffect(()=> {
+    socket.emit('getMessage', { userName: auth.currentUser?.displayName });
+
+    socket.on('userMessage', (data) => {
+      setData(data);
+    });
+  })
+
+
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
@@ -76,7 +88,7 @@ const GuestBook = () => {
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
-          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser?.displayName} photoUrl={auth.currentUser?.photoURL} /> : null}
+          {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
     </div>
