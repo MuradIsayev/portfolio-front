@@ -54,7 +54,7 @@ const GuestBook = () => {
   }, []);
 
   useEffect(()=> {
-    socket.emit('getMessage', { userName: auth.currentUser?.displayName });
+    socket.emit('getMessage');
 
     socket.on('userMessage', (data) => {
       setData(data);
@@ -87,7 +87,7 @@ const GuestBook = () => {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
