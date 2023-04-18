@@ -75,8 +75,8 @@ function GuestBook() {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
-          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser.displayName} photoUrl={auth.currentUser.photoURL} /> : null}
+          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {isSent ? <GuestBookContent message={message} currentUser={auth.currentUser?.displayName} photoUrl={auth.currentUser?.photoURL} /> : null}
         </div>
       </div>
     </div>
