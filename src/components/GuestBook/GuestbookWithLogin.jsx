@@ -14,12 +14,6 @@ const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, 
     e.preventDefault();
     handleSendButton();
   };
-
-  socket.emit('getMessage', { userName: currentUser?.displayName });
-
-  socket.on('userMessage', (data) => {
-    console.log(data);
-  });
   
   return currentUser && (
     <div>
