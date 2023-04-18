@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function GuestBookContent({ currentUser, message, photoUrl }) {
+const GuestBookContent = ({ currentUser, message, photoUrl }) => {
   return (
     <div className="mt-2">
       <div className="flex flex-row justify-start items-center gap-[3px] 

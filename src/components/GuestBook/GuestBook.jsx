@@ -20,7 +20,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
-function GuestBook() {
+const GuestBook = () => {
   const [message, setMessage] = useState('');
   const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);

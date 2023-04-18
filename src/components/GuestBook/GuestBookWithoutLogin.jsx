@@ -3,7 +3,7 @@ import darkgithub from '../../assets/darkgithub.svg';
 
 
 
-function GuestBookWithoutLogin({ signIn }) {
+const GuestBookWithoutLogin = ({ signIn }) => {
 
   return (
     <div>

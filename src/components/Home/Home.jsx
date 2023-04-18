@@ -6,7 +6,7 @@ import bluelinkedin from '../../assets/bluelinkedin.svg';
 import darklinkedin from '../../assets/darklinkedin.svg';
 import { motion } from 'framer-motion';
 
-function Home() {
+const Home = () => {
   const container = {
     hidden: { opacity: 0 },
     show: {

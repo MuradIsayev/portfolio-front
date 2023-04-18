@@ -5,7 +5,7 @@ import { IoMoonSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
 
-function NavBar() {
+const NavBar = () => {
   const location = useLocation();
   const isBlogPage = location.pathname.includes('/blog');
   const isGuestBookPage = location.pathname.includes('/guestbook');

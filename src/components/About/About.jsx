@@ -4,7 +4,7 @@ import './About.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function About() {
+const About = () => {
   const [project, setProject] = useState([]);
   useEffect(() => {
     axios.get('http://localhost:3001/api/projects').then(response => {
