@@ -23,7 +23,7 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
 const GuestBook = () => {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState(null);
   const [data, setData] = useState([]);
   const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);
@@ -59,13 +59,13 @@ const GuestBook = () => {
     socket.on('userMessage', (data) => {
       setData(data);
     });
-  })
-
+  }, [isSent])
 
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
       console.log('Signed in with GitHub');
+      console.log(auth.currentUser);
     })
       .catch(error => {
         console.log(error);
