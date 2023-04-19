@@ -18,37 +18,31 @@ const NavBar = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const handleMode = () => setDarkTheme(!darkTheme);
     return (
-      <motion.span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-2' initial={{ scale: 0 }}
-        animate={{ rotate: 360, scale: 1 }}
-        whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1, repeat: Infinity } }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20
-        }}>
+      <motion.span onClick={handleMode} className='cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-2'
+      >
         {darkTheme ? (
           <motion.div
-          // TODO decide which animation looks better
-          // animate={{ rotate: 360 }}
-          // transition={{
-          //   duration: 2,
-          //   repeat: Infinity,
-          //   delay: 1,
-          //   repeatDelay: 1,
-          // }}
+            // TODO decide which animation looks better
+            // animate={{ rotate: 360 }}
+            // transition={{
+            //   duration: 2,
+            //   repeat: Infinity,
+            //   delay: 1,
+            //   repeatDelay: 1,
+            // }}
             whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: .9, repeat: Infinity } }}
           >
             <IoMoonSharp size="22" className="text-gray-400 md:w-[19px] md:h-[19px]" /></motion.div>
         ) : (
           <motion.div
-          // TODO decide which animation looks better
-          // animate={{ rotate: 360 }}
-          // transition={{
-          //   duration: 2,
-          //   repeat: Infinity,
-          //   delay: 1,
-          //   repeatDelay: 1,
-          // }}
+            // TODO decide which animation looks better
+            // animate={{ rotate: 360 }}
+            // transition={{
+            //   duration: 2,
+            //   repeat: Infinity,
+            //   delay: 1,
+            //   repeatDelay: 1,
+            // }}
             whileHover={{ rotate: 360, transition: { ease: 'backInOut', duration: 1.3, repeat: Infinity } }}
           >
             <FaSun size="22" className="text-yellow-400 md:w-[19px] md:h-[19px] " /></motion.div>
