@@ -55,17 +55,17 @@ const GuestBook = () => {
 
   useEffect(() => {
     socket.emit('getMessage');
-
     socket.on('userMessage', (data) => {
       setData(data);
+      setIsSent(true);
     });
-  }, [isSent])
+  }, [isSent, data]);
 
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
-      console.log('Signed in with GitHub');
-      console.log(auth.currentUser);
+      console.log(`${auth?.currentUser?.email} signed in with GitHub`);
+      socket.emit('initiate', { userName: auth?.currentUser?.displayName, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
     })
       .catch(error => {
         console.log(error);

@@ -6,7 +6,7 @@ const socket = io("http://localhost:3001");
 const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, setMessage }) => {
   const handleSendButton = () => {
     socket.emit("message", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
-    setIsSent(true);
+    setIsSent(false);
     setMessage('');
   };
 
