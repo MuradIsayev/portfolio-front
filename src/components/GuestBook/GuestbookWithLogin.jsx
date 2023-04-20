@@ -57,7 +57,7 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
               transition={
                 { duration: .25 }
               }
-              className="text-red-500 text-[.8rem] mt-1 font-[300] md:text-[.53rem] dark:text-[#f06565d0]">{errorMessage}</motion.div>
+              className="text-red-500 text-[.8rem] mt-1 font-[300] md:text-[.53rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
           <div>
             <button type='submit' className="send-button"
