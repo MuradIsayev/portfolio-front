@@ -1,9 +1,16 @@
-import { useEffect } from 'react';
 import signout from '../../assets/signout.svg';
 import { io } from "socket.io-client";
-const socket = io("http://localhost:3001");
+import { z } from 'zod';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, setMessage }) => {
+const socket = io("http://localhost:3001");
+const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessage }) => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const validateMessage = z.string()
+    .max(100, 'Message should not be more than 100 characters')
+    .min(1, 'Message field should not be empty');
+
   const handleSendButton = () => {
     socket.emit("message", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
     setIsSent(false);
@@ -12,7 +19,19 @@ const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSendButton();
+    const parsedMessage = validateMessage.safeParse(message);
+    if (parsedMessage.success) {
+      handleSendButton();
+      setErrorMessage('');
+    } else {
+      const error = parsedMessage.error;
+      let newErrors = '';
+      error.errors.forEach((err) => {
+        newErrors = err.message;
+      }
+      );
+      setErrorMessage(newErrors);
+    }
   };
 
   return currentUser && (
@@ -24,7 +43,6 @@ const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, 
               type="text"
               className="message-input"
               name="message"
-              required
               placeholder="Your message..."
               value={message}
               onChange={((e) => {
@@ -32,13 +50,21 @@ const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, 
               })}
             />
           </div>
+          {errorMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: -22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={
+                { duration: .2 }
+              }
+              className="text-red-400 text-[.8rem] mt-1 font-[300]">{errorMessage}</motion.div>
+          )}
           <div>
             <button type='submit' className="send-button"
             >Send</button>
           </div>
         </div>
       </form>
-
 
       <div className="flex justify-start items-center gap-[7px] my-2 opacity-70
                       transition ease-linear duration-100 cursor-pointer 

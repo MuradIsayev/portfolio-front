@@ -8,6 +8,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { io } from "socket.io-client";
+
 const socket = io("http://localhost:3001");
 
 const firebaseConfig = {
@@ -23,7 +24,7 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
 const GuestBook = () => {
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState('');
   const [data, setData] = useState([]);
   const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);
@@ -87,7 +88,7 @@ const GuestBook = () => {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
