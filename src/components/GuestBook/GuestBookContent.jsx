@@ -20,12 +20,12 @@ const GuestBookContent = ({ data }) => {
   return (
     <div>
       {allMessages?.reverse().map((message) => (
-        <div className="mt-2">
+        <div key={`${message.userName}-${message.createdAt}`} className="mt-2">
           <div className="flex flex-row justify-start gap-[5px] 
                       mt-4 font-[300] text-[.95rem]
                 md:mt-3 md:text-[.63rem]">
             <img
-              src={message?.photoURL} alt="Profile photo" className="mb-auto md:-mt-[.2rem] -mt-[.1rem] rounded-full w-7 md:w-6 border border-gray-300 mr-1 transition ease-in-out duration-100 blur-[.8px] hover:blur-0" />
+              src={message?.photoURL} alt="Profile photo" className="mb-auto md:-mt-[.2rem] -mt-[.1rem] rounded-full w-7 md:w-6 border border-gray-600 dark:border-gray-200 mr-1" />
             <span className="font-[400]">{message?.userName ? message?.userName : 'Anonymous'}:</span>
             <span className="w-[70%] md:w-[70%] break-words ">{message?.message}</span>
           </div>

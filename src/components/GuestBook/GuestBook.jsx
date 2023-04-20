@@ -60,7 +60,7 @@ const GuestBook = () => {
       setData(data);
       setIsSent(true);
     });
-  }, [isSent, data]);
+  }, [isSent]);
 
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
