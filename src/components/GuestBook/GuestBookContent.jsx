@@ -1,4 +1,6 @@
-// TODO: Fix text length
+// TODO: Fix space between navbar and guestbook
+// TODO 2: Fix text overflow
+// TODO 3: Fix dark mode for guestbook
 
 const GuestBookContent = ({ data }) => {
   const allMessages = [];
