@@ -71,16 +71,17 @@
     }
 
     .send-button {
-        @apply rounded-md transition ease-linear duration-200
+        @apply flex items-center justify-center absolute right-1 top-1
+        rounded-md transition ease-linear duration-200
         font-[600] text-[13px] bg-[#f5f5f5] text-[#4E4E4E]
-        w-16 h-10 hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
+        w-16 h-9 hover:bg-[#e5e5e5] hover:text-[#0c0c0c]
         dark:bg-[#272727] dark:text-[#C2C2C2]
         dark:hover:bg-[#333333] dark:hover:text-[#f0f0f0]
-         md:text-[.55rem] md:font-[600] md:w-12 md:h-8
+         md:text-[.55rem] md:font-[600] md:w-12 md:h-7 md:top-[3px]
     }
 
     .message-input {
-        @apply w-[114.5%] md:w-[132.2%] rounded-md font-[400] text-[.9rem] px-4 py-[.7rem]
+        @apply block w-full rounded-md font-[400] text-[.9rem] px-4 py-[.7rem]
         text-[#3d3030] bg-[#f5f5f5] dark:bg-[#272727] dark:text-[#C2C2C2]
          md:text-[.9rem] md:px-[.8rem] md:py-[.4rem] 
         placeholder-[#dfaeae] placeholder:text-[.88rem] md:placeholder:text-[.58rem]

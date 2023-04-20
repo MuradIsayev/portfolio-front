@@ -17,13 +17,14 @@ const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, 
 
   return currentUser && (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div className="flex items-center">
-          <div className="w-[50%]" >
+      <form onSubmit={handleSubmit} className='relative max-w-[60%] md:max-w-full'>
+        <div >
+          <div>
             <input
               type="text"
               className="message-input"
               name="message"
+              required
               placeholder="Your message..."
               value={message}
               onChange={((e) => {
@@ -32,7 +33,8 @@ const GuestBookWithLogin = ({ signOut, currentUser, isSent, setIsSent, message, 
             />
           </div>
           <div>
-            <button type='submit' className="send-button">Send</button>
+            <button type='submit' className="send-button"
+            >Send</button>
           </div>
         </div>
       </form>
