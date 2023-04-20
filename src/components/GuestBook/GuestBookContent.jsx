@@ -17,7 +17,7 @@ const GuestBookContent = ({ data }) => {
     <div>
       {allMessages?.reverse().map((message) => (
         <div className="mt-2">
-          <div className="flex flex-row justify-start items-center gap-[3px] 
+          <div className="flex flex-row justify-start items-center gap-[5px] 
                       mt-2 max-w-[60%] font-[300] text-[.96rem] 
                 md:mt-1 md:w-[90%] md:font-[400] md:text-[.77rem]">
             <img

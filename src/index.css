@@ -13,6 +13,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+@layer base {
+    /* Hiding scrollbar */
+    ::-webkit-scrollbar{
+    @apply hidden 
+    }
+}
+
 @layer components {
     /* NAVBAR */
     .navbar-links {

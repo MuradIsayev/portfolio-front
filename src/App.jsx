@@ -9,7 +9,7 @@ import Resume from './components/Resume/Resume';
 const App = () => {
   return (
     <>
-      <div className='h-screen bg-white text-gray-800 dark:bg-black dark:text-white'>
+      <div className='h-screen bg-white dark:bg-black dark:text-white overflow-hidden overflow-y-scroll'>
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
