@@ -1,18 +1,33 @@
-import { motion } from "framer-motion";
+// TODO: Fix space between navbar and guestbook (when messages span is removed, it works fine)
+// TODO 2: Fix text overflow
+// TODO 3: Fix dark mode for guestbook
 
 const GuestBookContent = ({ data }) => {
-  console.log(data);
+  const allMessages = [];
+  data.forEach((userData) => {
+    userData.messages.forEach((message) => {
+      allMessages.push({
+        userName: userData?.userName,
+        photoURL: userData?.photoURL,
+        message: message?.message,
+        createdAt: message?.createdAt
+      });
+    });
+  });
+
+  allMessages.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
   return (
     <div>
-      {data.map((userData) => (
+      {allMessages?.reverse().map((message) => (
         <div className="mt-2">
-          <div className="flex flex-row justify-start items-center gap-[3px] 
-                      mt-2 max-w-[60%] font-[300] text-[.96rem] 
-                md:mt-1 md:w-[90%] md:font-[400] md:text-[.77rem]">
-            <motion.img
-              src={userData?.photoURL} alt="Profile photo" className="rounded-full w-8 border border-gray-300 mr-1 transition ease-in-out duration-100 blur-[.7px] hover:blur-0" />
-            <span className="font-[400]">{userData?.userName}:</span>
-            <span className="max-w-[85%]">{userData?.message}</span>
+          <div className="flex flex-row justify-start gap-[5px] 
+                      mt-4 font-[300] text-[.95rem]
+                md:mt-3 md:text-[.63rem]">
+            <img
+              src={message?.photoURL} alt="Profile photo" className="mb-auto md:-mt-[.2rem] -mt-[.1rem] rounded-full w-7 md:w-6 border border-gray-300 mr-1 transition ease-in-out duration-100 blur-[.8px] hover:blur-0" />
+            <span className="font-[400]">{message?.userName ? message?.userName : 'Anonymous'}:</span>
+            <span className="w-[70%] md:w-[70%] break-words ">{message?.message}</span>
           </div>
         </div>
       ))}

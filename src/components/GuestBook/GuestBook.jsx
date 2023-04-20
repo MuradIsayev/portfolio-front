@@ -8,6 +8,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { io } from "socket.io-client";
+
 const socket = io("http://localhost:3001");
 
 const firebaseConfig = {
@@ -41,7 +42,7 @@ const GuestBook = () => {
         if (timeoutId) {
           clearTimeout(timeoutId);
         }
-        timeoutId = setTimeout(handleTimeout, 120000); // 2 minutes
+        timeoutId = setTimeout(handleTimeout, 1200000); // 2 minutes
       } else {
         clearTimeout(timeoutId);
       }
@@ -53,19 +54,19 @@ const GuestBook = () => {
     };
   }, []);
 
-  useEffect(()=> {
-    socket.emit('getMessage', { userName: auth.currentUser?.displayName });
-
+  useEffect(() => {
+    socket.emit('getMessage');
     socket.on('userMessage', (data) => {
       setData(data);
+      setIsSent(true);
     });
-  })
-
+  }, [isSent, data]);
 
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
-      console.log('Signed in with GitHub');
+      console.log(`${auth?.currentUser?.email} signed in with GitHub`);
+      socket.emit('initiate', { userName: auth?.currentUser?.displayName, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
     })
       .catch(error => {
         console.log(error);
@@ -87,7 +88,7 @@ const GuestBook = () => {
       >
         <h2 className='headers'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} isSent={isSent} currentUser={auth.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
