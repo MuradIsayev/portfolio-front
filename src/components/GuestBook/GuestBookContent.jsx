@@ -1,4 +1,4 @@
-// TODO: Fix space between navbar and guestbook
+// TODO: Fix space between navbar and guestbook (when messages span is removed, it works fine)
 // TODO 2: Fix text overflow
 // TODO 3: Fix dark mode for guestbook
 
