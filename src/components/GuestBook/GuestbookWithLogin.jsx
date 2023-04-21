@@ -52,10 +52,10 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
           </div>
           {errorMessage && (
             <motion.div
-              initial={{ opacity: 0, y: -22 }}
+              initial={{ opacity: 0, y: -25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={
-                { duration: .25 }
+                { duration: .2 }
               }
               className="text-red-500 text-[.8rem] mt-1 font-[300] md:text-[.53rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
