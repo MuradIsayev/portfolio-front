@@ -60,7 +60,8 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
               className="text-red-500 text-[.8rem] mt-1 font-[300] md:text-[.53rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
           <div>
-            <button type='submit' className="send-button"
+            <button type='submit' className="send-button btn btn-outline btn-sm	h-9 w-[68px] 
+                                             normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
             >Send</button>
           </div>
         </div>
