@@ -23,7 +23,7 @@ const GuestBookWithoutLogin = ({ signInWithGitHub, signInWithGoogle }) => {
       <div>
         <button className="login-with-github">
           <img
-            className="w-[17px] md:w-[12px]  md:h-[12px]"
+            className="w-[18px] h-[18px] md:w-[12px]  md:h-[12px]"
             src={google}
             alt="github logo"
           />
