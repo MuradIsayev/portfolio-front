@@ -45,7 +45,7 @@
     }
 
     .navbar-container {
-        @apply flex flex-row items-center justify-start h-[72.9vh] w-[12vw] 
+        @apply flex flex-row items-center justify-start h-[72.9vh] w-[13.5vw] 
         mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 

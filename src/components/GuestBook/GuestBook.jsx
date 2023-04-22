@@ -83,10 +83,9 @@ const GuestBook = () => {
         <NavBar />
       </div>
       <div
-        className="flex flex-col justify-start mt-32 
-                    w-[90%] gap-3 md:mt-20 md:w-[100%]"
+        className="mt-32 w-[90%] md:mt-20 md:w-[100%]"
       >
-        <h2 className='headers'>GuestBook</h2>
+        <h2 className='headers mb-2'>GuestBook</h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
