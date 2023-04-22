@@ -73,6 +73,18 @@ const GuestBook = () => {
       });
   };
 
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider).then(() => {
+      console.log(`${auth?.currentUser?.email} signed in with Google`);
+      socket.emit('initiate', { userName: auth?.currentUser?.displayName, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+    })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+
   const handleSignOut = async () => {
     await auth.signOut();
   };
@@ -83,12 +95,11 @@ const GuestBook = () => {
         <NavBar />
       </div>
       <div
-        className="flex flex-col justify-start mt-32 
-                    w-[90%] gap-3 md:mt-20 md:w-[100%]"
+        className="mt-32 w-[90%] md:mt-20 md:w-[100%]"
       >
-        <h2 className='headers'>GuestBook</h2>
+        <h2 className='headers mb-2'>GuestBook</h2>
         <div className="guestbook-content-container">
-          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signIn={signInWithGitHub} />}
+          {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
