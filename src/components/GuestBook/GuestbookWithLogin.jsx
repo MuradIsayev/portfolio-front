@@ -9,7 +9,8 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
   const [errorMessage, setErrorMessage] = useState('');
   const validateMessage = z.string()
     .max(100, 'Message should not be more than 100 characters')
-    .min(1, 'Message field should not be empty');
+    .min(1, 'Message field should not be empty')
+    .refine((value) => !/^\s*$/.test(value), 'Message should not be empty');
 
   const handleSendButton = () => {
     socket.emit("message", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
