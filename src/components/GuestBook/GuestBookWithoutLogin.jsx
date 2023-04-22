@@ -8,8 +8,8 @@ import google from '../../assets/google.svg';
 const GuestBookWithoutLogin = ({ signInWithGitHub, signInWithGoogle }) => {
 
   return (
-    <div className="flex flex-row gap-5">
-      <div className=''>
+    <div className="flex flex-row items-center gap-5 mb-8 md:gap-3">
+      <div>
         <button className="login-with-github">
           <img
             className="w-[21px] md:w-[14px]  md:h-[14px]"
@@ -19,6 +19,7 @@ const GuestBookWithoutLogin = ({ signInWithGitHub, signInWithGoogle }) => {
           <span className="text-[.83rem] font-[500] md:text-[.5rem]" onClick={signInWithGitHub}>Sign in with GitHub</span>
         </button>
       </div>
+      <span className="text-[.9rem] font-[400] md:text-[.5rem]">or</span>
       <div>
         <button className="login-with-github">
           <img
