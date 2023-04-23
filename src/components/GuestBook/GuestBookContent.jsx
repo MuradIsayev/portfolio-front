@@ -1,6 +1,7 @@
 
 // TODO: Fix text overflow
-const GuestBookContent = ({ data }) => {
+const GuestBookContent = ({ data, socketIds }) => {
+  console.log(socketIds);
 
   const allMessages = [];
   data.forEach((userData) => {

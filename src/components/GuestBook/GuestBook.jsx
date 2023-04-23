@@ -32,6 +32,7 @@ const GuestBook = () => {
   });
   const [message, setMessage] = useState('');
   const [data, setData] = useState([]);
+  const [socketIds, setSocketIds] = useState([]);
   const [isSent, setIsSent] = useState(false);
   const [user] = useAuthState(auth);
 
@@ -65,6 +66,9 @@ const GuestBook = () => {
     socket.on('userMessage', (data) => {
       setData(data);
       setIsSent(true);
+    });
+    socket.on('userJoined', (id) => {
+      setSocketIds((prevIds) => [...prevIds, id]);
     });
   }, [isSent]);
 
@@ -106,7 +110,7 @@ const GuestBook = () => {
         <h2 className='headers mb-2'>GuestBook</h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
-          {isSent ? <GuestBookContent data={data} /> : null}
+          {isSent ? <GuestBookContent data={data} socketIds={socketIds} /> : null}
         </div>
       </div>
     </div>
