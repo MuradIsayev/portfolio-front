@@ -37,7 +37,7 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
 
   return currentUser && (
     <div>
-      <form onSubmit={handleSubmit} className='relative max-w-[60%] md:max-w-full'>
+      <form onSubmit={handleSubmit} className='relative max-w-[60%] md:max-w-[90%]'>
         <div >
           <div>
             <input
@@ -62,7 +62,7 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
           )}
           <div>
             <button type='submit' className="send-button btn btn-outline btn-sm	h-9 w-[68px] 
-                                             normal-case md:btn-xs md:w-[45px] md:text-[.55rem] border-none"
+                                             normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
             >Send</button>
           </div>
         </div>
