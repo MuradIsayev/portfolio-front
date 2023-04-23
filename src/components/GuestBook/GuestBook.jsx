@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { uniqueNamesGenerator, adjectives, animals } from "unique-names-generator";
 import NavBar from '../NavBar/NavBar';
 import GuestBookContent from './GuestBookContent';
 import GuestBookWithoutLogin from './GuestBookWithoutLogin';
@@ -24,6 +25,11 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
 const GuestBook = () => {
+  const username = uniqueNamesGenerator({
+    dictionaries: [adjectives, animals], 
+    length: 2,
+    separator: '-',
+  });
   const [message, setMessage] = useState('');
   const [data, setData] = useState([]);
   const [isSent, setIsSent] = useState(false);
@@ -66,7 +72,7 @@ const GuestBook = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
       console.log(`${auth?.currentUser?.email} signed in with GitHub`);
-      socket.emit('initiate', { userName: auth?.currentUser?.displayName, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
     })
       .catch(error => {
         console.log(error);
@@ -77,7 +83,7 @@ const GuestBook = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider).then(() => {
       console.log(`${auth?.currentUser?.email} signed in with Google`);
-      socket.emit('initiate', { userName: auth?.currentUser?.displayName, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username,  photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
     })
       .catch(error => {
         console.log(error);

@@ -1,6 +1,7 @@
-// TODO: Fix text overflow
 
+// TODO: Fix text overflow
 const GuestBookContent = ({ data }) => {
+
   const allMessages = [];
   data.forEach((userData) => {
     userData.messages.forEach((message) => {
@@ -24,7 +25,7 @@ const GuestBookContent = ({ data }) => {
                 md:mt-3 md:text-[.63rem]">
             <img
               src={message?.photoURL} alt="Profile photo" className="mb-auto md:-mt-[.2rem] -mt-[.2rem] rounded-full w-[30px] md:w-6 border border-gray-600 dark:border-gray-200 mr-1" />
-            <span className="font-[400]">{message?.userName ? message?.userName : 'Anonymous'}:</span>
+            <span className="font-[400]">{message?.userName}:</span>
             <span className="w-[70%] md:w-[70%] break-words ">{message?.message}</span>
           </div>
         </div>

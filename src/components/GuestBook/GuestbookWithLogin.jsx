@@ -62,7 +62,7 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
           )}
           <div>
             <button type='submit' className="send-button btn btn-outline btn-sm	h-9 w-[68px] 
-                                             normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
+                                             normal-case md:btn-xs md:w-[45px] md:text-[.55rem] border-none"
             >Send</button>
           </div>
         </div>
