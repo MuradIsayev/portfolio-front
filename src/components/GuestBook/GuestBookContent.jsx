@@ -21,10 +21,10 @@ const GuestBookContent = ({ data, socketIds }) => {
     <div>
       {allMessages?.reverse().map((message) => (
         <div key={`${message.userName}-${message.createdAt}`} className="mt-2">
-          <div className="flex flex-row justify-start gap-[4px] 
+          <div className="flex flex-row justify-start gap-[4px] whitespace-nowrap
                       mt-5 mb-5 md:mt-4 md:mb-4 font-[300] text-[.95rem]
                  md:text-[.63rem]">
-            <div className="avatar w-9 h-9 mb-auto md:w-6 md:h-6 mr-[7px] md:mr-[3px] ">
+            <div className="avatar w-[35px] h-[35px] mb-auto md:w-[23px] md:h-[23px] mr-[7px] md:mr-[2px]">
               <img
                 src={message?.photoURL} alt="Profile photo" className="outline rounded-full outline-[2px] md:outline-[1px] outline-[#67b3d1] 
                                                                          md:-mt-[.2rem] -mt-[.4rem]" />
