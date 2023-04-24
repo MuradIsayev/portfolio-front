@@ -26,14 +26,14 @@ const auth = firebase.auth();
 
 const GuestBook = () => {
   const username = uniqueNamesGenerator({
-    dictionaries: [adjectives, animals], 
+    dictionaries: [adjectives, animals],
     length: 2,
     separator: '-',
   });
   const [message, setMessage] = useState('');
   const [data, setData] = useState([]);
-  const [socketIds, setSocketIds] = useState([]);
   const [isSent, setIsSent] = useState(false);
+  const [isSignedOut, setIsSignedOut] = useState(true);
   const [user] = useAuthState(auth);
 
   useEffect(() => {
@@ -67,16 +67,14 @@ const GuestBook = () => {
       setData(data);
       setIsSent(true);
     });
-    socket.on('userJoined', (id) => {
-      setSocketIds((prevIds) => [...prevIds, id]);
-    });
-  }, [isSent]);
+  }, [isSent, isSignedOut]);
 
   const signInWithGitHub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider).then(() => {
       console.log(`${auth?.currentUser?.email} signed in with GitHub`);
-      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, });
+      setIsSignedOut(false);
     })
       .catch(error => {
         console.log(error);
@@ -87,15 +85,18 @@ const GuestBook = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider).then(() => {
       console.log(`${auth?.currentUser?.email} signed in with Google`);
-      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username,  photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+      setIsSignedOut(false);
     })
       .catch(error => {
         console.log(error);
       });
-  };
+  }; ``
 
 
   const handleSignOut = async () => {
+    socket.emit('signout', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+    setIsSignedOut(true);
     await auth.signOut();
   };
 
@@ -110,7 +111,7 @@ const GuestBook = () => {
         <h2 className='headers mb-2'>GuestBook</h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <GuestBookWithLogin setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <GuestBookWithoutLogin signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
-          {isSent ? <GuestBookContent data={data} socketIds={socketIds} /> : null}
+          {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
     </div>
