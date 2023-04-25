@@ -9,8 +9,7 @@ const Blog = () => {
         <NavBar />
       </div>
       <div
-        className="blogs-container"
-        style={{ backgroundColor: 'transparent' }}
+        className="mt-32 w-[90%] md:w-[auto] md:mt-20"
       >
         <div>
           <h2 className='headers'>Blog</h2>
