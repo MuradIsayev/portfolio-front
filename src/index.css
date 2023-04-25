@@ -31,7 +31,10 @@
 }
 
 @layer components {
-    /* NAVBAR */
+    .main-container {
+        @apply flex justify-center w-[78%] mx-auto my-0
+    }
+        /* NAVBAR */
     .navbar-links {
         @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
         dark:hover:bg-[#3f3f3f] dark:text-[#C2C2C2] dark:bg-[#272727] 
