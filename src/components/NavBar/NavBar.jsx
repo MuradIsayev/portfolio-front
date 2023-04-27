@@ -32,7 +32,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="flex bg-transparent flex-col items-start md:flex-row md:items-center"
+      className="flex bg-transparent flex-col items-start md:flex-row md:items-center fixed md:static"
     >
       <ThemeIcon />
 
