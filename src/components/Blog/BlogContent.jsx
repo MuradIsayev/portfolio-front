@@ -1,6 +1,6 @@
 import './Blog.css';
 
-const BlogContent = ({ title, minsRead, createdAt }) => {
+const BlogContent = ({ title, minsRead, createdAt, description }) => {
   return (
     <div className="h-[7.7rem]  md:h-24 flex flex-col flex-wrap justify-center cursor-pointer transition duration-150 
                     ease-linear hover:outline hover:outline-[2px] hover:outline-[#8ab2c5] dark:hover:outline-[#2c4a58] w-[80%] 
@@ -20,8 +20,7 @@ const BlogContent = ({ title, minsRead, createdAt }) => {
           </div>
         </div>
         <div className='text-[.91rem] md:text-[.6rem] '>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ipsam repellendus a 
-          accusamus asperiores expedita soluta praesentium? Odit, reprehenderit. Quisquam.
+          {description}
         </div>
       </div>
     </div>

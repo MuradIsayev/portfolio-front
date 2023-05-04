@@ -38,9 +38,9 @@ const Blog = () => {
           <span className='mr-2 text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
         </div>
         <div>
-          {blogData?.map(({id, title, minsRead, createdAt }) => {
+          {blogData?.map(({id, title, description, minsRead, createdAt }) => {
             return (
-              <BlogContent key={id} title={title} minsRead={minsRead} createdAt={createdAt} />
+              <BlogContent key={id} title={title} description={description} minsRead={minsRead} createdAt={createdAt} />
             )
           })}
         </div>
