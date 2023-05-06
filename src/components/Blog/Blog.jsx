@@ -26,14 +26,14 @@ const Blog = () => {
       <div
         className="mt-32 w-[90%] md:w-[100%] md:mt-20"
       >
-        <div className='flex flex-row justify-between w-[80%] md:w-[95%] items-center'>
-          <h2 className='headers'>Blog</h2>
-          <span className='mr-2 text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
-        </div>
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
           <BlogDetails blogId={selectedBlogId} />
         ) : (
           <>
+            <div className='flex flex-row justify-between w-[80%] md:w-[95%] items-center'>
+              <h2 className='headers'>Blog</h2>
+              <span className='mr-2 text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
+            </div>
             <div>
               {blogData?.map(({ id, blockId, title, description, minsRead, createdAt }) => {
                 return (
