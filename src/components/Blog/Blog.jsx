@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import BlogContent from './BlogContent';
-import { Client } from '@notionhq/client';
 import axios from 'axios';
 import BlogDetails from './BlogDetails';
-
-const client = new Client({
-  auth: import.meta.env.VITE_APP_NOTION_KEY,
-});
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -21,7 +16,6 @@ const Blog = () => {
 
   const handleBlogSelection = (blogId) => {
     setSelectedBlogId(blogId);
-    console.log(blogId);
   };
 
   return (
@@ -37,7 +31,7 @@ const Blog = () => {
           <span className='mr-2 text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
         </div>
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
-          <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} />
+          <BlogDetails blogId={selectedBlogId} />
         ) : (
           <>
             <div>
