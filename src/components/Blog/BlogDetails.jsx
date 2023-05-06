@@ -74,6 +74,37 @@ const BlogDetails = ({ blogId }) => {
                                     </li>
                                 </ul>
                             );
+                        case "numbered_list_item":
+                            return (
+                                <ol key={block.id} style={{ color: content.color, listStyleType: 'decimal', marginLeft: '20px' }} >
+                                    <li>
+                                        {content?.text.map((text, index) => (
+                                            <span
+                                                key={`${block.id}-text-${index}`}
+                                                style={{
+                                                    fontWeight: text.annotations?.bold ? 'bold' : 'normal',
+                                                    fontStyle: text.annotations?.italic ? 'italic' : 'normal',
+                                                    textDecoration: text.annotations?.underline ? 'underline' : 'none',
+                                                    color: text?.annotations?.color,
+                                                }}
+                                            >
+                                                {text.plain_text}
+                                            </span>
+                                        ))}
+                                    </li>
+                                </ol>
+                            );
+
+
+                        case "image":
+                            return (
+                                <img
+                                    key={block.id}
+                                    src={content?.file?.url}
+                                    alt={content?.caption?.[0]?.plain_text}
+                                    style={{ maxWidth: '100%' }}
+                                />
+                            );
                         default:
                             return null;
                     }
