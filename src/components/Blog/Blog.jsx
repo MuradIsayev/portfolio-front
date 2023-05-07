@@ -33,7 +33,7 @@ const Blog = () => {
         className="mt-32 w-[90%] md:w-[100%] md:mt-20"
       >
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
-          <BlogDetails blogId={selectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
+          <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
         ) : (
           <>
             <div className='flex flex-row justify-between w-[80%] md:w-[95%] items-center'>

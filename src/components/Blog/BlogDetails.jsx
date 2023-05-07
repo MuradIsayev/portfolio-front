@@ -3,8 +3,13 @@ import axios from 'axios';
 import goback from '../../assets/goback.svg';
 
 
-const BlogDetails = ({ blogId, title, minsRead, createdAt }) => {
+const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) => {
     const [data, setData] = useState([]);
+
+    const handleGoBack = () => {
+        setSelectedBlogId(null);
+    };
+
 
     useEffect(() => {
         axios.get(`http://localhost:3001/api/blogs/${blogId}`).then(response => {
@@ -15,9 +20,8 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt }) => {
     return (
         <div>
             <div className='flex flex-row justify-between w-[60%] items-center cursor-pointer'
-                >
-                <div className='flex items-center gap-[6px] text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 
-                    ease-linear'>
+            >
+                <div onClick={handleGoBack} className='flex items-center gap-[6px] text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
                     <img src={goback} alt='goback' className='w-6' />
                     <span className='text-[1rem] md:text-[.65rem] font-medium'>Back to blog</span>
                 </div>
