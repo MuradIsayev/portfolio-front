@@ -7,6 +7,9 @@ import BlogDetails from './BlogDetails';
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
   const [selectedBlogId, setSelectedBlogId] = useState(null); // initialize the selected blog id to null
+  const [selectedBlogTitle, setSelectedBlogTitle] = useState(null);
+  const [selectedBlogCreatedAt, setSelectedBlogCreatedAt] = useState(null);
+  const [selectedBlogMinsRead, setSelectedBlogMinsRead] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/blogs').then(response => {
@@ -14,8 +17,11 @@ const Blog = () => {
     });
   }, []);
 
-  const handleBlogSelection = (blogId) => {
+  const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
     setSelectedBlogId(blogId);
+    setSelectedBlogTitle(title);
+    setSelectedBlogCreatedAt(createdAt);
+    setSelectedBlogMinsRead(minsRead);
   };
 
   return (
@@ -27,12 +33,12 @@ const Blog = () => {
         className="mt-32 w-[90%] md:w-[100%] md:mt-20"
       >
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
-          <BlogDetails blogId={selectedBlogId} />
+          <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
         ) : (
           <>
             <div className='flex flex-row justify-between w-[80%] md:w-[95%] items-center'>
               <h2 className='headers'>Blog</h2>
-              <span className='mr-2 text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
+              <span className='text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
             </div>
             <div>
               {blogData?.map(({ id, blockId, title, description, minsRead, createdAt }) => {
