@@ -19,9 +19,9 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
 
     return (
         <div>
-            <div className='flex flex-row justify-between w-[60%] items-center cursor-pointer'
+            <div className='flex flex-row justify-between w-[60%] items-center'
             >
-                <div onClick={handleGoBack} className='flex items-center gap-[6px] text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
+                <div onClick={handleGoBack} className='flex items-center gap-[6px] cursor-pointer text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
                     <img src={goback} alt='goback' className='w-6' />
                     <span className='text-[1rem] md:text-[.65rem] font-medium'>Back to blog</span>
                 </div>
