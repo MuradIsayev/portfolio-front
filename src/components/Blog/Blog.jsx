@@ -30,7 +30,7 @@ const Blog = () => {
         <NavBar />
       </div>
       <div
-        className="mt-32 w-[90%] md:w-[100%] md:mt-20"
+        className="mt-[7.3rem] w-[65%] md:w-[100%] md:mt-20"
       >
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
           <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
@@ -57,6 +57,20 @@ const Blog = () => {
             </div>
           </>
         )}
+      </div>
+      <div className='w-[25%] mt-[7.3rem] pl-1'>
+        <p className='headers text-lg'>Random Post</p>
+        <div>
+          <a href='#' className='text-sky-600 hover:text-sky-800 home-texts'>Exciting New Features In Javascript</a>
+        </div>
+        <p className='headers text-lg mt-4'>Tags</p>
+        <div className='flex flex-wrap flex-row gap-2 text-xs cursor-pointer '>
+        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb] ">tailwind</div>
+        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">aws</div>
+        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">nestJS</div>
+        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">react</div>
+        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">redis</div>
+        </div>
       </div>
     </div>
   );
