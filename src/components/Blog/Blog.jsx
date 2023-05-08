@@ -44,7 +44,7 @@ const Blog = () => {
           <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
         ) : (
           <>
-            <div className='flex flex-row justify-between w-[88%] md:w-[95%] items-center'>
+            <div className='flex flex-row justify-between w-[90%] md:w-[95%] items-center'>
               <h2 className='headers'>Blog</h2>
               <span className='text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
             </div>
@@ -66,12 +66,12 @@ const Blog = () => {
           </>
         )}
       </div>
-      <div className='w-[27%] mt-[7.3rem] pl-1'>
+      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1'>
         <p className='headers text-lg'>Random Post</p>
         <div>
           <a href='#' className='text-sky-600 hover:text-sky-800 home-texts'>Exciting New Features In Javascript</a>
         </div>
-        <p className='headers text-lg mt-4'>Tags</p>
+        <p className='headers text-lg mt-7'>Tags</p>
         <div className='flex flex-wrap flex-row gap-2 text-xs cursor-pointer'>
           {tags?.map(({ tag }, index) => {
             return (
