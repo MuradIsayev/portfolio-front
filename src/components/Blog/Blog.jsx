@@ -25,7 +25,7 @@ const Blog = () => {
     });
   }, []);
 
-  const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
+  const handleBlogSelection = (blogId, title, createdAt, minsRead, tags) => {
     setSelectedBlogId(blogId);
     setSelectedBlogTitle(title);
     setSelectedBlogCreatedAt(createdAt);
@@ -49,7 +49,7 @@ const Blog = () => {
               <span className='text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
             </div>
             <div>
-              {blogData?.map(({ id, blockId, title, description, minsRead, createdAt }) => {
+              {blogData?.map(({ id, blockId, title, description, minsRead, createdAt, tags }) => {
                 return (
                   <BlogContent
                     key={id}
@@ -57,6 +57,7 @@ const Blog = () => {
                     blockId={blockId}
                     description={description}
                     minsRead={minsRead}
+                    tags={tags}
                     createdAt={createdAt}
                     handleClick={handleBlogSelection} // pass the blog id to the handler function
                   />
