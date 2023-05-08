@@ -3,6 +3,7 @@ import NavBar from '../NavBar/NavBar';
 import BlogContent from './BlogContent';
 import axios from 'axios';
 import BlogDetails from './BlogDetails';
+import BlogTags from './BlogTags';
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -65,11 +66,7 @@ const Blog = () => {
         </div>
         <p className='headers text-lg mt-4'>Tags</p>
         <div className='flex flex-wrap flex-row gap-2 text-xs cursor-pointer'>
-        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">tailwind</div>
-        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">aws</div>
-        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">nestJS</div>
-        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">react</div>
-        <div className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb]">redis</div>
+          <BlogTags  />
         </div>
       </div>
     </div>
