@@ -73,11 +73,11 @@ const Blog = () => {
         </div>
         <p className='headers text-lg mt-4'>Tags</p>
         <div className='flex flex-wrap flex-row gap-2 text-xs cursor-pointer'>
-          {tags?.map(({ id, name }) => {
+          {tags?.map(({ tag }, index) => {
             return (
               <BlogTags
-                key={id}
-                tag={name}
+                key={index}
+                tag={tag}
               />
             );
           })}
