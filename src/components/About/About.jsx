@@ -18,7 +18,7 @@ const About = () => {
         <NavBar />
       </div>
       <div
-        className="flex flex-col justify-start w-[90%] mt-32 md:mt-20 md:w-auto"
+        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-auto"
       >
         <h2 className='headers'>About</h2>
         <p className='home-texts'>

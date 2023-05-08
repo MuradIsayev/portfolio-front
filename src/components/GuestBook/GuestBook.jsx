@@ -106,7 +106,7 @@ const GuestBook = () => {
         <NavBar />
       </div>
       <div
-        className="mt-32 w-[90%] md:mt-20 md:w-[100%]"
+        className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
       >
         <h2 className='headers mb-2'>GuestBook</h2>
         <div className="guestbook-content-container">

@@ -32,9 +32,15 @@
 
 @layer components {
     .main-container {
-        @apply flex justify-center w-[78%] mx-auto my-0
+        @apply flex justify-center w-[80%] mx-auto my-0
     }
-        /* NAVBAR */
+    
+    /* NAVBAR */
+    .navbar-container {
+        @apply flex flex-row items-center justify-start h-[72.9vh] w-[13.5vw] 
+        mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
+    }
+
     .navbar-links {
         @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
         dark:hover:bg-[#3f3f3f] dark:text-[#C2C2C2] dark:bg-[#272727] 
@@ -45,11 +51,6 @@
     .active {
         @apply bg-[#0F0F0F] text-[#F1F1F1] hover:bg-[#0F0F0F] 
         dark:text-[#4E4E4E] dark:bg-[#F1F1F1] dark:hover:bg-[#F1F1F1]
-    }
-
-    .navbar-container {
-        @apply flex flex-row items-center justify-start h-[72.9vh] w-[13.5vw] 
-        mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 
     /* HOMEPAGE */
