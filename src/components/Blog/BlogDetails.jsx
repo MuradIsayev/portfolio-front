@@ -100,27 +100,6 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
                                 </ul>
                             );
 
-                        case "numbered_list_item":
-                            return (
-                                <ol className='md:text-xs' key={block.id} style={{ color: content.color, listStyleType: 'decimal', marginLeft: '20px' }} >
-                                    <li>
-                                        {content?.text.map((text, index) => (
-                                            <span
-                                                key={`${block.id}-text-${index}`}
-                                                style={{
-                                                    fontWeight: text.annotations?.bold ? 'bold' : 'normal',
-                                                    fontStyle: text.annotations?.italic ? 'italic' : 'normal',
-                                                    textDecoration: text.annotations?.underline ? 'underline' : 'none',
-                                                    color: text?.annotations?.color,
-                                                }}
-                                            >
-                                                {text.plain_text}
-                                            </span>
-                                        ))}
-                                    </li>
-                                </ol>
-                            );
-
                         case "image":
                             return (
                                 <img
