@@ -17,7 +17,7 @@ const Blog = () => {
     axios.get('http://localhost:3001/api/blogs').then(response => {
       setBlogData(response?.data);
     });
-  }, []);
+  }, [setBlogData]);
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/tags').then(response => {
@@ -73,12 +73,13 @@ const Blog = () => {
           <a href='#' className='text-sky-600 hover:text-sky-800 home-texts'>Exciting New Features In Javascript</a>
         </div>
         <p className='headers text-lg mt-7'>Tags</p>
-        <div className='flex flex-wrap flex-row gap-2 text-xs cursor-pointer'>
+        <div className='flex flex-wrap flex-row gap-2 text-xs'>
           {tags?.map(({ tag }, index) => {
             return (
               <BlogTags
                 key={index}
                 tag={tag}
+                setBlogData={setBlogData}
               />
             );
           })}
