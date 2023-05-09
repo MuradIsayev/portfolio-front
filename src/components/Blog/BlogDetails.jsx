@@ -19,15 +19,15 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
 
     return (
         <div>
-            <div className='flex flex-row justify-between w-[60%] items-center'
+            <div className='flex flex-row justify-start gap-24 items-center'
             >
                 <div onClick={handleGoBack} className='flex items-center gap-[6px] cursor-pointer text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
-                    <img src={goback} alt='goback' className='w-6' />
-                    <span className='text-[1rem] md:text-[.65rem] font-medium'>Back to blog</span>
+                    <img src={goback} alt='goback' className='w-5' />
+                    <span className='text-[.95rem] md:text-[.65rem] font-medium'>Back to blog</span>
                 </div>
                 <div className='flex flex-col items-center md:items-start mb-4'>
-                    <h3 className='text-[1.75rem] md:text-[1.33rem] font-medium'>{title}</h3>
-                    <div className='flex gap-1 md:gap-[3px] text-[.82rem] md:text-[.58rem] text-gray-400 dark:text-[#a7a4a4]'>
+                    <h3 className='text-[1.55rem] md:text-[1.3rem] font-medium'>{title}</h3>
+                    <div className='flex gap-1 md:gap-[3px] text-[.85rem] md:text-[.58rem] text-gray-400 dark:text-[#a7a4a4]'>
                         <span className='dark:hover:text-[#fff] hover:text-[#000] duration-100 
                     ease-linear'>{createdAt}</span>
                         <span>|</span>
@@ -98,27 +98,6 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
                                         ))}
                                     </li>
                                 </ul>
-                            );
-
-                        case "numbered_list_item":
-                            return (
-                                <ol className='md:text-xs' key={block.id} style={{ color: content.color, listStyleType: 'decimal', marginLeft: '20px' }} >
-                                    <li>
-                                        {content?.text.map((text, index) => (
-                                            <span
-                                                key={`${block.id}-text-${index}`}
-                                                style={{
-                                                    fontWeight: text.annotations?.bold ? 'bold' : 'normal',
-                                                    fontStyle: text.annotations?.italic ? 'italic' : 'normal',
-                                                    textDecoration: text.annotations?.underline ? 'underline' : 'none',
-                                                    color: text?.annotations?.color,
-                                                }}
-                                            >
-                                                {text.plain_text}
-                                            </span>
-                                        ))}
-                                    </li>
-                                </ol>
                             );
 
                         case "image":
