@@ -12,7 +12,7 @@ const Home = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.35,
+        staggerChildren: 0.25,
         delayChildren: .2,
       },
     },
@@ -23,9 +23,9 @@ const Home = () => {
     show: {
       opacity: 1, transition: {
         type: "tween",
-        staggerChildren: 0.45,
-        delayChildren: .4,
-        duration: ".8",
+        staggerChildren: 0.25,
+        delayChildren: .25,
+        duration: ".7",
       },
     },
   }
