@@ -9,7 +9,6 @@ const NavBar = () => {
   const isGuestBookPage = location.pathname.includes('/guestbook');
   const isAboutPage = location.pathname.includes('/about');
   const isHomePage = location.pathname.includes('/home');
-  const isResumePage = location.pathname.includes('/resume');
 
 
   const ThemeIcon = () => {
@@ -59,12 +58,6 @@ const NavBar = () => {
         className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
       >
         <span className="md:text-[.6rem]">GuestBook</span>
-      </Link>
-      <Link
-        to="/resume"
-        className={isResumePage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">Resume</span>
       </Link>
     </nav>
   );

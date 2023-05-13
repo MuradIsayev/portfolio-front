@@ -4,6 +4,7 @@ import BlogContent from './BlogContent';
 import axios from 'axios';
 import BlogDetails from './BlogDetails';
 import BlogTags from './BlogTags';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -12,6 +13,7 @@ const Blog = () => {
   const [selectedBlogCreatedAt, setSelectedBlogCreatedAt] = useState(null);
   const [selectedBlogMinsRead, setSelectedBlogMinsRead] = useState(null);
   const [tags, setTags] = useState([]);
+  const [randomPost, setRandomPost] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/blogs').then(response => {
@@ -25,7 +27,13 @@ const Blog = () => {
     });
   }, []);
 
-  const handleBlogSelection = (blogId, title, createdAt, minsRead, tags) => {
+  useEffect(() => {
+    axios.get('http://localhost:3001/api/blogs/random').then(response => {
+      setRandomPost(response?.data);
+    });
+  }, []);
+
+  const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
     setSelectedBlogId(blogId);
     setSelectedBlogTitle(title);
     setSelectedBlogCreatedAt(createdAt);
@@ -70,7 +78,7 @@ const Blog = () => {
       <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1'>
         <p className='headers text-lg'>Random Post</p>
         <div>
-          <a href='#' className='text-sky-600 hover:text-sky-800 home-texts'>Exciting New Features In Javascript</a>
+          <Link to='abcd' className='text-sky-600 hover:text-sky-800 home-texts'>{randomPost?.title}</Link>
         </div>
         <p className='headers text-lg mt-7'>Tags</p>
         <div className='flex flex-wrap flex-row gap-2 text-xs'>
