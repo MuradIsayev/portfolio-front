@@ -3,7 +3,6 @@ import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import GuestBook from './components/GuestBook/GuestBook';
 import { Routes, Route } from 'react-router-dom';
-import Resume from './components/Resume/Resume';
 
 
 const App = () => {
@@ -15,7 +14,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/guestbook" element={<GuestBook />} />
-          <Route path="/resume" element={<Resume />} />
           {/* <Route path="*" component={NotFoundPage} /> */}
         </Routes>
       </div>
