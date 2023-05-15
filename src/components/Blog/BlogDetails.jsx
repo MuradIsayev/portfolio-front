@@ -12,7 +12,7 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/api/blogs/${blogId}`).then(response => {
+        axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/${blogId}`).then(response => {
             setData(response?.data);
         });
     }, [blogId]);

@@ -16,19 +16,19 @@ const Blog = () => {
   const [randomPost, setRandomPost] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/blogs').then(response => {
+    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs`).then(response => {
       setBlogData(response?.data);
     });
   }, [setBlogData]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/tags').then(response => {
+    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/tags`).then(response => {
       setTags(response?.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/blogs/random').then(response => {
+    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/random`).then(response => {
       setRandomPost(response?.data);
     });
   }, []);
