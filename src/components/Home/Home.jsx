@@ -1,9 +1,9 @@
 import NavBar from '../NavBar/NavBar';
 import avatar from '../../assets/avatar.svg';
-import bluegithub from '../../assets/bluegithub.svg';
-import darkgithub from '../../assets/darkgithub.svg';
-import bluelinkedin from '../../assets/bluelinkedin.svg';
-import darklinkedin from '../../assets/darklinkedin.svg';
+import bluegithub from '../../assets/socials/bluegithub.svg';
+import darkgithub from '../../assets/socials/darkgithub.svg';
+import bluelinkedin from '../../assets/socials/bluelinkedin.svg';
+import darklinkedin from '../../assets/socials/darklinkedin.svg';
 import { motion } from 'framer-motion';
 
 const Home = () => {

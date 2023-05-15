@@ -1,6 +1,6 @@
-import bluegithub from '../../assets/bluegithub.svg';
-import darkgithub from '../../assets/darkgithub.svg';
-import google from '../../assets/google.svg';
+import bluegithub from '../../assets/socials/bluegithub.svg';
+import darkgithub from '../../assets/socials/darkgithub.svg';
+import google from '../../assets/socials/google.svg';
 
 
 

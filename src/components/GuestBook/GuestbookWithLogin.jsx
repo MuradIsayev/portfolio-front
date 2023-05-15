@@ -1,4 +1,4 @@
-import signout from '../../assets/signout.svg';
+import signout from '../../assets/signout/signout.svg';
 import { io } from "socket.io-client";
 import { z } from 'zod';
 import { useState } from 'react';

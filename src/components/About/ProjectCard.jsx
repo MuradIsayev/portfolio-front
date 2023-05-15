@@ -1,6 +1,6 @@
 import './About.css';
-import darkgithub from '../../assets/darkgithub.svg';
-import bluegithub from '../../assets/bluegithub.svg';
+import darkgithub from '../../assets/socials/darkgithub.svg';
+import bluegithub from '../../assets/socials/bluegithub.svg';
 import { motion } from 'framer-motion';
 
 const ProjectAbout = ({ name, description, url, skills, testValue }) => {
