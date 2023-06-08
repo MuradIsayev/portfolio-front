@@ -52,7 +52,7 @@ const Home = () => {
             src={avatar} alt="portfolio avatar" />
           </motion.div>
           <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
-            <a className="home-links" href="https://github.com/MuradIsayev">
+            <a className="home-links" href="https://github.com/MuradIsayev" target='_blank'>
               <img
                 className="h-[27px] md:h-[21px]"
                 src={bluegithub}
@@ -61,8 +61,9 @@ const Home = () => {
               <p className="md:text-[.65rem]">My Github</p>
             </a>
             <a
-              className="home-links"
-              href="https://www.linkedin.com/in/murad-isayev-7735671b5/"
+              target='_blank'
+              className="home-links "
+              href="https://www.linkedin.com/in/mi03/"
             >
               <img
                 className="h-[27px] md:h-[21px]"
