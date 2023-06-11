@@ -22,19 +22,16 @@
       overflow: hidden;
 
       &.download {
-        color: black;
-        background: #F1F1F1;
         z-index: 1;
         top: 0;
       }
 
       &.loadingSpinner {
-        background: #d1d1d1;
+
         display: flex;
         justify-content: center;
         align-items: center;
         gap:.7rem;
-        color: black;
         z-index: 2;
         top: -100%;
         position: relative;
@@ -50,8 +47,6 @@
       }
 
       &.done {
-        background: rgb(145, 145, 145);
-        color: black;
         z-index: 3;
         top: -100%;
       }

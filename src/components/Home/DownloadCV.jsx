@@ -38,14 +38,14 @@ const DownloadCV = () => {
             <div className="wrapper rounded-md" onClick={() => !isAnimating && animate()}>
                 <AnimatePresence>
                     <motion.div
-                        className="container download"
+                        className="container download bg-[#dfdede] dark:bg-[#F1F1F1]"
                         animate={uploadControls}
                         whileHover="hovered"
                     >
-                        <motion.div variants={iconVariants}><FaAngleDoubleDown className="icon" /></motion.div>
-                        <div>CV</div>
+                        <motion.div variants={iconVariants}><FaAngleDoubleDown className="icon text-sky-700 dark:text-black" /></motion.div>
+                        <div className='dark:text-black text-sky-600'>CV</div>
                     </motion.div>
-                    <motion.div className="container loadingSpinner" animate={loadingControls}>
+                    <motion.div className="container loadingSpinner dark:bg-[#d1d1d1] bg-sky-700 dark:text-black text-white" animate={loadingControls}>
                         <div role="status">
                             <svg aria-hidden="true" class="inline w-[1.2rem] h-[1.2rem] dark:text-[#d1d1d1] animate-spin dark:fill-black" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
@@ -56,7 +56,7 @@ const DownloadCV = () => {
                         <motion.div className="loading-bar" animate={loadingBarControls}>
                         </motion.div>
                     </motion.div>
-                    <motion.div className="container done" animate={doneControls}>
+                    <motion.div className="container done dark:bg-[#919191] dark:text-black bg-sky-700 text-white" animate={doneControls}>
                         <FaCheck className="icon" />
                         <div>DONE</div>
                     </motion.div>
