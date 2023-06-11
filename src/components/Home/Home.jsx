@@ -5,6 +5,7 @@ import darkgithub from '../../assets/socials/darkgithub.svg';
 import bluelinkedin from '../../assets/socials/bluelinkedin.svg';
 import darklinkedin from '../../assets/socials/darklinkedin.svg';
 import { motion } from 'framer-motion';
+import DownloadCV from './DownloadCV';
 
 const Home = () => {
   const container = {
@@ -46,6 +47,7 @@ const Home = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
           asperiores
         </motion.p>
+
         <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6
          md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4 md:mb-3">
           <motion.div variants={items}><img className="avatar-img"
@@ -79,6 +81,10 @@ const Home = () => {
           itaque asperiores vitae deleniti praesentium odio perferendis, fuga
           sapiente quidem sed delectus facere minima repudiandae?
         </motion.p>
+        
+        <motion.div variants={items}>
+        <DownloadCV />
+        </motion.div>
       </motion.div>
     </div>
   );
