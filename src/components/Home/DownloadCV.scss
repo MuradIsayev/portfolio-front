@@ -3,7 +3,7 @@
 
   .wrapper {
     position: relative;
-    height: 3.1rem;
+    height: 3.3rem;
     width: 8.8rem;
     overflow: hidden;
     cursor: pointer;
@@ -27,7 +27,6 @@
       }
 
       &.loadingSpinner {
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -39,11 +38,11 @@
 
       .loading-bar {
         position: absolute;
-        top: calc(100% - 3px);
+        top: calc(100% - 4px);
         left: 0;
         width: 0%;
-        height: 3px;
-        background: rgb(66, 66, 66);
+        height: 4px;
+        background: #082f49;
       }
 
       &.done {
