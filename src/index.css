@@ -80,6 +80,11 @@
         md:font-[11px] dark:hover:text-[#f2f2f2] hover:text-[#000000]
     }
 
+    .home-download-buttons {
+        @apply flex justify-center text-[.85rem] w-[100%] items-center rounded-md
+        h-[100%] gap-[.7rem] md:gap-[.5rem] absolute overflow-hidden font-medium
+    }
+
 
     /* GUESTBOOK */
     .login-with-github {
