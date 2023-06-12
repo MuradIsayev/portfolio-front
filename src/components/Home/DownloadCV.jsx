@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
-import './DownloadCV.scss';
 import { FaAngleDoubleDown, FaCheck } from 'react-icons/fa';
 
 
@@ -65,17 +64,15 @@ const DownloadCV = () => {
                              md:w-[5.8rem] overflow-hidden cursor-pointer relative" onClick={() => !isAnimating && animate()}>
                 <AnimatePresence>
                     <motion.div
-                        className="w-[100%] h-[100%] absolute gap-[.7rem] md:gap-[.5rem] text-[.85rem] md:text-[.75rem] overflow-hidden
-                                     font-medium flex justify-center items-center rounded-md top-0 z-[1] 
-                                     bg-[#dbdbdb] hover:bg-[#cfcfcf] dark:bg-[#F1F1F1] transition ease-linear duration-150"
+                        className="home-download-buttons md:text-[.75rem] top-0 z-[1] transition ease-linear duration-150
+                                     bg-[#dbdbdb] hover:bg-[#cfcfcf] dark:bg-[#F1F1F1] "
                         animate={uploadControls}
                         whileHover="hovered"
                     >
                         <motion.div variants={iconVariants}><FaAngleDoubleDown className="icon text-sky-700 dark:text-black" /></motion.div>
                         <div className='dark:text-black text-sky-600'>CV</div>
                     </motion.div>
-                    <motion.div className="w-[100%] flex justify-center text-[.85rem] md:text-[.7rem] font-medium overflow-hidden
-                                         items-center rounded-md h-[100%] gap-[.7rem] md:gap-[.5rem] absolute z-[2] top-[-100%] 
+                    <motion.div className="home-download-buttons md:text-[.7rem] z-[2] top-[-100%] 
                                          dark:bg-[#d1d1d1] bg-sky-700 dark:text-black"
                         animate={loadingControls}>
                         <div role="status">
@@ -88,8 +85,7 @@ const DownloadCV = () => {
                         <motion.div className="absolute left-0 top-[calc(100%-4px)] md:top-[calc(100%-3px)] bg-[#082f49] h-1 md:h-[3px] w-[0%] bottom-0" animate={loadingBarControls}>
                         </motion.div>
                     </motion.div>
-                    <motion.div className="w-[100%] flex justify-center text-[.85rem] md:text-[.7rem] font-medium overflow-hidden
-                                         items-center rounded-md gap-[.7rem] md:gap-[.5rem] h-[100%] absolute z-[3] top-[-100%] 
+                    <motion.div className="home-download-buttons md:text-[.7rem] z-[3] top-[-100%] 
                                          dark:bg-[#919191] dark:text-black bg-sky-900 text-white"
                         animate={doneControls}>
                         <FaCheck className="icon" />
