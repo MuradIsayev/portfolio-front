@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import './DownloadCV.scss';
 import { FaAngleDoubleDown, FaCheck } from 'react-icons/fa';
-import { BsCheckLg } from 'react-icons/bs';
 
 
 const iconVariants = {
@@ -20,17 +19,44 @@ const DownloadCV = () => {
     const loadingBarControls = useAnimation();
 
     const animate = async () => {
+
         setIsAnimating(true);
         uploadControls.start({ zIndex: 1 });
-        await loadingControls.start({ top: 0, transition: { duration: 0.3, } });
-        loadingBarControls.start({ width: '100%', transition: { duration: 1.3 } });
-        uploadControls.start({ top: '-100%', transition: { duration: 0 } });
-        await doneControls.start({ top: 0, transition: { delay: 1.45, duration: 0.3 } });
-        loadingControls.start({ top: '-100%', transition: { duration: 0 } });
-        loadingBarControls.start({ width: '0%' });
-        await uploadControls.start({ top: 0, zIndex: 4, transition: { delay: 1.3, duration: 0.3, } });
-        doneControls.start({ top: '-100%', transition: { duration: 0 } });
-        setIsAnimating(false);
+        await loadingControls.start({ top: 0, transition: { duration: 0.4 } });
+        loadingBarControls.start({ width: '100%', transition: { duration: 1.1 } });
+
+        // Make the download request
+        try {
+            const response = await fetch(
+                `${import.meta.env.VITE_APP_BACKEND_URL}/documents/my-cv/Murad_Isayev_CV.pdf`
+            );
+
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Murad_Isayev_CV.pdf';
+                a.click();
+
+                await doneControls.start({
+                    top: 0,
+                    transition: { delay: 1.25, duration: 0.4 },
+                });
+                // Reset animation after a delay
+                setTimeout(() => {
+                    setIsAnimating(false);
+                    uploadControls.start({ zIndex: 0 });
+                    loadingControls.start({ top: '-100%', transition: { duration: 0 } });
+                    loadingBarControls.start({ width: '0%', transition: { duration: 0 } });
+                    doneControls.start({ top: '-100%', transition: { duration: 0.4 } });
+                }, 1000); // Adjust the delay (in milliseconds) as needed
+            } else {
+                console.error('File download failed');
+            }
+        } catch (error) {
+            console.error('Error occurred during file download:', error);
+        }
     };
 
     return (
