@@ -6,8 +6,13 @@ import axios from 'axios';
 import JobTimeLine from './JobTimeLine';
 import './projects.scss';
 import { BsServer } from 'react-icons/bs';
+import { DiReact } from 'react-icons/di';
+
 
 const About = () => {
+  const darkColors = ['dark:bg-d-card-1', 'dark:bg-d-card-2', 'dark:bg-d-card-3', 'dark:bg-d-card-4', 'dark:bg-d-card-5', 'dark:bg-d-card-6', 'dark:bg-d-card-7'];
+  const colors = ['bg-l-card-1', 'bg-l-card-2', 'bg-l-card-3', 'bg-l-card-4', 'bg-l-card-5', 'bg-l-card-6', 'bg-l-card-7'];
+
   const [project, setProject] = useState([]);
   const [experience, setExperience] = useState([]);
 
@@ -21,7 +26,6 @@ const About = () => {
     });
   }, []);
 
-  let i = 0;
   return (
     <div className="main-container">
       <div className="navbar-container">
@@ -56,75 +60,22 @@ const About = () => {
             )}
           </ol>
         </div>
-
-        {/*
-        <div className="flex flex-row flex-wrap justify-start gap-y-[4%] gap-x-[2%] mt-8 w-[94%] h-[100%]
-        md:flex-col md:flex-nowrap md:justify-start md:w-auto md:gap-y-[2%]">
-          {project?.map(({ name, description, skills, url }) => {
+        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[82%] mb-5 ">
+          {project?.map(({ id, name, description, skills, url }, index) => {
+            const color = colors[index % colors.length];
+            const darkColor = darkColors[index % darkColors.length];
             return (
               <ProjectAbout
+                key={id}
                 name={name}
                 description={description}
                 skills={skills}
                 url={url}
-                testValue={i += 3}
+                color={color}
+                darkColor={darkColor}
               />
             );
           })}
-        </div> */}
-        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[82%] mb-5 ">
-          <div class="w-[44%] column">
-            <div class="card bg-dark-card-1">
-              <div class="txt">
-                <h1>BRANDING AND<br />
-                  CORPORATE DESIGN</h1>
-                <p>Visual communication and problem-solving</p>
-              </div>
-              <a href="#">more</a>
-              <div class="ico-card">
-                <i class="fa fa-rebel"></i>
-              </div>
-            </div>
-          </div>
-          <div class="w-[44%] column">
-            <div class="card bg-dark-card-2">
-              <div class="txt">
-                <h1>Web Front-End<br />
-                  SOLUTIONS</h1>
-                <p>How design is implemented on the web.</p>
-              </div>
-              <a href="#">more</a>
-              <div class="ico-card">
-                <i class="fa fa-codepen"><BsServer /></i>
-              </div>
-            </div>
-          </div>
-          <div class="w-[44%] column">
-            <div class="card bg-dark-card-3">
-              <div class="txt">
-                <h1>Web Front-End <br />
-                  SOLUTIONS</h1>
-                <p>How design is implemented on the web.</p>
-              </div>
-              <a href="#">more</a>
-              <div class="ico-card">
-                <i class="fa fa-codepen"></i>
-              </div>
-            </div>
-          </div>
-          <div class="w-[44%] column">
-            <div class="card bg-dark-card-4">
-              <div class="txt">
-                <h1>Web Front-End <br />
-                  SOLUTIONS</h1>
-                <p>How design is implemented on the web.</p>
-              </div>
-              <a href="#">more</a>
-              <div class="ico-card">
-                <i class="fa fa-codepen"></i>
-              </div>
-            </div>
-          </div>
         </div >
       </div >
     </div >
