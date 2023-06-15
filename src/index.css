@@ -19,6 +19,9 @@
     --dark-bc-2: linear-gradient(170deg, #091633 0%, #4d70a8 100%);
     --dark-bc-3: linear-gradient(170deg, #290a2e 0%, #9b468f 100%);
     --dark-bc-4: linear-gradient(170deg, #093637 0%, #3a8d7c 100%);
+    --dark-bc-5: linear-gradient(170deg, #2c3006 0%, #949641 100%);
+    --dark-bc-6: linear-gradient(170deg, #042504 0%, #348131 100%);
+    --dark-bc-7: linear-gradient(170deg, #351c08 0%, #8b6335 100%);
 }
 
 @layer base {
