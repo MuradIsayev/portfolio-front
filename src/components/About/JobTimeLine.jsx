@@ -20,3 +20,12 @@ const JobTimeLine = ({ position, description, startedAt, endedAt, company, workS
 }
 
 export default JobTimeLine;
+
+    //   initial={{
+    //     opacity: 0,
+    //     translateX: testValue % 2 === 0 ? -50 : 50,
+    //     translateY: -50,
+    //   }}
+    //   animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+    //   transition={{ duration: 0.2, delay: testValue * 0.1 }}
+    // >
