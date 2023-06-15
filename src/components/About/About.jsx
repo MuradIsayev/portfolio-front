@@ -72,9 +72,9 @@ const About = () => {
             );
           })}
         </div> */}
-        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[82%] mb-5">
+        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[82%] mb-5 ">
           <div class="w-[44%] column">
-            <div class="card gr-1">
+            <div class="card bg-dark-card-1">
               <div class="txt">
                 <h1>BRANDING AND<br />
                   CORPORATE DESIGN</h1>
@@ -87,7 +87,7 @@ const About = () => {
             </div>
           </div>
           <div class="w-[44%] column">
-            <div class="card gr-2">
+            <div class="card bg-dark-card-2">
               <div class="txt">
                 <h1>Web Front-End<br />
                   SOLUTIONS</h1>
@@ -100,7 +100,7 @@ const About = () => {
             </div>
           </div>
           <div class="w-[44%] column">
-            <div class="card gr-3">
+            <div class="card bg-dark-card-3">
               <div class="txt">
                 <h1>Web Front-End <br />
                   SOLUTIONS</h1>
@@ -113,7 +113,7 @@ const About = () => {
             </div>
           </div>
           <div class="w-[44%] column">
-            <div class="card gr-4">
+            <div class="card bg-dark-card-4">
               <div class="txt">
                 <h1>Web Front-End <br />
                   SOLUTIONS</h1>
