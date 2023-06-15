@@ -40,6 +40,7 @@ const Blog = () => {
     setSelectedBlogMinsRead(minsRead);
   };
 
+  let i = 0;
   return (
     <div className="main-container">
       <div className="navbar-container">
@@ -68,6 +69,7 @@ const Blog = () => {
                     tags={tags}
                     createdAt={createdAt}
                     handleClick={handleBlogSelection} // pass the blog id to the handler function
+                    testValue={i += 3}
                   />
                 );
               })}
