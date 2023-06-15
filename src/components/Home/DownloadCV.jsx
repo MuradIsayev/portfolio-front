@@ -60,7 +60,7 @@ const DownloadCV = () => {
 
     return (
         <div className="download-button grid mt-2 rounded-md">
-            <div className="wrapper rounded-md h-[3.3rem] w-[8.8rem] md:h-[2.5rem]
+            <div className="wrapper rounded-md h-[3.5rem] w-[9rem] md:h-[2.5rem]
                              md:w-[5.8rem] overflow-hidden cursor-pointer relative" onClick={() => !isAnimating && animate()}>
                 <AnimatePresence>
                     <motion.div
