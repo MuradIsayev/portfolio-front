@@ -10,7 +10,14 @@ export default {
     screens: {
       'md': { 'max': '768px' },
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "dark-card-1": "var(--dark-bc-1)",
+        "dark-card-2": "var(--dark-bc-2)",
+        "dark-card-3": "var(--dark-bc-3)",
+        "dark-card-4": "var(--dark-bc-4)",
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
