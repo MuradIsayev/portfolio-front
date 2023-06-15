@@ -12,6 +12,15 @@
     font-family: 'Inter', sans-serif;
 }
 
+.root,
+#root,
+#docs-root {
+    --dark-bc-1: linear-gradient(170deg, #330707 0%, #924640 100%);
+    --dark-bc-2: linear-gradient(170deg, #091633 0%, #4d70a8 100%);
+    --dark-bc-3: linear-gradient(170deg, #290a2e 0%, #9b468f 100%);
+    --dark-bc-4: linear-gradient(170deg, #093637 0%, #3a8d7c 100%);
+}
+
 @layer base {
     /* Hiding scrollbar */
     ::-webkit-scrollbar{
