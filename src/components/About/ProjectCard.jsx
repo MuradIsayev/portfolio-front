@@ -5,13 +5,13 @@ import bluegithub from '../../assets/socials/bluegithub.svg';
 const ProjectAbout = ({ name, description, url, skills, color, darkColor }) => {
 
   return (
-    <div class="w-[44%] column">
+    <div class="w-[42.5%] column">
       <div className={`card ${darkColor} ${color}`}>
         <div class="txt dark:text-white text-black">
-          <h1>{name}</h1>
-          <p>{description}</p>
+          <h1 className='project-name'>{name}</h1>
+          <p className='project-desc'>{description}</p>
         </div>
-        <a href={url} target='_blank'>more</a>
+        <a href={url} className='project-link' target='_blank'>more</a>
         <div class="ico-card">
           <i class="fa fa-rebel"></i>
         </div>
