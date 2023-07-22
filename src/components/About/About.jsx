@@ -60,7 +60,7 @@ const About = () => {
             )}
           </ol>
         </div>
-        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[82%] mb-5 ">
+        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
           {project?.map(({ id, name, description, skills, url }, index) => {
             const color = colors[index % colors.length];
             const darkColor = darkColors[index % darkColors.length];

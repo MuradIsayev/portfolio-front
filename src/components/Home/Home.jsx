@@ -48,7 +48,7 @@ const Home = () => {
           asperiores
         </motion.p>
 
-        <div className="flex flex-row items-center justify-start gap-7 mx-auto my-6
+        <div className="flex flex-row items-center justify-start gap-9 mx-auto my-6
          md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4 md:mb-3">
           <motion.div variants={items}><img className="avatar-img"
             src={avatar} alt="portfolio avatar" />
