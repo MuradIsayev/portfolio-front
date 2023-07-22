@@ -1,5 +1,4 @@
 
-// TODO: Fix text overflow
 const GuestBookContent = ({ data }) => {
 
   const allMessages = [];
