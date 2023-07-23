@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import goback from '../../assets/goback.svg';
+import goBack from '../../assets/goback.svg';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 
 const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) => {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     const handleGoBack = () => {
+        navigate('/blogs');
         setSelectedBlogId(null);
     };
 
@@ -22,7 +25,7 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
             <div className='flex flex-row justify-start gap-24 items-center'
             >
                 <div onClick={handleGoBack} className='flex items-center gap-[6px] cursor-pointer text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
-                    <img src={goback} alt='goback' className='w-5' />
+                    <img src={goBack} alt='Go back icon' className='w-5' />
                     <span className='text-[.95rem] md:text-[.65rem] font-medium'>Back to blog</span>
                 </div>
                 <div className='flex flex-col items-center md:items-start mb-4'>

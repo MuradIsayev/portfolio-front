@@ -10,7 +10,6 @@ const NavBar = () => {
   const isAboutPage = location.pathname.includes('/about');
   const isHomePage = location.pathname.includes('/home');
 
-
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const [isChecked, setIsChecked] = useState(darkTheme);
@@ -48,7 +47,7 @@ const NavBar = () => {
         <span className="md:text-[.6rem]">About</span>
       </Link>
       <Link
-        to="/blog"
+        to="/blogs"
         className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
       >
         <span className="md:text-[.6rem]">Blog</span>
