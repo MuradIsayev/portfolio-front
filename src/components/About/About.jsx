@@ -27,10 +27,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="main-container">
-      <div className="navbar-container">
-        <NavBar />
-      </div>
+    <>
       <div
         className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-auto"
       >
@@ -78,7 +75,7 @@ const About = () => {
           })}
         </div >
       </div >
-    </div >
+    </>
   );
 }
 

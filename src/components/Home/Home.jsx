@@ -32,10 +32,7 @@ const Home = () => {
   }
 
   return (
-    <div className="main-container ">
-      <div className="navbar-container">
-        <NavBar />
-      </div>
+    <>
       <motion.div variants={container}
         initial="hidden"
         animate="show"
@@ -81,12 +78,12 @@ const Home = () => {
           itaque asperiores vitae deleniti praesentium odio perferendis, fuga
           sapiente quidem sed delectus facere minima repudiandae?
         </motion.p>
-        
+
         <motion.div variants={items}>
-        <DownloadCV />
+          <DownloadCV />
         </motion.div>
       </motion.div>
-    </div>
+    </>
   );
 }
 

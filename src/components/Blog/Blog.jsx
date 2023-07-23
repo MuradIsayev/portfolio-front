@@ -4,7 +4,7 @@ import BlogContent from './BlogContent';
 import axios from 'axios';
 import BlogDetails from './BlogDetails';
 import BlogTags from './BlogTags';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -47,10 +47,7 @@ const Blog = () => {
 
   let i = 0;
   return (
-    <div className="main-container">
-      <div className="navbar-container">
-        <NavBar />
-      </div>
+    <>
       <div
         className="mt-[7.3rem] w-[63%] md:w-[100%] md:mt-20"
       >
@@ -67,6 +64,7 @@ const Blog = () => {
                 return (
                   <BlogContent
                     key={id}
+                    id={id}
                     title={title}
                     blockId={blockId}
                     description={description}
@@ -85,7 +83,7 @@ const Blog = () => {
       <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1'>
         <p className='headers text-lg'>Random Post</p>
         <div>
-          <Link to='abcd' className='text-sky-600 hover:text-sky-800 home-texts'>{randomPost?.title}</Link>
+          <Link to={`/blogs/${randomPost?.id}`} className='text-sky-600 hover:text-sky-800 home-texts'>{randomPost?.title}</Link>
         </div>
         <p className='headers text-lg mt-7'>Tags</p>
         <div className='flex flex-wrap flex-row gap-2 text-xs'>
@@ -100,7 +98,7 @@ const Blog = () => {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

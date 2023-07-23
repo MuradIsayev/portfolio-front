@@ -101,10 +101,7 @@ const GuestBook = () => {
   };
 
   return (
-    <div className="main-container">
-      <div className="navbar-container">
-        <NavBar />
-      </div>
+    <>
       <div
         className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
       >
@@ -114,7 +111,7 @@ const GuestBook = () => {
           {isSent ? <GuestBookContent data={data} /> : null}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
