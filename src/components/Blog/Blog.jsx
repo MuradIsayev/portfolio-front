@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import BlogContent from './BlogContent';
 import axios from 'axios';
@@ -40,6 +40,11 @@ const Blog = () => {
     setSelectedBlogMinsRead(minsRead);
   };
 
+  const numberOfBlogs = useMemo(() => {
+    return blogData?.length;
+  }, [blogData]);
+
+
   let i = 0;
   return (
     <div className="main-container">
@@ -55,7 +60,7 @@ const Blog = () => {
           <>
             <div className='flex flex-row justify-between w-[90%] md:w-[95%] items-center'>
               <h2 className='headers'>Blog</h2>
-              <span className='text-[.92rem] md:text-[.65rem] font-bold'>{blogData.length} articles</span>
+              <span className='text-[.92rem] md:text-[.65rem] font-bold'>{numberOfBlogs} articles</span>
             </div>
             <div>
               {blogData?.map(({ id, blockId, title, description, minsRead, createdAt, tags }) => {
