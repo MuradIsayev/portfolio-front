@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import NavBar from '../NavBar/NavBar';
 import BlogContent from './BlogContent';
 import axios from 'axios';
 import BlogDetails from './BlogDetails';
 import BlogTags from './BlogTags';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './test.scss';
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -83,7 +83,8 @@ const Blog = () => {
       <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1'>
         <p className='headers text-lg'>Random Post</p>
         <div>
-          <Link to={`/blogs/${randomPost?.id}`} className='text-sky-600 hover:text-sky-800 home-texts'>{randomPost?.title}</Link>
+          <Link to={`/blogs/${randomPost?.id}`} className='text-[#376ccf] opacity-75 hover:opacity-100 duration-75 ease-linear
+           dark:text-[#4673c5]  dark:opacity-80 dark:hover:opacity-100 home-texts brackets brackets2'>{randomPost?.title}</Link>
         </div>
         <p className='headers text-lg mt-7'>Tags</p>
         <div className='flex flex-wrap flex-row gap-2 text-xs'>
