@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import BlogContent from './components/Blog/BlogContent';
 import BlogDetails from './components/Blog/BlogDetails';
 import NavBar from './components/NavBar/NavBar';
+import NotFound from './components/NotFound';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
               <Route path=':id' element={<Blog />} />
             </Route>
             <Route path="guestbook" element={<GuestBook />} />
+            <Route path='*' element={<NotFound />}/>
             {/* <Route path="*" component={NotFoundPage} /> */}
           </Routes>
         </div>
