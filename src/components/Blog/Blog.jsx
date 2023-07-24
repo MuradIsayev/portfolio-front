@@ -15,21 +15,16 @@ const Blog = () => {
   const [tags, setTags] = useState([]);
   const [randomPost, setRandomPost] = useState(null);
 
-  useEffect(() => {
-    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs`).then(response => {
-      setBlogData(response?.data);
-    });
-  }, [setBlogData]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/tags`).then(response => {
-      setTags(response?.data);
-    });
-  }, []);
-
-  useEffect(() => {
-    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/random`).then(response => {
-      setRandomPost(response?.data);
+    Promise.all([
+      axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs`),
+      axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/tags`),
+      axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/random`),
+    ]).then(([blogsResponse, tagsResponse, randomPostResponse]) => {
+      setBlogData(blogsResponse?.data);
+      setTags(tagsResponse?.data);
+      setRandomPost(randomPostResponse?.data);
     });
   }, []);
 
