@@ -17,11 +17,12 @@ const App = () => {
             <NavBar />
           </div>
           <Routes>
+          <Route path="/" exact element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="blogs">
               <Route index element={<Blog />} />
-              <Route path=':id' element={<BlogDetails />} />
+              <Route path=':id' element={<Blog />} />
             </Route>
             <Route path="guestbook" element={<GuestBook />} />
             {/* <Route path="*" component={NotFoundPage} /> */}
