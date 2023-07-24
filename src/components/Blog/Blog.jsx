@@ -44,7 +44,7 @@ const Blog = () => {
   return (
     <>
       <div
-        className="mt-[7.3rem] w-[63%] md:w-[100%] md:mt-20"
+        className="mt-[7.3rem] w-[63%] md:w-[100%] md:mt-20 bg-gray-800"
       >
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
           <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
@@ -75,23 +75,27 @@ const Blog = () => {
           </>
         )}
       </div>
-      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1'>
-        <p className='headers text-lg'>Random Post</p>
+      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1 bg-red-300 md:flex-row md:justify-evenly md:w-full'>
         <div>
-          <Link to={`/blogs/${randomPost?.id}`} className='text-[#376ccf] opacity-75 hover:opacity-100 duration-75 ease-linear
+          <p className='headers text-lg'>Random Post</p>
+          <div>
+            <Link to={`/blogs/${randomPost?.id}`} className='text-[#376ccf] opacity-75 hover:opacity-100 duration-75 ease-linear
            dark:text-[#4673c5]  dark:opacity-80 dark:hover:opacity-100 home-texts brackets brackets2'>{randomPost?.title}</Link>
+          </div>
         </div>
-        <p className='headers text-lg mt-7'>Tags</p>
-        <div className='flex flex-wrap flex-row gap-2 text-xs'>
-          {tags?.map(({ tag }, index) => {
-            return (
-              <BlogTags
-                key={index}
-                tag={tag}
-                setBlogData={setBlogData}
-              />
-            );
-          })}
+        <div className=''>
+          <p className='headers text-lg mt-7 md:mt-0'>Tags</p>
+          <div className='flex flex-wrap flex-row gap-2 text-xs md:gap-1 md:flex-col md:flex-nowrap'>
+            {tags?.map(({ tag }, index) => {
+              return (
+                <BlogTags
+                  key={index}
+                  tag={tag}
+                  setBlogData={setBlogData}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

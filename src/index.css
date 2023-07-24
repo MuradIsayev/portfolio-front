@@ -51,7 +51,7 @@
 
 @layer components {
     .main-container {
-        @apply flex justify-center w-[80%] mx-auto my-0
+        @apply flex justify-center w-[80%] mx-auto my-0 bg-red-900
     }
     
     /* NAVBAR */

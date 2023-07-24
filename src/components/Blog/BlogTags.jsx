@@ -17,7 +17,7 @@ const BlogTags = ({ tag, setBlogData }) => {
         <div>
             <div
                 onClick={() => handleTagClick(tag, setBlogData)}
-                className="brackets  text-[#d31a1a] opacity-75 hover:opacity-100 duration-75 ease-linear
+                className="brackets text-[#d31a1a] opacity-75 hover:opacity-100 duration-75 ease-linear
                          dark:text-[#be6060]"
             >
                 {tag}
