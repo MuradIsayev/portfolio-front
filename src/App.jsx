@@ -7,11 +7,13 @@ import BlogContent from './components/Blog/BlogContent';
 import BlogDetails from './components/Blog/BlogDetails';
 import NavBar from './components/NavBar/NavBar';
 import NotFound from './components/NotFound';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
 const App = () => {
+  const queryClient = new QueryClient();
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <div className='h-screen bg-white dark:bg-black dark:text-white overflow-hidden overflow-y-scroll'>
         <div className="main-container ">
           <div className="navbar-container">
@@ -27,11 +29,10 @@ const App = () => {
             </Route>
             <Route path="guestbook" element={<GuestBook />} />
             <Route path='*' element={<NotFound />}/>
-            {/* <Route path="*" component={NotFoundPage} /> */}
           </Routes>
         </div>
       </div>
-    </>
+    </QueryClientProvider>
   );
 }
 
