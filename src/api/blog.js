@@ -20,3 +20,10 @@ export const fetchBlogs = async () => {
 
     return blogs;
 }
+
+export const fetchBlogById = async (id) => {
+    const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/${id}`);
+    const blog = await response.data;
+
+    return blog;
+}
