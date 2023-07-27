@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import goBack from '../../assets/goback.svg';
 import { useNavigate } from 'react-router-dom';
 import { fetchBlogById } from '../../api/blog';
