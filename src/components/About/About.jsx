@@ -1,13 +1,10 @@
-import NavBar from '../NavBar/NavBar';
 import ProjectAbout from './ProjectCard';
 import './About.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import JobTimeLine from './JobTimeLine';
 import './projects.scss';
 import { BsServer } from 'react-icons/bs';
 import { DiReact } from 'react-icons/di';
-import { useQueries, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences, fetchProjects } from '../../api/about';
 
 
