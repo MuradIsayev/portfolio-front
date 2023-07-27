@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import goBack from '../../assets/goback.svg';
 import { useNavigate } from 'react-router-dom';
+import { fetchBlogById } from '../../api/blog';
+import { useQuery } from '@tanstack/react-query';
 
 
 const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) => {
@@ -13,12 +15,11 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
         setSelectedBlogId(null);
     };
 
+    const { data: blog } = useQuery({ queryKey: ['blog'], queryFn: () => fetchBlogById(blogId) });
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/${blogId}`).then(response => {
-            setData(response?.data);
-        });
-    }, [blogId]);
+        if (blog) setData(blog);
+    }, [blog]);
 
     return (
         <div>
