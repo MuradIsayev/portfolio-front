@@ -1,32 +1,27 @@
 import { useEffect, useMemo, useState } from 'react';
 import BlogContent from './BlogContent';
-import axios from 'axios';
 import BlogDetails from './BlogDetails';
 import BlogTags from './BlogTags';
 import { Link } from 'react-router-dom';
 import './test.scss';
+import { fetchBlogs, fetchRandomPost, fetchTags } from '../../api/blog';
+import { useQuery } from '@tanstack/react-query';
 
 const Blog = () => {
-  const [blogData, setBlogData] = useState([]);
+  const [blogData, setBlogData] = useState([]); // initialize the blog data to an empty array
   const [selectedBlogId, setSelectedBlogId] = useState(null); // initialize the selected blog id to null
   const [selectedBlogTitle, setSelectedBlogTitle] = useState(null);
   const [selectedBlogCreatedAt, setSelectedBlogCreatedAt] = useState(null);
   const [selectedBlogMinsRead, setSelectedBlogMinsRead] = useState(null);
-  const [tags, setTags] = useState([]);
-  const [randomPost, setRandomPost] = useState(null);
 
+  const { data: blogs } = useQuery({ queryKey: ['blogs'], queryFn: fetchBlogs })
+  const { data: tags } = useQuery({ queryKey: ['tags'], queryFn: fetchTags }, { staleTime: 3000 })
+  const { data: randomPost } = useQuery({ queryKey: ['randomPost'], queryFn: fetchRandomPost }, { staleTime: 60000 })
 
   useEffect(() => {
-    Promise.all([
-      axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs`),
-      axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/tags`),
-      axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/random`),
-    ]).then(([blogsResponse, tagsResponse, randomPostResponse]) => {
-      setBlogData(blogsResponse?.data);
-      setTags(tagsResponse?.data);
-      setRandomPost(randomPostResponse?.data);
-    });
-  }, []);
+    if (blogs) setBlogData(blogs)
+  }, [blogs])
+
 
   const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
     setSelectedBlogId(blogId);
@@ -44,7 +39,7 @@ const Blog = () => {
   return (
     <>
       <div
-        className="mt-[7.3rem] w-[63%] md:w-[100%] md:mt-20 bg-gray-800"
+        className="mt-[7.3rem] w-[63%] md:w-[100%] md:mt-20"
       >
         {selectedBlogId ? ( // conditionally render the BlogDetails component if a blog is selected
           <BlogDetails blogId={selectedBlogId} setSelectedBlogId={setSelectedBlogId} title={selectedBlogTitle} minsRead={selectedBlogMinsRead} createdAt={selectedBlogCreatedAt} />
