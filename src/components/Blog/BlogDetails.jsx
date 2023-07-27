@@ -7,7 +7,6 @@ import { useQuery } from '@tanstack/react-query';
 
 
 const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) => {
-    const [data, setData] = useState([]);
     const navigate = useNavigate();
 
     const handleGoBack = () => {
@@ -16,10 +15,6 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
     };
 
     const { data: blog } = useQuery({ queryKey: ['blog'], queryFn: () => fetchBlogById(blogId) });
-
-    useEffect(() => {
-        if (blog) setData(blog);
-    }, [blog]);
 
     return (
         <div>
@@ -41,7 +36,7 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
                 </div>
             </div>
             {<div>
-                {data?.map((block) => {
+                {blog?.map((block) => {
                     const { type, [type]: content } = block;
 
                     switch (type) {
