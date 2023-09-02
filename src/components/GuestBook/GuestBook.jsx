@@ -76,8 +76,6 @@ const GuestBook = () => {
       const user = auth?.currentUser;
 
       if (user) {
-        const accessToken = await user.getIdToken(); // Get the access token
-
         console.log(`${user?.displayName} signed in with GitHub`);
         socket.emit('initiate', {
           userName: user?.displayName ? user?.displayName : username,
@@ -99,8 +97,6 @@ const GuestBook = () => {
       const user = auth?.currentUser;
 
       if (user) {
-        const accessToken = await user.getIdToken(); // Get the access token
-
         console.log(`${user?.displayName} signed in with Google`);
         socket.emit('initiate', {
           userName: user?.displayName ? user?.displayName : username,
