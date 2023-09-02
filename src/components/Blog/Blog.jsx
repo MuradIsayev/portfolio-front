@@ -70,7 +70,7 @@ const Blog = () => {
           </>
         )}
       </div>
-      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1 bg-red-300 md:flex-row md:justify-evenly md:w-full'>
+      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1 md:flex-row md:justify-evenly md:w-full'>
         <div>
           <p className='headers text-lg'>Random Post</p>
           <div>

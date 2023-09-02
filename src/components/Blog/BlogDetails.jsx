@@ -12,17 +12,17 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
         setSelectedBlogId(null);
     };
 
-    const { data: blog } = useQuery({ queryKey: ['blog'], queryFn: () => fetchBlogById(blogId) });
+    const { data: blog } = useQuery({ queryKey: ['blog', blogId], queryFn: () => fetchBlogById(blogId) });
 
     return (
         <div>
-            <div className='flex flex-row justify-start gap-24 items-center'
+            <div className='flex flex-row items-center justify-start gap-24'
             >
                 <div onClick={handleGoBack} className='flex items-center gap-[6px] cursor-pointer text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
                     <img src={goBack} alt='Go back icon' className='w-5' />
                     <span className='text-[.95rem] md:text-[.65rem] font-medium'>Back to blog</span>
                 </div>
-                <div className='flex flex-col items-center md:items-start mb-4'>
+                <div className='flex flex-col items-center mb-4 md:items-start'>
                     <h3 className='text-[1.55rem] md:text-[1.3rem] font-medium'>{title}</h3>
                     <div className='flex gap-1 md:gap-[3px] text-[.85rem] md:text-[.58rem] text-gray-400 dark:text-[#a7a4a4]'>
                         <span className='dark:hover:text-[#fff] hover:text-[#000] duration-100 
