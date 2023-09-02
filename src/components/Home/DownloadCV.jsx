@@ -27,7 +27,7 @@ const DownloadCV = () => {
         // Make the download request
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_APP_BACKEND_URL}/documents/my-cv/Murad_Isayev_CV.pdf`
+                `${import.meta.env.VITE_APP_BACKEND_URL}/documents/my-cv/Murad_Isayev_CV-f33b.pdf`
             );
 
             if (response.ok) {
