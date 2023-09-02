@@ -79,8 +79,8 @@
 
     .avatar-img {
         --f: 1.25;
-        @apply h-[90px] md:h-[55px] cursor-pointer transform 
-        scale-[var(--f)] transition duration-500 ease-in-out;
+        @apply h-[130px] w-[130px] md:h-[85px] md:w-[85px] cursor-pointer transform object-contain
+        rounded-full
       }
       
       .avatar-img:hover {
@@ -93,7 +93,7 @@
     }
     
     .home-links {
-        @apply flex flex-row items-center gap-2 text-[13px] font-[500]
+        @apply flex flex-row items-center gap-2 text-[.85rem] font-[500]
         text-[#a0a0a0] no-underline transition duration-150 ease-linear
         opacity-[.8] hover:opacity-100 dark:opacity-[.75] dark:hover:opacity-100
         md:font-[11px] dark:hover:text-[#f2f2f2] hover:text-[#000000]
