@@ -1,4 +1,4 @@
-import signout from '../../assets/signout/signout.svg';
+import { signOut } from '../../assets';
 import { io } from "socket.io-client";
 import { z } from 'zod';
 import { useState } from 'react';
@@ -73,7 +73,7 @@ const GuestBookWithLogin = ({ signOut, currentUser, setIsSent, message, setMessa
                       hover:opacity-100 mb-6 w-[10%] md:w-[20%]">
         <img
           className="md:w-3 w-[18px]"
-          src={signout}
+          src={signOut}
           alt="signout icon"
         />
         <button className="text-[#3f3f3f] dark:text-[#c2c2c2] 

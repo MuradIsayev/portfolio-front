@@ -1,4 +1,4 @@
-import goBack from '../../assets/goback.svg';
+import { goBack } from '../../assets';
 import { useNavigate } from 'react-router-dom';
 import { fetchBlogById } from '../../api/blog';
 import { useQuery } from '@tanstack/react-query';

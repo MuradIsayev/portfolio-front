@@ -1,8 +1,5 @@
-import bluegithub from '../../assets/socials/bluegithub.svg';
-import darkgithub from '../../assets/socials/darkgithub.svg';
-import google from '../../assets/socials/google.svg';
-
-
+import { github } from '../../assets';
+import { google } from '../../assets';
 
 
 const GuestBookWithoutLogin = ({ signInWithGitHub, signInWithGoogle }) => {
@@ -13,7 +10,7 @@ const GuestBookWithoutLogin = ({ signInWithGitHub, signInWithGoogle }) => {
         <button className="login-with-github">
           <img
             className="w-[21px] md:w-[14px] md:h-[14px]"
-            src={bluegithub}
+            src={github}
             alt="github logo"
           />
           <span className="text-[.83rem] font-[500] md:text-[.5rem]" onClick={signInWithGitHub}>Sign in with GitHub</span>

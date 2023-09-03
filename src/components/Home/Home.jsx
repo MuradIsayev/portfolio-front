@@ -1,9 +1,7 @@
 import NavBar from '../NavBar/NavBar';
-import my_avatar from '../../assets/myavatar.jpg';
-import bluegithub from '../../assets/socials/bluegithub.svg';
-import darkgithub from '../../assets/socials/darkgithub.svg';
-import bluelinkedin from '../../assets/socials/bluelinkedin.svg';
-import darklinkedin from '../../assets/socials/darklinkedin.svg';
+import { myAvatar } from '../../assets';
+import { github } from '../../assets';
+import { linkedin } from '../../assets';
 import { motion } from 'framer-motion';
 import DownloadCV from './DownloadCV';
 
@@ -47,13 +45,13 @@ const Home = () => {
 
         <div className="flex flex-row items-center justify-start gap-8 mx-auto my-5 md:gap-5 md:mx-auto md:my-4">
           <motion.div variants={items}><img className="avatar-img"
-            src={my_avatar} alt="portfolio avatar" />
+            src={myAvatar} alt="portfolio avatar" />
           </motion.div>
           <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
             <a className="home-links" href="https://github.com/MuradIsayev" target='_blank'>
               <img
                 className="h-[28px] md:h-[21px]"
-                src={bluegithub}
+                src={github}
                 alt="github logo"
               />
               <p className="md:text-[.65rem]">My Github</p>
@@ -65,7 +63,7 @@ const Home = () => {
             >
               <img
                 className="h-[28px] md:h-[21px]"
-                src={bluelinkedin}
+                src={linkedin}
                 alt="linkedin logo"
               />
               <p className="md:text-[.65rem]">My LinkedIn</p>

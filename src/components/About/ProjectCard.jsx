@@ -1,6 +1,4 @@
 import './About.css';
-import darkgithub from '../../assets/socials/darkgithub.svg';
-import bluegithub from '../../assets/socials/bluegithub.svg';
 
 const ProjectAbout = ({ name, description, url, skills, color, darkColor }) => {
 
