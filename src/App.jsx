@@ -3,8 +3,6 @@ import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import GuestBook from './components/GuestBook/GuestBook';
 import { Routes, Route } from 'react-router-dom';
-import BlogContent from './components/Blog/BlogContent';
-import BlogDetails from './components/Blog/BlogDetails';
 import NavBar from './components/NavBar/NavBar';
 import NotFound from './components/NotFound';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
