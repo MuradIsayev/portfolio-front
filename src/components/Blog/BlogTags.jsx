@@ -1,4 +1,5 @@
 import axios from "axios";
+import './test.scss'
 
 const handleTagClick = async (tag, setBlogData) => {
     await axios
@@ -16,7 +17,8 @@ const BlogTags = ({ tag, setBlogData }) => {
         <div>
             <div
                 onClick={() => handleTagClick(tag, setBlogData)}
-                className="badge badge-outline border-gray-300 p-3 hover:bg-[#ebebeb] cursor-pointer"
+                className="brackets text-[#d31a1a] opacity-75 hover:opacity-100 duration-75 ease-linear
+                         dark:text-[#be6060]"
             >
                 {tag}
             </div>

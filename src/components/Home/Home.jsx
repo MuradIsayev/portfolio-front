@@ -1,5 +1,5 @@
 import NavBar from '../NavBar/NavBar';
-import avatar from '../../assets/avatar.svg';
+import my_avatar from '../../assets/myavatar.jpg';
 import bluegithub from '../../assets/socials/bluegithub.svg';
 import darkgithub from '../../assets/socials/darkgithub.svg';
 import bluelinkedin from '../../assets/socials/bluelinkedin.svg';
@@ -45,15 +45,14 @@ const Home = () => {
           asperiores
         </motion.p>
 
-        <div className="flex flex-row items-center justify-start gap-9 mx-auto my-6
-         md:flex-col md:items-start md:justify-start md:gap-4 md:mx-auto md:my-4 md:mb-3">
+        <div className="flex flex-row items-center justify-start gap-8 mx-auto my-5 md:gap-5 md:mx-auto md:my-4">
           <motion.div variants={items}><img className="avatar-img"
-            src={avatar} alt="portfolio avatar" />
+            src={my_avatar} alt="portfolio avatar" />
           </motion.div>
           <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
             <a className="home-links" href="https://github.com/MuradIsayev" target='_blank'>
               <img
-                className="h-[27px] md:h-[21px]"
+                className="h-[28px] md:h-[21px]"
                 src={bluegithub}
                 alt="github logo"
               />
@@ -65,7 +64,7 @@ const Home = () => {
               href="https://www.linkedin.com/in/mi03/"
             >
               <img
-                className="h-[27px] md:h-[21px]"
+                className="h-[28px] md:h-[21px]"
                 src={bluelinkedin}
                 alt="linkedin logo"
               />

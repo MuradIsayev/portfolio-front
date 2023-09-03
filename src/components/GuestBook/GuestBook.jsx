@@ -10,7 +10,7 @@ import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:3001");
+const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APP_FIREBASE_KEY,
@@ -69,29 +69,46 @@ const GuestBook = () => {
     });
   }, [isSent, isSignedOut]);
 
-  const signInWithGitHub = () => {
+  const signInWithGitHub = async () => {
     const provider = new firebase.auth.GithubAuthProvider();
-    auth.signInWithPopup(provider).then(() => {
-      console.log(`${auth?.currentUser?.email} signed in with GitHub`);
-      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, });
-      setIsSignedOut(false);
-    })
-      .catch(error => {
-        console.log(error);
-      });
+    try {
+      await auth.signInWithPopup(provider);
+      const user = auth?.currentUser;
+
+      if (user) {
+        console.log(`${user?.displayName} signed in with GitHub`);
+        socket.emit('initiate', {
+          userName: user?.displayName ? user?.displayName : username,
+          photoURL: user?.photoURL,
+          uuid: user?.uid,
+        });
+        setIsSignedOut(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const signInWithGoogle = () => {
+
+  const signInWithGoogle = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).then(() => {
-      console.log(`${auth?.currentUser?.email} signed in with Google`);
-      socket.emit('initiate', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
-      setIsSignedOut(false);
-    })
-      .catch(error => {
-        console.log(error);
-      });
-  }; ``
+    try {
+      await auth.signInWithPopup(provider);
+      const user = auth?.currentUser;
+
+      if (user) {
+        console.log(`${user?.displayName} signed in with Google`);
+        socket.emit('initiate', {
+          userName: user?.displayName ? user?.displayName : username,
+          photoURL: user?.photoURL,
+          uuid: user?.uid,
+        });
+        setIsSignedOut(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 
   const handleSignOut = async () => {

@@ -1,37 +1,27 @@
 import { useEffect, useMemo, useState } from 'react';
-import NavBar from '../NavBar/NavBar';
 import BlogContent from './BlogContent';
-import axios from 'axios';
 import BlogDetails from './BlogDetails';
 import BlogTags from './BlogTags';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './test.scss';
+import { fetchBlogs, fetchRandomPost, fetchTags } from '../../api/blog';
+import { useQuery } from '@tanstack/react-query';
 
 const Blog = () => {
-  const [blogData, setBlogData] = useState([]);
+  const [blogData, setBlogData] = useState([]); // initialize the blog data to an empty array
   const [selectedBlogId, setSelectedBlogId] = useState(null); // initialize the selected blog id to null
   const [selectedBlogTitle, setSelectedBlogTitle] = useState(null);
   const [selectedBlogCreatedAt, setSelectedBlogCreatedAt] = useState(null);
   const [selectedBlogMinsRead, setSelectedBlogMinsRead] = useState(null);
-  const [tags, setTags] = useState([]);
-  const [randomPost, setRandomPost] = useState(null);
+
+  const { data: blogs } = useQuery({ queryKey: ['blogs'], queryFn: fetchBlogs })
+  const { data: tags } = useQuery({ queryKey: ['tags'], queryFn: fetchTags }, { staleTime: 3000 })
+  const { data: randomPost } = useQuery({ queryKey: ['randomPost'], queryFn: fetchRandomPost }, { staleTime: 60000 })
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs`).then(response => {
-      setBlogData(response?.data);
-    });
-  }, [setBlogData]);
+    if (blogs) setBlogData(blogs)
+  }, [blogs])
 
-  useEffect(() => {
-    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/tags`).then(response => {
-      setTags(response?.data);
-    });
-  }, []);
-
-  useEffect(() => {
-    axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/random`).then(response => {
-      setRandomPost(response?.data);
-    });
-  }, []);
 
   const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
     setSelectedBlogId(blogId);
@@ -80,22 +70,27 @@ const Blog = () => {
           </>
         )}
       </div>
-      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1'>
-        <p className='headers text-lg'>Random Post</p>
+      <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1 md:flex-row md:justify-evenly md:w-full'>
         <div>
-          <Link to={`/blogs/${randomPost?.id}`} className='text-sky-600 hover:text-sky-800 home-texts'>{randomPost?.title}</Link>
+          <p className='headers text-lg'>Random Post</p>
+          <div>
+            <Link to={`/blogs/${randomPost?.id}`} className='text-[#376ccf] opacity-75 hover:opacity-100 duration-75 ease-linear
+           dark:text-[#4673c5]  dark:opacity-80 dark:hover:opacity-100 home-texts brackets brackets2'>{randomPost?.title}</Link>
+          </div>
         </div>
-        <p className='headers text-lg mt-7'>Tags</p>
-        <div className='flex flex-wrap flex-row gap-2 text-xs'>
-          {tags?.map(({ tag }, index) => {
-            return (
-              <BlogTags
-                key={index}
-                tag={tag}
-                setBlogData={setBlogData}
-              />
-            );
-          })}
+        <div className=''>
+          <p className='headers text-lg mt-7 md:mt-0'>Tags</p>
+          <div className='flex flex-wrap flex-row gap-2 text-xs md:gap-1 md:flex-col md:flex-nowrap'>
+            {tags?.map(({ tag }, index) => {
+              return (
+                <BlogTags
+                  key={index}
+                  tag={tag}
+                  setBlogData={setBlogData}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

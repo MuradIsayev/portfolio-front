@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import goBack from '../../assets/goback.svg';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { fetchBlogById } from '../../api/blog';
+import { useQuery } from '@tanstack/react-query';
 
 
 const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) => {
-    const [data, setData] = useState([]);
     const navigate = useNavigate();
 
     const handleGoBack = () => {
@@ -13,22 +12,17 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
         setSelectedBlogId(null);
     };
 
-
-    useEffect(() => {
-        axios.get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/${blogId}`).then(response => {
-            setData(response?.data);
-        });
-    }, [blogId]);
+    const { data: blog } = useQuery({ queryKey: ['blog', blogId], queryFn: () => fetchBlogById(blogId) });
 
     return (
         <div>
-            <div className='flex flex-row justify-start gap-24 items-center'
+            <div className='flex flex-row items-center justify-start gap-24'
             >
                 <div onClick={handleGoBack} className='flex items-center gap-[6px] cursor-pointer text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
                     <img src={goBack} alt='Go back icon' className='w-5' />
                     <span className='text-[.95rem] md:text-[.65rem] font-medium'>Back to blog</span>
                 </div>
-                <div className='flex flex-col items-center md:items-start mb-4'>
+                <div className='flex flex-col items-center mb-4 md:items-start'>
                     <h3 className='text-[1.55rem] md:text-[1.3rem] font-medium'>{title}</h3>
                     <div className='flex gap-1 md:gap-[3px] text-[.85rem] md:text-[.58rem] text-gray-400 dark:text-[#a7a4a4]'>
                         <span className='dark:hover:text-[#fff] hover:text-[#000] duration-100 
@@ -40,7 +34,7 @@ const BlogDetails = ({ blogId, title, minsRead, createdAt, setSelectedBlogId }) 
                 </div>
             </div>
             {<div>
-                {data?.map((block) => {
+                {blog?.map((block) => {
                     const { type, [type]: content } = block;
 
                     switch (type) {
