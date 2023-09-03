@@ -1,14 +1,24 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 import { useState } from 'react';
+import { navLinks } from '../constants';
 
+
+const NavLink = ({ name, handleClick, isActive }) => {
+  return (
+    <div
+      className={`cursor-pointer ${isActive && isActive === name ? 'navbar-links active' : 'navbar-links'}`}
+      onClick={handleClick}
+    >
+      <span className="md:text-[.6rem]">{name}</span>
+    </div>
+  )
+}
 
 const NavBar = () => {
-  const location = useLocation();
-  const isBlogPage = location.pathname.includes('/blog');
-  const isGuestBookPage = location.pathname.includes('/guestbook');
-  const isAboutPage = location.pathname.includes('/about');
-  const isHomePage = location.pathname === '/home' || location.pathname === '/'; // Check for '/home' or the default route
+  const navigate = useNavigate();
+
+  const [isActive, setIsActive] = useState('Home');
 
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
@@ -34,30 +44,12 @@ const NavBar = () => {
     >
       <ThemeIcon />
 
-      <Link
-        to="/home"
-        className={isHomePage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">Home</span>
-      </Link>
-      <Link
-        to="/about"
-        className={isAboutPage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">About</span>
-      </Link>
-      <Link
-        to="/blogs"
-        className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">Blog</span>
-      </Link>
-      <Link
-        to="/guestbook"
-        className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">GuestBook</span>
-      </Link>
+      {navLinks.map((link) => (
+        <NavLink key={link.name} isActive={isActive} {...link} handleClick={() => {
+          setIsActive(link.name);
+          navigate(link.link);
+        }} />
+      ))}
     </nav>
   );
 }
