@@ -11,6 +11,9 @@ export default {
       'md': { 'max': '768px' },
     },
     extend: {
+      fontFamily: {
+        secondary: "GapSansBold",
+      },
       backgroundImage: {
         "d-card-1": "var(--d-card-bg-1)",
         "d-card-2": "var(--d-card-bg-2)",
