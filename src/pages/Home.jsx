@@ -43,7 +43,7 @@ const Home = () => {
         </motion.p>
 
         <div className="flex flex-row items-center justify-start gap-8 mx-auto my-5 md:gap-5 md:mx-auto md:my-4">
-          <motion.div variants={items}><img className="avatar-img"
+          <motion.div variants={items}><img className="avatar-img dark:opacity-90 dark:hover:opacity-100 transition duration-150 ease-linear dark:grayscale"
             src={myAvatar} alt="portfolio avatar" />
           </motion.div>
           <motion.div variants={items} className="flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
