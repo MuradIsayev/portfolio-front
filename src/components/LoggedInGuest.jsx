@@ -57,7 +57,7 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
               transition={
                 { duration: .2 }
               }
-              className="text-red-500 text-[.8rem] mt-1 font-[300] md:text-[.53rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
+              className="text-red-500 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
           <div>
             <button type='submit' className="send-button h-9 w-[68px] normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
