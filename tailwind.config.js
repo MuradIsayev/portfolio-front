@@ -12,6 +12,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        primary: "LibreBaskerville-Regular",
         secondary: "GapSansBold",
       },
       backgroundImage: {
