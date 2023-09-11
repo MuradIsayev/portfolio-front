@@ -2,7 +2,7 @@ import { io } from "socket.io-client";
 import { z } from 'zod';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-  
+
 const socket = io("http://localhost:3001");
 const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage }) => {
   const [errorMessage, setErrorMessage] = useState('');
@@ -65,12 +65,11 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
           </div>
         </div>
       </form>
-
-      <div className="mt-[2px] opacity-80 transition ease-linear duration-100 cursor-pointer 
-                      hover:opacity-100 mb-8 w-[10%] md:w-[20%]">
-        <button className="text-[#18181B] dark:text-[#fafafa] 
-                              text-[.9rem] md:text-[9px] font-[400]
-        " onClick={signOut}>Sign out</button>
+      <div>
+        <button className="mt-1 opacity-80 transition ease-linear duration-100 cursor-pointer 
+                      hover:opacity-100 mb-8 md:mb-2 whitespace-nowrap text-[#18181B] dark:text-[#fafafa] 
+                              text-[.9rem] md:text-[.56rem] font-[400] h-min w-min normal-case md:w-[45px] flex items-center justify-start"
+          onClick={signOut}>Sign out</button>
       </div>
     </div>
   );

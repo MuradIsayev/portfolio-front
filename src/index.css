@@ -72,14 +72,14 @@
 
     .navbar-links {
         @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
-        dark:hover:bg-[#3f3f3f] dark:text-[#C2C2C2] dark:bg-[#272727] 
+        dark:hover:bg-[#3f3f3f] dark:text-[#fafafa] dark:bg-[#272727] 
         no-underline px-3 py-1.5 my-[3%] rounded-md text-sm font-medium transition
          duration-150 ease-linear md:my-[10%] md:mr-[4%] md:ml-1 md:px-[13px] md:py-[2px]
     }
 
     .active {
         @apply bg-[#09090B] text-[#F1F1F1] hover:bg-[#0F0F0F] 
-        dark:text-[#4E4E4E] dark:bg-[#F1F1F1] dark:hover:bg-[#F1F1F1]
+        dark:text-[#4E4E4E] dark:bg-[#fafafa] dark:hover:bg-[#F1F1F1]
     }
 
     /* HOMEPAGE */
