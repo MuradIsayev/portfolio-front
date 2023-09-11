@@ -1,9 +1,8 @@
-import { signOutIcon } from '../assets';
 import { io } from "socket.io-client";
 import { z } from 'zod';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-
+  
 const socket = io("http://localhost:3001");
 const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage }) => {
   const [errorMessage, setErrorMessage] = useState('');
@@ -61,23 +60,16 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
               className="text-red-500 text-[.8rem] mt-1 font-[300] md:text-[.53rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
           <div>
-            <button type='submit' className="send-button btn btn-outline btn-sm	h-9 w-[68px] 
-                                             normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
+            <button type='submit' className="send-button h-9 w-[68px] normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
             >Send</button>
           </div>
         </div>
       </form>
 
-      <div className="flex justify-start items-center gap-[7px] my-2 opacity-70
-                      transition ease-linear duration-100 cursor-pointer 
-                      hover:opacity-100 mb-6 w-[10%] md:w-[20%]">
-        <img
-          className="md:w-3 w-[18px]"
-          src={signOutIcon}
-          alt="signout icon"
-        />
-        <button className="text-[#3f3f3f] dark:text-[#c2c2c2] 
-                              text-[13px] md:text-[9px] font-[600]
+      <div className="mt-[2px] opacity-80 transition ease-linear duration-100 cursor-pointer 
+                      hover:opacity-100 mb-8 w-[10%] md:w-[20%]">
+        <button className="text-[#18181B] dark:text-[#fafafa] 
+                              text-[.9rem] md:text-[9px] font-[400]
         " onClick={signOut}>Sign out</button>
       </div>
     </div>
