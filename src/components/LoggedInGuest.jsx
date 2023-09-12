@@ -60,7 +60,7 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
               className="text-red-500 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
           <div>
-            <button type='submit' className="send-button h-9 w-[68px] normal-case md:btn-xs md:w-[45px] md:text-[.55rem]"
+            <button type='submit' className="send-button h-9 w-[68px] md:btn-xs md:w-[45px] md:text-[.55rem]"
             >Send</button>
           </div>
         </div>
@@ -68,7 +68,7 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
       <div>
         <button className="mt-1 opacity-80 transition ease-linear duration-100 cursor-pointer 
                       hover:opacity-100 mb-8 md:mb-2 whitespace-nowrap text-[#18181B] dark:text-[#fafafa] 
-                              text-[.9rem] md:text-[.56rem] font-[400] h-min w-min normal-case md:w-[45px] flex items-center justify-start"
+                              text-[.83rem] md:text-[.56rem] font-[400] h-min w-min normal-case md:w-[45px] flex items-center justify-start"
           onClick={signOut}>Sign out</button>
       </div>
     </div>

@@ -138,14 +138,14 @@
         @apply flex items-center justify-center absolute right-1 top-[5px]
         rounded-md transition ease-linear duration-200
         font-[500] text-[14px] md:font-[600] 
-         md:top-[3px] dark:bg-[#09090B] bg-[#ffffff] hover:bg-[#f1f1f1d8]
+         md:top-1 dark:bg-[#09090B] bg-[#ffffff] hover:bg-[#f1f1f1d8]
          dark:text-[#fafafa] dark:hover:bg-[#1b1b1dd5]
         border dark:border-[#27272A] border-[#E4E4E7]
     }
 
     .message-input {
-        @apply block w-full rounded-md font-[400] text-[.9rem] px-4 py-[.7rem]
-        md:text-[.7rem] md:px-[.8rem] md:py-[.4rem] 
+        @apply block w-full rounded-md font-[400] text-[.9rem] px-4 py-[.7rem] pr-24 md:pr-16
+        md:text-[.7rem] md:pl-[.8rem] md:py-[.4rem] 
         text-[#09090B] dark:text-[#fafafa] bg-[#ffffff] border border-[#E4E4E7] dark:border-[#27272A] dark:bg-[#09090B]
         placeholder-[#71717A] placeholder:text-[.9rem] placeholder:font-[400] dark:placeholder:opacity-75
          md:placeholder:text-[.55rem] dark:placeholder-[#A1A1AA] placeholder:opacity-70
