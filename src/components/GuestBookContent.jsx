@@ -14,7 +14,7 @@ const GuestBookContent = ({ data }) => {
   });
 
   allMessages.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
- // mb-auto above img container
+  // mb-auto above img container
   return (
     <div>
       {allMessages?.reverse().map((message) => (
@@ -30,15 +30,18 @@ const GuestBookContent = ({ data }) => {
                 : <span class="top-0 left-7 absolute md:left-4 md:w-[7px] md:h-[7px] md:border-[1px]  w-3 h-3 dark:bg-gray-300 bg-gray-400  border-2 border-white dark:border-[#09090B] rounded-full"></span>}
             </div>
             <div className="flex w-[85%] gap-[.2rem]">
-              <span className=" max-w-[20%] md:max-w-[35%] font-[400] md:whitespace-nowrap">{message?.userName}:</span>
-              <span className=" w-[85%] md:w-[75%] break-words">{message?.message}</span>
+              <span className=" max-w-[20%] md:max-w-[35%] font-[400] md:whitespace-nowrap dark:text-[#e7e6e6e8] text-[#09090bdc] ">{message?.userName}:</span>
+              <span className=" w-[85%] md:w-[75%] font-[400] break-words text-[#18181B] dark:text-[#ececec]">{message?.message}</span>
             </div>
           </div>
         </div>
       ))
       }
     </div >
+
   );
 }
 
 export default GuestBookContent;
+
+
