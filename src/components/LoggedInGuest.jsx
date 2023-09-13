@@ -66,9 +66,9 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
         </div>
       </form>
       <div>
-        <button className="mt-1 opacity-80 transition ease-linear duration-100 cursor-pointer 
-                      hover:opacity-100 mb-8 md:mb-2 whitespace-nowrap text-[#18181B] dark:text-[#fafafa] 
-                              text-[.83rem] md:text-[.56rem] font-[400] h-min w-min normal-case md:w-[45px] flex items-center justify-start"
+        <button className="mt-1 opacity-80 transition ease-linear duration-100 cursor-pointer
+                      hover:opacity-100 mb-8 md:mb-6 whitespace-nowrap text-[#18181B] dark:text-[#A1A1AA] 
+                              text-[.8rem] md:text-[.52rem] font-[400] h-min w-min normal-case md:w-[45px] flex items-center justify-start"
           onClick={signOut}>Sign out</button>
       </div>
     </div>
