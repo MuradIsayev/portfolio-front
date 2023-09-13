@@ -16,11 +16,11 @@ const GuestBookContent = ({ data }) => {
   allMessages.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
   return (
     <div>
-      {allMessages?.reverse().map((message) => (
+      {allMessages?.slice(-50).reverse().map((message) => (
         <div key={`${message.userName}-${message.createdAt}`} className="mt-2">
           <div key={message?.createdAt} className="flex flex-row items-center mb-4">
 
-            <div className="w-10 h-10 rounded-full object-contain md:w-6 md:h-6 mr-[7px] md:mr-[3px] relative mb-auto">
+            <div className="w-10 h-10 rounded-full object-contain md:w-6 md:h-6 mr-[7px] md:mr-[3px] relative mb-auto tooltip" data-tip={message?.createdAt}>
               <img
                 src={message?.photoURL} alt="Profile photo" className="rounded-full " />
               {message?.isOnline ? <span class="top-0 left-7 absolute w-3 h-3 bg-green-400 border-2 border-white dark:border-[#09090B] rounded-full
