@@ -1,13 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { navLinks } from '../constants';
-
 
 const NavLink = ({ name, handleClick, isActive }) => {
   return (
     <div
-      className={`cursor-pointer ${isActive && isActive === name ? 'navbar-links active' : 'navbar-links'}`}
+      className={`cursor-pointer ${isActive ? 'navbar-links active' : 'navbar-links'}`}
       onClick={handleClick}
     >
       <span className="md:text-[.6rem]">{name}</span>
@@ -17,8 +16,20 @@ const NavLink = ({ name, handleClick, isActive }) => {
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [isActive, setIsActive] = useState('Home');
+  const [isActive, setIsActive] = useState(null);
+
+  useEffect(() => {
+    // Find the matching link for the current location
+    const currentLink = navLinks.find(link => link.link === location.pathname);
+
+    if (currentLink) {
+      setIsActive(currentLink.name);
+    } else {
+      setIsActive(null); // No matching link found
+    }
+  }, [location.pathname]);
 
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
@@ -27,7 +38,7 @@ const NavBar = () => {
     const handleMode = () => {
       setDarkTheme(!isChecked);
       setIsChecked(!isChecked);
-    }
+    } 
 
     return (
       <label className="swap swap-rotate cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-2 h-9 w-9 
@@ -47,7 +58,7 @@ const NavBar = () => {
       <ThemeIcon />
 
       {navLinks.map((link) => (
-        <NavLink key={link.name} isActive={isActive} {...link} handleClick={() => {
+        <NavLink key={link.name} isActive={link.name === isActive} {...link} handleClick={() => {
           setIsActive(link.name);
           navigate(link.link);
         }} />
