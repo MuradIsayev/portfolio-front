@@ -1,5 +1,4 @@
 import { ProjectCard } from '../components';
-import '../styles/About.css';
 import { JobTimeLine } from '../components';
 import '../styles/projects.scss';
 import { BsServer } from 'react-icons/bs';
@@ -9,9 +8,6 @@ import { fetchExperiences, fetchProjects } from '../api/about';
 
 
 const About = () => {
-  const darkColors = ['dark:bg-d-card-1', 'dark:bg-d-card-2', 'dark:bg-d-card-3', 'dark:bg-d-card-4', 'dark:bg-d-card-5', 'dark:bg-d-card-6', 'dark:bg-d-card-7'];
-  const colors = ['bg-l-card-1', 'bg-l-card-2', 'bg-l-card-3', 'bg-l-card-4', 'bg-l-card-5', 'bg-l-card-6', 'bg-l-card-7'];
-
   const { data: experiences } = useQuery({ queryKey: ['experiences'], queryFn: fetchExperiences, }, { staleTime: 3000 })
   const { data: projects } = useQuery({ queryKey: ['projects'], queryFn: fetchProjects }, { staleTime: 3000 })
 
@@ -49,8 +45,6 @@ const About = () => {
         </div>
         <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
           {projects?.map(({ id, name, description, skills, url }, index) => {
-            const color = colors[index % colors.length];
-            const darkColor = darkColors[index % darkColors.length];
             return (
               <ProjectCard
                 key={id}
@@ -58,8 +52,6 @@ const About = () => {
                 description={description}
                 skills={skills}
                 url={url}
-                color={color}
-                darkColor={darkColor}
               />
             );
           })}
