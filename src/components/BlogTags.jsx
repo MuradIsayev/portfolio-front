@@ -1,5 +1,5 @@
 import axios from "axios";
-import './test.scss'
+import '../styles/brackets.scss'
 
 const handleTagClick = async (tag, setBlogData) => {
     await axios
