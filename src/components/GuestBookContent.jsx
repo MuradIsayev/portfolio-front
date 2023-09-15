@@ -1,22 +1,8 @@
 const GuestBookContent = ({ data }) => {
 
-  const allMessages = [];
-  data.forEach((userData) => {
-    userData.messages.forEach((message) => {
-      allMessages.push({
-        userName: userData?.userName,
-        photoURL: userData?.photoURL,
-        message: message?.message,
-        createdAt: message?.createdAt,
-        isOnline: userData?.isOnline,
-      });
-    });
-  });
-
-  allMessages.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
   return (
     <div>
-      {allMessages?.slice(-50).reverse().map((message) => (
+      {data?.slice(-50).reverse().map((message) => (
         <div key={`${message.userName}-${message.createdAt}`} className="mt-2">
           <div key={message?.createdAt} className="flex flex-row items-center mb-4">
 
