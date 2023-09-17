@@ -13,13 +13,12 @@
       .project-name,
       .project-desc {
         transition: 0.2s;
-        color: rgba(255, 255, 255, 1);
+        // color: rgba(255, 255, 255, 1);
         opacity: 1;
       }
     }
     .project-link {
       transition: 0.2s;
-      color: rgba(255, 255, 255, 1);
       &:after {
         transition: 0.2s;
         width: 10%;
@@ -31,12 +30,8 @@
   min-height: 150px;
   margin: 0;
   padding: 1.5rem 1.2rem;
-  border: none;
-  border-radius: 0;
-  color: rgb(209, 203, 203);
   letter-spacing: 0.05rem;
   font-family: 'Oswald', sans-serif;
-  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
   .txt {
     transition: 0.2s;
     margin-left: -2.4rem;
@@ -47,13 +42,13 @@
       text-transform: uppercase;
     }
     .project-desc {
-      transition:0.2s;
+      transition: 0.2s;
       font-size: 0.7rem;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
       margin-top: 33px;
       opacity: 0;
-      color: rgba(255, 255, 255, 1);
+      // color: rgba(255, 255, 255, 1);
     }
   }
   .project-link {
@@ -72,29 +67,8 @@
       width: 0;
       margin-right: -100%;
       margin-left: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 1);
+      border-top: 1px solid rgb(82 82 82);
       transition: 0.3s;
     }
-  }
-  .ico-card {
-    transition: 0.2s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  i {
-    position: relative;
-    right: -50%;
-    top: 10%;
-    font-size: 12rem;
-    line-height: 0;
-    opacity: 0.2;
-    color: rgba(255, 255, 255, 1);
-    z-index: 0;
   }
 }

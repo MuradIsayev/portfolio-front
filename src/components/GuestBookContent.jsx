@@ -2,7 +2,7 @@ const GuestBookContent = ({ data }) => {
 
   return (
     <div>
-      {data?.slice(-50).reverse().map((message) => (
+      {data?.map((message) => (
         <div key={`${message.userName}-${message.createdAt}`} className="mt-2">
           <div key={message?.createdAt} className="flex flex-row items-center mb-4">
 

@@ -20,26 +20,6 @@
     font-family: LibreBaskerville-Regular;
     src: url("LibreBaskerville-Regular.otf") format("opentype");
 }
-  LibreBaskerville-Regular
-
-.root,
-#root,
-#docs-root {
-    --d-card-bg-1: linear-gradient(170deg, #330707 0%, #924640 100%);
-    --d-card-bg-2: linear-gradient(170deg, #091633 0%, #4d70a8 100%);
-    --d-card-bg-3: linear-gradient(170deg, #290a2e 0%, #9b468f 100%);
-    --d-card-bg-4: linear-gradient(170deg, #093637 0%, #3a8d7c 100%);
-    --d-card-bg-5: linear-gradient(170deg, #2c3006 0%, #949641 100%);
-    --d-card-bg-6: linear-gradient(170deg, #042504 0%, #348131 100%);
-    --d-card-bg-7: linear-gradient(170deg, #351c08 0%, #8b6335 100%);
-    --l-card-bg-1: linear-gradient(170deg, #fd6868 0%, #e61405 100%);
-    --l-card-bg-2: linear-gradient(170deg, #01E4F8 0%, #1D3EDE 100%);
-    --l-card-bg-3: linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
-    --l-card-bg-4: linear-gradient(170deg, #72f9fc 0%, #129eb1 100%);
-    --l-card-bg-5: linear-gradient(170deg, #f3ff85 0%, #c2c501 100%);
-    --l-card-bg-6: linear-gradient(170deg, #cafd71 0%, #41b115 100%);
-    --l-card-bg-7: linear-gradient(170deg, #fcb072 0%, #ca7008 100%);
-}
 
 @layer base {
     /* Hiding scrollbar */
