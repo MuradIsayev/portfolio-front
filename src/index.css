@@ -86,9 +86,9 @@
     
     .home-links {
         @apply flex flex-row items-center gap-2 text-[.85rem] font-[500]
-        text-[#a0a0a0] no-underline transition duration-150 ease-linear
-        opacity-[.8] hover:opacity-100 dark:opacity-[.75] dark:hover:opacity-100
-        md:font-[11px] dark:hover:text-[#f2f2f2] hover:text-[#000000]
+        no-underline transition duration-150 ease-linear md:font-[11px] 
+        opacity-[.85] dark:opacity-[.8] hover:opacity-100 dark:hover:opacity-90
+        text-neutral-600 dark:text-neutral-400 hover:text-[#09090B] dark:hover:text-[#fafafa]
     }
 
     .home-download-buttons {
