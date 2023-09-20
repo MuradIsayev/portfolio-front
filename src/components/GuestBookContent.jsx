@@ -19,7 +19,9 @@ const GuestBookContent = ({ data }) => {
               <span className="mr-1 text-neutral-600 whitespace-nowrap dark:text-neutral-400">
                 {message?.userName}:
               </span>
+              <span className="dark:text-[#fafafa] text-[#09090B]">
               {message?.message}
+              </span>
             </div>
           </div>
         </div>
