@@ -65,7 +65,7 @@
     /* HOMEPAGE */
     .headers {
         @apply text-[1.5rem] font-medium mb-1 md:text-lg md:mb-0  
-        font-secondary 
+        font-secondary dark:text-[#fafafa] text-[#09090B]
 
     }
 

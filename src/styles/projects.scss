@@ -9,12 +9,11 @@
     padding-left: 0;
     .card .txt {
       transition: 0.2s;
-      margin-left: 1rem;
+      margin-left: .2rem;
       .project-name,
       .project-desc,
       .project-skills {
         transition: 0.2s;
-        // color: rgba(255, 255, 255, 1);
         opacity: 1;
       }
     }
@@ -35,7 +34,7 @@
   font-family: 'Oswald', sans-serif;
   .txt {
     transition: 0.2s;
-    margin-left: -2.4rem;
+    margin-left: -2.6rem;
     z-index: 1;
     .project-name {
       font-size: 1.2rem;
@@ -48,7 +47,6 @@
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
       opacity: 0;
-      // color: rgba(255, 255, 255, 1);
     }
 
     .project-skills {
@@ -58,16 +56,14 @@
       letter-spacing: 0rem;
       opacity: 0;
       bottom:2.2rem;
-
-      // color: rgba(255, 255, 255, 1);
     }
   }
   .project-link {
     transition: 0.2s;
     z-index: 3;
     font-size: 0.7rem;
-    color: rgba(0, 0, 0, 1);
-    margin-left: 1rem;
+    margin-left: .2rem;
+
     position: absolute;
     bottom: .8rem;
     text-transform: uppercase;
