@@ -51,15 +51,15 @@
     }
 
     .navbar-links {
-        @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
-        dark:hover:bg-[#3f3f3f] dark:text-[#fafafa] dark:bg-[#272727] 
-        no-underline px-3 py-1.5 my-[3%] rounded-md text-sm font-medium transition
+        @apply text-neutral-600 dark:text-neutral-400
+        hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] font-primary
+        no-underline px-3 py-1.5 my-[2%] rounded-md text-sm font-semibold transition
          duration-150 ease-linear md:my-[10%] md:mr-[4%] md:ml-1 md:px-[13px] md:py-[2px]
     }
 
     .active {
-        @apply bg-[#09090B] text-[#F1F1F1] hover:bg-[#0F0F0F] 
-        dark:text-[#4E4E4E] dark:bg-[#fafafa] dark:hover:bg-[#F1F1F1]
+        @apply bg-[#ededeee0] text-[#000000]
+        dark:text-[#ffffff] dark:bg-[#151516d5]
     }
 
     /* HOMEPAGE */
@@ -111,7 +111,7 @@
 
     .login-with-google {
         @apply bg-[#ffffff] text-[#09090B] dark:text-[#fafafa] dark:bg-[#09090B]
-        hover:bg-[#f7f7f7ea] dark:hover:bg-[#111113dc] border border-[#E4E4E7] dark:border-[#27272A]
+        hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] border border-[#E4E4E7] dark:border-[#27272A]
     }
 
     .send-button {
@@ -119,7 +119,7 @@
         rounded-md transition ease-linear duration-200
         font-[500] text-[14px] md:font-[600] 
          md:top-1 dark:bg-[#09090B] bg-[#ffffff] hover:bg-[#f1f1f1d8]
-         dark:text-[#fafafa] dark:hover:bg-[#1b1b1dd5]
+         dark:text-[#fafafa] dark:hover:bg-[#151516d5]
         border dark:border-[#27272A] border-[#E4E4E7]
     }
 
