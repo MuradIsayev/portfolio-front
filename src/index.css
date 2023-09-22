@@ -52,9 +52,9 @@
 
     .navbar-links {
         @apply text-neutral-600 dark:text-neutral-400
-        hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] font-primary
-        no-underline px-3 py-1.5 my-[2%] rounded-md text-sm font-semibold transition
-         duration-150 ease-linear md:my-[10%] md:mr-[4%] md:ml-1 md:px-[13px] md:py-[2px]
+        hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] 
+        no-underline px-3 py-1.5 rounded-md text-sm font-medium transition
+         duration-150 ease-linear md:my-[10%] md:ml-1 md:px-[13px] md:py-[2px]
     }
 
     .active {

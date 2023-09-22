@@ -20,7 +20,7 @@ const NavBar = () => {
     }
 
     return (
-      <label className="swap swap-rotate cursor-pointer mb-2 md:mt-2 md:-ml-8 md:mr-2 h-9 w-9 
+      <label className="swap swap-rotate cursor-pointer h-10 w-10 md:h-8 md:w-8
       dark:hover:bg-[#151516d5] rounded-md hover:bg-[#ededeee0]
       transition ease-linear duration-200">
         <input type="checkbox" checked={isChecked} onChange={handleMode} />
@@ -32,7 +32,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="fixed flex flex-col items-start bg-transparent md:flex-row md:items-center md:static"
+      className="fixed flex flex-col items-start gap-1 bg-transparent md:flex-row md:items-center md:static"
     >
       <ThemeIcon />
 
