@@ -3,7 +3,7 @@ const Skills = ({ skills }) => {
   return (
     <div className='flex flex-wrap project-skills'>
       {skills.map((skill) => (
-        <div className='skill text-neutral-600 dark:text-neutral-400 font-semibold pr-2'>
+        <div className='pr-2 font-semibold skill text-neutral-600 dark:text-neutral-400'>
           <p>{skill?.name}</p>
         </div>
       ))}
@@ -24,7 +24,7 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor }) => {
           <Skills skills={skills} />
         </div>
         <div>
-        <a href={url} className='project-link text-neutral-600 dark:text-neutral-400 group-hover:text-[#09090B] dark:group-hover:text-[#fafafa]' target='_blank'>more</a>
+        <a href={url} className='project-link text-neutral-600 dark:text-neutral-400 group-hover:text-[#09090B] dark:group-hover:text-[#fafafa] group-hover:animate-pulse' target='_blank'>more</a>
         <span className="absolute opacity-0 group-hover:bg-[#09090B] dark:group-hover:bg-[#fafafa] bottom-[1.3rem] ml-3 left-12 w-6 h-[1px] group-hover:opacity-100
         transition ease-linear duration-150"></span>
         </div>

@@ -1,5 +1,4 @@
 const GuestBookContent = ({ data }) => {
-  console.log(data);
 
   return (
     <div>

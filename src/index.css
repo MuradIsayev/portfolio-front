@@ -93,7 +93,7 @@
 
     .home-download-buttons {
         @apply flex justify-center text-[.85rem] w-[100%] items-center rounded-md
-        h-[100%] gap-[.7rem] md:gap-[.5rem] absolute overflow-hidden font-medium
+        h-[100%] gap-[.5rem] md:gap-[.5rem] absolute overflow-hidden font-medium
     }
 
 
