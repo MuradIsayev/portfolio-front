@@ -3,13 +3,6 @@ import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { FaAngleDoubleDown, FaCheck } from 'react-icons/fa';
 
 
-const iconVariants = {
-    hovered: {
-        y: [0, -2, 0, 2, 0],
-        transition: { duration: 0.5, ease: 'easeInOut' }
-    }
-};
-
 const DownloadCV = () => {
     const [isAnimating, setIsAnimating] = useState(false);
     const uploadControls = useAnimation();
@@ -67,9 +60,18 @@ const DownloadCV = () => {
                         className="home-download-buttons md:text-[.75rem] top-0 z-[1] transition ease-linear duration-150
                         bg-[#18181B] hover:bg-neutral-800 dark:bg-[#F1F1F1] dark:hover:bg-[#f7f7f7e8]"
                         animate={uploadControls}
-                        whileHover="hovered"
                     >
-                        <motion.div variants={iconVariants}><FaAngleDoubleDown className="icon dark:text-[#18181B] text-[#FAFAFA]" /></motion.div>
+                        <motion.div 
+                            initial={{ y: 0 }}
+                            animate={{ y: 3 }}
+                            transition={{
+                                type: "tween",
+                                repeat: Infinity,
+                                repeatType: "mirror",
+                                duration: 0.5,
+                                ease: 'easeInOut',
+                                delay: 2.5
+                            }}><FaAngleDoubleDown className="icon dark:text-[#18181B] text-[#FAFAFA]" /></motion.div>
                         <div className='dark:text-[#18181B] text-[#FAFAFA]'>CV</div>
                     </motion.div>
                     <motion.div className="home-download-buttons md:text-[.7rem] z-[2] top-[-100%] 
