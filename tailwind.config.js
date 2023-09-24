@@ -12,8 +12,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        primary: "LibreBaskerville-Regular",
-        secondary: "GapSansBold",
+        primary: "JosefinSans-VariableFont_wght",
+        // secondary: "CothamSans",
+        // tertiary: "Gidole-Regular",
+        quaternary: "Nunito-VariableFont_wght",
+
       },
     },
   },
