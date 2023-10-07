@@ -27,7 +27,6 @@
   }
 }
 .card {
-  min-height: 170px;
   margin: 0;
   padding: 1.3rem 1.4rem;
   letter-spacing: 0.05rem;
@@ -36,14 +35,8 @@
     transition: 0.2s;
     margin-left: -2.6rem;
     z-index: 1;
-    .project-name {
-      font-size: 1.2rem;
-      font-weight: 300;
-      text-transform: uppercase;
-    }
     .project-desc {
       transition: 0.2s;
-      font-size: 0.7rem;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
       opacity: 0;
@@ -51,7 +44,6 @@
 
     .project-skills {
       position: absolute;
-      font-size: 0.72rem;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
       opacity: 0;
