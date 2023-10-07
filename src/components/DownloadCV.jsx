@@ -63,7 +63,7 @@ const DownloadCV = () => {
                     >
                         <motion.div 
                             initial={{ y: 0 }}
-                            animate={{ y: 3 }}
+                            animate={{ y: 2}}
                             transition={{
                                 type: "tween",
                                 repeat: Infinity,
@@ -71,8 +71,8 @@ const DownloadCV = () => {
                                 duration: 0.5,
                                 ease: 'easeInOut',
                                 delay: 2.5
-                            }}><FaAngleDoubleDown className="icon dark:text-[#18181B] text-[#FAFAFA]" /></motion.div>
-                        <div className='dark:text-[#18181B] text-[#FAFAFA]'>CV</div>
+                            }}><FaAngleDoubleDown className="md:w-[9px] md:h-[9px] h-[14px] w-[14px] icon dark:text-[#18181B] text-[#FAFAFA]" /></motion.div>
+                        <div className='dark:text-[#18181B] text-[#FAFAFA] text-base md:text-xs'>CV</div>
                     </motion.div>
                     <motion.div className="home-download-buttons md:text-[.7rem] z-[2] top-[-100%] 
                                          dark:bg-[#d1d1d1] bg-neutral-800"

@@ -9,18 +9,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Nunito-VariableFont_wght;
+    font-family: Supreme-Variable;
  
 }
 
 @font-face {
     font-family: GapSansBold;
     src: url("./fonts/GapSansBold.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: WorkSans-VariableFont_wght;
-    src: url("./fonts/WorkSans-VariableFont_wght.ttf") format('truetype');
 }
 
 @font-face {
@@ -69,7 +64,7 @@
     
     /* NAVBAR */
     .navbar-container {
-        @apply flex flex-row items-center justify-start h-[72.9vh] w-[13.5vw] 
+        @apply flex flex-row items-center justify-start h-[64vh] w-[13.5vw] 
         mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 
@@ -124,7 +119,7 @@
     .login-with {
         @apply flex justify-center items-center px-[1.4rem] py-[.95rem] gap-[10px]  
         cursor-pointer transition ease-linear duration-150
-        h-[53px] w-[205px] md:h-[36px] md:w-[130px] md:gap-[8px] md:p-[.85rem] rounded-md
+        h-[53px] w-[205px] md:h-[36px] md:w-[135px] md:gap-[8px] md:p-[.85rem] rounded-md
     }
 
     .login-with-github {

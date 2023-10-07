@@ -3,8 +3,8 @@ import { underConstruction } from "../assets";
 
 const UnderConstruction = () => {
     const style = {
-        height: 170,
-        width: 170,
+        height: 155,
+        width: 155,
       };
 
 

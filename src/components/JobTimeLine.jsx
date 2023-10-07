@@ -9,7 +9,7 @@ const JobTimeLine = ({ position, description, startedAt, endedAt, company, workS
                 <span className="text-base md:text-sm font-medium dark:text-[#fafafa] text-[#09090B]">{position}</span>
                 <span className="text-[.87rem] md:text-[.73rem] text-neutral-600 dark:text-neutral-400 font-medium">@</span>
                 <span className="text-[.87rem] md:text-[.73rem] font-medium dark:text-[#fafafa] text-[#09090B]">{company}</span>
-                <span className="text-[.87rem] md:text-[.73rem] font-medium text-neutral-600 dark:text-neutral-400">·</span>
+                <span className="text-[.8rem] font-[600] text-neutral-600 dark:text-neutral-400">·</span>
                 <span className="text-[.87rem] md:text-[.73rem] font-medium dark:text-[#fafafa] text-[#09090B]">{workScheduleType}</span>
             </div>
             <p className="mb-4 text-sm font-normal md:text-[.67rem] text-neutral-600 dark:text-neutral-400">
