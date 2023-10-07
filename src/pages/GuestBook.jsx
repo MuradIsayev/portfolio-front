@@ -3,11 +3,13 @@ import { uniqueNamesGenerator, adjectives, animals } from "unique-names-generato
 import { GuestBookContent } from '../components';
 import { NotLoggedInGuest } from '../components';
 import { LoggedInGuest } from '../components';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { io } from "socket.io-client";
+import { useAppVisible } from '../hooks/useAppVisible';
 
 const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
@@ -29,11 +31,20 @@ const GuestBook = () => {
     length: 2,
     separator: '-',
   });
-  const [message, setMessage] = useState('');
+
+  const isVisible = useAppVisible();
+
+  const initialMessage = '';
+  const [savedForm, setSavedForm] = useLocalStorage("inputForm");
+  const [message, setMessage] = useState(savedForm() || initialMessage);
   const [data, setData] = useState([]);
   const [isSent, setIsSent] = useState(false);
   const [isSignedOut, setIsSignedOut] = useState(true);
   const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    setSavedForm(message)
+  }, [setSavedForm, message])
 
   useEffect(() => {
     let timeoutId;
@@ -111,17 +122,24 @@ const GuestBook = () => {
 
 
   const handleSignOut = async () => {
-    socket.emit('signout', { userName: auth?.currentUser.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+    socket.emit('signout', { userName: auth?.currentUser?.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+    setMessage('');
     setIsSignedOut(true);
     await auth.signOut();
   };
+
+  useEffect(() => {
+    if (!isVisible) {
+      handleSignOut();
+    }
+  }, [isVisible])
 
   return (
     <>
       <div
         className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
       >
-        <h2 className='headers mb-2'>GuestBook</h2>
+        <h2 className='mb-2 headers'>GuestBook</h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
