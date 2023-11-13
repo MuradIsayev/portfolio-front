@@ -49,7 +49,7 @@ const Home = () => {
           <motion.div variants={items} className=" flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
             <a className="home-links group" href="https://github.com/MuradIsayev" target='_blank' >
               <img
-                className="group-hover:animate-pulse h-[28px] md:h-[21px]"
+                className="group-hover:-translate-y-0.5 transition-all duration-200 h-[28px] md:h-[21px]"
                 src={github}
                 alt="github logo"
               />
@@ -57,11 +57,11 @@ const Home = () => {
             </a>
             <a
               target='_blank'
-              className="home-links group "
+              className="home-links group"
               href="https://www.linkedin.com/in/mi03/"
             >
               <img
-                className="h-[28px] md:h-[21px] group-hover:animate-pulse"
+                className="h-[28px] md:h-[21px] group-hover:-translate-y-0.5 transition-all duration-200"
                 src={linkedin}
                 alt="linkedin logo"
               />
