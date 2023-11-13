@@ -9,16 +9,34 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Supreme-Variable;
+ 
 }
 
 @font-face {
     font-family: GapSansBold;
-    src: url("GapSansBold.ttf") format('truetype');
-  }
+    src: url("./fonts/GapSansBold.ttf") format('truetype');
+}
 
 @font-face {
-    font-family: LibreBaskerville-Regular;
-    src: url("LibreBaskerville-Regular.otf") format("opentype");
+    font-family: HankenGrotesk-VariableFont_wght;
+    src: url("./fonts/HankenGrotesk-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: Supreme-Variable;
+    src: url("./fonts/Supreme-Variable.ttf") format('truetype');
+} 
+
+/*FONT FOR LINKS*/
+@font-face {
+    font-family: BagnardSans;
+    src: url("./fonts/BagnardSans.otf") format('opentype');
+}
+
+@font-face {
+    font-family: Nunito-VariableFont_wght;
+    src: url("./fonts/Nunito-VariableFont_wght.ttf") format('truetype');
 }
 
 @layer base {
@@ -46,27 +64,26 @@
     
     /* NAVBAR */
     .navbar-container {
-        @apply flex flex-row items-center justify-start h-[72.9vh] w-[13.5vw] 
+        @apply flex flex-row items-center justify-start h-[64vh] w-[13.5vw] 
         mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 
     .navbar-links {
-        @apply bg-[#F2F2F2] text-[#4E4E4E] hover:bg-[#e2e2e2] 
-        dark:hover:bg-[#3f3f3f] dark:text-[#fafafa] dark:bg-[#272727] 
-        no-underline px-3 py-1.5 my-[3%] rounded-md text-sm font-medium transition
-         duration-150 ease-linear md:my-[10%] md:mr-[4%] md:ml-1 md:px-[13px] md:py-[2px]
+        @apply text-neutral-600 dark:text-neutral-400
+        hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] 
+        no-underline px-3 py-1.5 rounded-md text-sm font-medium transition
+         duration-150 ease-linear md:my-[10%] md:ml-1 md:px-[13px] md:py-[2px]
     }
 
     .active {
-        @apply bg-[#09090B] text-[#F1F1F1] hover:bg-[#0F0F0F] 
-        dark:text-[#4E4E4E] dark:bg-[#fafafa] dark:hover:bg-[#F1F1F1]
+        @apply bg-[#ededeee0] text-[#000000]
+        dark:text-[#ffffff] dark:bg-[#151516d5]
     }
 
     /* HOMEPAGE */
     .headers {
         @apply text-[1.5rem] font-medium mb-1 md:text-lg md:mb-0  
-        font-secondary 
-
+         dark:text-[#fafafa] text-[#09090B]
     }
 
     .avatar-img {
@@ -81,19 +98,20 @@
 
     .home-texts {
         @apply max-w-[72%] text-[.96rem] font-[400] leading-[1.4] 
-        md:max-w-[100%] md:text-[.75rem] md:text-[300] md:leading-[1.3]
+        md:max-w-[100%] md:text-[.75rem] md:text-[300] md:leading-[1.3]        
     }
     
     .home-links {
-        @apply flex flex-row items-center gap-2 text-[.85rem] font-[500]
-        text-[#a0a0a0] no-underline transition duration-150 ease-linear
-        opacity-[.8] hover:opacity-100 dark:opacity-[.75] dark:hover:opacity-100
-        md:font-[11px] dark:hover:text-[#f2f2f2] hover:text-[#000000]
+        @apply flex flex-row items-center gap-2 text-sm font-medium
+        no-underline transition duration-150 ease-linear md:font-[11px] 
+        opacity-[.85] dark:opacity-[.8] hover:opacity-100 dark:hover:opacity-90
+        text-neutral-600 dark:text-neutral-400 hover:text-[#09090B] dark:hover:text-[#fafafa]
+        font-primary
     }
 
     .home-download-buttons {
         @apply flex justify-center text-[.85rem] w-[100%] items-center rounded-md
-        h-[100%] gap-[.7rem] md:gap-[.5rem] absolute overflow-hidden font-medium
+        h-[100%] gap-[.5rem] md:gap-[.5rem] absolute overflow-hidden font-medium
     }
 
 
@@ -101,7 +119,7 @@
     .login-with {
         @apply flex justify-center items-center px-[1.4rem] py-[.95rem] gap-[10px]  
         cursor-pointer transition ease-linear duration-150
-        h-[53px] w-[205px] md:h-[36px] md:w-[130px] md:gap-[8px] md:p-[.85rem] rounded-md
+        h-[53px] w-[205px] md:h-[36px] md:w-[135px] md:gap-[8px] md:p-[.85rem] rounded-md
     }
 
     .login-with-github {
@@ -111,7 +129,7 @@
 
     .login-with-google {
         @apply bg-[#ffffff] text-[#09090B] dark:text-[#fafafa] dark:bg-[#09090B]
-        hover:bg-[#f7f7f7ea] dark:hover:bg-[#111113dc] border border-[#E4E4E7] dark:border-[#27272A]
+        hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] border border-[#E4E4E7] dark:border-[#27272A]
     }
 
     .send-button {
@@ -119,7 +137,7 @@
         rounded-md transition ease-linear duration-200
         font-[500] text-[14px] md:font-[600] 
          md:top-1 dark:bg-[#09090B] bg-[#ffffff] hover:bg-[#f1f1f1d8]
-         dark:text-[#fafafa] dark:hover:bg-[#1b1b1dd5]
+         dark:text-[#fafafa] dark:hover:bg-[#151516d5]
         border dark:border-[#27272A] border-[#E4E4E7]
     }
 

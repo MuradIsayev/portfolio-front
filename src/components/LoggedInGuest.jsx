@@ -17,8 +17,8 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
 
   const handleSendButton = () => {
     socket.emit("message", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
-    setIsSent(false);
     setMessage('');
+    setIsSent(false);
   };
 
   const handleSubmit = (e) => {
