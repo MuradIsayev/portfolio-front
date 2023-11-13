@@ -97,7 +97,7 @@
       }
 
     .home-texts {
-        @apply max-w-[72%] text-[.96rem] font-[400] leading-[1.4] 
+        @apply max-w-[72%] text-[.96rem] font-[400] leading-[1.4] dark:text-neutral-200
         md:max-w-[100%] md:text-[.75rem] md:text-[300] md:leading-[1.3]        
     }
     

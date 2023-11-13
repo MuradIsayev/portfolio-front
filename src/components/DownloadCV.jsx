@@ -72,7 +72,7 @@ const DownloadCV = () => {
                                 ease: 'easeInOut',
                                 delay: 2.5
                             }}><FaAngleDoubleDown className="md:w-[9px] md:h-[9px] h-[14px] w-[14px] icon dark:text-[#18181B] text-[#FAFAFA]" /></motion.div>
-                        <div className='dark:text-[#18181B] text-[#FAFAFA] text-base md:text-xs'>CV</div>
+                        <div className='dark:text-[#18181B] text-[#FAFAFA] text-[.97rem] md:text-xs'>CV</div>
                     </motion.div>
                     <motion.div className="home-download-buttons md:text-[.7rem] z-[2] top-[-100%] 
                                          dark:bg-[#d1d1d1] bg-neutral-800"
