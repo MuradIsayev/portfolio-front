@@ -25,7 +25,8 @@
     "sass": "^1.63.3",
     "socket.io-client": "^4.6.1",
     "unique-names-generator": "^4.7.1",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "zustand": "^4.4.6"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.2",
