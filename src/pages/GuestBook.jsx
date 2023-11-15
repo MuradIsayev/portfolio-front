@@ -48,7 +48,7 @@ const GuestBook = () => {
   useEffect(() => {
     setInputForm(message)
   }, [setInputForm, message])
-  
+
   useEffect(() => {
     setIsSignedOutFromStorage(isSignedOut)
   }, [isSignedOut])
@@ -147,7 +147,7 @@ const GuestBook = () => {
       <div
         className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
       >
-        <h2 className='mb-2 headers'>GuestBook</h2>
+        <h2 className='mb-2 headers'>Leave your sign</h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}

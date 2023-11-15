@@ -17,7 +17,7 @@ const About = () => {
         className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-auto"
       >
         <div className='mb-4'>
-          <h2 className='headers'>About</h2>
+          <h2 className='headers'>About Me</h2>
           <p className='home-texts'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
             itaque asperiores vitae deleniti praesentium odio perferendis, fuga
