@@ -1,12 +1,12 @@
-import goBack from './goback.svg';
-import github from './socials/github.svg';
-import whiteGithub from './socials/whitegithub.svg';
-import google from './socials/google.svg';
-import linkedin from './socials/bluelinkedin.svg';
-import myAvatar from './myavatar.jpg';
-import underConstruction from './underConstruction.json';
-import notFound from './notFound.json';
-import darkLinkedin from './socials/darklinkedin.svg';
-import whiteGoogle from './socials/whitegoogle.svg';
+import goBack from './icons/goback.svg';
+import github from './icons/socials/github.svg';
+import whiteGithub from './icons/socials/whitegithub.svg';
+import google from './icons/socials/google.svg';
+import whiteGoogle from './icons/socials/whitegoogle.svg';
+import linkedin from './icons/socials/linkedin.svg';
+import darkLinkedin from './icons/socials/darklinkedin.svg';
+import myAvatar from './images/myimage.jpg';
+import underConstruction from './animations/underConstruction.json';
+import notFound from './animations/notFound.json';
 
 export { goBack, github, google, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
