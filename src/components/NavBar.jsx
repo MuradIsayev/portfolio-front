@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 import { useState } from 'react';
+import { isThemeChangedStore } from '../store/useIsThemeChanged';
 
 
 const NavBar = () => {
@@ -13,10 +14,13 @@ const NavBar = () => {
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const [isChecked, setIsChecked] = useState(darkTheme);
+    const {isThemeChanged, setIsThemeChanged} = isThemeChangedStore();
+
 
     const handleMode = () => {
       setDarkTheme(!isChecked);
       setIsChecked(!isChecked);
+      setIsThemeChanged(!isThemeChanged);
     }
 
     return (
