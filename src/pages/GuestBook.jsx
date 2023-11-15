@@ -34,17 +34,24 @@ const GuestBook = () => {
 
   const isVisible = useAppVisible();
 
+  const [getInputForm, setInputForm] = useLocalStorage("inputForm");
+  const [getIsSignedOut, setIsSignedOutFromStorage] = useLocalStorage("isSignedOut");
+
   const initialMessage = '';
-  const [savedForm, setSavedForm] = useLocalStorage("inputForm");
-  const [message, setMessage] = useState(savedForm() || initialMessage);
+  const initialSignOutState = true;
+  const [message, setMessage] = useState(getInputForm() || initialMessage);
   const [data, setData] = useState([]);
   const [isSent, setIsSent] = useState(false);
-  const [isSignedOut, setIsSignedOut] = useState(true);
+  const [isSignedOut, setIsSignedOut] = useState(getIsSignedOut() ?? initialSignOutState);
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    setSavedForm(message)
-  }, [setSavedForm, message])
+    setInputForm(message)
+  }, [setInputForm, message])
+  
+  useEffect(() => {
+    setIsSignedOutFromStorage(isSignedOut)
+  }, [isSignedOut])
 
   useEffect(() => {
     let timeoutId;
@@ -93,12 +100,12 @@ const GuestBook = () => {
           uuid: user?.uid,
         });
         setIsSignedOut(false);
+        setIsSignedOutFromStorage(false); // Update local storage immediately
       }
     } catch (error) {
       console.error(error);
     }
   };
-
 
   const signInWithGoogle = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -114,6 +121,7 @@ const GuestBook = () => {
           uuid: user?.uid,
         });
         setIsSignedOut(false);
+        setIsSignedOutFromStorage(false); // Update local storage immediately
       }
     } catch (error) {
       console.error(error);
