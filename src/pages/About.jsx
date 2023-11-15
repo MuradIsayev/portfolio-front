@@ -43,11 +43,11 @@ const About = () => {
             )}
           </ol>
         </div>
-        <div class="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
+        <div className="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
           {projects?.map(({ id, name, description, skills, url }, index) => {
             return (
               <ProjectCard
-                key={id}
+                key={index}
                 name={name}
                 description={description}
                 skills={skills}
