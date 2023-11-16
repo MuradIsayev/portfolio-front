@@ -137,7 +137,7 @@ const GuestBook = () => {
   };
 
   useEffect(() => {
-    if (!isVisible) {
+    if (!isSignedOut && !isVisible) {
       handleSignOut();
     }
   }, [isVisible])
