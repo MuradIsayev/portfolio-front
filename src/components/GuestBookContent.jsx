@@ -1,9 +1,16 @@
+import { motion } from 'framer-motion';
+import { guestbookContainer, items } from '../assets/animations/transitions';
+
 const GuestBookContent = ({ data }) => {
 
   return (
-    <div>
+    <motion.div
+      variants={guestbookContainer}
+      initial="hidden"
+      animate="show"
+    >
       {data?.map((message, index) => (
-        <div key={index} className="mt-2">
+        <motion.div variants={items} key={index} className="mt-2">
           <div key={message?.createdAt} className="flex flex-row items-center mb-4 guestbook-container">
 
             <div className="w-10 h-10 rounded-full object-contain md:w-7 md:h-7 mr-[7px] md:mr-[3px] relative mb-auto tooltip" data-tip={message?.createdAt}>
@@ -19,14 +26,14 @@ const GuestBookContent = ({ data }) => {
                 {message?.userName}:
               </span>
               <span className="dark:text-[#fafafa] text-[#09090B]">
-              {message?.message}
+                {message?.message}
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))
       }
-    </div >
+    </motion.div >
 
   );
 }
