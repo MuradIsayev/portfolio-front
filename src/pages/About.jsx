@@ -1,10 +1,14 @@
 import { ProjectCard } from '../components';
 import { JobTimeLine } from '../components';
 import '../styles/projects.scss';
-import { BsServer } from 'react-icons/bs';
-import { DiReact } from 'react-icons/di';
+import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences, fetchProjects } from '../api/about';
+
+
+
+import { container, items } from '../assets/animations/transitions';
+
 
 
 const About = () => {
@@ -13,20 +17,23 @@ const About = () => {
 
   return (
     <>
-      <div
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
         className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-auto"
       >
         <div className='mb-4'>
-          <h2 className='headers'>About Me</h2>
-          <p className='home-texts'>
+          <motion.h2 variants={items} className='headers'>About Me</motion.h2>
+          <motion.p variants={items} className='home-texts'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
             itaque asperiores vitae deleniti praesentium odio perferendis, fuga
             sapiente quidem sed delectus facere minima repudiandae?
-          </p>
+          </motion.p>
         </div>
 
         <div>
-          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+          <motion.ol variants={items} className="relative border-l border-gray-200 dark:border-gray-700">
             {experiences?.map(({ position, description, startedAt, endedAt, company, workScheduleType }, index) => {
               return (
                 <JobTimeLine
@@ -41,10 +48,11 @@ const About = () => {
               )
             }
             )}
-          </ol>
+          </motion.ol>
         </div>
-        <div className="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
-          {projects?.map(({ id, name, description, skills, url }, index) => {
+        <motion.div
+          className="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
+          {projects?.map(({ name, description, skills, url }, index) => {
             return (
               <ProjectCard
                 key={index}
@@ -52,11 +60,12 @@ const About = () => {
                 description={description}
                 skills={skills}
                 url={url}
+                animationValue={index += 1}
               />
             );
           })}
-        </div >
-      </div >
+        </motion.div >
+      </motion.div >
     </>
   );
 }
