@@ -3,8 +3,8 @@ export const container = {
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.25,
-            delayChildren: .2,
+            staggerChildren: 0.25, 
+            delayChildren: .2,  
         },
     },
 }
@@ -14,8 +14,8 @@ export const items = {
     show: {
         opacity: 1, transition: {
             type: "tween",
-            staggerChildren: 0.25,
-            delayChildren: .25,
+            staggerChildren: 0.25, // 0.25 second delay between each child 
+            delayChildren: .25, // wait .25 before starting 
             duration: ".7",
         },
     },
