@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import { items } from '../assets/animations/transitions';
 
 const Skills = ({ skills }) => {
   return (
@@ -11,10 +13,18 @@ const Skills = ({ skills }) => {
   )
 }
 
-const ProjectCard = ({ name, description, url, skills, color, darkColor }) => {
+const ProjectCard = ({ name, description, url, skills, color, darkColor, animationValue }) => {
 
   return (
-    <div className="w-[325px] md:w-[280px] column dark:hover:opacity-90 opacity-95 dark:opacity-90 hover:opacity-100">
+    <motion.div
+      variants={items}
+      initial={{
+        opacity: 0,
+        translateX: animationValue % 2 === 0 ? 100 : -100,
+      }}
+      animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+      transition={{ duration: 0.25, delay: animationValue * 0.15 }}
+      className="w-[325px] md:w-[280px] column dark:hover:opacity-90 opacity-95 dark:opacity-90 hover:opacity-100">
       <div className={` hover:bg-[#f7f7f7ea] dark:bg-[#09090B] hover:dark:bg-[#111113dc] border border-[#E4E4E7] dark:border-[#27272A] group min-h-[170px] md:min-h-[160px] card ${darkColor} ${color}`}>
         <div className="txt dark:text-[#fafafa] text-[#09090B]">
           <h1 className='project-name text-xl md:text-lg font-[300] uppercase text-neutral-600 dark:text-neutral-400 dark:group-hover:text-[#fafafa] group-hover:text-[#09090B]'>{name}</h1>
@@ -27,17 +37,8 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor }) => {
         transition ease-linear duration-150"></span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default ProjectCard;
-
-//   initial={{
-//     opacity: 0,
-//     translateX: testValue % 2 === 0 ? -50 : 50,
-//     translateY: -50,
-//   }}
-//   animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-//   transition={{ duration: 0.2, delay: testValue * 0.1 }}
-// >
