@@ -22,12 +22,9 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor }) => {
           <Skills skills={skills} />
         </div>
         <div>
-          <a href={url} className='project-link font-medium text-neutral-600 dark:text-neutral-400 group-hover:text-[#09090B] dark:group-hover:text-[#fafafa] group-hover:animate-pulse' target='_blank'>more</a>
+          <a href={url} className='project-link font-normal text-neutral-600 dark:text-neutral-400 group-hover:text-[#09090B] dark:group-hover:text-[#fafafa] group-hover:animate-pulse' target='_blank'>more</a>
           <span className="absolute opacity-0 group-hover:bg-[#09090B] dark:group-hover:bg-[#fafafa] bottom-[1.35rem] ml-3 left-[60px] w-6 h-[1px] group-hover:opacity-100
         transition ease-linear duration-150"></span>
-        </div>
-        <div className="absolute inset-x-0 inset-y-0 w-full h-full overflow-hidden transition duration-200">
-          <i className="fa fa-rebel relative right-[-50%] top-[10%] text-[12rem] leading-[0] opacity-20 text-white z-0"></i>
         </div>
       </div>
     </div>
@@ -35,3 +32,12 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor }) => {
 }
 
 export default ProjectCard;
+
+//   initial={{
+//     opacity: 0,
+//     translateX: testValue % 2 === 0 ? -50 : 50,
+//     translateY: -50,
+//   }}
+//   animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+//   transition={{ duration: 0.2, delay: testValue * 0.1 }}
+// >
