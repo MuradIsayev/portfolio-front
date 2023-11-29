@@ -9,7 +9,9 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { io } from "socket.io-client";
+import { motion } from 'framer-motion';
 import { useAppVisible } from '../hooks/useAppVisible';
+import { container, items } from '../assets/animations/transitions';
 
 const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
@@ -144,15 +146,15 @@ const GuestBook = () => {
 
   return (
     <>
-      <div
+      <motion.div variants={container} initial="hidden" animate="show"
         className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
       >
-        <h2 className='mb-2 headers'>Leave your sign</h2>
+        <motion.h2 variants={items} className='mb-2 headers'>Leave your sign</motion.h2>
         <div className="guestbook-content-container">
           {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
