@@ -3,8 +3,8 @@ export const container = {
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.25, 
-            delayChildren: .2,  
+            staggerChildren: 0.25,
+            delayChildren: .2,
         },
     },
 }
@@ -20,3 +20,16 @@ export const items = {
         },
     },
 }
+
+export const guestbookContainer = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.08,
+            delayChildren: .37,
+        },
+    },
+}
+
+// TODO: add separate animation for the project content
