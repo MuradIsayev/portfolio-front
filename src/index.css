@@ -15,28 +15,28 @@
 
 @font-face {
     font-family: GapSansBold;
-    src: url("./fonts/GapSansBold.ttf") format('truetype');
+    src: url("./assets/fonts/GapSansBold.ttf") format('truetype');
 }
 
 @font-face {
     font-family: HankenGrotesk-VariableFont_wght;
-    src: url("./fonts/HankenGrotesk-VariableFont_wght.ttf") format('truetype');
+    src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format('truetype');
 }
 
 @font-face {
     font-family: Supreme-Variable;
-    src: url("./fonts/Supreme-Variable.ttf") format('truetype');
+    src: url("./assets/fonts/Supreme-Variable.ttf") format('truetype');
 } 
 
 /*FONT FOR LINKS*/
 @font-face {
     font-family: BagnardSans;
-    src: url("./fonts/BagnardSans.otf") format('opentype');
+    src: url("./assets/fonts/BagnardSans.otf") format('opentype');
 }
 
 @font-face {
     font-family: Nunito-VariableFont_wght;
-    src: url("./fonts/Nunito-VariableFont_wght.ttf") format('truetype');
+    src: url("./assets/fonts/Nunito-VariableFont_wght.ttf") format('truetype');
 }
 
 @layer base {
