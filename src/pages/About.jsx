@@ -4,7 +4,7 @@ import '../styles/projects.scss';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences, fetchProjects } from '../api/about';
-import { container, items } from '../assets/animations/transitions';
+import { cardContainer, container, items } from '../assets/animations/transitions';
 
 
 const About = () => {
@@ -29,7 +29,8 @@ const About = () => {
         </div>
 
         <div>
-          <motion.ol variants={items} className="relative border-l border-gray-200 dark:border-gray-700">
+          <motion.ol variants={cardContainer}
+            className="relative border-l border-gray-200 dark:border-gray-700">
             {experiences?.map(({ position, description, startedAt, endedAt, company, workScheduleType }, index) => {
               return (
                 <JobTimeLine
@@ -46,7 +47,9 @@ const About = () => {
             )}
           </motion.ol>
         </div>
+
         <motion.div
+          variants={cardContainer}
           className="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
           {projects?.map(({ name, description, skills, url }, index) => {
             return (
