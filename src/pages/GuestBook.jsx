@@ -150,10 +150,10 @@ const GuestBook = () => {
         className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
       >
         <motion.h2 variants={items} className='mb-2 headers'>Leave your sign</motion.h2>
-        <div className="guestbook-content-container">
+        <motion.div variants={items} className="guestbook-content-container">
           {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
           {isSent ? <GuestBookContent data={data} /> : null}
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );
