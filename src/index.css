@@ -64,7 +64,7 @@
     
     /* NAVBAR */
     .navbar-container {
-        @apply flex flex-row items-center justify-start h-[64vh] w-[13.5vw] 
+        @apply flex flex-row items-center justify-start h-[64vh] w-[14.5vw] lg:h-[54vh]
         mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw]
     }
 
@@ -73,6 +73,7 @@
         hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] 
         no-underline px-3 py-1.5 rounded-md text-sm font-medium transition
          duration-150 ease-linear md:my-[10%] md:ml-1 md:px-[13px] md:py-[2px]
+         lg:px-3 lg:py-2 lg:text-[.92rem]
     }
 
     .active {
