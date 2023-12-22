@@ -22,7 +22,7 @@ const NotLoggedInGuest = ({ signInWithGitHub, signInWithGoogle }) => {
     <div className="flex flex-row items-center gap-6 mb-8 md:gap-4 w-min">
       <div>
         <button className="login-with login-with-github">
-          <div className='w-[22px] h-[22px] object-contain md:w-[14px] md:h-[14px]'>
+          <div className='w-[22px] h-[22px] object-contain md:w-[14px] md:h-[14px] '>
             <img
               src={isThemeDark ? github : whiteGithub}
               alt="github logo"
