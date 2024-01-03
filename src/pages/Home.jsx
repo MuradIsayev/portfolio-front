@@ -42,11 +42,11 @@ const Home = () => {
           <motion.div variants={items} className=" flex flex-col gap-3 justify-center md:items-start md:gap-[10px]">
             <a className="home-links group" href="https://github.com/MuradIsayev" target='_blank' >
               <img
-                className="group-hover:-translate-y-0.5 transition-all duration-200 h-[28px] md:h-[21px]"
+                className="group-hover:-translate-y-0.5 transition-all duration-200 h-[28px] lg:h-[30px] md:h-[21px]"
                 src={isThemeDark ? whiteGithub : github}
                 alt="github logo"
               />
-              <p className="md:text-[.65rem]">My Github</p>
+              <p className="md:text-[.65rem] lg:text-[.9rem]">My Github</p>
             </a>
             <a
               target='_blank'
@@ -54,11 +54,11 @@ const Home = () => {
               href="https://www.linkedin.com/in/mi03/"
             >
               <img
-                className="h-[28px] md:h-[21px] group-hover:-translate-y-0.5 transition-all duration-200"
+                className="h-[28px] md:h-[21px] lg:h-[30px] group-hover:-translate-y-0.5 transition-all duration-200"
                 src={isThemeDark ? linkedin : darkLinkedin}
                 alt="linkedin logo"
               />
-              <p className="md:text-[.65rem]">My LinkedIn</p>
+              <p className="md:text-[.65rem] lg:text-[.9rem]">My LinkedIn</p>
             </a>
           </motion.div>
         </div>
