@@ -29,8 +29,8 @@ const About = () => {
         </div>
 
         <div>
-          <motion.ol variants={cardContainer}
-            className="relative border-l border-gray-200 dark:border-gray-700">
+          <motion.ol variants={container}
+            className="relative border-l border-neutral-600 dark:border-neutral-400">
             {experiences?.map(({ position, description, startedAt, endedAt, company, workScheduleType }, index) => {
               return (
                 <JobTimeLine
@@ -50,7 +50,7 @@ const About = () => {
 
         <motion.div
           variants={cardContainer}
-          className="flex flex-row flex-wrap gap-x-3 gap-y-5 max-w-[82%] md:flex-col mb-5 ">
+          className="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[75%] md:w-full mb-5">
           {projects?.map(({ name, description, skills, url }, index) => {
             return (
               <ProjectCard

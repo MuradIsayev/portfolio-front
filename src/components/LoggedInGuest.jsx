@@ -40,7 +40,7 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
 
   return currentUser && (
     <div>
-      <form onSubmit={handleSubmit} className='relative max-w-[60%] md:max-w-[90%]'>
+      <form onSubmit={handleSubmit} className='relative max-w-lg lg:max-w-xl md:max-w-sm'>
         <div >
           <div>
             <input

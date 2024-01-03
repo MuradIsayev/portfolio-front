@@ -24,7 +24,7 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor, animati
       }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: .4, delay: animationValue * 0.2, ease: 'linear' }}
-      className="w-[325px] md:w-[280px] column dark:hover:opacity-90 opacity-95 dark:opacity-90 hover:opacity-100">
+      className="grow w-[40%] min-w-[310px] column dark:hover:opacity-90 opacity-95 dark:opacity-90 hover:opacity-100">
       <div className={` hover:bg-[#f7f7f7ea] dark:bg-[#09090B] hover:dark:bg-[#111113dc] border border-[#E4E4E7] dark:border-[#27272A] group min-h-[170px] md:min-h-[160px] card ${darkColor} ${color}`}>
         <div className="txt dark:text-[#fafafa] text-[#09090B]">
           <h1 className='project-name text-xl md:text-lg font-[300] uppercase text-neutral-600 dark:text-neutral-400 dark:group-hover:text-[#fafafa] group-hover:text-[#09090B]'>{name}</h1>

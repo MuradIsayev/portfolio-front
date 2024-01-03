@@ -9,6 +9,7 @@ export default {
   theme: {
     screens: {
       'md': { 'max': '768px' },
+      'lg': { 'min': '1024px' },
     },
     extend: {
       fontFamily: {
