@@ -30,7 +30,7 @@ const BlogContent = ({ id, title, minsRead, blockId, createdAt, description, han
               {description}
             </div>
           </div>
-          <div className='flex flex-wrap justify-start flex-row gap-3 md:gap-2 cursor-pointer ml-2'>
+          <div className='flex flex-row flex-wrap justify-start gap-3 ml-2 cursor-pointer md:gap-2'>
             {tags?.map(({ id, name }) => {
               return (
                 <BlogTags

@@ -1,4 +1,3 @@
-// export { default as UnderConstruction } from './UnderConstruction';
 export { default as NavBar } from './NavBar';
 export { default as NotFound } from './NotFound';
 export { default as DownloadCV } from './DownloadCV';

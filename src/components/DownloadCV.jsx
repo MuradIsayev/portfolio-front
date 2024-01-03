@@ -17,10 +17,9 @@ const DownloadCV = () => {
         await loadingControls.start({ top: 0, transition: { duration: 0.4 } });
         loadingBarControls.start({ width: '100%', transition: { duration: 1.1 } });
 
-        // Make the download request
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_APP_BACKEND_URL}/documents/my-cv/Murad_Isayev_CV-f33b.pdf`
+                `${import.meta.env.VITE_APP_BACKEND_URL}/${import.meta.env.VITE_APP_CV_FILEPATH}`
             );
 
             if (response.ok) {
@@ -28,21 +27,21 @@ const DownloadCV = () => {
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = 'Murad_Isayev_CV.pdf';
+                a.download = `${import.meta.env.VITE_APP_FILENAME}.pdf`;
                 a.click();
 
                 await doneControls.start({
                     top: 0,
                     transition: { delay: 1.25, duration: 0.4 },
                 });
-                // Reset animation after a delay
+
                 setTimeout(() => {
                     setIsAnimating(false);
                     uploadControls.start({ zIndex: 0 });
                     loadingControls.start({ top: '-100%', transition: { duration: 0 } });
                     loadingBarControls.start({ width: '0%', transition: { duration: 0 } });
                     doneControls.start({ top: '-100%', transition: { duration: 0.4 } });
-                }, 1000); // Adjust the delay (in milliseconds) as needed
+                }, 1000);
             } else {
                 console.error('File download failed');
             }
@@ -61,9 +60,9 @@ const DownloadCV = () => {
                         bg-[#18181B] hover:bg-neutral-800 dark:bg-[#F1F1F1] dark:hover:bg-[#f7f7f7e8]"
                         animate={uploadControls}
                     >
-                        <motion.div 
+                        <motion.div
                             initial={{ y: 0 }}
-                            animate={{ y: 2}}
+                            animate={{ y: 2 }}
                             transition={{
                                 type: "tween",
                                 repeat: Infinity,

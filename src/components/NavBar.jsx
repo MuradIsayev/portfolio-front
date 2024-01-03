@@ -9,12 +9,12 @@ const NavBar = () => {
   const isBlogPage = location.pathname.includes('/blog');
   const isGuestBookPage = location.pathname.includes('/guestbook');
   const isAboutPage = location.pathname.includes('/about');
-  const isHomePage = location.pathname === '/home' || location.pathname === '/'; // Check for '/home' or the default route
+  const isHomePage = location.pathname === '/home' || location.pathname === '/';
 
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const [isChecked, setIsChecked] = useState(darkTheme);
-    const {isThemeChanged, setIsThemeChanged} = isThemeChangedStore();
+    const { isThemeChanged, setIsThemeChanged } = isThemeChangedStore();
 
 
     const handleMode = () => {

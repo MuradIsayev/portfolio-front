@@ -5,7 +5,7 @@ const handleTagClick = async (tag, setBlogData) => {
     await axios
         .get(`${import.meta.env.VITE_APP_BACKEND_URL}/blogs/search?tag=${tag}`)
         .then((response) => {
-            setBlogData(response?.data); // logs the filtered blogs array
+            setBlogData(response?.data);
         })
         .catch((error) => {
             console.log(error);

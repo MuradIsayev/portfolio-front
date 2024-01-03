@@ -95,14 +95,13 @@ const GuestBook = () => {
       const user = auth?.currentUser;
 
       if (user) {
-        console.log(`${user?.displayName} signed in with GitHub`);
         socket.emit('initiate', {
           userName: user?.displayName ? user?.displayName : username,
           photoURL: user?.photoURL,
           uuid: user?.uid,
         });
         setIsSignedOut(false);
-        setIsSignedOutFromStorage(false); // Update local storage immediately
+        setIsSignedOutFromStorage(false);
       }
     } catch (error) {
       console.error(error);
@@ -116,14 +115,13 @@ const GuestBook = () => {
       const user = auth?.currentUser;
 
       if (user) {
-        console.log(`${user?.displayName} signed in with Google`);
         socket.emit('initiate', {
           userName: user?.displayName ? user?.displayName : username,
           photoURL: user?.photoURL,
           uuid: user?.uid,
         });
         setIsSignedOut(false);
-        setIsSignedOutFromStorage(false); // Update local storage immediately
+        setIsSignedOutFromStorage(false);
       }
     } catch (error) {
       console.error(error);

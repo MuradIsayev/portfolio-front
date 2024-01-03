@@ -4,7 +4,7 @@ import { underConstruction } from "../assets";
 const UnderConstruction = () => {
     return (
         <>
-            <div    
+            <div
                 className="mt-[7.3rem] w-[90%] md:w-full md:mt-20"
             >
                 <h2 className="headers text-[1.3rem] md:text-[1.1rem]">Oops.. I haven't completed it yet.</h2>

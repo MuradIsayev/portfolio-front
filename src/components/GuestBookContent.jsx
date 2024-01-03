@@ -1,5 +1,3 @@
-
-
 const GuestBookContent = ({ data }) => {
 
   return (
