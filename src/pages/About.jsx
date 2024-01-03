@@ -29,8 +29,8 @@ const About = () => {
         </div>
 
         <div>
-          <motion.ol variants={cardContainer}
-            className="relative border-l border-gray-200 dark:border-gray-700">
+          <motion.ol variants={container}
+            className="relative border-l border-neutral-600 dark:border-neutral-400">
             {experiences?.map(({ position, description, startedAt, endedAt, company, workScheduleType }, index) => {
               return (
                 <JobTimeLine
