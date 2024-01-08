@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchProjects = async () => {
   const response = await axios.get(
-    `${import.meta.env.VITE_APP_BACKEND_URL}/projects`
+    `https://${import.meta.env.VITE_APP_BACKEND_URL}/projects`
   );
   const projects = await response.data;
 

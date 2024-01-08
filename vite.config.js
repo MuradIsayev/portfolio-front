@@ -11,9 +11,9 @@ export default defineConfig(({ command, mode }) => {
     // Vite config
     plugins: [react()],
     server: {
-      proxy: { // proxy setting
+      proxy: {
         '/api': {
-          target: 'https://portfolio-back-production-f61e.up.railway.app',
+          target: 'http://localhost:3001',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         },
