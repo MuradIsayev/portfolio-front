@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Filter from 'bad-words';
 
-const socket = io("http://localhost:3001");
+const socket = io(import.meta.env.VITE_APP_socketIO_URL);
+
 const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage }) => { 
   const filter = new Filter();
 

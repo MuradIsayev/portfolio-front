@@ -68,7 +68,7 @@ const GuestBook = () => {
         if (timeoutId) {
           clearTimeout(timeoutId);
         }
-        timeoutId = setTimeout(handleTimeout, 1200000); // 2 minutes
+        timeoutId = setTimeout(handleTimeout, 600000); // 10 minutes 
       } else {
         clearTimeout(timeoutId);
       }
