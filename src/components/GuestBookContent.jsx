@@ -1,7 +1,4 @@
 const GuestBookContent = ({ data }) => {
-  data?.map((message, index) => (
-    console.log(message?.isOnline)
-  ))
 
   return (
     <div
