@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
     server: {
       proxy: { // proxy setting
         '/api': {
-          target: import.meta.env.VITE_APP_socketIO_URL,
+          target: 'https://portfolio-back-production-f61e.up.railway.app',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         },
