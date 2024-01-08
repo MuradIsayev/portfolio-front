@@ -86,7 +86,7 @@ const GuestBook = () => {
       setData(data);
       setIsSent(true);
     });
-  }, [isSent, isSignedOut]);
+  }, [isSent, isSignedOut, user, data]);
 
   const signInWithGitHub = async () => {
     const provider = new firebase.auth.GithubAuthProvider();
