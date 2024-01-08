@@ -99,6 +99,7 @@ const GuestBook = () => {
           userName: user?.displayName ? user?.displayName : username,
           photoURL: user?.photoURL,
           uuid: user?.uid,
+          isOnline: true,
         });
         setIsSignedOut(false);
         setIsSignedOutFromStorage(false);
@@ -119,6 +120,7 @@ const GuestBook = () => {
           userName: user?.displayName ? user?.displayName : username,
           photoURL: user?.photoURL,
           uuid: user?.uid,
+          isOnline: true,
         });
         setIsSignedOut(false);
         setIsSignedOutFromStorage(false);
@@ -130,7 +132,7 @@ const GuestBook = () => {
 
 
   const handleSignOut = async () => {
-    socket.emit('signout', { userName: auth?.currentUser?.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+    socket.emit('signout', { userName: auth?.currentUser?.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, isOnline: false })
     setMessage('');
     setIsSignedOut(true);
     await auth.signOut();
