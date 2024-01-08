@@ -11,9 +11,9 @@ export default defineConfig(({ command, mode }) => {
     // Vite config
     plugins: [react()],
     server: {
-      proxy: {
+      proxy: { // proxy setting
         '/api': {
-          target: 'http://localhost:3001',
+          target: import.meta.env.VITE_APP_socketIO_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         },
