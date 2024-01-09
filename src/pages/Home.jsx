@@ -31,8 +31,7 @@ const Home = () => {
           className='headers'>Murad Isayev</motion.h2>
         <motion.p variants={items}
           className="home-texts">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
-          asperiores
+          Welcome darling. Take a glimpse at my Portfolio.
         </motion.p>
 
         <div className="flex flex-row items-center justify-start gap-8 mx-auto my-5 md:gap-5 md:mx-auto md:my-4">
@@ -63,9 +62,8 @@ const Home = () => {
           </motion.div>
         </div>
         <motion.p variants={items} className="home-texts">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aut
-          itaque asperiores vitae deleniti praesentium odio perferendis, fuga
-          sapiente quidem sed delectus facere minima repudiandae?
+          I am a computer science senior at French-Azerbaijani University (UFAZ) with more than a year of experience in NodeJS.
+          Download my CV to learn more about me. <span className='italic font-medium'>( you won't, this is what it is )</span>
         </motion.p>
 
         <motion.div variants={items}>
