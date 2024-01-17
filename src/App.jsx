@@ -11,7 +11,7 @@ const App = () => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className='h-full bg-white dark:bg-[#09090B] dark:text-white overflow-hidden overflow-y-scroll'>
+      <div className='min-h-screen bg-white dark:bg-[#09090B] dark:text-white overflow-hidden overflow-y-scroll'>
         <div className="main-container">
           <div className="navbar-container">
             <NavBar />
