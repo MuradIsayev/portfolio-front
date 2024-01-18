@@ -2,19 +2,26 @@ import { io } from "socket.io-client";
 import { z } from 'zod';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Filter from 'bad-words';
+import {
+  RegExpMatcher,
+  englishDataset,
+  englishRecommendedTransformers,
+} from 'obscenity'
 
 const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
-const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage }) => { 
-  const filter = new Filter();
+const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage }) => {
+  const matcher = new RegExpMatcher({
+    ...englishDataset.build(),
+    ...englishRecommendedTransformers,
+  });
 
   const [errorMessage, setErrorMessage] = useState('');
   const validateMessage = z.string()
-    .max(75, 'Message should not be more than 75 characters')
-    .min(1, 'Message field should not be empty')
-    .refine((value) => !/^\s*$/.test(value), 'Message should not be empty')
-    .refine((value) => !filter.isProfane(value), 'Message should not contain profanity');
+    .max(75, 'Message should not be more than 75 characters.')
+    .min(1, 'Message field should not be empty.')
+    .refine((value) => !/^\s*$/.test(value), 'Message should not be empty.')
+    .refine((value) => !matcher.hasMatch(value), 'Message should not contain profanity.')
 
   const handleSendButton = () => {
     socket.emit("message", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
