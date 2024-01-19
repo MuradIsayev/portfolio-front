@@ -139,11 +139,11 @@ const GuestBook = () => {
     await auth.signOut();
   };
 
-  useEffect(() => {
-    if (!isSignedOut && !isVisible) {
-      handleSignOut();
-    }
-  }, [isVisible])
+  // useEffect(() => {
+  //   if (!isSignedOut && !isVisible) {
+  //     handleSignOut();
+  //   }
+  // }, [isVisible])
 
   return (
     <>

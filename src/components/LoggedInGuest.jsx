@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 import { z } from 'zod';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   RegExpMatcher,
@@ -16,6 +16,7 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
     ...englishRecommendedTransformers,
   });
 
+  const [displayTyping, setDisplayTyping] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const validateMessage = z.string()
     .max(75, 'Message should not be more than 75 characters.')
@@ -28,6 +29,44 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
     setMessage('');
     setIsSent(false);
   };
+
+  let timeout = null;
+  const handleTyping = () => {
+    if (timeout === null) {
+      // User started typing, send a typing message to the server
+      socket.emit("typing", { uuid: currentUser.uid, isTyping: true });
+
+      // Set a timeout to clear the typing status after 1500 milliseconds
+      timeout = setTimeout(() => {
+        timeout = null;
+      }, 1500);
+    }
+  }
+
+
+  useEffect(() => {
+    // Clean up the timeout when the component unmounts
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  socket.on('typing', ({ userName, isTyping, nbOfUsers }) => {
+    clearTimeout(timeout);
+    if (nbOfUsers > 1) {
+      setDisplayTyping(`Multiple people are typing...`);
+      timeout = setTimeout(() => {
+        setDisplayTyping('');
+      }, 2000)
+    }
+    if (isTyping) {
+      setDisplayTyping(`${userName} is typing...`);
+      timeout = setTimeout(() => {
+        setDisplayTyping('');
+      }, 2500)
+    };
+  });
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,10 +97,15 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
               placeholder="Your message..."
               value={message}
               onChange={((e) => {
-                setMessage(e.target.value)
+                setMessage(e.target.value);
+                handleTyping();
               })}
             />
           </div>
+          {displayTyping && (
+            <motion.div
+              className="text-neutral-400 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-neutral-500">{displayTyping}</motion.div>
+          )}
           {errorMessage && (
             <motion.div
               initial={{ opacity: 0, y: -25 }}
