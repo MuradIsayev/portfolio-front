@@ -7,6 +7,7 @@ import {
   englishDataset,
   englishRecommendedTransformers,
 } from 'obscenity'
+import debounce from "lodash/debounce";
 
 const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
@@ -18,6 +19,8 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
 
   const [displayTyping, setDisplayTyping] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [dotCount, setDotCount] = useState(0);
   const validateMessage = z.string()
     .max(75, 'Message should not be more than 75 characters.')
     .min(1, 'Message field should not be empty.')
@@ -32,34 +35,31 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
     })
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDotCount((prevCount) => (prevCount % 3) + 1);
+    }, 750);
+    return () => clearInterval(interval);
+  }, []);
+
+  const typingDot = '.'.repeat(dotCount);
+
+  const handleTyping = debounce(() => {
+    setIsTyping(false);
+    socket.emit('typing', { isTyping, uuid: currentUser?.uid });
+  }, 1000);
+
+
   let timeout = null;
-  const handleTyping = () => {
-    clearTimeout(timeout);
-
-    // User started typing, send a typing message to the server
-    timeout = setTimeout(() => {
-      // User stopped typing, send a typing message to the server
-      socket.emit("typing", { uuid: currentUser.uid, isTyping: true });
-
-      timeout = null;
-    }, 500);
-
-    // Set a timeout to clear the typing status after 2500 milliseconds
-    timeout = setTimeout(() => {
-      // User stopped typing, send a typing message to the server
-      socket.emit("typing", { uuid: currentUser.uid, isTyping: false });
-
-      timeout = null;
-    }, 1500);
-  };
-
   socket.on('typing', ({ userName, nbOfUsers, allTypingUserIDs }) => {
     clearTimeout(timeout);
 
-    if (nbOfUsers === 1 || (nbOfUsers === 2 && allTypingUserIDs.includes(currentUser.uid))) {
-      setDisplayTyping(`${userName} is typing...`);
+    const areTwoUsersTyping = nbOfUsers === 2 && allTypingUserIDs.includes(currentUser.uid);
+
+    if (nbOfUsers === 1 || areTwoUsersTyping) {
+      setDisplayTyping(`${userName} is typing`);
     } else if (nbOfUsers >= 2) {
-      setDisplayTyping(`Multiple people are typing...`);
+      setDisplayTyping(`Multiple people are typing`);
     }
 
     // Set a timeout to clear the typing status after 2500 milliseconds
@@ -74,7 +74,6 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
       clearTimeout(timeout);
     };
   }, []);
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -107,13 +106,14 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
               value={message}
               onChange={((e) => {
                 setMessage(e.target.value);
+                setIsTyping(true);
                 handleTyping();
               })}
             />
           </div>
           {displayTyping && (
             <motion.div
-              className="text-neutral-400 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-neutral-500">{displayTyping}</motion.div>
+              className="text-neutral-400 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-neutral-500">{displayTyping}{typingDot}</motion.div>
           )}
           {errorMessage && (
             <motion.div
