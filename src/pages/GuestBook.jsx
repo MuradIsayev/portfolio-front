@@ -43,7 +43,6 @@ const GuestBook = () => {
   const initialSignOutState = true;
   const [message, setMessage] = useState(getInputForm() || initialMessage);
   const [data, setData] = useState([]);
-  const [isSent, setIsSent] = useState(false);
   const [isSignedOut, setIsSignedOut] = useState(getIsSignedOut() ?? initialSignOutState);
   const [user] = useAuthState(auth);
 
@@ -81,39 +80,30 @@ const GuestBook = () => {
   }, []);
 
   useEffect(() => {
-    socket.emit('getMessage');
-    socket.on('userMessage', (data) => {
+    socket.emit('getAllMessages');
+    socket.on('allMessages', (data) => {
       setData(data);
-      setIsSent(true);
     });
-  }, [isSent, isSignedOut, user, data]);
+  }, [isSignedOut, user]);
 
   const signInWithGitHub = async () => {
-    const provider = new firebase.auth.GithubAuthProvider();
-    try {
-      await auth.signInWithPopup(provider);
-      const user = auth?.currentUser;
+    const provider = new firebase.auth.GithubAuthProvider()
 
-      if (user) {
-        socket.emit('initiate', {
-          userName: user?.displayName ? user?.displayName : username,
-          photoURL: user?.photoURL,
-          uuid: user?.uid,
-          isOnline: true,
-        });
-        setIsSignedOut(false);
-        setIsSignedOutFromStorage(false);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    await signIn(provider);
   };
 
   const signInWithGoogle = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    try {
-      await auth.signInWithPopup(provider);
-      const user = auth?.currentUser;
+    const provider = new firebase.auth.GoogleAuthProvider()
+
+    await signIn(provider);
+
+    setIsSignedOut(false);
+    setIsSignedOutFromStorage(false);
+  };
+
+  const signIn = async (provider) => {
+    await auth.signInWithPopup(provider).then((result) => {
+      const user = result.user;
 
       if (user) {
         socket.emit('initiate', {
@@ -122,13 +112,12 @@ const GuestBook = () => {
           uuid: user?.uid,
           isOnline: true,
         });
-        setIsSignedOut(false);
-        setIsSignedOutFromStorage(false);
       }
-    } catch (error) {
+    }).catch((error) => {
       console.error(error);
-    }
-  };
+    });
+  }
+
 
 
   const handleSignOut = async () => {
@@ -139,6 +128,7 @@ const GuestBook = () => {
     await auth.signOut();
   };
 
+  // TODO: Enable this for production
   // useEffect(() => {
   //   if (!isSignedOut && !isVisible) {
   //     handleSignOut();
@@ -152,8 +142,8 @@ const GuestBook = () => {
       >
         <motion.h2 variants={items} className='mb-2 headers'>Leave your sign</motion.h2>
         <motion.div variants={items} className="guestbook-content-container">
-          {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
-          {isSent ? <GuestBookContent data={data} /> : null}
+          {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setData={setData} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
+          {data ? <GuestBookContent data={data} /> : null}
         </motion.div>
       </motion.div>
     </>
