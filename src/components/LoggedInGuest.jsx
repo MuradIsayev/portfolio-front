@@ -113,7 +113,7 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
           </div>
           {displayTyping && (
             <motion.div
-              className="text-neutral-400 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-neutral-500">{displayTyping}{typingDot}</motion.div>
+              className="text-neutral-600 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-neutral-400">{displayTyping}{typingDot}</motion.div>
           )}
           {errorMessage && (
             <motion.div
