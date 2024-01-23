@@ -91,6 +91,10 @@ const GuestBook = () => {
 
     await signIn(provider);
 
+    socket.on('getAllMessages', (data) => {
+      setData(data);
+    });
+
     setIsSignedOut(false);
     setIsSignedOutFromStorage(false);
   };
@@ -99,6 +103,11 @@ const GuestBook = () => {
     const provider = new firebase.auth.GoogleAuthProvider()
 
     await signIn(provider);
+
+
+    socket.on('getAllMessages', (data) => {
+      setData(data);
+    });
 
     setIsSignedOut(false);
     setIsSignedOutFromStorage(false);
@@ -116,6 +125,7 @@ const GuestBook = () => {
           isOnline: true,
         });
       }
+
     }).catch((error) => {
       console.error(error);
     });

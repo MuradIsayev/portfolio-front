@@ -35,7 +35,9 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
   let timeout = null;
 
   const handleTyping = () => {
-    clearTimeout(timeout);
+    if (timeout) {
+      clearTimeout(timeout);
+    }
 
     // User started typing, send a typing message to the server
     socket.emit("typing", { uuid: currentUser.uid, isTyping: true });
@@ -50,13 +52,19 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
   };
 
   socket.on('typing', ({ userName, isTyping, nbOfUsers }) => {
+    console.log('typing', userName, isTyping, nbOfUsers);
     clearTimeout(timeout);
 
     if (isTyping) {
       setDisplayTyping(`${userName} is typing...`);
-    } else if (nbOfUsers > 1) {
-      setDisplayTyping(`Multiple people are typing...`);
+    } else {
+      if (nbOfUsers === 1) {
+        setDisplayTyping('');
+      } else {
+        setDisplayTyping(`Multiple people are typing...`);
+      }
     }
+
     timeout = setTimeout(() => {
       setDisplayTyping('');
     }, 1500);
