@@ -90,6 +90,9 @@ const GuestBook = () => {
     const provider = new firebase.auth.GithubAuthProvider()
 
     await signIn(provider);
+
+    setIsSignedOut(false);
+    setIsSignedOutFromStorage(false);
   };
 
   const signInWithGoogle = async () => {
