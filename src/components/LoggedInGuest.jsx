@@ -10,7 +10,7 @@ import {
 
 const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
-const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage }) => {
+const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) => {
   const matcher = new RegExpMatcher({
     ...englishDataset.build(),
     ...englishRecommendedTransformers,
@@ -25,9 +25,11 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
     .refine((value) => !matcher.hasMatch(value), 'Message should not contain profanity.')
 
   const handleSendButton = () => {
-    socket.emit("message", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
+    socket.emit("sendMessage", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
     setMessage('');
-    setIsSent(false);
+    socket.on('updatedMessages', (data) => {
+      setData(data);
+    })
   };
 
   let timeout = null;
@@ -38,21 +40,14 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
     // User started typing, send a typing message to the server
     socket.emit("typing", { uuid: currentUser.uid, isTyping: true });
 
-    // Set a timeout to clear the typing status after 2000 milliseconds
+    // Set a timeout to clear the typing status after 2500 milliseconds
     timeout = setTimeout(() => {
       // User stopped typing, send a typing message to the server
       socket.emit("typing", { uuid: currentUser.uid, isTyping: false });
 
       timeout = null;
-    }, 2500);
+    }, 3000);
   };
-
-  useEffect(() => {
-    // Clean up the timeout when the component unmounts
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
 
   socket.on('typing', ({ userName, isTyping, nbOfUsers }) => {
     clearTimeout(timeout);
@@ -66,6 +61,14 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
       setDisplayTyping('');
     }, 1500);
   });
+
+
+  useEffect(() => {
+    // Clean up the timeout when the component unmounts
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
 
 
   const handleSubmit = (e) => {
@@ -92,6 +95,7 @@ const LoggedInGuest = ({ signOut, currentUser, setIsSent, message, setMessage })
           <div>
             <input
               type="text"
+              autoComplete="off"
               className="message-input"
               name="message"
               placeholder="Your message..."
