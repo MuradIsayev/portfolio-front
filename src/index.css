@@ -131,7 +131,7 @@
   .send-button {
     @apply flex items-center justify-center absolute right-1 top-[5px]
         rounded-md transition ease-linear duration-200
-        font-[500] text-[14px] md:font-[600] 
+        font-[500] text-[14px] 
          md:top-1 dark:bg-[#09090B] bg-[#ffffff] hover:bg-[#f1f1f1d8]
          dark:text-[#fafafa] dark:hover:bg-[#151516d5] text-[#09090B]
         border dark:border-[#27272A] border-[#E4E4E7];
