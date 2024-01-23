@@ -33,14 +33,16 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
   };
 
   let timeout = null;
-
   const handleTyping = () => {
-    if (timeout) {
-      clearTimeout(timeout);
-    }
+    clearTimeout(timeout);
 
     // User started typing, send a typing message to the server
-    socket.emit("typing", { uuid: currentUser.uid, isTyping: true });
+    timeout = setTimeout(() => {
+      // User stopped typing, send a typing message to the server
+      socket.emit("typing", { uuid: currentUser.uid, isTyping: true });
+
+      timeout = null;
+    }, 500);
 
     // Set a timeout to clear the typing status after 2500 milliseconds
     timeout = setTimeout(() => {
@@ -48,28 +50,23 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
       socket.emit("typing", { uuid: currentUser.uid, isTyping: false });
 
       timeout = null;
-    }, 3000);
+    }, 1500);
   };
 
-  socket.on('typing', ({ userName, isTyping, nbOfUsers }) => {
-    console.log('typing', userName, isTyping, nbOfUsers);
+  socket.on('typing', ({ userName, nbOfUsers, allTypingUserIDs }) => {
     clearTimeout(timeout);
 
-    if (isTyping) {
+    if (nbOfUsers === 1 || (nbOfUsers === 2 && allTypingUserIDs.includes(currentUser.uid))) {
       setDisplayTyping(`${userName} is typing...`);
-    } else {
-      if (nbOfUsers === 1) {
-        setDisplayTyping('');
-      } else {
-        setDisplayTyping(`Multiple people are typing...`);
-      }
+    } else if (nbOfUsers >= 2) {
+      setDisplayTyping(`Multiple people are typing...`);
     }
 
+    // Set a timeout to clear the typing status after 2500 milliseconds
     timeout = setTimeout(() => {
       setDisplayTyping('');
-    }, 1500);
+    }, 2000);
   });
-
 
   useEffect(() => {
     // Clean up the timeout when the component unmounts

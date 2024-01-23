@@ -104,7 +104,6 @@ const GuestBook = () => {
 
     await signIn(provider);
 
-
     socket.on('getAllMessages', (data) => {
       setData(data);
     });
