@@ -15,12 +15,14 @@ const Blog = () => {
   const [selectedBlogMinsRead, setSelectedBlogMinsRead] = useState(null);
 
   const { data: blogs } = useQuery({ queryKey: ['blogs'], queryFn: fetchBlogs })
-  const { data: tags } = useQuery({ queryKey: ['tags'], queryFn: fetchTags }, { staleTime: 3000 })
+  // const { data: tags } = useQuery({ queryKey: ['tags'], queryFn: fetchTags }, { staleTime: 3000 })
   const { data: randomPost } = useQuery({ queryKey: ['randomPost'], queryFn: fetchRandomPost }, { staleTime: 60000 })
 
   useEffect(() => {
     if (blogs) setBlogData(blogs)
   }, [blogs])
+
+  console.log(blogData);
 
 
   const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
@@ -81,15 +83,20 @@ const Blog = () => {
         <div className=''>
           <p className='text-lg headers mt-7 md:mt-0'>Tags</p>
           <div className='flex flex-row flex-wrap gap-2 text-xs md:gap-1 md:flex-col md:flex-nowrap'>
-            {tags?.map(({ tag }, index) => {
+            {blogData?.map(({ tags }) => {
               return (
-                <BlogTags
-                  key={index}
-                  tag={tag}
-                  setBlogData={setBlogData}
-                />
+                tags?.map(({ id, name }) => {
+                  return (
+                    <BlogTags
+                      key={id}
+                      tag={name}
+                      setBlogData={setBlogData}
+                    />
+                  );
+                })
               );
-            })}
+            }
+            )}
           </div>
         </div>
       </div>
