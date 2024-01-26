@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { BlogContent } from '../components';
-import { BlogDetails } from '../components';
-import { BlogTags } from '../components';
+import { BlogContent, BlogDetails, BlogTags, CountAnimation } from '../components';
 import { Link } from 'react-router-dom';
 import '../styles/brackets.scss'
-import { fetchBlogs, fetchRandomPost, fetchTags } from '../api/blog';
+import { fetchBlogs, fetchRandomPost } from '../api/blog';
 import { useQuery } from '@tanstack/react-query';
+
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -21,8 +20,6 @@ const Blog = () => {
   useEffect(() => {
     if (blogs) setBlogData(blogs)
   }, [blogs])
-
-  console.log(blogData);
 
 
   const handleBlogSelection = (blogId, title, createdAt, minsRead) => {
@@ -49,7 +46,10 @@ const Blog = () => {
           <>
             <div className='flex flex-row justify-between w-[90%] md:w-[95%] items-center'>
               <h2 className='headers'>Blog</h2>
-              <span className='text-[.92rem] md:text-[.65rem] font-bold'>{numberOfBlogs} articles</span>
+              <span className='text-[.92rem] md:text-[.65rem] font-bold'>
+                <CountAnimation n={numberOfBlogs} />
+                <span> articles</span>
+              </span>
             </div>
             <div>
               {blogData?.map(({ id, blockId, title, description, minsRead, createdAt, tags }) => {
