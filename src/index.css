@@ -86,7 +86,7 @@
   }
 
   .avatar-img {
-    @apply h-[130px] w-[130px] lg:h-[140px] lg:w-[140px] md:h-[85px] md:w-[85px] cursor-pointer transform object-contain
+    @apply h-[130px] w-[130px] lg:h-[140px] lg:w-[140px] md:h-[85px] md:w-[85px] object-contain
         rounded-full;
   }
 

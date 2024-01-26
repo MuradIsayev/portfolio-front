@@ -92,7 +92,7 @@ const NavBar = () => {
                   // type: 'tween',
                   // duration: 0.25,
                   type: 'spring',
-                  stiffness: 200,
+                  stiffness: 210,
                   damping:20,
                 }}
               />
