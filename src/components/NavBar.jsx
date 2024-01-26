@@ -2,14 +2,22 @@ import { Link, useLocation } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 import { useState } from 'react';
 import { isThemeChangedStore } from '../store/useIsThemeChanged';
+import { motion } from 'framer-motion';
+import navItems from '../constants/routes';
+import { isMobile } from 'react-device-detect';
+
 
 
 const NavBar = () => {
   const location = useLocation();
-  const isBlogPage = location.pathname.includes('/blog');
-  const isGuestBookPage = location.pathname.includes('/guestbook');
-  const isAboutPage = location.pathname.includes('/about');
-  const isHomePage = location.pathname === '/home' || location.pathname === '/';
+
+  let currentPath = location.pathname;
+
+  if (currentPath === '/') {
+    currentPath = '/home';
+  }
+
+  const [hoveredPath, setHoveredPath] = useState(currentPath);
 
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
@@ -24,7 +32,7 @@ const NavBar = () => {
     }
 
     return (
-      <label className="swap swap-rotate cursor-pointer h-10 w-10 md:h-8 md:w-8 lg:h-11 lg:w-11
+      <label className="mb-2 mr-2 md:mb-0 swap swap-rotate cursor-pointer h-10 w-10 md:h-8 md:w-8 lg:h-11 lg:w-11
       dark:hover:bg-[#151516d5] rounded-md hover:bg-[#ededeee0]
       transition ease-linear duration-200">
         <input type="checkbox" checked={isChecked} onChange={handleMode} />
@@ -36,34 +44,62 @@ const NavBar = () => {
 
   return (
     <nav
-      className="fixed flex flex-col items-start gap-1 bg-transparent lg:gap-[6px] md:flex-row md:items-center md:static"
+      className="fixed flex flex-col items-start bg-transparent md:flex-row md:items-center md:sticky"
     >
       <ThemeIcon />
 
-      <Link
-        to="/home"
-        className={isHomePage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">Home</span>
-      </Link>
-      <Link
-        to="/about"
-        className={isAboutPage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">About</span>
-      </Link>
-      <Link
-        to="/blogs"
-        className={isBlogPage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">Blog</span>
-      </Link>
-      <Link
-        to="/guestbook"
-        className={isGuestBookPage ? 'navbar-links active' : 'navbar-links'}
-      >
-        <span className="md:text-[.6rem]">GuestBook</span>
-      </Link>
+      {navItems.map((item, index) => {
+        const isActive = item.path === currentPath;
+
+
+        const handleMouseEvents = {
+          onMouseOver: () => {
+            if (!isMobile) {
+              setHoveredPath(item.path);
+            }
+          },
+          onMouseLeave: () => {
+            if (!isMobile) {
+              setHoveredPath(currentPath);
+            }
+          },
+        };
+
+        const handleTouchEvents = {
+          onClick: () => {
+            setHoveredPath(item.path);
+          },
+        };
+
+        return (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`relative ${isActive ? "navbar-links text-[#000000] dark:text-[#ffffff]" : "navbar-links"
+              }`}
+            data-active={isActive}
+            href={item.path}
+            {...(isMobile ? handleTouchEvents : handleMouseEvents)}
+
+          >
+            <span className='md:text-[.6rem]'>{item.name}</span>
+            {item.path === hoveredPath && (
+              <motion.div
+                className="absolute bottom-0 left-0 w-full h-full rounded-md -z-10 hovered-path"
+                layoutId="navbar"
+                aria-hidden="true"
+                transition={{
+                  type: 'tween',
+                  bounce: .25,
+                  stiffness: 100,
+                  damping: 3,
+                  duration: 0.35,
+                }}
+              />
+            )}
+          </Link>
+        );
+      })}
     </nav>
   );
 }
