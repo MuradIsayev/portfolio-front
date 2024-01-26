@@ -22,7 +22,7 @@ const About = () => {
         <div className='mb-4'>
           <motion.h2 variants={items} className='headers'>About Me</motion.h2>
           <motion.p variants={items} className='home-texts'>
-            My journey began in backend development, but I've since expanded my skills to embrace both frontend technologies as well, to become a full-stack developer.
+            My journey began in backend development, but I've since expanded my skills to embrace frontend technologies as well.
             Now, I am working on myself, to be a solid one.
             Here's what I have done so far.
           </motion.p>
