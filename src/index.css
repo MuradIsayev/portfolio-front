@@ -72,12 +72,12 @@
     @apply text-neutral-600 dark:text-neutral-400
         hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] 
         no-underline px-3 py-2 rounded-md text-sm font-medium transition
-         duration-150 ease-linear md:my-[10%] md:ml-1 md:px-[13px] md:py-[2px]
-         lg:py-2 lg:text-[.92rem];
+         duration-300 ease-linear md:my-[10%] md:px-[13px] md:py-[2px]
+         lg:py-[10px] lg:px-[15px] lg:text-[.92rem];
   }
 
-  .active {
-    @apply bg-[#ededeee0] text-[#000000]
+  .hovered-path {
+    @apply text-[#000000] bg-[#ededeee0]
         dark:text-[#ffffff] dark:bg-[#151516d5];
   }
 
