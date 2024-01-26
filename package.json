@@ -19,6 +19,7 @@
     "lottie-react": "^2.4.0",
     "obscenity": "^0.2.0",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-icons": "^4.9.0",
