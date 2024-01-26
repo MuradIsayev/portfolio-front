@@ -89,11 +89,11 @@ const NavBar = () => {
                 layoutId="navbar"
                 aria-hidden="true"
                 transition={{
-                  type: 'tween',
-                  bounce: .25,
-                  stiffness: 100,
-                  damping: 3,
-                  duration: 0.35,
+                  // type: 'tween',
+                  // duration: 0.25,
+                  type: 'spring',
+                  stiffness: 200,
+                  damping:20,
                 }}
               />
             )}
