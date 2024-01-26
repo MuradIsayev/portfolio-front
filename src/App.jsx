@@ -19,7 +19,7 @@ const App = () => {
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             {/* <Route path="blogs" element={<UnderConstruction />} /> */}
-            <Route path="blogs" element={<Blog />} />
+            <Route path="blog" element={<Blog />} />
             {/* <Route path=':id' element={<Blog />} /> */}
             <Route path="guestbook" element={<GuestBook />} />
             <Route path='*' element={<NotFound />} />
