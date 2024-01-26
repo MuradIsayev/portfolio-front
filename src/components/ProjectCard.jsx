@@ -5,7 +5,7 @@ const Skills = ({ skills }) => {
   return (
     <div className='flex flex-wrap project-skills'>
       {skills.map((skill) => (
-        <div key={skill?.id} className='pr-2 font-semibold skill text-neutral-600 dark:text-neutral-400'>
+        <div key={skill?.id} className='pr-2 font-semibold md:font-medium skill text-neutral-600 dark:text-neutral-400'>
           <p className="text-[.72rem] md:text-[.68rem]">{skill?.name}</p>
         </div>
       ))}
