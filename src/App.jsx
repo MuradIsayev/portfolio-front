@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { NavBar, UnderConstruction } from './components';
+import { BlogDetails, NavBar } from './components';
 import { NotFound } from './components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Blog, Home, About, GuestBook } from './pages';
@@ -18,9 +18,8 @@ const App = () => {
             <Route path="/" exact element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
-            {/* <Route path="blogs" element={<UnderConstruction />} /> */}
             <Route path="blog" element={<Blog />} />
-            {/* <Route path=':id' element={<Blog />} /> */}
+            <Route path='blog/:slug' element={<BlogDetails />} />
             <Route path="guestbook" element={<GuestBook />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
