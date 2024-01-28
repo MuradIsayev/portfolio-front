@@ -19,22 +19,25 @@ const BlogDetails = () => {
 
     return (
         <div className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full">
-            <div className='flex flex-row items-center justify-start gap-24'
+            <div className='flex flex-row items-center w-[65%] mb-1 gap-3'
             >
-                {/* <div onClick={handleGoBack} className='flex items-center gap-[6px] cursor-pointer text-[#5f5f5f] opacity-70 hover:opacity-100 duration-75 ease-linear'>
-                    <img src={goBack} alt='Go back icon' className='w-5' />
-                    <span className='text-[.95rem] md:text-[.65rem] font-medium'>Back to blog</span>
-                </div> */}
-                <div className='flex flex-col items-center mb-4 md:items-start'>
-                    <h3 className='text-[1.55rem] md:text-[1.3rem] font-medium'>{singleBlog?.post?.title}</h3>
-                    <div className='flex gap-1 md:gap-[3px] text-[.85rem] md:text-[.58rem] text-gray-400 dark:text-[#a7a4a4]'>
-                        <span className='dark:hover:text-[#fff] hover:text-[#000] duration-100 
-                    ease-linear'>{singleBlog?.post?.createdAt}</span>
-                        <span>|</span>
-                        <span className='dark:hover:text-[#fff] hover:text-[#000] duration-100 
-                    ease-linear'>{singleBlog?.post?.minsRead} min read</span>
-                    </div>
+                <div onClick={handleGoBack} className='flex flex-row gap-[6px] cursor-pointer '>
+                    <img src={goBack} alt='Go back icon' className='w-6' />
                 </div>
+                <div className=''>
+                    <h3 className='text-[1.6rem] md:text-[1.32rem] font-medium'>{singleBlog?.post?.title}</h3>
+                </div>
+            </div>
+            <div className=' mb-4 flex flex-row items-center justify-between w-[65%]'>
+                <div className='flex gap-1 md:gap-[4px] text-[.8rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400'>
+                    <span>{singleBlog?.post?.createdAt}</span>
+                    <span>|</span>
+                    <span>{singleBlog?.post?.minsRead} min read</span>
+                </div>
+                <div className='text-[.8rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400'>
+                    123 Views
+                </div>
+
             </div>
 
             <article className='prose md:prose-sm dark:prose-invert dark:text-neutral-400 lg:max-w-[65%] md:max-w-full mt-4'>

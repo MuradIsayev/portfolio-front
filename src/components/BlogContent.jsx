@@ -16,7 +16,7 @@ const BlogContent = ({ slug, title, minsRead, createdAt, description, tags, next
       <Link to={`/blog/${slug}`}>
         <div>
           <div
-            className=" grow hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] h-[5.2rem] md:h-[4.5rem] flex flex-row flex-wrap cursor-pointer border border-[#E4E4E7] dark:border-[#27272A] card-hover rounded-lg mb-4 md:mb-3 mt-1.5">
+            className="grow hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] h-[5.2rem] md:h-[4.5rem] flex flex-row flex-wrap cursor-pointer border border-[#E4E4E7] dark:border-[#27272A] card-hover rounded-lg mb-4 md:mb-3 mt-1.5">
             <div className='flex flex-row flex-wrap justify-center items-center md:justify-start max-w-[100%] md:max-w-[95%] p-4 md:ml-1'>
               <div className='flex flex-col items-start md:items-start'>
                 <h3 className='text-[1rem] md:text-[.73rem] font-medium'>{title}</h3>
