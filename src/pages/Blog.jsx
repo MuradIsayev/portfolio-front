@@ -3,14 +3,14 @@ import { BlogContent, CountAnimation } from '../components';
 import '../styles/brackets.scss'
 import { fetchBlogs } from '../api/blog';
 import { useQuery } from '@tanstack/react-query';
+import { motion } from 'framer-motion';
+import { cardContainer, container, items } from '../assets/animations/transitions';
 
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
 
   const { data: blogs } = useQuery({ queryKey: ['blogs'], queryFn: fetchBlogs })
-  // const { data: tags } = useQuery({ queryKey: ['tags'], queryFn: fetchTags }, { staleTime: 3000 })
-  // const { data: randomPost } = useQuery({ queryKey: ['randomPost'], queryFn: fetchRandomPost }, { staleTime: 60000 })
 
   useEffect(() => {
     if (blogs) setBlogData(blogs)
@@ -21,39 +21,41 @@ const Blog = () => {
     return blogData?.length;
   }, [blogData]);
 
-
-  let i = 0;
   return (
     <>
-      <div
-        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-auto"
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={container}
+        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full"
       >
-        <div className='flex flex-row justify-between w-[65%] md:w-[95%] items-center'>
+        <motion.div
+          variants={items}
+          className='flex flex-row justify-between items-center w-full lg:w-[65%]'>
           <h2 className='headers'>Blog</h2>
-          <span className='text-[.92rem] md:text-[.65rem] font-bold'>
+          <span className='text-[.92rem] md:text-[.65rem] font-semibold'>
             <CountAnimation n={numberOfBlogs} />
             <span> blogs</span>
           </span>
-        </div>
-        <div>
-          {blogData?.map(({ id, title, description, minsRead, createdAt, tags, slug }) => {
+        </motion.div>
+        <motion.div className='lg:w-[65%] w-full'
+          variants={container}>
+          {blogData?.map(({ id, title, description, minsRead, createdAt, tags, slug }, index) => {
             return (
               <BlogContent
                 key={id}
-                // id={id}
                 slug={slug}
                 title={title}
                 description={description}
                 minsRead={minsRead}
                 tags={tags}
                 createdAt={createdAt}
-                // handleClick={handleBlogSelection}
-                testValue={i += 3}
+                nextDelay={index += 1}
               />
             );
           })}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div >
       {/* <div className='flex flex-col items-start w-[27%] mt-[7.3rem] pl-1 md:flex-row md:justify-evenly md:w-full'>
         <div>
           <p className='text-lg headers'>Random Post</p>
