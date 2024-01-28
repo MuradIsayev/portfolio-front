@@ -146,4 +146,8 @@
   .testbutton {
     animation: glowing 0.7s linear;
   }
+
+  .card-hover {
+    @apply transition ease-linear duration-200 hover:shadow-md
+  }
 }
