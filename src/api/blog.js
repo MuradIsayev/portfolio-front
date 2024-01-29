@@ -26,3 +26,11 @@ export const fetchBlogById = async slug => {
 
   return blog;
 };
+
+export const updateViewCount = async slug => {
+  console.log("I am called", slug);
+  await axios.patch(
+    `${import.meta.env.VITE_APP_BACKEND_URL}/blog/viewCount/${slug}`
+  );
+
+}
