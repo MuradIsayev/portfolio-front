@@ -1,5 +1,4 @@
 import axios from "axios";
-import '../styles/brackets.scss'
 
 const handleTagClick = async (tag, setBlogData) => {
     await axios
@@ -12,16 +11,12 @@ const handleTagClick = async (tag, setBlogData) => {
         });
 };
 
-const BlogTags = ({ tag, setBlogData }) => {
+const BlogTags = ({ tag }) => {
     return (
-        <div>
-            <div
-                onClick={() => handleTagClick(tag, setBlogData)}
-                className="brackets text-[#d31a1a] opacity-75 hover:opacity-100 duration-75 ease-linear
-                         dark:text-[#be6060]"
-            >
-                {tag}
-            </div>
+        <div
+            className="text-neutral-500  text-[.75rem] md:text-[.55rem] font-medium"
+        >
+            #{tag}
         </div>
     );
 };
