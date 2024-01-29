@@ -11,3 +11,4 @@ export { default as ProjectCard } from './ProjectCard';
 export { default as JobTimeLine } from './JobTimeLine';
 export { default as UnderConstruction } from './UnderConstruction';
 export { default as CountAnimation } from './CountAnimation';
+export { default as Loading } from './Loading';

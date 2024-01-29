@@ -21,7 +21,7 @@ const BlogDetails = () => {
         <div className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full">
             <div className='flex flex-row items-center w-[65%] mb-1 gap-3'
             >
-                <div onClick={handleGoBack} className='flex flex-row gap-[6px] cursor-pointer '>
+                <div onClick={handleGoBack} className='flex flex-row gap-[6px] cursor-pointer'>
                     <img src={goBack} alt='Go back icon' className='w-6' />
                 </div>
                 <div className=''>
