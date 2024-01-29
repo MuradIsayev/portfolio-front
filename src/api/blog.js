@@ -9,27 +9,18 @@ export const fetchTags = async () => {
   return tags;
 };
 
-export const fetchRandomPost = async () => {
-  const response = await axios.get(
-    `${import.meta.env.VITE_APP_BACKEND_URL}/blogs/random`
-  );
-  const randomBlog = await response.data;
-
-  return randomBlog;
-};
-
 export const fetchBlogs = async () => {
   const response = await axios.get(
-    `${import.meta.env.VITE_APP_BACKEND_URL}/blogs`
+    `${import.meta.env.VITE_APP_BACKEND_URL}/blog`
   );
   const blogs = await response.data;
 
   return blogs;
 };
 
-export const fetchBlogById = async id => {
+export const fetchBlogById = async slug => {
   const response = await axios.get(
-    `${import.meta.env.VITE_APP_BACKEND_URL}/blogs/${id}`
+    `${import.meta.env.VITE_APP_BACKEND_URL}/blog/${slug}`
   );
   const blog = await response.data;
 
