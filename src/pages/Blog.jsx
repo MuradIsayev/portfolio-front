@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { BlogContent, CountAnimation } from '../components';
-import '../styles/brackets.scss'
 import { fetchBlogs } from '../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
@@ -9,18 +8,11 @@ import { Loading } from '../components';
 
 
 const Blog = () => {
-  const [blogData, setBlogData] = useState([]);
-
   const { data: blogs, isLoading } = useQuery({ queryKey: ['blogs'], queryFn: fetchBlogs })
 
-  useEffect(() => {
-    if (blogs) setBlogData(blogs)
-  }, [blogs])
-
-
   const numberOfBlogs = useMemo(() => {
-    return blogData?.length;
-  }, [blogData]);
+    return blogs?.length;
+  }, [blogs]);
 
   return (
     <>
@@ -42,7 +34,7 @@ const Blog = () => {
         <motion.div className='lg:w-[65%] w-full'
           variants={container}>
           {isLoading ? <Loading /> : (
-            blogData?.map(({ id, title, description, minsRead, createdAt, tags, slug }, index) => {
+            blogs?.map(({ id, title, description, minsRead, createdAt, tags, slug, viewCount }, index) => {
               return (
                 <BlogContent
                   key={id}
@@ -53,6 +45,7 @@ const Blog = () => {
                   tags={tags}
                   createdAt={createdAt}
                   nextDelay={index += 1}
+                  viewCount={viewCount}
                 />
               );
             })
