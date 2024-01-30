@@ -89,11 +89,8 @@ const NavBar = () => {
                 layoutId="navbar"
                 aria-hidden="true"
                 transition={{
-                  // type: 'tween',
-                  // duration: 0.25,
-                  type: 'spring',
-                  stiffness: 210,
-                  damping:20,
+                  type: 'tween',
+                  duration: 0.3,
                 }}
               />
             )}
