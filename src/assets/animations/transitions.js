@@ -16,17 +16,6 @@ export const cardContainer = {
         opacity: 1,
         transition: {
             staggerChildren: 0.2,
-            delayChildren: .5   ,
-        },
-    },
-}
-
-export const guestbookContainer = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.08,
             delayChildren: .5,
         },
     },
@@ -43,5 +32,22 @@ export const items = {
         },
     },
 }
+
+export const animateTags = {
+    initial: {
+        opacity: 0,
+        x: 15,
+    },
+
+    animateTags: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 210,
+            damping: 15,
+        },
+    },
+};
 
 // TODO: add separate animation for the project content
