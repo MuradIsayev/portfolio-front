@@ -4,7 +4,7 @@ import { fetchBlogs } from '../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { container, items } from '../assets/animations/transitions';
-import { Loading } from '../components';
+import { BlogCardSkeleton } from '../components';
 
 
 const Blog = () => {
@@ -33,7 +33,7 @@ const Blog = () => {
         </motion.div>
         <motion.div className='lg:w-[65%] w-full'
           variants={container}>
-          {isLoading ? <Loading /> : (
+          {isLoading ? <BlogCardSkeleton /> : (
             blogs?.map(({ id, title, description, minsRead, createdAt, tags, slug, viewCount }, index) => {
               return (
                 <BlogContent
@@ -50,6 +50,7 @@ const Blog = () => {
               );
             })
           )}
+
         </motion.div>
       </motion.div >
     </>
