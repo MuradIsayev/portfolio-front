@@ -3,24 +3,24 @@
 
 .column {
   padding-left: 1.2rem;
-  transition: 0.2s;
+  transition: 0.3s;
   &:hover {
-    transition: 0.2s;
+    transition: 0.3s;
     padding-left: 0;
     .card .txt {
-      transition: 0.2s;
+      transition: 0.3s;
       margin-left: .2rem;
       .project-name,
       .project-desc,
       .project-skills {
-        transition: 0.2s;
+        transition: 0.3s;
         opacity: 1;
       }
     }
     .project-link {
-      transition: 0.2s;
+      transition: 0.3s;
       &:after {
-        transition: 0.2s;
+        transition: 0.3s;
         width: 10%;
       }
     }
@@ -32,17 +32,18 @@
   letter-spacing: 0.05rem;
   font-family: 'Oswald', sans-serif;
   .txt {
-    transition: 0.2s;
+    transition: 0.3s;
     margin-left: -2.6rem;
     z-index: 1;
     .project-desc {
-      transition: 0.2s;
+      transition: 0.3s;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
       opacity: 0;
     }
 
     .project-skills {
+      transition: 0.3s;
       position: absolute;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
@@ -51,7 +52,7 @@
     }
   }
   .project-link {
-    transition: 0.2s;
+    transition: 0.3s;
     z-index: 3;
     font-size: 0.73rem;
     margin-left: .2rem;
