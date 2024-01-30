@@ -9,15 +9,12 @@ import { isThemeChangedStore } from '../store/useIsThemeChanged';
 import { motion } from 'framer-motion';
 
 
-
-
 const BlogDetails = () => {
     let { slug } = useParams();
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
     const [getIsDarkTheme] = useLocalStorage("dark-theme");
     const isThemeChanged = isThemeChangedStore();
-
     const [isThemeDark, setIsThemeDark] = useState(() => getIsDarkTheme())
 
     useEffect(() => {
@@ -29,9 +26,7 @@ const BlogDetails = () => {
         navigate('/blog');
     };
 
-    // destructure the markdown and posts properties from the useQuery hook data object
     const { data: singleBlog } = useQuery({ queryKey: ['singleBlog', slug], queryFn: () => fetchBlogById(slug) });
-
 
     return (
         <div className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full">

@@ -34,13 +34,12 @@ const Blog = () => {
         <motion.div className='lg:w-[65%] w-full'
           variants={container}>
           {isLoading ? <BlogCardSkeleton /> : (
-            blogs?.map(({ id, title, description, minsRead, createdAt, tags, slug, viewCount }, index) => {
+            blogs?.map(({ id, title, minsRead, createdAt, tags, slug, viewCount }, index) => {
               return (
                 <BlogContent
                   key={id}
                   slug={slug}
                   title={title}
-                  description={description}
                   minsRead={minsRead}
                   tags={tags}
                   createdAt={createdAt}
