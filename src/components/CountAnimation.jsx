@@ -7,7 +7,7 @@ const CountAnimation = ({ n }) => {
 
     useEffect(() => {
         const animation = animate(count, n, {
-            duration: n > 15 ? 1 : 0.3,
+            duration: n > 10 ? 1 : 0.5,
         });
 
         return animation.stop;
