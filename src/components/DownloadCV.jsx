@@ -61,15 +61,15 @@ const DownloadCV = () => {
                         animate={uploadControls}
                     >
                         <motion.div
-                            initial={{ y: 0 }}
-                            animate={{ y: 2 }}
+                            initial={{ y: -1 }}
+                            animate={{ y: 1 }}
                             transition={{
                                 type: "tween",
                                 repeat: Infinity,
                                 repeatType: "mirror",
-                                duration: 0.5,
+                                duration: 0.45,
                                 ease: 'easeInOut',
-                                delay: 2.5
+                                delay: 2
                             }}><FaAngleDoubleDown className="md:w-[9px] md:h-[9px] h-[14px] w-[14px] icon dark:text-[#18181B] text-[#FAFAFA]" /></motion.div>
                         <div className='dark:text-[#18181B] text-[#FAFAFA] text-[.97rem] md:text-xs'>CV</div>
                     </motion.div>
