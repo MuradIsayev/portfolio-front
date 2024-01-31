@@ -69,8 +69,7 @@
   }
 
   .navbar-links {
-    @apply text-neutral-600 dark:text-neutral-400
-        no-underline px-3 py-2 rounded-md text-sm font-medium md:my-[10%] md:px-[13px] md:py-[2px]
+    @apply no-underline px-3 py-2 rounded-md text-sm font-medium md:my-[10%] md:px-[13px] md:py-[2px]
          lg:py-[10px] lg:px-[18px] lg:text-[.92rem];
   }
 

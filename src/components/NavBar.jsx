@@ -75,7 +75,7 @@ const NavBar = () => {
           <Link
             key={item.path}
             to={item.path}
-            className={`relative ${isActive ? "navbar-links text-[#000000] dark:text-[#ffffff]" : "navbar-links"
+            className={`relative navbar-links ${isActive ? " text-[#000000] dark:text-[#ffffff]" : "text-neutral-600 dark:text-neutral-400"
               }`}
             data-active={isActive}
             href={item.path}
