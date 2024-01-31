@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { items } from '../assets/animations/transitions';
+import { items } from '../../assets/animations/transitions';
 
 const Skills = ({ skills }) => {
   return (

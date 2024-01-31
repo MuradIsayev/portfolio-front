@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { github } from '../assets';
-import { google } from '../assets';
-import { whiteGoogle } from '../assets';
-import { whiteGithub } from '../assets';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { isThemeChangedStore } from '../store/useIsThemeChanged';
+import { github } from '../../assets';
+import { google } from '../../assets';
+import { whiteGoogle } from '../../assets';
+import { whiteGithub } from '../../assets';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { isThemeChangedStore } from '../../store/useIsThemeChanged';
 
 
 

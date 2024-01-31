@@ -1,4 +1,4 @@
-import { items } from '../assets/animations/transitions';
+import { items } from '../../assets/animations/transitions';
 import { motion } from 'framer-motion';
 
 

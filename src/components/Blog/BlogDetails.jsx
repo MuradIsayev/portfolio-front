@@ -1,13 +1,13 @@
-import { goBack, darkGoBack } from '../assets';
+import { goBack, darkGoBack } from '../../assets';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchBlogById } from '../api/blog';
+import { fetchBlogById } from '../../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { isThemeChangedStore } from '../store/useIsThemeChanged';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { isThemeChangedStore } from '../../store/useIsThemeChanged';
 import { motion } from 'framer-motion';
-import { BlogDetailsSkeleton } from '../components';
+import { BlogDetailsSkeleton } from '..';
 
 const BlogDetails = () => {
     let { slug } = useParams();

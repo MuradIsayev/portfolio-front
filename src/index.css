@@ -59,13 +59,13 @@
 
 @layer components {
   .main-container {
-    @apply flex justify-center w-[80%] mx-auto my-0;
+    @apply flex justify-center w-[80%] mx-auto bg-red-200;
   }
 
   /* NAVBAR */
   .navbar-container {
-    @apply flex flex-row items-center justify-start h-[59vh] w-[14.5vw] lg:h-[61vh]
-        mx-auto md:flex-col md:items-start md:justify-start md:h-[100vh] md:w-[0vw];
+    @apply flex flex-row items-center justify-start h-[59vh] w-[20%] lg:h-[61vh] bg-blue-200
+        md:flex-col md:items-start md:h-[100vh] md:w-[0vw];
   }
 
   .navbar-links {
