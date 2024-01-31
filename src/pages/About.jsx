@@ -16,7 +16,7 @@ const About = () => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-auto"
+        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full"
       >
         <div className='mb-4'>
           <motion.h2 variants={items} className='headers'>About Me</motion.h2>
