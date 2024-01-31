@@ -1,5 +1,4 @@
-import { ProjectCard } from '../components';
-import { JobTimeLine } from '../components';
+import { ProjectCard, JobTimeLine } from '../components';
 import '../styles/projects.scss';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';

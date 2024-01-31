@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { uniqueNamesGenerator, adjectives, animals } from "unique-names-generator";
-import { GuestBookContent } from '../components';
-import { NotLoggedInGuest } from '../components';
-import { LoggedInGuest } from '../components';
+import { GuestBookContent, NotLoggedInGuest, LoggedInGuest } from '../components';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';

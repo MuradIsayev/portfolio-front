@@ -1,8 +1,4 @@
-import { myAvatar } from '../assets';
-import { github } from '../assets';
-import { linkedin } from '../assets';
-import { darkLinkedin } from '../assets';
-import { whiteGithub } from '../assets';
+import { myAvatar, github, linkedin, darkLinkedin, whiteGithub } from '../assets';
 import { motion } from 'framer-motion';
 import { DownloadCV } from '../components';
 import { useLocalStorage } from '../hooks/useLocalStorage';

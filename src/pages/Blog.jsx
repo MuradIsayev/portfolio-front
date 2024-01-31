@@ -1,10 +1,9 @@
 import { useMemo } from 'react';
-import { BlogContent, CountAnimation } from '../components';
+import { BlogContent, CountAnimation, BlogCardSkeleton } from '../components';
 import { fetchBlogs } from '../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { container, items } from '../assets/animations/transitions';
-import { BlogCardSkeleton } from '../components';
 
 
 const Blog = () => {
