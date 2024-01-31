@@ -19,7 +19,7 @@ const Blog = () => {
         initial="hidden"
         animate="show"
         variants={container}
-        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full"
+        className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-24 md:w-full"
       >
         <motion.div
           variants={items}

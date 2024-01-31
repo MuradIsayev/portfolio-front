@@ -22,7 +22,7 @@ const Home = () => {
       <motion.div variants={container}
         initial="hidden"
         animate="show"
-        className="mt-[7.3rem] w-[90%] md:w-[auto] md:mt-20">
+        className="mt-[7.3rem] w-[90%] md:w-[auto] md:mt-24">
         <motion.h2 variants={items}
           className='headers'>Murad Isayev</motion.h2>
         <motion.p variants={items}

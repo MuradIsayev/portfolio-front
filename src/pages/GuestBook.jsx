@@ -148,7 +148,7 @@ const GuestBook = () => {
   return (
     <>
       <motion.div variants={container} initial="hidden" animate="show"
-        className="mt-[7.3rem] w-[90%] md:mt-20 md:w-[100%]"
+        className="mt-[7.3rem] w-[90%] md:mt-24 md:w-[100%]"
       >
         <motion.h2 variants={items} className='mb-2 headers'>Leave your sign</motion.h2>
         <motion.div variants={items} className="guestbook-content-container">
