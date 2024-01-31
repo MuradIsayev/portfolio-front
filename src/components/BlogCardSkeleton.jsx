@@ -1,7 +1,7 @@
 const BlogCardSkeleton = () => {
     return (
         <>
-            {Array(7)
+            {Array(10)
                 .fill(1)
                 .map((_, index) => (
                     <div key={index} className="gap-1 grow bg-[#ededeee0] dark:bg-[#151516d5] h-[4.7rem] md:h-[4rem] p-4 flex justify-around items-start flex-col flex-wrap rounded-lg mb-3 md:mb-2 mt-1.5">

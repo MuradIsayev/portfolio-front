@@ -30,7 +30,7 @@ const BlogDetails = () => {
 
     return (
         <div className="flex flex-col justify-start w-[90%] mt-[7.3rem] md:mt-20 md:w-full">
-            <div className='flex flex-row items-center w-[65%] gap-3'
+            <div className='flex flex-row items-center w-[65%] gap-3 mb-1'
             >
                 <motion.div
                     initial={{ x: 0 }}
@@ -47,20 +47,18 @@ const BlogDetails = () => {
                     <img src={isThemeDark ? goBack : darkGoBack} alt='Go back icon' className='w-7 md:w-5' />
                 </motion.div>
                 <div>
-                    <h3 className='text-[1.65rem] font-semibold md:text-[1.32rem]'>{singleBlog?.post?.title}</h3>
+                    <div className='text-[1.45rem] font-semibold md:text-[1.32rem] leading-6'>{singleBlog?.post?.title}</div>
                 </div>
             </div>
             <div className=' mb-4 flex flex-row items-center justify-between w-[65%]'>
-                <div className='flex gap-1 md:gap-[4px] text-[.8rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400'>
-                    <span>{singleBlog?.post?.createdAt} | {singleBlog?.post?.minsRead} min read</span>
+                <div className='flex gap-1 md:gap-[4px] text-[.8rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400 font-medium'>
+                    {singleBlog?.post?.minsRead} min read
                 </div>
-                <div className='text-[.8rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400'>
-                    123 Views
+                <div className='text-[.8rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400 font-medium'>
+                    {singleBlog?.post?.fromNow}
                 </div>
-
             </div>
-
-            <article className='prose md:prose-sm dark:prose-invert dark:text-neutral-400 lg:max-w-[65%] md:max-w-full mt-4'>
+            <article className='prose mb-5 md:mb-3 md:prose-sm !prose-slate dark:!prose-invert dark:prose-pre:bg-[#151516d5] dark:prose-pre:text-neutral-400 prose-pre:bg-[#ededeee0] prose-pre:text-neutral-900 text-black dark:text-white lg:max-w-[65%] md:max-w-full mt-5 md:mt-3'>
                 <ReactMarkdown>{singleBlog?.markdown?.parent}</ReactMarkdown>
             </article>
         </div>
