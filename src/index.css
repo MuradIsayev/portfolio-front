@@ -12,9 +12,6 @@
   font-family: Supreme-Variable;
 }
 
-html {
- background-color: red;
-}
 
 @font-face {
   font-family: GapSansBold;
@@ -117,10 +114,9 @@ html {
 
   /* GUESTBOOK */
   .login-with {
-    @apply flex justify-center items-center px-[1.4rem] py-[.95rem] gap-[10px]  
-        cursor-pointer transition ease-linear duration-150
-        h-[53px] w-[205px] md:h-[36px] md:w-[135px] md:gap-[8px] md:p-[.85rem] rounded-md
-        lg:h-[58px] lg:w-[225.5px];
+    @apply flex justify-center items-center px-[1.4rem] py-[.95rem] gap-3 md:gap-2
+        cursor-pointer transition ease-linear duration-150 md:p-[.85rem] rounded-md
+        lg:w-[35%] w-[45%] md:w-full h-[53px]  md:h-[36px] lg:h-[58px];
   }
 
   .login-with-github {
