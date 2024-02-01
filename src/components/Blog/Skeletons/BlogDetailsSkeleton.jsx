@@ -5,9 +5,9 @@ const BlogDetailsSkeleton = () => {
                 <div className='w-full rounded-lg h-9 md:h-7 animate-pulse bg-neutral-300 dark:bg-neutral-800 '>
                 </div>
                 <div className='flex flex-row items-center justify-between w-full mb-4 md:mb-3'>
-                    <div className='flex w-16 h-3 gap-1 rounded-lg md:w-12 animate-pulse bg-neutral-300 dark:bg-neutral-800 '>
+                    <div className='flex w-16 h-3 gap-1 rounded md:w-12 animate-pulse bg-neutral-300 dark:bg-neutral-800 '>
                     </div>
-                    <div className='w-16 h-3 rounded-lg md:w-12 animate-pulse bg-neutral-300 dark:bg-neutral-800'>
+                    <div className='w-16 h-3 rounded md:w-12 animate-pulse bg-neutral-300 dark:bg-neutral-800'>
                     </div>
                 </div>
                 {Array(5).fill().map((_, i) => (

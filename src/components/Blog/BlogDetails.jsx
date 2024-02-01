@@ -32,7 +32,7 @@ const BlogDetails = () => {
         <div className='lg:w-[70%] w-[80%] md:w-full'>
             <motion.div
                 initial={{ x: 0 }}
-                animate={{ x: -4 }}
+                animate={{ x: -5 }}
                 transition={{
                     type: "tween",
                     repeat: Infinity,
@@ -48,8 +48,8 @@ const BlogDetails = () => {
             </motion.div>
 
             {isLoading ? <BlogDetailsSkeleton /> : (
-                <>
-                    <div className='flex flex-row items-center w-full gap-3 mb-2 md:gap-2 md:mb-1'>
+                <div className='w-[89%]'>
+                    <div className='w-full mb-2 md:mb-1'>
                         <div className='text-[1.45rem] font-medium md:text-[1.15rem] leading-6 md:leading-5 '>{singleBlog?.post?.title}</div>
                     </div>
                     <div className='flex flex-row items-center justify-between w-full mb-4'>
@@ -60,10 +60,10 @@ const BlogDetails = () => {
                             {singleBlog?.post?.fromNow}
                         </div>
                     </div>
-                    <article className='prose md:prose-sm !prose-neutral dark:!prose-invert dark:prose-pre:bg-[#151516d5] dark:prose-pre:text-neutral-300 prose-pre:bg-[#ededeee0] prose-pre:text-neutral-900 w-full mt-6 md:mt-4'>
-                        <ReactMarkdown>{singleBlog?.markdown?.parent}</ReactMarkdown>
-                    </article>
-                </>
+                        <article className='w-full prose md:prose-sm !prose-neutral dark:!prose-invert dark:prose-pre:bg-[#151516d5] dark:prose-pre:text-neutral-300 prose-pre:bg-[#ededeee0] prose-pre:text-neutral-900 mt-8'>
+                            <ReactMarkdown>{singleBlog?.markdown?.parent}</ReactMarkdown>
+                        </article>
+                </div>
             )}
         </div>
     );
