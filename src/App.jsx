@@ -9,12 +9,12 @@ const App = () => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className='min-h-screen bg-white dark:bg-[#09090B] dark:text-white overflow-hidden overflow-y-scroll'>
-        <div className="parent-container">
+      <div className='bg-white dark:bg-[#09090B] dark:text-white'>
+        <div className="h-[100vh] parent-container">
           <div className="navbar-container">
             <NavBar />
           </div>
-          <div className='content-container'>
+          <div className='overflow-auto content-container'>
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="home" element={<Home />} />
