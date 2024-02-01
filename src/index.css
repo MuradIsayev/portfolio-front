@@ -66,11 +66,11 @@
 
   /* NAVBAR */
   .navbar-container {
-    @apply flex flex-row items-center justify-start h-[59vh] w-[20%] lg:h-[62vh] md:flex-col md:items-start md:h-[100vh] md:w-[0vw];
+    @apply flex flex-row items-center justify-start h-[59vh] w-[15%] lg:h-[62vh] md:flex-col md:items-start md:h-[100vh] md:w-[0vw];
   }
 
   .content-container {
-    @apply w-[80%] md:pt-[88px] pt-32 pb-9 md:pb-5 pl-5 md:pl-3;
+    @apply w-[85%] md:pt-[88px] pt-32 pb-9 md:pb-5 pl-5 md:pl-3;
   }
 
   .navbar-links {
