@@ -29,7 +29,7 @@ const BlogDetails = () => {
     const { data: singleBlog, isLoading } = useQuery({ queryKey: ['singleBlog', slug], queryFn: () => fetchBlogById(slug) });
 
     return (
-        <div className='lg:w-[70%] w-[80%] md:w-full md:mt-7'>
+        <div className='lg:w-[70%] w-[80%] md:w-full'>
             <motion.div
                 initial={{ x: 0 }}
                 animate={{ x: -4 }}
@@ -43,7 +43,7 @@ const BlogDetails = () => {
                 onClick={handleGoBack} className='
                 flex md:h-7 md:w-7 h-9 w-9 p-1
                 dark:hover:bg-[#151516d5] rounded-md hover:bg-[#ededeee0]
-                absolute -mt-11 transition duration-150 ease-linear cursor-pointer md:-mt-8'>
+                relative transition duration-150 ease-linear cursor-pointer'>
                 <img src={isThemeDark ? goBack : darkGoBack} alt='Go back icon' />
             </motion.div>
 
