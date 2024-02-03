@@ -23,8 +23,8 @@ const Blog = () => {
         className='flex flex-row justify-between items-center w-full lg:w-[70%]'>
         <h2 className='headers'>My Writings</h2>
         <span className='text-[.92rem] md:text-[.65rem] font-semibold'>
-          {numberOfBlogs ? <CountAnimation n={numberOfBlogs} /> : null}
-          <span> blogs</span>
+          {numberOfBlogs >= 0 ? <CountAnimation n={numberOfBlogs} /> : null}
+          <span className='font-semibold md:font-medium'> blogs</span>
         </span>
       </motion.div>
       <motion.div className='lg:w-[70%] w-full'

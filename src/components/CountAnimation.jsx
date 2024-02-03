@@ -33,7 +33,7 @@ const CountAnimation = ({ n }) => {
     }, [n]);
 
     return (
-        <motion.span>{rounded}</motion.span>
+        <motion.span className="font-semibold md:font-medium">{rounded}</motion.span>
     )
 };
 
