@@ -1,6 +1,6 @@
 const BlogTags = ({ tag }) => {
     return (
-        <div className="text-neutral-500 text-[.78rem] md:text-[.5rem] font-medium">
+        <div className="text-neutral-500 text-[.78rem] md:text-[.55rem] font-medium">
             #{tag}
         </div>
     );

@@ -35,7 +35,7 @@ const BlogContent = ({ slug, title, createdAt, tags, nextDelay, viewCount }) => 
             }}
             className="gap-1 grow hover:bg-[#ededeee0]  dark:hover:bg-[#151516d5] p-4 h-[4.7rem] md:h-[4rem] justify-around items-start flex flex-col flex-wrap cursor-pointer hover:shadow-lg border border-[#E4E4E7] dark:border-[#27272A] rounded-lg mb-3 md:mb-2 mt-1.5">
             <div className='flex flex-col items-start justify-start max-w-[75%] gap-1'>
-              <div className='text-[1rem] md:text-[.62rem] font-medium leading-4 md:leading-3'>{title}</div>
+              <div className='text-[1rem] md:text-[.7rem] font-medium leading-4 md:leading-3'>{title}</div>
               <div className='flex flex-wrap gap-2 md:gap-1'>
                 {tags?.map(({ id, name }) => {
                   return (
@@ -52,7 +52,7 @@ const BlogContent = ({ slug, title, createdAt, tags, nextDelay, viewCount }) => 
               variants={animateTags}
               className='max-w-[25%] flex flex-col flex-wrap items-center self-end justify-center text-[.75rem] md:text-[.5rem] dark:text-neutral-400 text-neutral-600 font-medium'>
               <div>{createdAt}</div>
-              <div className="font-semibold">{viewCount} views</div>
+              <div className="font-semibold md:font-medium">{viewCount} views</div>
             </motion.div>
           </motion.div>
         </motion.div>
