@@ -1,6 +1,6 @@
 import { goBack, darkGoBack } from '../../assets';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchBlogById } from '../../api/blog';
+import { fetchBlogById, updateViewCount } from '../../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
@@ -13,6 +13,7 @@ const BlogDetails = () => {
     let { slug } = useParams();
 
     const navigate = useNavigate();
+
     const [getIsDarkTheme] = useLocalStorage("dark-theme");
     const isThemeChanged = isThemeChangedStore();
     const [isThemeDark, setIsThemeDark] = useState(() => getIsDarkTheme())
@@ -27,6 +28,10 @@ const BlogDetails = () => {
     };
 
     const { data: singleBlog, isLoading } = useQuery({ queryKey: ['singleBlog', slug], queryFn: () => fetchBlogById(slug) });
+
+    useEffect(() => {
+        updateViewCount(slug);
+    }, [slug]);
 
     return (
         <div className='lg:w-[70%] w-[80%] md:w-full'>
@@ -60,9 +65,9 @@ const BlogDetails = () => {
                             {singleBlog?.post?.fromNow}
                         </div>
                     </div>
-                        <article className='w-full prose md:prose-sm !prose-neutral dark:!prose-invert dark:prose-pre:bg-[#151516d5] dark:prose-pre:text-neutral-300 prose-pre:bg-[#ededeee0] prose-pre:text-neutral-900 mt-8'>
-                            <ReactMarkdown>{singleBlog?.markdown?.parent}</ReactMarkdown>
-                        </article>
+                    <article className='w-full prose md:prose-sm !prose-neutral dark:!prose-invert dark:prose-pre:bg-[#151516d5] dark:prose-pre:text-neutral-300 prose-pre:bg-[#ededeee0] prose-pre:text-neutral-900 mt-8'>
+                        <ReactMarkdown>{singleBlog?.markdown?.parent}</ReactMarkdown>
+                    </article>
                 </div>
             )}
         </div>

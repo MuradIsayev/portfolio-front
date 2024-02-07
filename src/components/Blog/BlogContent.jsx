@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { items } from "../../assets/animations/transitions";
 import BlogTags from "./BlogTags";
-import { updateViewCount } from "../../api/blog";
 import { animateTags } from "../../assets/animations/transitions";
 
 
@@ -17,7 +16,6 @@ const BlogContent = ({ slug, title, createdAt, tags, nextDelay, viewCount }) => 
       }
       animate={{ opacity: 1 }}
       transition={{ duration: .4, delay: .3 * nextDelay, ease: 'linear' }}
-      onClick={() => updateViewCount(slug)}
     >
       <Link to={`/blog/${slug}`}>
         <motion.div
