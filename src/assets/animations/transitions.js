@@ -50,4 +50,21 @@ export const animateTags = {
     },
 };
 
+export const animateLink = {
+    initial: {
+        opacity: 0,
+        x: 10,
+    },
+
+    animateLink: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 210,
+            damping: 15,
+        },
+    },
+};
+
 // TODO: add separate animation for the project content
