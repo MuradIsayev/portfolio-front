@@ -16,7 +16,7 @@ const JobTimeLine = ({ position, description, startedAt, endedAt, company, workS
                 <span className="text-[.8rem] font-[600] text-neutral-600 dark:text-neutral-400">·</span>
                 <span className="text-[.87rem] lg:text-[.92rem] md:text-[.73rem] font-medium dark:text-[#fafafa] text-[#09090B]">{workScheduleType}</span>
             </motion.div>
-            <motion.p variants={items} className="mb-4 text-sm lg:text-[.9rem] font-normal md:text-[.67rem] text-neutral-600 dark:text-neutral-400">
+            <motion.p variants={items} className=" text-sm lg:text-[.9rem] font-normal md:text-[.67rem] text-neutral-600 dark:text-neutral-400">
                 {description}
             </motion.p>
         </li>
