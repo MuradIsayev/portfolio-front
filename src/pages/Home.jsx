@@ -1,21 +1,12 @@
 import { myAvatar, github, linkedin, darkLinkedin, whiteGithub } from '../assets';
 import { motion } from 'framer-motion';
 import { DownloadCV } from '../components';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { useEffect, useState } from 'react';
-import { isThemeChangedStore } from '../store/useIsThemeChanged';
+import { isThemeDarkStore } from '../store/useIsThemeDark';
 import { container, items } from '../assets/animations/transitions';
 
 
 const Home = () => {
-  const [getIsDarkTheme] = useLocalStorage("dark-theme");
-  const isThemeChanged = isThemeChangedStore();
-  const [isThemeDark, setIsThemeDark] = useState(() => getIsDarkTheme())
-
-  useEffect(() => {
-    setIsThemeDark(getIsDarkTheme())
-  }, [isThemeChanged])
-
+  const { isThemeDark } = isThemeDarkStore();
 
   return (
     <motion.div variants={container}

@@ -1,18 +1,9 @@
 import { Tooltip } from 'react-tooltip'
-import { isThemeChangedStore } from '../../store/useIsThemeChanged';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { useEffect, useState } from 'react';
+import { isThemeDarkStore } from '../../store/useIsThemeDark';
 
 const GuestBookContent = ({ data }) => {
 
-  const [getIsDarkTheme] = useLocalStorage("dark-theme");
-  const isThemeChanged = isThemeChangedStore();
-  const [isThemeDark, setIsThemeDark] = useState(() => getIsDarkTheme())
-
-  useEffect(() => {
-    setIsThemeDark(getIsDarkTheme())
-  }, [isThemeChanged])
-
+  const { isThemeDark } = isThemeDarkStore();
 
   return (
     <div

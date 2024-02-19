@@ -1,19 +1,10 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { github, google, whiteGoogle, whiteGithub } from '../../assets';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { isThemeChangedStore } from '../../store/useIsThemeChanged';
-
+import { isThemeDarkStore } from '../../store/useIsThemeDark';
 
 
 const NotLoggedInGuest = ({ signInWithGitHub, signInWithGoogle }) => {
-  const [getIsDarkTheme] = useLocalStorage("dark-theme");
-  const isThemeChanged = isThemeChangedStore();
-
-  const [isThemeDark, setIsThemeDark] = useState(() => getIsDarkTheme())
-
-  useEffect(() => {
-    setIsThemeDark(getIsDarkTheme())
-  }, [isThemeChanged])
+  const { isThemeDark } = isThemeDarkStore();
 
   return (
     <div className="flex flex-row items-center gap-5 mb-8 md:gap-4 lg:w-[70%] w-[80%] md:w-full">

@@ -3,24 +3,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { fetchBlogById, updateViewCount } from '../../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import ReactMarkdown from 'react-markdown';
-import { useEffect, useState } from 'react';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { isThemeChangedStore } from '../../store/useIsThemeChanged';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BlogDetailsSkeleton } from '..';
+import { isThemeDarkStore } from '../../store/useIsThemeDark';
 
 const BlogDetails = () => {
     let { slug } = useParams();
+    const { isThemeDark } = isThemeDarkStore();
 
     const navigate = useNavigate();
-
-    const [getIsDarkTheme] = useLocalStorage("dark-theme");
-    const isThemeChanged = isThemeChangedStore();
-    const [isThemeDark, setIsThemeDark] = useState(() => getIsDarkTheme())
-
-    useEffect(() => {
-        setIsThemeDark(getIsDarkTheme())
-    }, [isThemeChanged])
 
 
     const handleGoBack = () => {

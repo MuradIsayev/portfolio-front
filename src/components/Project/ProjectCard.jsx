@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { items } from '../../assets/animations/transitions';
 import { link, darkLink } from '../../assets';
 import { animateLink } from '../../assets/animations/transitions';
+import { isThemeDarkStore } from '../../store/useIsThemeDark';
 
 
 const Skills = ({ skills }) => {
@@ -17,6 +18,7 @@ const Skills = ({ skills }) => {
 }
 
 const ProjectCard = ({ name, description, url, skills, color, darkColor, animationValue }) => {
+  const { isThemeDark } = isThemeDarkStore();
 
   return (
     <motion.div
@@ -42,7 +44,7 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor, animati
         // variants={animateLink}
         >
           <a href={url} className='opacity-75 right-[1.1rem] bottom-[1.1rem] absolute dark:opacity-50 project-link group-hover:opacity-100 dark:group-hover:opacity-90 group-hover:animate-pulse' target='_blank'>
-            <img src={darkLink} alt='link' className='w-[19px] h-[19px] md:w-4 md:h-4' />
+            <img src={isThemeDark ? link : darkLink} alt='link' className='w-[19px] h-[19px] md:w-4 md:h-4' />
           </a>
         </div>
       </div>
