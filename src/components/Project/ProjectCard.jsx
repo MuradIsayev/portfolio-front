@@ -10,7 +10,7 @@ const Skills = ({ skills }) => {
     <div className='flex flex-wrap gap-[6px] md:gap-1 project-skills'>
       {skills.map((skill) => (
         <div key={skill?.id} className='font-semibold md:font-medium skill text-neutral-600 dark:text-neutral-400'>
-          <p className="text-[.69rem] md:text-[.57rem]">{skill?.name}</p>
+          <p className="text-[.65rem] md:text-[.53rem]">{skill?.name}</p>
         </div>
       ))}
     </div>
@@ -44,7 +44,7 @@ const ProjectCard = ({ name, description, url, skills, color, darkColor, animati
         // variants={animateLink}
         >
           <a href={url} className='opacity-75 right-[1.1rem] bottom-[1.1rem] absolute dark:opacity-50 project-link group-hover:opacity-100 dark:group-hover:opacity-90 group-hover:animate-pulse' target='_blank'>
-            <img src={isThemeDark ? link : darkLink} alt='link' className='w-[19px] h-[19px] md:w-4 md:h-4' />
+            <img src={isThemeDark ? link : darkLink} alt='link' className='w-[18px] h-[18px] md:w-4 md:h-4' />
           </a>
         </div>
       </div>
