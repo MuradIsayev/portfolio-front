@@ -7,19 +7,28 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BlogDetailsSkeleton } from '..';
 import { isThemeDarkStore } from '../../store/useIsThemeDark';
+import { useBlogDataStore } from '../../store/useBlogData';
 
 const BlogDetails = () => {
     let { slug } = useParams();
-    const { isThemeDark } = isThemeDarkStore();
-
     const navigate = useNavigate();
 
+    const { isThemeDark } = isThemeDarkStore();
+    const { storagePost, setStoragePost } = useBlogDataStore();
 
     const handleGoBack = () => {
         navigate('/blog');
     };
 
     const { data: singleBlog, isLoading } = useQuery({ queryKey: ['singleBlog', slug], queryFn: () => fetchBlogById(slug) });
+
+    useEffect(() => {
+        if (storagePost?.post?.slug === slug) return;
+
+        if (singleBlog) {
+            setStoragePost(singleBlog);
+        }
+    }, [singleBlog]);
 
     useEffect(() => {
         updateViewCount(slug);
@@ -44,21 +53,21 @@ const BlogDetails = () => {
                 <img src={isThemeDark ? goBack : darkGoBack} alt='Go back icon' />
             </motion.div>
 
-            {isLoading ? <BlogDetailsSkeleton /> : (
+            {(isLoading && !(slug === storagePost?.post?.slug)) ? <BlogDetailsSkeleton /> : (
                 <div className='w-[89%]'>
                     <div className='w-full mb-2 md:mb-1'>
-                        <div className='text-[1.45rem] font-medium md:text-[1.15rem] leading-6 md:leading-5 '>{singleBlog?.post?.title}</div>
+                        <div className='text-[1.45rem] font-medium md:text-[1.15rem] leading-6 md:leading-5 '>{storagePost?.post?.title ?? singleBlog?.post?.title}</div>
                     </div>
                     <div className='flex flex-row items-center justify-between w-full mb-4'>
                         <div className='flex gap-1 md:gap-[4px] text-[.85rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400 font-medium'>
-                            {singleBlog?.post?.minsRead} min read
+                            {storagePost?.post?.minsRead ?? singleBlog?.post?.minsRead} min read
                         </div>
                         <div className='text-[.85rem] md:text-[.58rem] text-neutral-600 dark:text-neutral-400 font-medium'>
-                            {singleBlog?.post?.fromNow}
+                            {storagePost?.post?.fromNow ?? singleBlog?.post?.fromNow}
                         </div>
                     </div>
                     <article className='w-full prose md:prose-sm !prose-neutral dark:!prose-invert dark:prose-pre:bg-[#151516d5] dark:prose-pre:text-neutral-300 prose-pre:bg-[#ededeee0] prose-pre:text-neutral-900 mt-8'>
-                        <ReactMarkdown>{singleBlog?.markdown?.parent}</ReactMarkdown>
+                        <ReactMarkdown>{storagePost?.markdown?.parent ?? singleBlog?.markdown?.parent}</ReactMarkdown>
                     </article>
                 </div>
             )}
