@@ -89,7 +89,7 @@ const NavBar = () => {
                 aria-hidden="true"
                 transition={{
                   type: 'tween',
-                  duration: .25,
+                  duration: .3,
                 }}
               />
             )}
