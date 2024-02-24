@@ -128,10 +128,8 @@ const GuestBook = () => {
     });
   }
 
-
-
   const handleSignOut = async () => {
-    socket.emit('signout', { userName: auth?.currentUser?.displayName ? auth.currentUser.displayName : username, photoURL: auth?.currentUser?.photoURL, uuid: auth?.currentUser?.uid, })
+    socket.emit('signout', { uuid: auth?.currentUser?.uid, })
     setMessage('');
     setIsSignedOut(true);
     setIsSignedOutFromStorage(true);
