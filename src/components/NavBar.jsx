@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 import { useState } from 'react';
-import { isThemeDarkStore } from '../store/useIsThemeDark';
+import { useThemeStore } from '../store/useThemeDark';
 import { motion } from 'framer-motion';
 import navItems from '../constants/routes';
 import { isMobile } from 'react-device-detect';
@@ -21,7 +21,7 @@ const NavBar = () => {
 
   const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
-    const { isThemeDark, setIsThemeDark } = isThemeDarkStore();
+    const { isThemeDark, setIsThemeDark } = useThemeStore();
 
 
 

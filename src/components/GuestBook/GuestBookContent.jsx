@@ -1,9 +1,9 @@
 import { Tooltip } from 'react-tooltip'
-import { isThemeDarkStore } from '../../store/useIsThemeDark';
+import { useThemeStore } from '../../store/useThemeDark';
 
 const GuestBookContent = ({ data }) => {
 
-  const { isThemeDark } = isThemeDarkStore();
+  const { isThemeDark } = useThemeStore();
 
   return (
     <div

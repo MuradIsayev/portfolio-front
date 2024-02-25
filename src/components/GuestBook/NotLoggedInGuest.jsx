@@ -1,10 +1,10 @@
 // import { useEffect, useState } from 'react';
 import { github, google, whiteGoogle, whiteGithub } from '../../assets';
-import { isThemeDarkStore } from '../../store/useIsThemeDark';
+import { useThemeStore } from '../../store/useThemeDark';
 
 
 const NotLoggedInGuest = ({ signInWithGitHub, signInWithGoogle }) => {
-  const { isThemeDark } = isThemeDarkStore();
+  const { isThemeDark } = useThemeStore();
 
   return (
     <div className="flex flex-row items-center gap-5 mb-8 md:gap-4 lg:w-[70%] w-[80%] md:w-full">

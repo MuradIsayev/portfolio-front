@@ -6,15 +6,15 @@ import ReactMarkdown from 'react-markdown';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BlogDetailsSkeleton } from '..';
-import { isThemeDarkStore } from '../../store/useIsThemeDark';
-import { useBlogDataStore } from '../../store/useBlogData';
+import { useThemeStore } from '../../store/useThemeDark';
+import { useBlogContentStore } from '../../store/useBlogContent';
 
 const BlogDetails = () => {
     let { slug } = useParams();
     const navigate = useNavigate();
 
-    const { isThemeDark } = isThemeDarkStore();
-    const { storagePost, setStoragePost } = useBlogDataStore();
+    const { isThemeDark } = useThemeStore();
+    const { storagePost, setStoragePost } = useBlogContentStore();
 
     const handleGoBack = () => {
         navigate('/blog');

@@ -1,12 +1,12 @@
 import { myAvatar, github, linkedin, darkLinkedin, whiteGithub } from '../assets';
 import { motion } from 'framer-motion';
 import { DownloadCV } from '../components';
-import { isThemeDarkStore } from '../store/useIsThemeDark';
+import { useThemeStore } from '../store/useThemeDark';
 import { container, items } from '../assets/animations/transitions';
 
 
 const Home = () => {
-  const { isThemeDark } = isThemeDarkStore();
+  const { isThemeDark } = useThemeStore();
 
   return (
     <motion.div variants={container}
@@ -16,7 +16,7 @@ const Home = () => {
         className='headers'>Murad Isayev</motion.h2>
       <motion.p variants={items}
         className="home-texts">
-        Welcome darling. Take a glimpse at my Portfolio.
+        Welcome. Take a glimpse at my Portfolio.
       </motion.p>
 
       <div className="flex flex-row items-center justify-start gap-8 mx-auto my-5 md:gap-5 md:mx-auto md:my-4">

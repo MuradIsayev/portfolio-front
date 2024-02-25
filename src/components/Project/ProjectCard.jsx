@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { items } from '../../assets/animations/transitions';
 import { link, darkLink } from '../../assets';
 import { animateLink } from '../../assets/animations/transitions';
-import { isThemeDarkStore } from '../../store/useIsThemeDark';
+import { useThemeStore } from '../../store/useThemeDark';
 
 
 const Skills = ({ skills }) => {
@@ -18,7 +18,7 @@ const Skills = ({ skills }) => {
 }
 
 const ProjectCard = ({ name, description, url, skills, color, darkColor, animationValue }) => {
-  const { isThemeDark } = isThemeDarkStore();
+  const { isThemeDark } = useThemeStore();
 
   return (
     <motion.div
