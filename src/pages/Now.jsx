@@ -8,9 +8,9 @@ const Now = () => {
                 <div>This section is a <a
                     target='_blank'
                     className="custom-underline" href='https://nownownow.com/about'>/now page</a>, <span>inspired by </span>
-                    <a className="text-base custom-underline" href="https://sive.rs/">Derek Sivers</a>. Here you will find whatever I am currently building, reading and learning.</div>
+                    <a className="custom-underline" href="https://sive.rs/">Derek Sivers</a>. Here you will find whatever I am currently building, reading and learning.</div>
 
-                <div className='mt-3 mb-1 text-lg font-semibold'>Top of my mind at the moment:</div>
+                <div className='mt-3 mb-1 text-lg font-semibold md:text-[.9rem]'>Top of my mind at the moment:</div>
 
                 <div className='flex flex-col gap-1 ml-5'>
 
