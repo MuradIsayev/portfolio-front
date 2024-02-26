@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences, fetchProjects } from '../api/about';
 import { cardContainer, container, items } from '../assets/animations/transitions';
+import { Link } from 'react-router-dom';
 
 
 const About = () => {
@@ -20,7 +21,8 @@ const About = () => {
         <motion.p variants={items} className='home-texts'>
           My journey began in backend development, but I've since expanded my skills to embrace frontend technologies as well.
           Now, I am working on myself, to be a solid one.
-          Here's what I have done so far.
+          Enough about past. What about <span>
+            <a href='/now' className='font-medium underline'>now?</a></span>
         </motion.p>
       </div>
 
