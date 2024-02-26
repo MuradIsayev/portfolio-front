@@ -22,7 +22,7 @@ const About = () => {
           My journey began in backend development, but I've since expanded my skills to embrace frontend technologies as well.
           Now, I am working on myself, to be a solid one.
           Enough about past. What about <span>
-            <a href='/now' className='font-medium underline'>now?</a></span>
+            <a href='/now' className='custom-underline'>now?</a></span>
         </motion.p>
       </div>
 

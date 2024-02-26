@@ -47,8 +47,8 @@ const Home = () => {
         </motion.div>
       </div>
       <motion.p variants={items} className="home-texts">
-        I am a computer science senior at French-Azerbaijani University (UFAZ) with more than a year of experience in NodeJS.
-        Download my CV to learn more about me. <span className='italic font-medium'>( you won't, this is what it is )</span>
+        I am a computer science senior at French-Azerbaijani University (UFAZ) and experienced in NodeJS.
+        Download my CV to learn more.
       </motion.p>
 
       <motion.div variants={items}>

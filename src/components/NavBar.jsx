@@ -23,8 +23,6 @@ const NavBar = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const { isThemeDark, setIsThemeDark } = useThemeStore();
 
-
-
     const handleMode = () => {
       setDarkTheme(!isThemeDark);
       setIsThemeDark(!isThemeDark);
@@ -49,7 +47,6 @@ const NavBar = () => {
 
       {navItems.map((item, index) => {
         const isActive = item.path === currentPath;
-
 
         const handleMouseEvents = {
           onMouseOver: () => {
