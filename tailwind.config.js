@@ -14,8 +14,6 @@ export default {
     extend: {
       fontFamily: {
         primary: "JosefinSans-VariableFont_wght",
-        // secondary: "CothamSans",
-        // tertiary: "Gidole-Regular",
         quaternary: "Nunito-VariableFont_wght",
 
       },

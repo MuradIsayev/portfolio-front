@@ -127,4 +127,8 @@
     animation: glowing 0.7s linear;
   }
 
+  .custom-underline {
+    @apply hover:text-[#000] dark:hover:text-[#fafafa] text-neutral-600 dark:text-[#e6e3e3e8] font-normal border-b-[1.5px] border-[#a9d7ff] dark:border-[#5980a0];
+  }
+
 }
