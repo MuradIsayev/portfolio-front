@@ -3,6 +3,7 @@ import { BlogDetails, NavBar } from './components';
 import { NotFound } from './components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Blog, Home, About, GuestBook } from './pages';
+import Now from './pages/Now';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
               <Route path="/" exact element={<Home />} />
               <Route path="home" element={<Home />} />
               <Route path="about" element={<About />} />
+              <Route path="now" element={<Now />} />
               <Route path="blog" element={<Blog />} />
               <Route path='blog/:slug' element={<BlogDetails />} />
               <Route path="guestbook" element={<GuestBook />} />
