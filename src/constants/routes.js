@@ -1,23 +1,23 @@
 const navItems = [
     {
         path: "/home",
-        name: "Home",
+        name: "HOME",
     },
     {
         path: "/about",
-        name: "About",
+        name: "ABOUT",
     },
     {
         path: "/now",
-        name: "Now",
+        name: "NOW",
     },
     {
         path: "/blog",
-        name: "Blog",
+        name: "BLOG",
     },
     {
         path: "/guestbook",
-        name: "Guestbook",
+        name: "GUESTBOOK",
     },
 ];
 
