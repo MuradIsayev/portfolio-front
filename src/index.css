@@ -10,7 +10,6 @@
   margin: 0;
   padding: 0;
   font-family: Montserrat-VariableFont_wght;
-  
 }
 
 @font-face {
@@ -55,7 +54,7 @@
 
   /* NAVBAR */
   .navbar-container {
-    @apply flex flex-row items-center justify-start h-[59vh] w-[15%] lg:h-[62vh] md:flex-col md:items-start md:h-[100vh] md:w-[0vw];
+    @apply pt-32 md:pt-6 w-[15%] md:flex-col md:items-start md:w-[0vw] md:h-[100vh];
   }
 
   .content-container {
@@ -63,7 +62,7 @@
   }
 
   .navbar-links {
-    @apply no-underline px-3 py-2 rounded-md text-sm font-semibold md:my-[10%] md:px-[13px] md:py-[2px] lg:py-[10px] lg:px-[18px] lg:text-[.8rem];
+    @apply leading-6 no-underline rounded-md text-[.72rem] font-semibold md:my-[10%] md:px-[13px] md:py-[2px] py-[10px] px-[18px] lg:text-[.8rem];
   }
 
   .hovered-path {
@@ -80,7 +79,7 @@
   }
 
   .home-texts {
-    @apply max-w-[70%] text-[.96rem] font-[400] leading-[1.4] dark:text-neutral-400 text-[#000] md:max-w-[100%] md:text-xs md:text-[300] md:leading-[1.3] lg:text-base;
+    @apply max-w-[70%] text-[.96rem] font-[400] dark:text-neutral-300 text-[#000] md:max-w-[100%] md:text-xs md:text-[300];
   }
 
   .home-links {
@@ -117,7 +116,7 @@
   }
 
   .custom-underline {
-    @apply hover:text-[#000] dark:hover:text-[#fafafa] text-neutral-600 dark:text-[#e6e3e3e8] font-normal border-b-[1.5px] md:border-b-[1px] border-[#a9d7ff] dark:border-[#5980a0];
+    @apply font-medium border-b-[1.5px] hover:border-b-[2px] md:border-b-[1px] md:hover:border-b-[1.3px] border-[#cececf] dark:border-[#5d5d63d5];
   }
 
 }
