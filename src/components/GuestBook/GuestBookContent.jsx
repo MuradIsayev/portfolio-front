@@ -44,7 +44,7 @@ const GuestBookContent = ({ data }) => {
         style={{
           borderRadius: "6px",
           padding: "6px 9px",
-          fontSize: "1.6vmin",
+          fontSize: "1.65vmin",
         }}
       />
     </div >

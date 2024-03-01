@@ -13,3 +13,4 @@ export { default as UnderConstruction } from './UnderConstruction';
 export { default as CountAnimation } from './CountAnimation';
 export { default as BlogCardSkeleton } from './Blog/Skeletons/BlogCardSkeleton';
 export { default as BlogDetailsSkeleton } from './Blog/Skeletons/BlogDetailsSkeleton';
+export { default as BulletPointItem } from './BulletPointItem';
