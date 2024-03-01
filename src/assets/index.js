@@ -12,6 +12,9 @@ import notFound from './animations/notFound.json';
 import linkExternal from './icons/link-external-dark.svg';
 import link from './icons/link.svg';
 import darkLink from './icons/link-dark.svg';
+import dot from './icons/dot.svg';
+import darkDot from './icons/dark-dot.svg';
 
 
-export { linkExternal, darkLink, link, goBack, github, google, darkGoBack, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
+
+export { linkExternal, dot, darkDot, darkLink, link, goBack, github, google, darkGoBack, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
