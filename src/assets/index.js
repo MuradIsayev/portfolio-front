@@ -14,7 +14,8 @@ import link from './icons/link.svg';
 import darkLink from './icons/link-dark.svg';
 import dot from './icons/dot.svg';
 import darkDot from './icons/dark-dot.svg';
+import avatar from './icons/avatar.svg'
 
 
 
-export { linkExternal, dot, darkDot, darkLink, link, goBack, github, google, darkGoBack, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
+export { avatar, linkExternal, dot, darkDot, darkLink, link, goBack, github, google, darkGoBack, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
