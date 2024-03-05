@@ -23,7 +23,7 @@ const BlogDetails = () => {
     const { data: singleBlog, isLoading } = useQuery({ queryKey: ['singleBlog', slug], queryFn: () => fetchBlogById(slug) });
 
     useEffect(() => {
-        if (storagePost?.post?.slug === slug) return;
+        if (storagePost?.post?.slug === slug && storagePost?.markdown?.parent === singleBlog?.markdown?.parent) return;
 
         if (singleBlog) {
             setStoragePost(singleBlog);
