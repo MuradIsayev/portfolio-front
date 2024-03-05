@@ -9,22 +9,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Montserrat-VariableFont_wght;
+  font-family: Montserrat;
 }
 
 @font-face {
-  font-family: Montserrat-VariableFont_wght;
-  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-family: Montserrat;
+  src: url('./assets/fonts/Montserrat.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Supreme-Variable;
   src: url('./assets/fonts/Supreme-Variable.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: Gilroy-Medium;
-  src: url('./assets/fonts/Gilroy-Medium.ttf') format('truetype');
 }
 
 @layer base {
@@ -71,7 +66,7 @@
 
   /* HOMEPAGE */
   .headers {
-    @apply text-[1.5rem] font-normal mb-1 md:text-lg md:mb-0 lg:text-[2rem] dark:text-[#f5f5f5] text-[#000];
+    @apply text-[1.5rem] font-normal mb-1 md:text-lg md:mb-0 lg:text-3xl dark:text-[#f5f5f5] text-[#000];
   }
 
   .avatar-img {
