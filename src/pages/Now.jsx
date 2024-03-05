@@ -25,7 +25,7 @@ const Now = () => {
             </div>
 
             <hr class="h-[1.3px] mb-2 mt-4 bg-[#ededeee0] border-0 dark:bg-[#1f1f20d5]"></hr>
-            <div>
+            <div className='home-texts'>
                 Last updated on 25 February, 2024 (Baku, Azerbaijan)
             </div>
         </div>
