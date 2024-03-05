@@ -43,9 +43,8 @@ export const animateTags = {
         opacity: 1,
         x: 0,
         transition: {
-            type: "spring",
-            stiffness: 210,
-            damping: 15,
+            type: 'tween',
+            duration: .2,
         },
     },
 };
@@ -60,9 +59,8 @@ export const animateLink = {
         opacity: 1,
         x: 0,
         transition: {
-            type: "spring",
-            stiffness: 210,
-            damping: 15,
+            type: 'tween',
+            duration: .25,
         },
     },
 };

@@ -4,7 +4,7 @@ export { default as DownloadCV } from './DownloadCV';
 export { default as GuestBookContent } from './GuestBook/GuestBookContent';
 export { default as LoggedInGuest } from './GuestBook/LoggedInGuest';
 export { default as NotLoggedInGuest } from './GuestBook/NotLoggedInGuest';
-export { default as BlogContent } from './Blog/BlogContent';
+export { default as BlogCard } from './Blog/BlogCard';
 export { default as BlogDetails } from './Blog/BlogDetails';
 export { default as BlogTags } from './Blog/BlogTags';
 export { default as ProjectCard } from './Project/ProjectCard';

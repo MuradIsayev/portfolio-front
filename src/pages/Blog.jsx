@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { BlogContent, CountAnimation, BlogCardSkeleton } from '../components';
+import { BlogCard, CountAnimation, BlogCardSkeleton } from '../components';
 import { fetchBlogs } from '../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
@@ -32,7 +32,7 @@ const Blog = () => {
         {isLoading ? <BlogCardSkeleton /> : (
           blogs?.map(({ id, title, minsRead, createdAt, tags, slug, viewCount }, index) => {
             return (
-              <BlogContent
+              <BlogCard
                 key={id}
                 slug={slug}
                 title={title}
