@@ -74,7 +74,7 @@
   }
 
   .home-texts {
-    @apply max-w-[70%] text-[.96rem] font-[400] dark:text-[#d1d1d1] text-[#000] md:max-w-[100%] md:text-xs md:text-[300];
+    @apply text-[.96rem] font-[400] dark:text-[#d1d1d1] text-[#000] md:text-xs md:text-[300];
   }
 
   .home-links {
