@@ -11,7 +11,8 @@ const Now = () => {
                 <div>This section is a <a
                     target='_blank'
                     className="custom-underline" href='https://nownownow.com/about'>/now page</a>, <span>inspired by </span>
-                    <a className="custom-underline" href="https://sive.rs/">Derek Sivers</a>. Here you will find whatever I am currently building, reading and learning.</div>
+                    <a className="custom-underline" href="https://sive.rs/" target='_blank'
+                    >Derek Sivers</a>. Here you will find whatever I am currently building, reading and learning.</div>
 
                 <div className='mt-5 mb-2 text-xl md:text-base headers'>Top of my mind at the moment:</div>
 
