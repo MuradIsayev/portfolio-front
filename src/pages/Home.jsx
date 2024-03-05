@@ -9,7 +9,7 @@ const Home = () => {
   const { isThemeDark } = useThemeStore();
 
   return (
-    <motion.div variants={container}
+    <motion.div variants={container} className='lg:max-w-[60%] max-w-[70%] md:max-w-full'
       initial="hidden"
       animate="show">
       <motion.h2 variants={items}
@@ -31,7 +31,7 @@ const Home = () => {
               src={isThemeDark ? whiteGithub : github}
               alt="github logo"
             />
-            <p className="md:text-[.65rem] lg:text-[.9rem] home-texts font-medium text-neutral-600 dark:text-neutral-400">My Github</p>
+            <p className="md:text-[.6rem] text-[.85rem] home-texts font-medium text-neutral-600 dark:text-neutral-400">My Github</p>
           </a>
           <a
             target='_blank'
@@ -43,7 +43,7 @@ const Home = () => {
               src={isThemeDark ? linkedin : darkLinkedin}
               alt="linkedin logo"
             />
-            <p className="md:text-[.65rem] lg:text-[.9rem] home-texts font-medium text-neutral-600 dark:text-neutral-400">My LinkedIn</p>
+            <p className="md:text-[.6rem] text-[.85rem] home-texts font-medium text-neutral-600 dark:text-neutral-400">My LinkedIn</p>
           </a>
         </motion.div>
       </div >

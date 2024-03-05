@@ -5,7 +5,7 @@ import { BulletPointItem } from '../components'
 const Now = () => {
 
     return (
-        <div >
+        <div className='lg:max-w-[60%] max-w-[70%] md:max-w-full'>
             <h2 className='headers'>What I am up to now</h2>
             <div className='home-texts'>
                 <div>This section is a <a
