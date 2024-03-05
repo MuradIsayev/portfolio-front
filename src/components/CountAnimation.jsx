@@ -9,19 +9,19 @@ const CountAnimation = ({ n }) => {
 
     switch (true) {
         case n > 5:
-            customDuration = .5;
+            customDuration = .6;
             break;
         case n > 10:
-            customDuration = .7;
+            customDuration = .8;
             break;
         case n > 20:
-            customDuration = .9;
-            break;
-        case n > 30:
             customDuration = 1;
             break;
+        case n > 30:
+            customDuration = 1.2;
+            break;
         default:
-            customDuration = 0.3;
+            customDuration = 0.4;
     }
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const CountAnimation = ({ n }) => {
     }, [n]);
 
     return (
-        <motion.span className="font-semibold md:font-medium">{rounded}</motion.span>
+        <motion.span className="font-medium">{rounded}</motion.span>
     )
 };
 

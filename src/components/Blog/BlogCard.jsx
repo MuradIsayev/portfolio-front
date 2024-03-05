@@ -49,7 +49,7 @@ const BlogCard = ({ slug, title, createdAt, tags, nextDelay, viewCount }) => {
               variants={animateTags}
               className='max-w-[25%] flex flex-col flex-wrap items-center self-end justify-center text-[.75rem] md:text-[.5rem] dark:text-neutral-400 text-neutral-600 font-medium'>
               <div>{createdAt}</div>
-              <div className="font-semibold md:font-medium">{viewCount} views</div>
+              <div className="font-medium">{viewCount} views</div>
             </motion.div>
           </motion.div>
         </motion.div>
