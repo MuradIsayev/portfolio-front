@@ -36,22 +36,18 @@ const BlogDetails = () => {
 
     return (
         <div className='lg:w-[70%] w-[80%] md:w-full'>
-            <motion.div
-                initial={{ x: 0 }}
-                animate={{ x: -5 }}
-                transition={{
-                    type: "tween",
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    duration: 0.6,
-                    ease: 'easeInOut',
-                }}
-                onClick={handleGoBack} className='
-                flex md:h-7 md:w-7 h-9 w-9 p-1
-                dark:hover:bg-[#151516d5] rounded-md hover:bg-[#ededeee0]
-                relative transition duration-150 ease-linear cursor-pointer'>
-                <img src={isThemeDark ? goBack : darkGoBack} alt='Go back icon' />
-            </motion.div>
+            <div
+                onClick={handleGoBack} className='border w-[9.5rem] h-[43px] mb-3 md:mb-2 
+                bg-[#ffffff] text-[#09090B] dark:text-[#fafafa] dark:bg-[#09090B] hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] border-[#E4E4E7] dark:border-[#27272A]
+                flex items-center justify-center gap-[6px] rounded-md
+                transition duration-150 ease-linear cursor-pointer
+                md:w-[7.8rem] md:h-9
+                
+                
+                '>
+                <img src={isThemeDark ? goBack : darkGoBack} alt='Go back icon' className='h-5 md:h-[15px]' />
+                <div className='text-sm font-medium md:text-[.7rem] home-texts text-neutral-600 dark:text-neutral-400'>Back to blog</div>
+            </div>
 
             {(isLoading && !(slug === storagePost?.post?.slug)) ? <BlogDetailsSkeleton /> : (
                 <div className='w-[89%]'>

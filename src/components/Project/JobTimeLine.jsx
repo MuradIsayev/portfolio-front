@@ -11,9 +11,9 @@ const JobTimeLine = ({ position, description, startedAt, endedAt, company, workS
             <motion.time variants={items} className="text-[.83rem] md:text-[.71rem] lg:text-sm font-medium leading-none text-neutral-600 dark:text-neutral-400">{startedAt} ‑ {endedAt}</motion.time>
             <motion.div variants={items} className='flex items-end gap-1'>
                 <span className="text-base md:text-sm font-medium dark:text-[#fafafa] text-[#09090B]">{position}</span>
-                <span className="text-[.87rem] lg:text-[.92rem] md:text-[.73rem] text-neutral-600 dark:text-neutral-400 font-medium self-center">@</span>
+                <span className="text-[.72rem] lg:text-[.8rem] md:text-[.65rem] text-neutral-600 dark:text-neutral-400 font-medium self-center">@</span>
                 <span className="text-[.87rem] lg:text-[.92rem] md:text-[.73rem] font-medium dark:text-[#fafafa] text-[#09090B]">{company}</span>
-                <span className="text-[.8rem] font-[600] text-neutral-600 dark:text-neutral-400">·</span>
+                <span className="text-[.95rem] font-[600] text-neutral-600 dark:text-neutral-400">·</span>
                 <span className="text-[.87rem] lg:text-[.92rem] md:text-[.73rem] font-medium dark:text-[#fafafa] text-[#09090B]">{workScheduleType}</span>
             </motion.div>
             <motion.p variants={items} className=" text-sm lg:text-[.9rem] font-normal md:text-[.67rem] text-neutral-600 dark:text-neutral-400">

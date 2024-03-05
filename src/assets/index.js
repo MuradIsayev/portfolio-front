@@ -1,5 +1,5 @@
 import goBack from './icons/goback.svg';
-import darkGoBack from './icons/darkGoback.svg';
+import darkGoBack from './icons/dark-go-back.svg';
 import github from './icons/socials/github.svg';
 import whiteGithub from './icons/socials/whitegithub.svg';
 import google from './icons/socials/google.svg';
