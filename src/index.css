@@ -57,7 +57,7 @@
   }
 
   .navbar-links {
-    @apply leading-6 no-underline rounded-md text-[.72rem] font-semibold md:my-[10%] md:px-[13px] md:py-[2px] py-[10px] px-[18px] lg:text-[.8rem];
+    @apply leading-6 no-underline rounded-md text-[.72rem] md:text-[.67rem] font-semibold md:font-medium md:my-[10%] md:px-[12px] md:py-[2px] py-[10px] px-[18px] lg:text-[.8rem];
   }
 
   .hovered-path {
