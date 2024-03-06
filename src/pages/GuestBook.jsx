@@ -132,7 +132,7 @@ const GuestBook = () => {
   return (
     <motion.div variants={container} initial="hidden" animate="show">
       <motion.h2 variants={items} className='mb-2 headers'>Hello hi hey...</motion.h2>
-      <motion.div variants={items} className="guestbook-content-container">
+      <motion.div variants={items}>
         {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setData={setData} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
         {data ? <GuestBookContent data={data} /> : null}
       </motion.div>

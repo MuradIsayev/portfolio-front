@@ -7,7 +7,7 @@ const NotLoggedInGuest = ({ signInWithGitHub, signInWithGoogle }) => {
   const { isThemeDark } = useThemeStore();
 
   return (
-    <div className="flex flex-row items-center gap-5 mb-8 md:gap-4 lg:w-[70%] w-[80%] md:w-full">
+    <div className="flex flex-row items-center gap-5 mb-6 md:mb-4 md:gap-4 lg:w-[70%] w-[80%] md:w-full">
       <button className="login-with login-with-github">
         <div className='w-[22px] h-[22px] object-contain md:w-[14px] md:h-[14px]'>
           <img
