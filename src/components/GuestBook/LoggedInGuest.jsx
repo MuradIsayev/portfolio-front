@@ -22,7 +22,7 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
   const [isTyping, setIsTyping] = useState(false);
   const [dotCount, setDotCount] = useState(0);
   const validateMessage = z.string()
-    .max(75, 'Message should not be more than 75 characters.')
+    .max(100, 'Message should not be more than 100 characters.')
     .min(1, 'Message field should not be empty.')
     .refine((value) => !/^\s*$/.test(value), 'Message should not be empty.')
     .refine((value) => !matcher.hasMatch(value), 'Message should not contain profanity.')
@@ -125,7 +125,7 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
               className="text-red-500 text-[.83rem] mt-1 font-[300] md:text-[.54rem] dark:text-[#ee6b6bad]">{errorMessage}</motion.div>
           )}
           <div>
-            <button type='submit' className="send-button h-9 w-[75px] md:btn-xs md:w-[45px] md:text-[.55rem]"
+            <button type='submit' className="send-button h-9 w-[75px] md:btn-xs md:w-[47px] md:text-[.55rem]"
             >Send</button>
           </div>
         </div>
