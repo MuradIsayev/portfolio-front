@@ -30,13 +30,12 @@ const Blog = () => {
       <motion.div className='lg:w-[70%] w-full'
         variants={container}>
         {isLoading ? <BlogCardSkeleton /> : (
-          blogs?.map(({ id, title, minsRead, createdAt, tags, slug, viewCount }, index) => {
+          blogs?.map(({ id, title, createdAt, tags, slug, viewCount }, index) => {
             return (
               <BlogCard
                 key={id}
                 slug={slug}
                 title={title}
-                minsRead={minsRead}
                 tags={tags}
                 createdAt={createdAt}
                 nextDelay={index += 1}
