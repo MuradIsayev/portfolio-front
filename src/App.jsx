@@ -2,9 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { BlogDetails, NavBar } from './components';
 import { NotFound } from './components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Blog, Home, About, GuestBook } from './pages';
-import Now from './pages/Now';
-
+import { Blog, Home, About, GuestBook, Now } from './pages';
 
 const App = () => {
   const queryClient = new QueryClient();

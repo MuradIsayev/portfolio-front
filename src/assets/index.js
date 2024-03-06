@@ -14,7 +14,9 @@ import darkLink from './icons/link-dark.svg';
 import dot from './icons/dot.svg';
 import darkDot from './icons/dark-dot.svg';
 import avatar from './icons/avatar.svg'
+import guestbookGithub from './icons/socials/guestbook-github.svg';
+import guestbookGithubDark from './icons/socials/guestbook-github-dark.svg';
 
 
 
-export { avatar, dot, darkDot, darkLink, link, goBack, github, google, darkGoBack, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
+export { avatar, dot, darkDot, darkLink, link, goBack, github, guestbookGithub, guestbookGithubDark, google, darkGoBack, linkedin, myAvatar, underConstruction, notFound, whiteGithub, darkLinkedin, whiteGoogle };
