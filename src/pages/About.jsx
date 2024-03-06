@@ -16,7 +16,7 @@ const About = () => {
       variants={container}
       initial="hidden"
       animate="show">
-      <div className='mb-4'>
+      <div className='mb-5 max-w-[70%] md:max-w-full'>
         <motion.h2 variants={items} className='headers'>About Me</motion.h2>
         <motion.p variants={items} className='home-texts'>
           My journey began in backend development, but I've since expanded my skills to embrace frontend technologies as well.
