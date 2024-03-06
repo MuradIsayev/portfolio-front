@@ -95,7 +95,7 @@
   }
 
   .login-with-google {
-    @apply bg-[#ffffff] text-[#09090B] dark:text-[#fafafa] dark:bg-[#09090B] hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] border border-[#E4E4E7] dark:border-[#27272A];
+    @apply bg-[#ffffff] text-[#18181B] dark:text-[#fafafa] dark:bg-[#09090B] hover:bg-[#ededeee0] dark:hover:bg-[#151516d5] border border-[#E4E4E7] dark:border-[#27272A];
   }
 
   .send-button {

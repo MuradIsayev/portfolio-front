@@ -25,7 +25,6 @@ const About = () => {
             <a href='/now' className='custom-underline'>now?</a></span>
         </motion.p>
       </div>
-
       <div>
         <motion.ol variants={container}
           className="relative border-l border-neutral-600 dark:border-neutral-400">
@@ -45,7 +44,6 @@ const About = () => {
           )}
         </motion.ol>
       </div>
-
       <motion.div
         variants={cardContainer}
         className="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[70%] md:w-full">

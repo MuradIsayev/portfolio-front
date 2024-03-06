@@ -9,7 +9,7 @@ const GuestBookContent = ({ data }) => {
     <div
     >
       {data?.map((message, index) => (
-        <div key={index} className="mt-3 md:mt-2">
+        <div key={index} className="mt-3 md:mt-[10px]">
           <div key={message?.createdAt} className="flex flex-row items-center guestbook-container">
             <div className="w-10 lg:w-[3rem] rounded-full object-contain md:w-7 md:h-7 mr-[7px] md:mr-[3px] relative mb-auto">
               <img

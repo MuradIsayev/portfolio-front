@@ -1,5 +1,5 @@
 // import { useEffect, useState } from 'react';
-import { github, google, whiteGoogle, whiteGithub } from '../../assets';
+import { whiteGoogle, google, guestbookGithub, guestbookGithubDark } from '../../assets';
 import { useThemeStore } from '../../store/useThemeDark';
 
 
@@ -11,7 +11,7 @@ const NotLoggedInGuest = ({ signInWithGitHub, signInWithGoogle }) => {
       <button className="login-with login-with-github">
         <div className='w-[22px] h-[22px] object-contain md:w-[14px] md:h-[14px]'>
           <img
-            src={isThemeDark ? github : whiteGithub}
+            src={isThemeDark ? guestbookGithubDark : guestbookGithub}
             alt="github logo"
           />
         </div>
