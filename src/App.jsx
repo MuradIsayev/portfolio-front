@@ -10,7 +10,7 @@ const App = () => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className='bg-white dark:bg-[#09090B] dark:text-white'>
+      <div className='bg-white dark:bg-[#09090B] md:min-h-[100vh] dark:text-white'>
         <div className="h-[100vh] md:h-full parent-container ">
           <div className="navbar-container">
             <NavBar />

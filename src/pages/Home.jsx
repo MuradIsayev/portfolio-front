@@ -24,7 +24,7 @@ const Home = () => {
           <img className='avatar-img'
             src={avatar} alt="portfolio avatar" />
         </motion.div>
-        <motion.div variants={items} className=" flex flex-col justify-center md:items-start gap-[10px]">
+        <motion.div variants={items} className=" flex flex-col justify-center md:items-start gap-[10px] md:gap-2">
           <a className="home-links group" href="https://github.com/MuradIsayev" target='_blank' >
             <img
               className="group-hover:-translate-y-1 transition-all duration-300 h-[30px] lg:h-[32px] md:h-[23px]"

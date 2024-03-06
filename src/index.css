@@ -49,11 +49,11 @@
 
   /* NAVBAR */
   .navbar-container {
-    @apply pt-32 md:pt-6 w-[15%] md:flex-col md:items-start md:w-[0vw] md:h-[100vh];
+    @apply pt-32 md:pt-0 w-[15%] md:w-[90%];
   }
 
   .content-container {
-    @apply w-[85%] md:pt-[88px] pt-32 pb-9 md:pb-5 pl-5 md:pl-3;
+    @apply w-[85%] md:pt-0 pt-32 pb-9 md:pb-5 pl-5 md:pl-3 md:w-[90%];
   }
 
   .navbar-links {
