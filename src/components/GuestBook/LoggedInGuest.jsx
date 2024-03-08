@@ -11,7 +11,7 @@ import debounce from "lodash/debounce";
 
 const socket = io(import.meta.env.VITE_APP_socketIO_URL);
 
-const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) => {
+const LoggedInGuest = ({ signOut, currentUser, message, setMessage, setIsSent }) => {
   const matcher = new RegExpMatcher({
     ...englishDataset.build(),
     ...englishRecommendedTransformers,
@@ -27,12 +27,16 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
     .refine((value) => !/^\s*$/.test(value), 'Message should not be empty.')
     .refine((value) => !matcher.hasMatch(value), 'Message should not contain profanity.')
 
-  const handleSendButton = () => {
-    socket.emit("sendMessage", { userName: currentUser?.displayName, message, photoURL: currentUser?.photoURL, uuid: currentUser?.uid, })
+
+  const handleSendMessage = () => {
+    socket.emit("sendMessage", { uuid: currentUser?.uid, message })
     setMessage('');
-    socket.on('updatedMessages', (data) => {
-      setData(data);
-    })
+    setIsSent(true);
+
+    setTimeout(() => {
+      setIsSent(false);
+    }
+      , 1000);
   };
 
   useEffect(() => {
@@ -79,7 +83,7 @@ const LoggedInGuest = ({ signOut, currentUser, setData, message, setMessage }) =
     e.preventDefault();
     const parsedMessage = validateMessage.safeParse(message);
     if (parsedMessage.success) {
-      handleSendButton();
+      handleSendMessage();
       setErrorMessage('');
     } else {
       const error = parsedMessage.error;
