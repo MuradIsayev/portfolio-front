@@ -11,20 +11,8 @@ import { useAppVisible } from '../hooks/useAppVisible';
 import { container, items } from '../assets/animations/transitions';
 import { useMessageInputStore } from '../store/useMessageInput';
 import { useGuestOnlineStatusStore } from '../store/useGuestOnlineStatus';
-
-const socket = io(import.meta.env.VITE_APP_socketIO_URL);
-
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APP_FIREBASE_KEY,
-  authDomain: import.meta.env.VITE_APP_FIREBASE_DOMAIN,
-  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_SENDER_ID,
-  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
-};
-
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+import { auth } from '../services/firebase';
+import socket from '../services/socket';
 
 const GuestBook = () => {
   const username = uniqueNamesGenerator({
@@ -37,6 +25,7 @@ const GuestBook = () => {
 
   const { isGuestOnline, setIsGuestOnline } = useGuestOnlineStatusStore();
   const { message, setMessage } = useMessageInputStore();
+  const [isSent, setIsSent] = useState(false);
 
   const [data, setData] = useState([]);
   const [user] = useAuthState(auth);
@@ -71,7 +60,7 @@ const GuestBook = () => {
     socket.on('allMessages', (data) => {
       setData(data);
     });
-  }, [isGuestOnline, user, data]);
+  }, [isGuestOnline, user, isSent]);
 
   const signInWithGitHub = async () => {
     const provider = new firebase.auth.GithubAuthProvider()
@@ -133,8 +122,8 @@ const GuestBook = () => {
     <motion.div variants={container} initial="hidden" animate="show">
       <motion.h2 variants={items} className='mb-2 headers'>Hello hi hey...</motion.h2>
       <motion.div variants={items}>
-        {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setData={setData} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
-        {data ? <GuestBookContent data={data} /> : null}
+        {auth?.currentUser ? <LoggedInGuest setMessage={setMessage} message={message} setIsSent={setIsSent} currentUser={auth?.currentUser} signOut={handleSignOut} /> : <NotLoggedInGuest signInWithGoogle={signInWithGoogle} signInWithGitHub={signInWithGitHub} />}
+        {data && <GuestBookContent data={data} />}
       </motion.div>
     </motion.div>
   );
