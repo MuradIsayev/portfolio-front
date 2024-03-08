@@ -23,7 +23,7 @@ const Now = () => {
 
                 <motion.div
                     variants={items}
-                    className='mt-5 mb-2 text-xl md:text-base headers'>Top of my mind at the moment:</motion.div>
+                    className='mb-2 text-xl mt-7 md:text-base headers'>Top of my mind at the moment:</motion.div>
 
                 <div className='flex flex-col gap-2 mt-2 ml-5'>
                     <BulletPointItem text='Building a personal website' />
