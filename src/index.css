@@ -57,7 +57,7 @@
   }
 
   .navbar-links {
-    @apply leading-6 no-underline rounded-md text-[.72rem] md:text-[.67rem] font-semibold md:font-medium md:my-[10%] md:px-[12px] md:py-[2px] py-[10px] px-[18px] lg:text-[.8rem];
+    @apply leading-6 no-underline rounded-md text-[.72rem] md:text-[.67rem] font-semibold md:font-medium md:my-[10%] md:px-[14px] md:py-[3px] py-[10px] px-[18px] lg:text-[.8rem];
   }
 
   .hovered-path {
@@ -66,7 +66,7 @@
 
   /* HOMEPAGE */
   .headers {
-    @apply text-[1.5rem] font-normal mb-1 md:text-lg md:mb-0 lg:text-3xl dark:text-[#f5f5f5] text-[#000];
+    @apply font-normal mb-1 md:text-lg md:mb-0 text-3xl dark:text-[#f5f5f5] text-[#000];
   }
 
   .avatar-img {
