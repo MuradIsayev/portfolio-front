@@ -4,7 +4,6 @@ import { fetchBlogById, updateViewCount } from '../../api/blog';
 import { useQuery } from '@tanstack/react-query';
 import ReactMarkdown from 'react-markdown';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { BlogDetailsSkeleton } from '..';
 import { useThemeStore } from '../../store/useThemeDark';
 import { useBlogContentStore } from '../../store/useBlogContent';

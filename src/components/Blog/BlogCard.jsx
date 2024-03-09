@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { items } from "../../assets/animations/transitions";
+import { items, animateTags } from "../../assets/animations/transitions";
 import BlogTags from "./BlogTags";
-import { animateTags } from "../../assets/animations/transitions";
 
 
 const BlogCard = ({ slug, title, createdAt, tags, nextDelay, viewCount }) => {

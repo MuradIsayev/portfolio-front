@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { items } from '../../assets/animations/transitions';
+import { items, animateLink } from '../../assets/animations/transitions';
 import { link, darkLink } from '../../assets';
-import { animateLink } from '../../assets/animations/transitions';
 import { useThemeStore } from '../../store/useThemeDark';
 
 

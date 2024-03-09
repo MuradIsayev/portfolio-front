@@ -5,7 +5,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { io } from "socket.io-client";
 import { motion } from 'framer-motion';
 import { useAppVisible } from '../hooks/useAppVisible';
 import { container, items } from '../assets/animations/transitions';
