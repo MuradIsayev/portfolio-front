@@ -46,7 +46,7 @@ const About = () => {
       </div>
       <motion.div
         variants={cardContainer}
-        className="flex flex-row flex-wrap gap-x-3 gap-y-5 w-[70%] md:w-full">
+        className="flex flex-row flex-wrap gap-x-4 gap-y-5 w-[70%] md:w-full">
         {projects?.map(({ name, description, skills, url }, index) => {
           return (
             <ProjectCard
