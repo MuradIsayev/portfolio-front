@@ -26,17 +26,16 @@ const Now = () => {
                     className='mb-2 text-xl mt-7 md:text-base headers'>Top of my mind at the moment:</motion.div>
 
                 <div className='flex flex-col gap-2 mt-2 ml-5'>
-                    <BulletPointItem text='Building a personal website' />
+                    <BulletPointItem text='Working on my Bachelor Thesis' />
                     <BulletPointItem text='Learning Data Structures and Algorithms' />
                     <BulletPointItem text='Diving into Go language' />
-                    <BulletPointItem text='Searching for Jobs and Internships as a Software Developer' />
-                    <BulletPointItem text='Reading The Go Programming Language and Manifest' />
+                    <BulletPointItem text='Planning to switch from VS Code to NeoVim' />
                 </div>
             </div>
 
             <motion.hr variants={items} className="h-[1.3px] mb-2 mt-4 bg-[#ededeee0] border-0 dark:bg-[#1f1f20d5]"></motion.hr>
             <motion.div variants={items} className='home-texts'>
-                Last updated on 25 February, 2024 (Baku, Azerbaijan)
+                Last updated on 6 May, 2024 (Baku, Azerbaijan)
             </motion.div>
         </motion.div>
     )
