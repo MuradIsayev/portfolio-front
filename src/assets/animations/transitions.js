@@ -16,7 +16,7 @@ export const cardContainer = {
         opacity: 1,
         transition: {
             staggerChildren: 0.2,
-            delayChildren: .5,
+            delayChildren: 1.1,
         },
     },
 }

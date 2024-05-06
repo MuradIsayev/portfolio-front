@@ -48,8 +48,8 @@ const Home = () => {
         </motion.div>
       </div >
       <motion.p variants={items} className="home-texts">
-        I am a computer science senior at French-Azerbaijani University (UFAZ) and experienced in NodeJS.
-        Download my CV to learn more.
+        I’m a Software Developer and a graduate of French-Azerbaijani University with a bachelor’s degree in Computer Science.
+        My long-term goal is to become a Software Engineer who builds products and services with the purpose of making a difference in people's lives. Download my CV to learn more.
       </motion.p>
 
       <motion.div variants={items}>

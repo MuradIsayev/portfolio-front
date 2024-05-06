@@ -18,10 +18,10 @@ const About = () => {
       <div className='mb-5 max-w-[70%] md:max-w-full'>
         <motion.h2 variants={items} className='headers'>About Me</motion.h2>
         <motion.p variants={items} className='home-texts'>
-          My journey began in backend development, but I've since expanded my skills to embrace frontend technologies as well.
-          Now, I am working on myself, to be a solid one.
-          Enough about past. What about <span>
-            <a href='/now' className='custom-underline'>now?</a></span>
+          I have gained experience in both backend and frontend development, particularly in <span className='custom-underline'>Node.js</span> for over 2 years. Additionally, I have a strong foundation in <span className='custom-underline'>Go</span>.
+          You can check out what I am doing <span>
+            <a href='/now' className='custom-underline'>now.</a></span>
+          <div>Here's a summary of my work and some of the projects I have worked on so far.</div>
         </motion.p>
       </div>
       <div>
