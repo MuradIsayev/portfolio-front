@@ -48,8 +48,8 @@ const Home = () => {
         </motion.div>
       </div >
       <motion.p variants={items} className="home-texts">
-        I’m a Software Developer and a graduate of French-Azerbaijani University with a bachelor’s degree in Computer Science.
-        My long-term goal is to become a Software Engineer who builds products and services with the purpose of making a difference in people's lives. Download my CV to learn more.
+        I’m a Software Engineer and M.Sc student in Global Software Development at Fulda University of Applied Sciences, located in Fulda, Germany.
+        My long-term goal is to become a Software Engineer who builds products and services with the purpose of making a difference in people's lives. <br />Download my CV to learn more.
       </motion.p>
 
       <motion.div variants={items}>
