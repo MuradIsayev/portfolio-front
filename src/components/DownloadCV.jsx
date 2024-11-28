@@ -17,40 +17,37 @@ const DownloadCV = () => {
         await loadingControls.start({ top: 0, transition: { duration: .4 } });
         loadingBarControls.start({ width: '100%', transition: { duration: 1.1 } });
 
-        const pdfURL = "src/assets/Murad_Isayev_Resume.pdf";
+        try {
+            const response = await fetch(
+                `${import.meta.env.VITE_APP_BACKEND_URL}/${import.meta.env.VITE_APP_CV_FILEPATH}`
+            );
 
-        // try {
-        //     const response = await fetch(
-        //         `${import.meta.env.VITE_APP_BACKEND_URL}/${import.meta.env.VITE_APP_CV_FILEPATH}`
-        //     );
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${import.meta.env.VITE_APP_FILENAME}.pdf`;
+                a.click();
 
-        // if (response.ok) {
-        // const blob = await response.blob();
+                await doneControls.start({
+                    top: 0,
+                    transition: { delay: 1.25, duration: 0.4 },
+                });
 
-        // const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = pdfURL;
-        a.download = `${import.meta.env.VITE_APP_FILENAME}.pdf`;
-        a.click();
-
-        await doneControls.start({
-            top: 0,
-            transition: { delay: 1.25, duration: 0.4 },
-        });
-
-        setTimeout(() => {
-            setIsAnimating(false);
-            uploadControls.start({ zIndex: 0 });
-            loadingControls.start({ top: '-100%', transition: { duration: 0 } });
-            loadingBarControls.start({ width: '0%', transition: { duration: 0 } });
-            doneControls.start({ top: '-100%', transition: { duration: 0.4 } });
-        }, 1000);
-        // } else {
-        console.error('File download failed');
-        // }
-        // } catch (error) {
-        // console.error('Error occurred during file download:', error);
-        // }
+                setTimeout(() => {
+                    setIsAnimating(false);
+                    uploadControls.start({ zIndex: 0 });
+                    loadingControls.start({ top: '-100%', transition: { duration: 0 } });
+                    loadingBarControls.start({ width: '0%', transition: { duration: 0 } });
+                    doneControls.start({ top: '-100%', transition: { duration: 0.4 } });
+                }, 1000);
+            } else {
+                console.error('File download failed');
+            }
+        } catch (error) {
+            console.error('Error occurred during file download:', error);
+        }
     };
 
     return (
